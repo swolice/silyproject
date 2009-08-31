@@ -1,0 +1,5 @@
+10:49:52,437 DEBUG LogFile:22 : debug!!!
+10:49:52,468  INFO LogFile:23 : info!!!
+10:49:52,468  WARN LogFile:24 : warn!!!
+10:49:52,468 ERROR LogFile:25 : error!!!
+10:49:52,468 FATAL LogFile:26 : fatal!!!
