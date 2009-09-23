@@ -6,7 +6,8 @@
  */
 package cn.com.sily;
 
-import java.util.regex.Pattern;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 /**
  * @author a
@@ -63,9 +64,16 @@ public class Test {
 //			System.out.println("false");
 //		}
 		
-		for (int i = 1; i <= 100; i++) {
-			String sql = "insert into interface_base_info(row_id,baseinfo001,baseinfo003,baseinfo006,inserttime,updatetime) values(f_get_globalid,'SI000"+i+"','浙江鸿程"+i+"','571',sysdate,sysdate);";
-			System.out.println(sql);
+//		for (int i = 1; i <= 100; i++) {
+//			String sql = "insert into interface_base_info(row_id,baseinfo001,baseinfo003,baseinfo006,inserttime,updatetime) values(f_get_globalid,'SI000"+i+"','浙江鸿程"+i+"','571',sysdate,sysdate);";
+//			System.out.println(sql);
+//		}
+		
+		try {
+			FileOutputStream file = new FileOutputStream("e:/qc.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
+		
 	}
 }
