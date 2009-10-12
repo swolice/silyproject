@@ -21,7 +21,7 @@ public class ReplaceSpace {
 
 	public static void main(String[] args) {
 		try {
-			FileReader fr = new FileReader("E:/bnet/DealResultReq.xml");
+			FileReader fr = new FileReader("d:/aaa.xml");
 			BufferedReader br = new BufferedReader(fr);
 			String str = "";
 			while((str = br.readLine())!= null ){
