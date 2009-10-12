@@ -34,21 +34,22 @@ public class TestSplit {
 //		List list = read(file, "utf-8");
 //		System.out.println((String)list.get(0));
 //		System.out.println((String)list.get(1));
-		String ss = "e:/ILH_SIInfo_YYYYMMDDXXX.NNNN";
-		System.out.println(read(ss, "utf-8"));
+//		String ss = "e:/ILH_SIInfo_YYYYMMDDXXX.NNNN";
+//		System.out.println(read(ss, "utf-8"));
 //		Pattern pattern = Pattern.compile("\\d{11}\\.\\d{4}");
 //		boolean b = pattern.matcher(ss).matches();
 //		if(b){
 //			System.out.println(ss);
 //		}
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-//		Date date = null;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmms");
+		Date date = null;
 //		try {
-//			date = sdf.parse("20090911");
+////			date = sdf.parse("11");
 //		} catch (ParseException e) {
 //			e.printStackTrace();
 //		}
-		
+		System.out.println(new Date(1253760009047L));
+		System.out.println(new Date(1253759986703L));
 		
 		//文件名日期
 //		Calendar c = Calendar.getInstance();
@@ -85,13 +86,13 @@ public class TestSplit {
 		//			
 		//			int a = reader.read(c,0,1);
 		//			System.out.println(c[0]);
-//		for (int i = 0; i < 100000; i++) {
-//			//System.out.println(i);
-//			//reader.read(c,i+1,1);
-//			String s = "SI000" + i + "||浙江鸿程" + i + "|zjhc|2|571|2|1|2|备注信息"
-//					+ i + "\n\r";
-//			method1(file,s);
-//		}
+		for (int i = 0; i < 10000; i++) {
+			//System.out.println(i);
+			String file = "E:/ILH_SIInfo_20090927000.0001";
+			String s = "SI000" + i + "||浙江鸿程" + i + "|zjhc|2|571|2|1|2|备注信息"
+					+ i + "\r\n";
+			method1(file,s);
+		}
 //		String s = "46003000|4600300|0001|100000";
 //		method1(file,s);
 		//			for (i = int_file-1; i > -1; i--) {
@@ -186,7 +187,7 @@ public class TestSplit {
 		BufferedWriter out = null;
 		try {
 			out = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream(file, true)));
+					new FileOutputStream(file, true),"utf-8"));
 			out.write(conent);
 		} catch (Exception e) {
 			e.printStackTrace();

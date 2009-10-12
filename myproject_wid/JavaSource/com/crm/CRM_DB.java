@@ -28,7 +28,7 @@ public class CRM_DB {
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.1.252:1521:CRMTEST", "eim", "123");
 			for (int i = 1; i <= 100; i++) {
 				stmt = conn.createStatement();
-				String sql = "update interface_base_info set baseinfo004 = 'zjhc"+i+"' where baseinfo001 = 'SI000" + i + "'";
+				String sql = "update interface_base_info set baseinfo014 = 'E0001' where baseinfo099 = '重单'";
 				stmt.executeUpdate(sql);
 			}
 		} catch (ClassNotFoundException e) {
