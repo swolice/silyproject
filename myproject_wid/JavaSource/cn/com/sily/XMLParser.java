@@ -16,7 +16,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-public class XMLParser {
+public class XMLParser { 
 	//Éú³É
 	public void generateDocument() {
 		Document document = DocumentHelper.createDocument();
