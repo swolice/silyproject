@@ -31,8 +31,6 @@ import jxl.write.biff.RowsExceededException;
  */
 public class ExpExcel {
 
-	public static List ranges = new ArrayList();
-
 	public static void main(String[] args) {
 		FileOutputStream outExl = null;
 		FileInputStream fis = null;
