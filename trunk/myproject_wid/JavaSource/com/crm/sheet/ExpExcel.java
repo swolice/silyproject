@@ -41,46 +41,43 @@ public class ExpExcel {
 			Workbook rwb = Workbook.getWorkbook(fis);
 			wwb = Workbook.createWorkbook(new File("d:/IP_xn_yw_jf1.xls"), rwb);
 			sheet = wwb.getSheet(0);
-			copyRow(sheet, 8, 11);
-			sheet.removeRow(8);
-			copyRow(sheet, 7, 8);
-			copyRow(sheet, 8, 9);
-			copyRow(sheet, 9, 10);
+			copyRow(sheet, 7, 1);
 		
-			Map mapHead = new HashMap();
-			mapHead.put("ORDER_NBR","20091092411313");
-			mapHead.put("CUST_NAME","客户名称");
-			insertHeaderData(sheet,mapHead);
-			
-			Map mapBody = new HashMap();
-			mapBody.put("STRNUM", "1");
-			mapBody.put("AREA", "2222");
-			mapBody.put("SERV_NBR", "3333");
-			mapBody.put("CIRCUIT_DIRECT_TYPE", "343");
-			mapBody.put("LOCAL_CIR_TYPE", "111");
-			mapBody.put("SPEEP_INPUT", "21321");
-			mapBody.put("CIRCUIT_LOCAL_NBR", "1222");
-			mapBody.put("SPEED_PE_PORT", "2222");
-			mapBody.put("CONNECT_IP_CE", "212312");
-			mapBody.put("CONNECT_IP_PE", "3333");
-			mapBody.put("FRI_TER_USER", "123");
-			mapBody.put("USER_ADDRESS", "1231");
-			mapBody.put("FRI_TER_LINK_MAN", "3333");
-			mapBody.put("FRI_TER_TEL", "3333");
-			mapBody.put("RD", "3333");
-			mapBody.put("RT_IMPORT", "3333");
-			mapBody.put("RT_EXPORT", "3333");
-			mapBody.put("ORDER_DATE", "3333");
-			mapBody.put("ORDER_ACT_DATE", "3333");
-			mapBody.put("LINE_COMMENT", "3333");
-			insertRowData(sheet, mapBody, 7);
-			insertRowData(sheet, mapBody, 8);
-			insertRowData(sheet, mapBody, 9);
-			insertRowData(sheet, mapBody, 10);
-			
-			Map mapFoot = new HashMap();
-			mapFoot.put("ORDER_COMMENT","订单内容");
-			insertFootData(sheet,mapFoot);
+		
+//			Map mapHead = new HashMap();
+//			mapHead.put("ORDER_NBR","20091092411313");
+//			mapHead.put("CUST_NAME","客户名称");
+//			insertHeaderData(sheet,mapHead);
+//			
+//			Map mapBody = new HashMap();
+//			mapBody.put("STRNUM", "1");
+//			mapBody.put("AREA", "2222");
+//			mapBody.put("SERV_NBR", "3333");
+//			mapBody.put("CIRCUIT_DIRECT_TYPE", "343");
+//			mapBody.put("LOCAL_CIR_TYPE", "111");
+//			mapBody.put("SPEEP_INPUT", "21321");
+//			mapBody.put("CIRCUIT_LOCAL_NBR", "1222");
+//			mapBody.put("SPEED_PE_PORT", "2222");
+//			mapBody.put("CONNECT_IP_CE", "212312");
+//			mapBody.put("CONNECT_IP_PE", "3333");
+//			mapBody.put("FRI_TER_USER", "123");
+//			mapBody.put("USER_ADDRESS", "1231");
+//			mapBody.put("FRI_TER_LINK_MAN", "3333");
+//			mapBody.put("FRI_TER_TEL", "3333");
+//			mapBody.put("RD", "3333");
+//			mapBody.put("RT_IMPORT", "3333");
+//			mapBody.put("RT_EXPORT", "3333");
+//			mapBody.put("ORDER_DATE", "3333");
+//			mapBody.put("ORDER_ACT_DATE", "3333");
+//			mapBody.put("LINE_COMMENT", "3333");
+//			insertRowData(sheet, mapBody, 7);
+//			insertRowData(sheet, mapBody, 8);
+//			insertRowData(sheet, mapBody, 9);
+//			insertRowData(sheet, mapBody, 10);
+//			
+//			Map mapFoot = new HashMap();
+//			mapFoot.put("ORDER_COMMENT","订单内容");
+//			insertFootData(sheet,mapFoot);
 			
 			wwb.write();
 		} catch (FileNotFoundException e) {
@@ -104,39 +101,50 @@ public class ExpExcel {
 			}
 		}
 	}
-
-	public static void copyRow(WritableSheet sheet, int sourceRow, int toRow) {
+	
+	/**
+	 * 复制多行
+	 * @param sheet
+	 * @param sourceRow 复制开始行的下标
+	 * @param rows 需要复制的行数
+	 */
+	public static void copyRow(WritableSheet sheet, int sourceRow, int rows) {
 		try {
-			Cell cells[] = sheet.getRow(sourceRow);
-			sheet.insertRow(toRow);
-			sheet.setRowView(toRow, sheet.getRowHeight(sourceRow));
-			for (int i = 0; i < cells.length; i++) {
-				if (cells[i].getType() == CellType.EMPTY) {
-					try {
-						jxl.write.WritableCellFormat wcsB = new jxl.write.WritableCellFormat();
-						wcsB.setBorder(jxl.format.Border.ALL,
-								jxl.format.BorderLineStyle.THIN);
-						Label lb = new Label(cells[i].getColumn(), toRow, "",
-								wcsB);
-						sheet.addCell(lb);
-					} catch (RowsExceededException e) {
-						e.printStackTrace();
-					} catch (WriteException e) {
-						e.printStackTrace();
+			
+			for (int i = 0; i < rows; i++) {
+				int toRow = sourceRow + rows + i;
+				sheet.insertRow(toRow);
+				sheet.setRowView(toRow, sheet.getRowHeight(sourceRow + i));
+				Cell cells[] = sheet.getRow(sourceRow + i);
+				for (int j = 0; j < cells.length; j++) {
+					if (cells[j].getType() == CellType.EMPTY) {
+						try {
+							jxl.write.WritableCellFormat wcsB = new jxl.write.WritableCellFormat();
+							wcsB.setBorder(jxl.format.Border.ALL,
+									jxl.format.BorderLineStyle.THIN);
+							Label lb = new Label(cells[j].getColumn(), toRow, "",
+									wcsB);
+							sheet.addCell(lb);
+						} catch (RowsExceededException e) {
+							e.printStackTrace();
+						} catch (WriteException e) {
+							e.printStackTrace();
+						}
+					}
+					if (cells[j].getType() == CellType.LABEL) {
+						Label wc = (Label) cells[j];
+						Label wc1 = (Label) wc.copyTo(cells[j].getColumn(), toRow);
+						wc1.setCellFormat(wc.getCellFormat());
+						sheet.addCell(wc1);
 					}
 				}
-				if (cells[i].getType() == CellType.LABEL) {
-					Label wc = (Label) cells[i];
-					Label wc1 = (Label) wc.copyTo(cells[i].getColumn(), toRow);
-					wc1.setCellFormat(wc.getCellFormat());
-					sheet.addCell(wc1);
-				}
 			}
+			
 			Range rangs[] = sheet.getMergedCells();
 			for (int i = 0; i < rangs.length; i++) {
-				if (rangs[i].getTopLeft().getRow() == sourceRow) {
-					Range range = sheet.mergeCells(rangs[i].getTopLeft().getColumn(), toRow,
-							rangs[i].getBottomRight().getColumn(), toRow);
+				if ((rangs[i].getTopLeft().getRow() < (sourceRow + rows)) && rangs[i].getTopLeft().getRow() >= sourceRow) {
+					Range range = sheet.mergeCells(rangs[i].getTopLeft().getColumn(), rangs[i].getTopLeft().getRow() + rows,
+							rangs[i].getBottomRight().getColumn(), rangs[i].getBottomRight().getRow() + rows);
 					Cell cell = range.getTopLeft();
 					jxl.write.WritableCellFormat wcsB = new jxl.write.WritableCellFormat(cell.getCellFormat());
 					wcsB.setBorder(jxl.format.Border.ALL,
