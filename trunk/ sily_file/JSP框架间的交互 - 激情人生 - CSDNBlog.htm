@@ -1,0 +1,416 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0062)http://blog.csdn.net/cuishijin/archive/2007/05/10/1602596.aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>JSP:框架间的交互 - 激情人生 - CSDNBlog</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=再回首 name=author>
+<META content=Csdn name=Copyright>
+<META content="现有一分帧页面如上图所示的，  A窗口是网站logo及广告，  B窗口是导航栏，  C是显示页面的窗口。" 
+name=description>
+<META content=再回首,框架交互 name=keywords><LINK 
+href="http://profile.csdn.net/cuishijin/picture/1.ico" rel="Shortcut Icon"><LINK 
+media=all href="JSP框架间的交互 - 激情人生 - CSDNBlog.files/Cogitation_1.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://blog.csdn.net/cuishijin/rss.aspx" type=application/rss+xml 
+rel=alternate>
+<META content="MSHTML 6.00.2900.5659" name=GENERATOR></HEAD>
+<BODY id=defaultuser>
+<DIV id=csdnblog_allwrap>
+<FORM language=javascript id=Form1 name=Form1 
+onsubmit="javascript:return WebForm_OnSubmit();" action=1602596.aspx 
+method=post><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE>
+<SCRIPT type=text/javascript>
+<!--
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Anthem_FormID = "Form1";
+//]]>
+</SCRIPT>
+
+<SCRIPT src="F:\sily\摘录笔记\JSP框架间的交互 - 激情人生 - CSDNBlog.files\WebResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="F:\sily\摘录笔记\JSP框架间的交互 - 激情人生 - CSDNBlog.files\WebResource(2).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+// -->
+</SCRIPT>
+ 
+<DIV id=csdnblog_midwrap>
+<DIV id=csdnblog_header>
+<H1><A id=Header1_HeaderTitle 
+href="http://blog.csdn.net/cuishijin/">激情人生</A></H1>
+<H2>创造生活激情 点滴积累人生</H2>
+<UL id=personalnav>
+  <LI><A href="http://passport.csdn.net/UserLogin.aspx">登录</A></LI>
+  <LI><A href="http://passport.csdn.net/CSDNUserRegister.aspx">注册</A></LI></UL>
+<UL id=blogsearchsty>
+  <LI><INPUT class=bolgsearch id=inputSearch 
+onkeydown="return keyb(event)"></LI>
+  <LI class=selectsty><SELECT id=Search_ddlSearchScope 
+  name=Search:ddlSearchScope><OPTION value=all selected>全站</OPTION><OPTION 
+    value=cuishijin>当前博客</OPTION></SELECT></LI>
+  <LI><INPUT class=bolggobtn onclick=checkNull() type=button value=搜索></LI></UL>
+<UL id=menu>
+  <LI><A href="http://hi.csdn.net/cuishijin">空间</A></LI>
+  <LI><A class=on href="http://blog.csdn.net/cuishijin">博客</A></LI>
+  <LI><A 
+  href="http://hi.csdn.net/cuishijin/profile/contactlist/1.html">好友</A></LI>
+  <LI><A href="http://blog.csdn.net/cuishijin/Gallery.aspx">相册</A><A 
+  href="http://bbs.csdn.net/" target=_blank>论坛</A></LI>
+  <LI><A class=last 
+  href="http://hi.csdn.net/cuishijin/profile/notebook/1.html">留言</A></LI></UL></DIV>
+<DIV id=csdnblog_sidebar>
+<DIV class=gutter>
+<DIV class=aboutauthor>
+<DL>
+  <DT>用户操作
+  <DD class=middle><A 
+  href="http://passport.csdn.net/UserLogin.aspx?from=http://webim.csdn.net/Messages/cuishijin.ashx" 
+  target=_blank>[即时聊天]</A> <A 
+  href="http://passport.csdn.net/UserLogin.aspx?from=http://hi.csdn.net/Admin/WriteMessage.aspx?Receiver=cuishijin" 
+  target=_blank>[发私信]</A> <A 
+  href="http://passport.csdn.net/UserLogin.aspx?from=http://webim.csdn.net/AddFriends/cuishijin.ashx" 
+  target=_blank>[加为好友]</A>
+  <DT>再回首<SPAN>ID：cuishijin</SPAN>
+  <DD class=middle><IMG alt="" 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/1_cuishijin.jpg">
+  <DD class=middle><A href="http://profile.csdn.net/8/E4/edit.html"></A>
+  <DD>共<EM>10959</EM>次访问，排名<EM>10479(-1)</EM>，好友<EM>0</EM>人，关注者<EM>0</EM>人。<BR>
+  <DD>
+  <DT>cuishijin的文章
+  <DD>原创 13 篇
+  <DD>翻译 1 篇
+  <DD>转载 5 篇
+  <DD>评论 9 篇 
+  <DT>最近评论
+  <DD>蓝奇高级验证码识别引擎QQ:631753663：<A title=点击查看《回复:验证码技术学习》 
+  href="http://blog.csdn.net/cuishijin/archive/2007/05/01/1594324.aspx#791025">出售蓝奇高级验证码识别引擎，可准确识别新浪动网淘宝CSDN等多种复杂验证码。<BR><BR>输出为一个标准DLL，可供VB,VC,Delphi,C#.NET,VB.NET,模拟精灵,按键精灵等多平台调用，调用方法简单，几行代码即可完成。独具特色的边缘检测字符分离、旋转倾斜纠正和通用字符匹配算法（无论字体和大小）， 
+  使得该引擎对于像新浪、动网、淘宝、CSDN等多种验证码均有不错的识别率……</A>
+  <DD>gxinhy：<A title=点击查看《回复:使用jsp导出到excel汇总》 
+  href="http://blog.csdn.net/cuishijin/archive/2007/04/24/1577009.aspx#699999">谢谢</A>
+  <DD>djhyoo：<A title=点击查看《回复:使用jsp导出到excel汇总》 
+  href="http://blog.csdn.net/cuishijin/archive/2007/04/24/1577009.aspx#564484">多谢 
+  很详细的</A>
+  <DD>cuishijin：<A title="点击查看《回复:web常用开发技术  40种js技巧》" 
+  href="http://blog.csdn.net/cuishijin/archive/2007/05/11/1605172.aspx#560489">40种网站常用Javascript技巧<BR><BR>1. 
+  oncontextmenu="window.event.returnValue=false" 将彻底屏蔽鼠标右键<BR>&lt;table border 
+  oncontextmenu=return(false)&gt;&lt;td&gt;no&lt;/table&gt; 可用于Table<BR><BR>2. 
+  &lt;……</A>
+  <DD>cuishijin：<A title=点击查看《回复:不错的文章：数据库连接池技术研究》 
+  href="http://blog.csdn.net/cuishijin/archive/2007/05/11/1605091.aspx#560479">论JSP数据库连接池的必要性<BR>2007-05-03 
+  14:46<BR>一般情况下，在使用开发基于数据库的WEB程序时，传统的模式基本是按以下步骤：<BR>　　<BR>　　1． 
+  在主程序（如Servlet、Beans）中建立数据库连接。<BR>　　<BR>　　2． 进行SQL操作，取出数据。<BR>　　<BR>　　3． 
+  断开数据库连接。<BR>　　<B……< a> 
+  <DT>文章分类
+  <DD>
+  <DIV class=publiclist_sidebar>
+  <UL>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/category/335612.aspx">2008面试笔试</A><A 
+    href="http://blog.csdn.net/cuishijin/category/335612.aspx/rss">(RSS)</A>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/category/296866.aspx">java技术</A><A 
+    href="http://blog.csdn.net/cuishijin/category/296866.aspx/rss">(RSS)</A>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/category/335621.aspx">计算机综合技术</A><A 
+    href="http://blog.csdn.net/cuishijin/category/335621.aspx/rss">(RSS)</A>
+    <LI><A href="http://blog.csdn.net/cuishijin/category/296867.aspx">生活</A><A 
+    href="http://blog.csdn.net/cuishijin/category/296867.aspx/rss">(RSS)</A></LI></UL></DIV>
+  <DT>收藏
+  <DD>
+  <DIV class=publiclist_sidebar>
+  <UL></UL></DIV>
+  <DT>相册
+  <DD><A href="http://blog.csdn.net/cuishijin/Gallery/296896.aspx">在哈尔滨</A>
+  <DT>java技术
+  <DD><A href="http://blog.csdn.net/zm1313/archive/2006/06/17/806690.aspx" 
+  target=_self>java blog </A>
+  <DD><A href="http://blog.csdn.net/lip009/archive/2006/09/11/1208343.aspx" 
+  target=_self>java blog </A>
+  <DD><A href="http://www.destroydrop.com/javascripts/tree/default.html" 
+  target=_self>javascripts中的一些技术，其中有treemenu的代码和说明</A>
+  <DT>点滴生活
+  <DT>存档
+  <DD>
+  <DIV class=publiclist_sidebar>
+  <UL>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/archive/2007/09.aspx">2007年09月(3)</A>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/archive/2007/06.aspx">2007年06月(2)</A>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/archive/2007/05.aspx">2007年05月(8)</A>
+    <LI><A 
+    href="http://blog.csdn.net/cuishijin/archive/2007/04.aspx">2007年04月(6)</A></LI></UL></DIV><SPAN 
+  id=RecentVisitors></SPAN>
+  <DT>软件项目交易
+  <DD><IFRAME 
+  style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 180px; PADDING-TOP: 0px; HEIGHT: 32px" 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/CsdnBlogPage.htm" frameBorder=0 
+  scrolling=no></IFRAME><SPAN id=SubscriptionList>
+  <DT>订阅我的博客
+  <DD><A href="http://blog.csdn.net/cuishijin/Rss.aspx"><IMG alt=XML聚合 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/xml.gif" border=0></A>&nbsp;&nbsp;<A 
+  href="http://feeds.feedsky.com/csdn.net/cuishijin" target=_blank><IMG 
+  alt=FeedSky src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/feedsky.gif" border=0></A>
+  <DD><A 
+  href="http://www.xianguo.com/subscribe.php?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到鲜果 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_xianguo.jpg" border=0></A>
+  <DD><A 
+  href="http://fusion.google.com/add?feedurl=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到Google 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_google.gif" border=0></A>
+  <DD><A 
+  href="http://www.zhuaxia.com/add_channel.php?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到抓虾 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_zhuaxia.gif" border=0></A>
+  <DD><A 
+  href="http://www.bloglines.com/sub/http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到BlogLines 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_bloglines.gif" border=0></A>
+  <DD><A 
+  href="http://add.my.yahoo.com/rss?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到Yahoo 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_yahoo.gif" border=0></A>
+  <DD><A 
+  href="http://rss.gougou.com/find_rss.jsp?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到GouGou 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_gougou.gif" border=0></A>
+  <DD><A 
+  href="http://www.pageflakes.com/subscribe.aspx?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到飞鸽 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_pageflakes.gif" border=0></A>
+  <DD><A 
+  href="http://www.rojo.com/add-subscription?resource=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到Rojo 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_rojo.gif" border=0></A>
+  <DD><A 
+  href="http://www.newsgator.com/ngs/subscriber/subfext.aspx?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到newsgator 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_newsgator.gif" border=0></A>
+  <DD><A 
+  href="http://www.netvibes.com/subscribe.php?url=http://blog.csdn.net/cuishijin/Rss.aspx" 
+  target=_blank><IMG alt=订阅到netvibes 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/rss_netvibes.gif" border=0></A></SPAN> 
+  </DD></DL></DIV></DIV></DIV>
+<DIV id=csdnblog_content>
+<DIV class=gutter>
+<DIV class=default_contents>
+<DIV class=user_article>
+<SCRIPT src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/LoadFeedbackCount.js" 
+type=text/javascript></SCRIPT>
+
+<H1><IMG height=16 alt=原创 src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/authorship.gif" 
+width=15 border=0>&nbsp;<A 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/10/1602596.aspx">JSP:框架间的交互</A><CITE 
+class=fav_csdnstylebykimi><A class=fav_csdnstylebykimi title=收藏到我的网摘中，并分享给我的朋友 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(saveit=window.open('http://wz.csdn.net/storeit.aspx?t='+escape(d.title)+'&amp;u='+escape(d.location.href)+'&amp;c='+escape(t),'saveit','scrollbars=no,width=590,height=300,left=75,top=20,status=no,resizable=yes'));saveit.focus();">收藏</A></CITE></H1>
+<DIV class=blogstory><SPAN id=Post.ascx_ViewPost_PreviousAndNextEntriesUp>
+<H3><A 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/11/1605075.aspx">新一篇:&nbsp;java相关收藏</A>&nbsp;|&nbsp;<A 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/08/1600416.aspx">旧一篇:&nbsp;JSP分页技术</A></H3></SPAN>
+<SCRIPT>function StorePage(){d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(keyit=window.open('http://www.365key.com/storeit.aspx?t='+escape(d.title)+'&u='+escape(d.location.href)+'&c='+escape(t),'keyit','scrollbars=no,width=475,height=575,left=75,top=20,status=no,resizable=yes'));keyit.focus();}</SCRIPT>
+
+<P style="TEXT-INDENT: 2em"><STRONG>一、在导航窗口点击链接， 
+<!-- 段落关注点 -->在另一窗口打开网页</STRONG></P>
+<CENTER><IMG alt="" src="" border=0></CENTER>
+<P style="TEXT-INDENT: 2em">现有一分帧页面如上图所示的， <!-- 段落关注点 -->A窗口是网站logo及广告， <!-- 段落关注点 -->B窗口是导航栏， <!-- 段落关注点 -->C是显示页面的窗口。 <!-- 该句已结束 -->该分帧页面的源代码为：</P>
+<P style="TEXT-INDENT: 2em">&lt;framesetrows="20%,*"&gt; </P>
+<P 
+style="TEXT-INDENT: 2em">&lt;framename="topFrame"scrolling="NO"noresizesrc="toppage.htm"&gt; 
+</P>
+<P style="TEXT-INDENT: 2em">&lt;framesetcols="18%,*"&gt; </P>
+<P 
+style="TEXT-INDENT: 2em">&lt;framename="leftFrame"noresizesrc="leftpage.htm"&gt; 
+</P>
+<P style="TEXT-INDENT: 2em">&lt;framename="mainFrame"src="mainpage.htm"&gt; </P>
+<P style="TEXT-INDENT: 2em">&lt;/frameset&gt; </P>
+<P style="TEXT-INDENT: 2em">&lt;/frameset&gt;</P>
+<P style="TEXT-INDENT: 2em">若要求在B窗口中的链接页面（test.htm）在C窗口中打开， 
+<!-- 段落关注点 -->那么B窗口中的链接应这样写：&lt;a herf="test.htm" 
+target="mailFrame"&gt;此链接的页面在C窗口中打开&lt;/a&gt;， 
+<!-- 段落关注点 -->在这里起关键作用的是&lt;A&gt;标记中的target参数， <!-- 段落关注点 -->你想在那个窗口中打开网页， <!-- 段落关注点 -->就在Target参数中设置那个窗口的名称。 <!-- 该句已结束 --></P>
+<P style="TEXT-INDENT: 2em"><STRONG>二、在B窗口中按下一个按钮， 
+<!-- 段落关注点 -->在C窗口中写一行字</STRONG></P>
+<P style="TEXT-INDENT: 2em">本例的页面格式与上例相同， 
+<!-- 段落关注点 -->完成后的效果是这样的：按下B窗口中“在C窗口写字”的按钮后， 
+<!-- 段落关注点 -->在C窗口中就出现一行文字“嗨！你好！这是通过B窗口控制而写的字。 <!-- 该句已结束 -->”。 
+<!-- 该句已结束 -->分帧页面的代码及每个窗口中的网页文件与上例相同。 <!-- 该句已结束 --></P>
+<P style="TEXT-INDENT: 2em">制作方法：</P>
+<P style="TEXT-INDENT: 2em">1、 
+在C窗口网页（mainpage.htm）的源代码&lt;head&gt;与&lt;/head&gt;之间插入下面这段Javascript程序：</P>
+<P style="TEXT-INDENT: 2em">&lt;scriptlanguage="Javascript"&gt; </P>
+<P style="TEXT-INDENT: 2em">&lt;!-- </P>
+<P style="TEXT-INDENT: 2em">functionhtest(){ </P>
+<P style="TEXT-INDENT: 2em">document.write("嗨！你好！这是通过B窗口控制而写的字。 <!-- 该句已结束 -->") 
+</P>
+<P style="TEXT-INDENT: 2em">} </P>
+<P style="TEXT-INDENT: 2em">--&gt; </P>
+<P style="TEXT-INDENT: 2em">&lt;/script&gt;</P>
+<P style="TEXT-INDENT: 2em">这段程序的作用是在当前窗口写上一段文字。 <!-- 该句已结束 --></P>
+<P style="TEXT-INDENT: 2em">2、那么如何在B窗口中调用C窗口中的程序呢？先看B窗口中“在C窗口中写字”这个按钮的源代码：</P>
+<P 
+style="TEXT-INDENT: 2em">&lt;inputtype="button"value="在C窗口中写字"onclick="parent.mainFrame.htest()"&gt;</P>
+<P style="TEXT-INDENT: 2em">在这段代码中， <!-- 段落关注点 -->关键是代码“parent.mainFrame”， <!-- 段落关注点 -->这里引入一个新的概念—窗口结构关系， <!-- 段落关注点 -->也就是在多窗口页面中， 
+<!-- 段落关注点 -->各窗口之间的关系是以什么原则来确定的。 
+<!-- 该句已结束 -->窗口关系的确定原则是：当前窗口分割出来的窗口为当前窗口的“子窗口”（children）， 
+<!-- 段落关注点 -->那么当前窗口就是分割出来窗口的“父窗口”（parent）。 <!-- 该句已结束 -->如本例中各窗口的关系如下： </P>
+<CENTER><IMG alt="" src="" border=0></CENTER>
+<P style="TEXT-INDENT: 2em">从上表可得知， 
+<!-- 段落关注点 -->“浏览器窗口”是“topFrame”和“下部窗口”的“父窗口”， 
+<!-- 段落关注点 -->而下部窗口又是“leftFrame”和“mainFrame”两个窗口的“父窗口”。 
+<!-- 该句已结束 -->两个窗口之间的联系必须通过它们的父窗口才能进行， 
+<!-- 段落关注点 -->所以本例中要调用C窗口中网页上的“htest()”很显然是通过C与B的parent再到mainFrame， <!-- 段落关注点 -->然后调用htest()程序。 <!-- 该句已结束 --><YESKYRECOMMEND></YESKYRECOMMEND></P>
+<P style="TEXT-INDENT: 2em">那么若C窗口中向B窗口中写字的代码就是这样的了： 
+onclick="parent.leftFrame.htest()"；那么， 
+<!-- 段落关注点 -->在A窗口中要向C窗口中写一段文字的代码你知道怎样写吗？对了， 
+<!-- 段落关注点 -->就是这样：onclick="grandchildren.mainFrame.htest()"。 <!-- 该句已结束 --></P>
+<P style="TEXT-INDENT: 2em">从上面的例子中可看出， <!-- 段落关注点 -->在各窗口之间进行交互信息， <!-- 段落关注点 -->关键的问题是要搞清楚窗口与窗口之间的关系， <!-- 段落关注点 -->其它的操作就比较简单了。 
+<!-- 该句已结束 --><A11 href="http://tech.163.com/"><IMG height=12 alt=陈刚 src="" 
+width=12 border=0></A11></P><SPAN style="FONT-WEIGHT: bold">三</SPAN><SPAN 
+id=zoom><STRONG>、如何访问框架</STRONG><BR>　　在前面我们介绍过使用document.forms[]实现单一窗体中不同 
+元素的访问。而要实现框架中多窗体的不同元素的访问，则必须使用window对象中的Frames属性。Frames属性同样也是一个数组，他在　　父框 
+架集中为每一个子框架设有一项。通过下标实现不同框架的访问:<BR>parent.frames[Index1].docuement.forms[index2]<BR>　　通过parent.frames.length确定窗口中窗体的数目。 
+除了使用数组下标来访问窗体外还可以使用框架名和窗体名来实现各元素的访：<BR>parent.framesName.decument.formNames.elementName.(m/p)<BR><BR><SPAN 
+style="COLOR: rgb(255,0,0)">**********************************************************************************************<BR></SPAN></SPAN>
+<P>页面刷新： &nbsp; <BR>&nbsp; 有三种方法： &nbsp; <BR>&nbsp; 1，在html中设置： &nbsp; 
+<BR>&nbsp; &lt;title&gt;xxxxx&lt;/title&gt;之後加入下面这一行即可！ &nbsp; &nbsp; <BR>&nbsp; 
+定时刷新：&lt;META &nbsp; HTTP-EQUIV="Refresh" &nbsp; content="10; &nbsp; 
+URL=http://自己的URL"&gt; &nbsp; &nbsp; <BR>&nbsp; 10代表刷新间隔 &nbsp; <BR>&nbsp; 
+&nbsp; <BR>&nbsp; 2.jsp &nbsp; <BR>&nbsp; &lt;% &nbsp; 
+response.setHeader("refresh","1"); &nbsp; %&gt; &nbsp; <BR>&nbsp; &nbsp; 每一秒刷新一次 
+&nbsp; <BR>&nbsp; &nbsp; <BR>&nbsp; 3.使用javascript: &nbsp; <BR>&nbsp; &lt;script 
+&nbsp; language="javascript"&gt; &nbsp; <BR>&nbsp; 
+setTimeout("self.location.reload();",1000); &nbsp; <BR>&nbsp; &lt;script&gt; 
+&nbsp; <BR>&nbsp; 一秒一次 &nbsp; <BR>&nbsp; <A 
+href="http://topic.csdn.net/t/20040825/10/3307177.html#">Top、</A></P>
+<H3><STRONG><A class=anchor 
+name=r_23465914><BR></A></STRONG><SPAN></SPAN></H3>&lt;%@ &nbsp; page &nbsp; 
+import="java.util.Date" &nbsp; %&gt; &nbsp; <BR>&nbsp; &lt;%@ &nbsp; page &nbsp; 
+contentType="text/html;charset=GB2312" &nbsp; %&gt; &nbsp; <BR>&nbsp; 
+&lt;html&gt; &nbsp; <BR>&nbsp; &lt;head&gt; &nbsp; <BR>&nbsp; 下面为程序代码： &nbsp; 
+<BR>&nbsp; &lt;title&gt;定时刷新页面&lt;/title&gt; &nbsp; <BR>&nbsp; &lt;/head&gt; 
+&nbsp; <BR>&nbsp; &lt;body&gt; &nbsp; <BR>&nbsp; &lt;br&gt; &nbsp; <BR>&nbsp; 
+&lt;b&gt;当前时间为：&lt;/b&gt; &nbsp; <BR>&nbsp; &lt;% &nbsp; <BR>&nbsp; 
+response.setHeader("refresh","10"); &nbsp; <BR>&nbsp; %&gt; &nbsp; <BR>&nbsp; 
+&lt;% &nbsp; <BR>&nbsp; out.println(new &nbsp; Date()); &nbsp; <BR>&nbsp; %&gt; 
+&nbsp; <BR>&nbsp; &lt;/body&gt; &nbsp; <BR>&nbsp; &lt;/html&gt;
+<P class="right articalinfo">发表于 @ <A title=permalink 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/10/1602596.aspx">2007年05月10日 
+09:07:00</A>|<A title=评论 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/10/1602596.aspx#FeedBack">评论(<SPAN 
+id=FeedbackCount_1602596>loading...</SPAN>
+<SCRIPT type=text/javascript>AddFeedbackCountStack("1602596")</SCRIPT>
+)</A>|<A title=编辑 
+href="http://writeblog.csdn.net/PostEdit.aspx?entryId=1602596">编辑</A></P><SPAN 
+id=Post.ascx_ViewPost_PreviousAndNextEntriesDown>
+<H3><A 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/11/1605075.aspx">新一篇:&nbsp;java相关收藏</A>&nbsp;|&nbsp;<A 
+href="http://blog.csdn.net/cuishijin/archive/2007/05/08/1600416.aspx">旧一篇:&nbsp;JSP分页技术</A></H3></SPAN></DIV></DIV>
+<DIV class=commentslist><SPAN id=Anthem_Post.ascx_Comments_ltlComments__><SPAN 
+id=Post.ascx_Comments_ltlComments>
+<DIV id=commentslist>
+<H3>评论：没有评论。</H3></DIV></SPAN></SPAN></DIV>
+<DIV class=spacecommment>
+<DIV id=Anthem_Post.ascx_PostComment_CommentUpdatePanel__>
+<DIV id=Post.ascx_PostComment_CommentUpdatePanel>
+<FIELDSET><LEGEND>发表评论</LEGEND>
+<UL>
+  <LI>姓&nbsp;&nbsp;&nbsp;名：<INPUT id=Post.ascx_PostComment_tbName maxLength=32 
+  size=40 name=Post.ascx:PostComment:tbName><SPAN 
+  id=Post.ascx_PostComment_RequiredFieldValidator2 
+  style="VISIBILITY: hidden; COLOR: red" initialvalue="" 
+  evaluationfunction="RequiredFieldValidatorEvaluateIsValid" 
+  errormessage="请输入名字" 
+  controltovalidate="Post.ascx_PostComment_tbName">请输入名字</SPAN> 
+  <LI>主&nbsp;&nbsp;&nbsp;页：<INPUT id=Post.ascx_PostComment_tbUrl maxLength=256 
+  size=40 name=Post.ascx:PostComment:tbUrl> 
+  <LI>
+  <DIV id=Post.ascx_PostComment_AntiBotImageRegion>校验码： <INPUT 
+  id=Post.ascx_PostComment_tbAntiBotImage style="WIDTH: 75px" 
+  name=Post.ascx:PostComment:tbAntiBotImage> <SPAN 
+  id=Post.ascx_PostComment_valAntiBotImage style="DISPLAY: none; COLOR: red" 
+  evaluationfunction="CustomValidatorEvaluateIsValid" 
+  display="Dynamic">检验码无效!</SPAN> <SPAN 
+  id=Anthem_Post.ascx_PostComment_imgAntiBotImage__><IMG 
+  id=Post.ascx_PostComment_imgAntiBotImage alt="" 
+  src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/AntiBotImage.jpg" align=absMiddle 
+  border=0></SPAN> <SPAN 
+  id=Anthem_Post.ascx_PostComment_lbCreateAntiBotImage__><A 
+  id=Post.ascx_PostComment_lbCreateAntiBotImage 
+  onclick="javascript:Anthem_FireCallBackEvent(this,event,'Post.ascx:PostComment:lbCreateAntiBotImage','',false,'','','',true,null,null,null,true,true);return false;" 
+  href="javascript:__doPostBack('Post.ascx$PostComment$lbCreateAntiBotImage','')">看不清,换一张</A></SPAN> 
+  </DIV></LI></UL><SPAN id=Post.ascx_PostComment_RequiredFieldValidator3 
+style="VISIBILITY: hidden; COLOR: red" initialvalue="" 
+evaluationfunction="RequiredFieldValidatorEvaluateIsValid" errormessage="请输入评论" 
+controltovalidate="Post.ascx_PostComment_tbComment">请输入评论</SPAN><BR><TEXTAREA id=Post.ascx_PostComment_tbComment name=Post.ascx:PostComment:tbComment rows=10 cols=50></TEXTAREA><BR><SPAN 
+id=Anthem_Post.ascx_PostComment_btnSubmit__><INPUT language=javascript id=Post.ascx_PostComment_btnSubmit onclick="javascript:Anthem_FireCallBackEvent(this,event,'Post.ascx:PostComment:btnSubmit','',true,'','','正在处理...',false,null,null,null,true,true);return false;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Post.ascx:PostComment:btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" type=submit value=提交 name=Post.ascx:PostComment:btnSubmit></SPAN> 
+<BR><SPAN id=Post.ascx_PostComment_Message style="COLOR: red"><A 
+href="http://passport.csdn.net/member/UserLogin.aspx?from=http://blog.csdn.net/cuishijin/archive/2007/05/10/1602596.aspx">登录</A></SPAN> 
+</FIELDSET> </DIV></DIV></DIV>
+<SCRIPT type=text/javascript>
+    LoadFeedbackCount();//加载评论
+    document.write("<img src='http://counter.csdn.net/pv.aspx?id=24' border=0 width=0 height=0>");// 计数器
+    </SCRIPT>
+
+<SCRIPT src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/HighLighter.js" 
+type=text/javascript></SCRIPT>
+</DIV></DIV></DIV>
+<DIV id=pubfooter>
+<DL>
+  <DT>
+  <DD>Csdn Blog version 3.1a 
+  <DD>Copyright © 再回首 </DD></DL></DIV></DIV>
+<SCRIPT type=text/javascript>
+<!--
+var Page_Validators =  new Array(document.getElementById("Post.ascx_PostComment_RequiredFieldValidator2"), document.getElementById("Post.ascx_PostComment_valAntiBotImage"), document.getElementById("Post.ascx_PostComment_RequiredFieldValidator3"));
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</SCRIPT>
+</FORM>
+<SCRIPT src="JSP框架间的交互 - 激情人生 - CSDNBlog.files/counter.js" 
+type=text/javascript></SCRIPT>
+</DIV></BODY></HTML>
