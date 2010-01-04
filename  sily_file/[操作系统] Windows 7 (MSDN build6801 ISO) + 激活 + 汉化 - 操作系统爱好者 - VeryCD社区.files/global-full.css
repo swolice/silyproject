@@ -1,0 +1,23 @@
+#page-wrapper {
+	WIDTH: 94%; min-width: 990px
+}
+#top-search {
+	BACKGROUND: url(/images/layout/searchbar-broad.png) no-repeat left 50%; WIDTH: 691px
+}
+#top-search-input {
+	WIDTH: 400px! important
+}
+#top-search .yui-ac-container {
+	WIDTH: 403px! important
+}
+BODY:unknown #page-wrapper {
+	max-width: 1120px
+}
+
+@media Unknown    
+{
+#top-search {
+	LEFT: 84px
+}
+
+}

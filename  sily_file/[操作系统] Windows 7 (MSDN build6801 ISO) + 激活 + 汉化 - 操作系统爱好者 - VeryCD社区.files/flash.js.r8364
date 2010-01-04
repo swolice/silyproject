@@ -1,0 +1,202 @@
+/*
+* @author surfchen@gmail.com
+*
+* @usage
+*    first you must:
+*       initFlash('flash_panel');
+*
+*    after that you can:
+*       <button onclick="toggleFlashFull();">Zoom</button>
+*
+* $Id: flash.js 8364 2008-01-24 08:16:17Z apollopy $
+*/
+current_full_id=false;
+function rebuildFull() {
+    if (current_full_id==false) return false;
+    if (VeryCD.FlashToggler[current_full_id].full==false) return false;
+    VeryCD.FlashToggler[current_full_id].full=false;
+    toggleFlashFull(current_full_id);
+}
+function toggleFlashFull(flash_id)
+{
+    current_full_id=flash_id;
+    if (flash_id==false) return false;
+    var ua=window.navigator.userAgent.toLowerCase();
+    /*
+    embed_ua_list=[['mac','firefox'],['windows','opera']];
+    is_embed=false;
+    for (var i=0;i<embed_ua_list.length;i++) {
+        e1:
+        for (var n=0;n<embed_ua_list[i].length;n++) {
+            if (ua.indexOf(embed_ua_list[i][n])==-1) {
+                is_embed=false;
+                break e1;
+            }
+            is_embed=true;
+        }
+        if (is_embed==true) break;
+    }
+    flash_id=is_embed?'embed_'+id:'object_'+id;
+    */
+    if (ua.indexOf('safari')!=-1) {
+        flash_id=flash_id.replace('embed','object');
+    }
+    var panels=flash_id.split('_');
+    var panel_id="player_"+panels[1];
+    //flash_id='object_'+panels[1];
+    initFlash(flash_id,panel_id);
+    var flash_to_mini_func='full';//flash function to mini
+    var flash_to_full_func='full';//flash funciton to full
+
+    var flash_o=document.getElementById(flash_id);
+    if (VeryCD.FlashToggler[flash_id].full) {//full to mini
+        //eval("flash_o."+flash_to_mini_func+'();');
+    } else {//mini to full
+        //eval("flash_o."+flash_to_full_func+'();');
+    }
+    if (ua.indexOf('firefox')!=-1) {
+        if (VeryCD.FlashToggler[flash_id].full) {
+            ff_kfp=setInterval("keepFlashPos()",200);
+        } else {
+            clearInterval(ff_kfp);
+        }
+    }
+    var wi=getWindowLength('w');
+    var dbc=document.body.clientHeight||0;
+    var dde=document.documentElement.clientHeight||0;
+    var tp=getScrollTop();
+    if (0 && window.location.href.indexOf('groups')!=-1) {
+        if (ua.indexOf('opera')!=-1) {
+            var he=dbc>dde?dbc:dde;
+        } else {
+            var he=dbc<dde?dbc:dde;
+        }
+        var group_width=620;
+        VeryCD.FlashToggler[flash_id].full_style['top']=(tp-120)+'px';
+        VeryCD.FlashToggler[flash_id].full_style['left']=((group_width-776)/2)+'px';
+        he-=15;
+        VeryCD.FlashToggler[flash_id].full_style['height']=he+'px';
+        VeryCD.FlashToggler[flash_id].full_style['width']=(he*1.2)+'px';
+    } else {
+        var he=dbc<dde?dbc:dde;
+        var flash_wi=he*1.2;
+        VeryCD.FlashToggler[flash_id].full_style['top']=tp+'px';
+        VeryCD.FlashToggler[flash_id].full_style['left']=((wi-flash_wi)/2)+'px';
+        VeryCD.FlashToggler[flash_id].full_style['height']=he+'px';
+        VeryCD.FlashToggler[flash_id].full_style['width']=(he*1.2)+'px';
+    }
+    VeryCD.FlashToggler[flash_id].exec();
+    //ff_kfp=setInterval("keepFlashPos()",200);
+
+    //return VeryCD.FlashToggler.id.full;
+}
+function initFlash(flash_id,panel_id)
+{
+    VeryCD.namespace('FlashToggler.'+flash_id);
+    if (VeryCD.FlashToggler[flash_id] instanceof ScreenToggler) {
+        return true;
+    }
+    VeryCD.FlashToggler[flash_id]=new ScreenToggler(panel_id);
+    var panels=flash_id.split('_');
+    var ho=VeryCD.FlashToggler[flash_id].saver.hiddenObjects;
+    for (var i=0;i<flash_ids.length;i++) {
+        if (flash_ids[i]==panels[1]) continue;
+        ho[ho.length]=$('player_'+flash_ids[i]);
+    }
+    var objects = document.getElementsByTagName('object');
+    for (var i=0;i<objects.length;i++) {
+        if (objects.item(i).id.indexOf('audioplayer')==-1) continue;
+        ho[ho.length] = objects.item(i); 
+    }
+    VeryCD.FlashToggler[flash_id].saver.style2 = {
+    'vals' : new Array('position','zIndex','background','filter','opacity','MozOpacity'),
+    'vars' : new Array("absolute","3","#666","alpha(opacity=80)",80/100,80/100)
+    }
+
+    //{
+    //}
+    var not_allowed_styles='.font.parentRule.length.';
+    if (window.navigator.userAgent.toLowerCase().indexOf('msie')!=-1) {
+        VeryCD.FlashToggler[flash_id].little_style={
+            'position':'relative',
+            'width':'450px',
+            'height':'375px',
+            'top':'0',
+            'left':'0'
+        }
+    }
+    for (style in VeryCD.FlashToggler[flash_id].o.style) {
+        if (not_allowed_styles.indexOf("."+style+".")!=-1) continue;
+        VeryCD.FlashToggler[flash_id].little_style[style]=VeryCD.FlashToggler[flash_id].o.style[style];
+    }
+    VeryCD.FlashToggler[flash_id].full_style={
+        'position':'absolute',
+        'width':'780px',
+        'height':'650px',
+        'zIndex':'4'
+    };
+    VeryCD.FlashToggler[flash_id].saver.obj.onclick=function () {
+            toggleFlashFull(flash_id);
+    };
+}
+flash_ids=new Array();
+function buildFlash(flv) {
+    var id='f'+Math.round(Math.random()*100000);
+    flash_ids[flash_ids.length]=id;
+    document.write('<div style="width:450px; height:375px; top:0; left:0;"><div id="player_'+id+'"  style="width:450px; height:375px; top:0; left:0;z-index:606">');
+    document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"  align="middle" height="100%" width="100%" id="object_'+id+'" play="true">');
+    document.write('  <param name="allowScriptAccess" value="sameDomain">');
+    document.write('  <param name="movie" value="/player-fs.swf?flvid='+flv+'&id=object_'+id+'">');
+    document.write('  <param name="quality" value="high">');
+    document.write('  <param name="allowFullScreen" value="true">');
+    document.write('  <param name="bgcolor" value="#ffffff">');
+    document.write('<embed src="/player-fs.swf?flvid='+flv+'&id=embed_'+id+'" quality="high" bgcolor="#ffffff" allowscriptaccess="sameDomain" type="application/x-shockwave-flash"  pluginspage="http://www.macromedia.com/go/getflashplayer"  align="middle" height="100%" width="100%" id="embed_'+id+'" style="z-index:602" allowFullScreen="true" />');
+    document.write('</object></div> <script>absolutizeFF("'+id+'")</script> </div>');
+	eval('window.object_'+id+'=document.getElementById("object_'+id+'")');
+}
+function buildAudio(audio) {
+//    var id='f'+Math.round(Math.random()*100000);
+//    flash_ids[flash_ids.length]=id;
+//    alert(id);
+    document.write('  <object width="450" height="270" id="audioplayer1" type="application/x-shockwave-flash" data="/mp3player.swf" mediawrapchecked="true">');
+    document.write('  <param name="movie" value="/mp3player.swf">');
+    document.write('  <param value="songid='+audio+'" name="FlashVars" />');
+    document.write('  <param value="high" name="quality" >');
+    document.write('  <param value="false" name="menu" >');
+    document.write('  <param value="transparent" name="wmode" >');
+    document.write('</object>');
+}
+function stopFlashes(exclude_id) {
+    var stop_func = 'pauseFlash';
+    var ua=window.navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari')!=-1) {
+        exclude_id=exclude_id.replace('embed','object');
+    }
+    var panels=exclude_id.split('_');
+    var type_str=panels[0];
+    for (var i=0;i<flash_ids.length;i++) {
+        fi = flash_ids[i];
+        if (fi==panels[1]) continue;
+        flash_o=document.getElementById(type_str+'_'+fi);
+        eval("flash_o."+stop_func+'();');
+    }
+}
+function absolutizeFF(flash_id) {
+    if (navigator.userAgent.toLowerCase().indexOf("firefox")!=-1) {
+        Position.absolutize("player_"+flash_id);
+    }
+}
+if (navigator.userAgent.toLowerCase().indexOf("firefox")!=-1) {
+     ff_kfp=setInterval("keepFlashPos()",10);
+}
+function keepFlashPos() {
+    for (var i=0;i<flash_ids.length;i++) {
+        var offsets = Position.positionedOffset($("player_"+flash_ids[i]).parentNode);
+        $("player_"+flash_ids[i]).style.left=offsets[0]+'px';
+        $("player_"+flash_ids[i]).style.top=offsets[1]+'px';
+    }
+}
+//wr=window.onresize;
+window.onresize=function () {
+    rebuildFull();
+}

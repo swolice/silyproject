@@ -1,0 +1,357 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #3c72c4; BACKGROUND: #cccccc; OVERFLOW-X: hidden; SCROLLBAR-HIGHLIGHT-COLOR: #fff; SCROLLBAR-SHADOW-COLOR: #d4d4d4; COLOR: #5a1f01; SCROLLBAR-3DLIGHT-COLOR: #d4d4d4; SCROLLBAR-ARROW-COLOR: #d4d4d4; SCROLLBAR-TRACK-COLOR: #f3f3f5; SCROLLBAR-DARKSHADOW-COLOR: #fff; SCROLLBAR-BASE-COLOR: #a4bde3
+}
+BODY A {
+	COLOR: #887a44; TEXT-DECORATION: none
+}
+BODY A:link {
+	COLOR: #887a44
+}
+BODY A:visited {
+	COLOR: #887a44; TEXT-DECORATION: none
+}
+BODY A:hover {
+	COLOR: #888; TEXT-DECORATION: underline
+}
+DIV.line {
+	BORDER-TOP: #ddd 1px solid
+}
+#main {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/7ed2fa8d7ba1170ab21bbaa5.jpg) repeat-y 50% 0%; MARGIN: 0px 0px -45px -10px; WIDTH: 1024px! important
+}
+#header {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/213d031395f14cc8f6039ea5.jpg) no-repeat 50% 0%; HEIGHT: 454px
+}
+#header DIV.lc {
+	
+}
+#header DIV.rc {
+	
+}
+#header DIV.tit {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; LEFT: 470px; COLOR: #888; LINE-HEIGHT: 50px; FONT-FAMILY: ; TOP: 25px
+}
+#header DIV.tit A.titlink {
+	COLOR: #888; TEXT-DECORATION: none
+}
+#header DIV.tit A.titlink:visited {
+	COLOR: #888; TEXT-DECORATION: none
+}
+#header DIV.desc {
+	FONT-SIZE: 12px; LEFT: 550px; COLOR: #888; TOP: 40px
+}
+#tabline {
+	DISPLAY: none; TOP: 242px
+}
+#tab {
+	LEFT: 232px; MARGIN-LEFT: 44px; TOP: 290px; TEXT-ALIGN: right
+}
+#tab A.on {
+	FONT-SIZE: 12px; BACKGROUND: #000; FILTER: Alpha(Opacity=10); WIDTH: 108px; COLOR: #000; TEXT-ALIGN: right; moz-opacity: 0.1; opacity: 0.1
+}
+#tab A.on:link {
+	FONT-SIZE: 12px; BACKGROUND: #000; FILTER: Alpha(Opacity=10); WIDTH: 108px; COLOR: #000; TEXT-ALIGN: right; moz-opacity: 0.1; opacity: 0.1
+}
+#tab A.on:visited {
+	FONT-SIZE: 12px; BACKGROUND: #000; FILTER: Alpha(Opacity=10); WIDTH: 108px; COLOR: #000; TEXT-ALIGN: right; moz-opacity: 0.1; opacity: 0.1
+}
+#tab SPAN {
+	DISPLAY: none
+}
+#tab A {
+	PADDING-RIGHT: 15px; FILTER: Alpha(Opacity=10); WIDTH: 108px; LETTER-SPACING: 10px; TEXT-ALIGN: right; moz-opacity: 0.1; opacity: 0.1
+}
+#tab A:link {
+	FONT-SIZE: 12px; COLOR: #000; TEXT-DECORATION: none
+}
+#tab A:visited {
+	FONT-SIZE: 12px; FILTER: Alpha(Opacity=0); COLOR: #000; TEXT-DECORATION: none; moz-opacity: 0; opacity: 0
+}
+#tab A:hover {
+	BACKGROUND: #000; FILTER: Alpha(Opacity=10); WIDTH: 108px; COLOR: #000; moz-opacity: 0.1; opacity: 0.1
+}
+#tab2 {
+	COLOR: #4c4c4c; TOP: -120px
+}
+#tab2 SPAN {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+#tab2 A {
+	FONT-SIZE: 12px; COLOR: #4c4c4c
+}
+#tab2 A:link {
+	FONT-SIZE: 12px; COLOR: #4c4c4c
+}
+.stage {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/5ffbe95939fafa322934f0a5.jpg) no-repeat 50% 100%; TEXT-ALIGN: center
+}
+.stagepad {
+	MARGIN: 0px auto; WIDTH: 930px; POSITION: relative; TOP: -120px
+}
+#layout {
+	MARGIN: 0px auto; WIDTH: 900px! important; POSITION: relative; TOP: -120px
+}
+#layout TD.c1t1 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c2t1 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c2t3 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c3t1 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c3t3 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c3t5 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c1t1 {
+	
+}
+#layout TD.c2t1 {
+	
+}
+#layout TD.c2t3 {
+	
+}
+#layout TD.c2t2 {
+	
+}
+#layout TD.c3t1 {
+	
+}
+#layout TD.c3t3 {
+	
+}
+#layout TD.c3t5 {
+	
+}
+.mod {
+	MARGIN-BOTTOM: 10px
+}
+.modhandle {
+	CURSOR: move
+}
+.modth {
+	HEIGHT: 27px
+}
+.modhead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+.modbox {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.modopt {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+.modtit {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #1d5ec0
+}
+A.modtit {
+	COLOR: #ffff75; PADDING-TOP: 15px
+}
+A.modtit:visited {
+	COLOR: #1d5ec0
+}
+.modtitlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #1d5ec0
+}
+A.modtitlink {
+	COLOR: #1d5ec0; TEXT-DECORATION: none
+}
+A.modtitlink:visited {
+	COLOR: #1d5ec0; TEXT-DECORATION: none
+}
+A.modtitlink:hover {
+	COLOR: #1d5ec0; TEXT-DECORATION: underline
+}
+.modact {
+	FONT-SIZE: 12px; COLOR: #fff; TEXT-DECORATION: none
+}
+A.modact:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+A.modact:visited {
+	COLOR: #4c4c4c
+}
+.modlabel {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000
+}
+.c2t1 .modtit {
+	COLOR: #000
+}
+.c2t3 .modtit {
+	COLOR: #ffffff
+}
+.c2t3 .modtl {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/b25660501ffde8441138c2a5.jpg) no-repeat 0% 100%; WIDTH: 89px; HEIGHT: 32px
+}
+.c2t3 .modtc {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/73233b11a3c49e66cb80c4a5.jpg) repeat-x 0% 100%; LEFT: 30px; HEIGHT: 32px
+}
+.c2t3 .modtr {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/73233b11a3c49e66cb80c4a5.jpg) no-repeat 0% 100%; WIDTH: 29px; HEIGHT: 32px
+}
+.c2t3 .modbox {
+	BORDER-RIGHT: #afafaf 1px solid; BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/1bc2397ef8574b200dd7daa5.jpg) repeat-x 0% 100%; BORDER-LEFT: #afafaf 1px solid
+}
+.c2t3 .modbl {
+	BACKGROUND: no-repeat 100% 0%; WIDTH: 8px; HEIGHT: 17px
+}
+.c2t3 .modbc {
+	BACKGROUND: repeat-x; HEIGHT: 17px
+}
+.c2t3 .modbr {
+	BACKGROUND: no-repeat; WIDTH: 80px; HEIGHT: 17px
+}
+#mod_bloglist .modtit {
+	COLOR: #000
+}
+#m_blog DIV.tit {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 35px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: no-repeat 0% 25%; PADDING-BOTTOM: 0px; COLOR: #1d5ec0; PADDING-TOP: 25px; FONT-FAMILY: Tahoma; HEIGHT: 75px; TEXT-ALIGN: left
+}
+#m_blog DIV.tit A {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #1d5ec0; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.tit A:visited {
+	COLOR: #1d5ec0; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.tit A:hover {
+	COLOR: #958a5c
+}
+#m_blog DIV.date {
+	BORDER-TOP: #aaaaaa 1px solid; FONT-SIZE: 11px; MARGIN: -22px 0px 8px 33px; COLOR: #958a5c; FONT-FAMILY: Tahoma; TEXT-ALIGN: right
+}
+#m_blog DIV.cnt {
+	FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #000000; LINE-HEIGHT: 20px
+}
+#m_blog  {
+	LINE-HEIGHT: 200%! important
+}
+#m_blog DIV.cnt {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: Tahoma
+}
+#m_blog DIV.cnt A {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.cnt A:visited {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.cnt A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #958a5c; LINE-HEIGHT: 20px; TEXT-DECORATION: underline
+}
+#m_blog DIV.cnt PRE {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-LEFT: 10px; BORDER-LEFT: #cccccc 8px solid; LINE-HEIGHT: 22px; MARGIN-RIGHT: 10px; FONT-FAMILY: Tahoma
+}
+#m_blog DIV.more {
+	PADDING-RIGHT: 28px! important; MARGIN: 0px 12px 0px 0px; HEIGHT: 50px! important; TEXT-ALIGN: right
+}
+#m_blog DIV.more A {
+	FONT-SIZE: 12px; BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/4251ec383800bf3b96ddd8a5.jpg) no-repeat; WIDTH: 100px! important; COLOR: #4c4c4c; FONT-FAMILY: Tahoma; HEIGHT: 50px! important; TEXT-DECORATION: none
+}
+#m_blog DIV.more A:visited {
+	COLOR: #4c4c4c; TEXT-DECORATION: none
+}
+#m_blog DIV.more A:hover {
+	TEXT-DECORATION: underline
+}
+#m_blog DIV.opt {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/30482001a5de401e1c9583a5.jpg) no-repeat; MARGIN: 0px 12px 12px 0px; TEXT-ALIGN: left
+}
+#m_blog DIV.opt {
+	PADDING-LEFT: 30px; FONT-SIZE: 12px; COLOR: #958a5c; FONT-FAMILY: Tahoma; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+#m_blog DIV.opt A {
+	FONT-SIZE: 12px; COLOR: #958a5c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.opt A:visited {
+	COLOR: #958a5c
+}
+#m_blog DIV.opt A:hover {
+	COLOR: #4c4c4c; TEXT-DECORATION: underline
+}
+#m_blog DIV.line {
+	MARGIN-TOP: 5px; BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/c4d9e706f6432463030881a5.jpg) repeat-x; MARGIN-BOTTOM: 5px
+}
+#m_blog DIV.none {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 100px; COLOR: #000; PADDING-TOP: 100px
+}
+#mod_profile .modth {
+	
+}
+#m_pro A {
+	COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_pro A:visited {
+	COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_pro A:hover {
+	TEXT-DECORATION: underline
+}
+#m_pro DIV.image {
+	TEXT-ALIGN: center
+}
+#m_pro DIV.act {
+	MARGIN-TOP: 10px; TEXT-ALIGN: center
+}
+#m_pro DIV.user {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-ALIGN: center
+}
+#m_pro DIV.desc {
+	FONT-SIZE: 12px; COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-ALIGN: center
+}
+#m_pro DIV.line {
+	BORDER-TOP: #0c161f 0px solid; MARGIN-TOP: 17px; LINE-HEIGHT: 17px
+}
+#m_pro TD {
+	FONT-SIZE: 12px; COLOR: #46412d; LINE-HEIGHT: 24px; FONT-FAMILY: Tahoma
+}
+#m_pro .photo .line {
+	
+}
+#m_pro .ref {
+	BORDER-RIGHT: #ddd 0px solid; BORDER-TOP: #ddd 0px solid; MARGIN-TOP: 10px; BORDER-LEFT: #ddd 0px solid; BORDER-BOTTOM: #ddd 0px solid
+}
+#m_pro .ref .tit {
+	PADDING-LEFT: 10px; BACKGROUND: #eee; BORDER-BOTTOM: #ddd 1px solid
+}
+#m_pro .ref .cnt {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: #fff; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+#m_pro .basic TD {
+	FONT-SIZE: 12px; COLOR: #46412d
+}
+#m_pro .basic .tit {
+	FONT-WEIGHT: bold
+}
+#m_pro .basic A:hover {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #261cdc; PADDING-BOTTOM: 1px; COLOR: #fff; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+#m_pro .basic A.nlk:hover {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #196cca; PADDING-TOP: 0px; BACKGROUND-COLOR: #fff; TEXT-DECORATION: underline
+}
+#m_pro .pline {
+	BORDER-TOP: #a6a6a6 0px dashed; MARGIN-TOP: 10px; MARGIN-LEFT: 5px; LINE-HEIGHT: 10px
+}
+#m_pro .pitem {
+	FONT-SIZE: 12px; MARGIN-LEFT: 5px; LINE-HEIGHT: 22px
+}
+#m_pro .pitem .tit {
+	COLOR: #46412d
+}
+#m_pro .pitem A:hover {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #196cca; PADDING-BOTTOM: 1px; COLOR: #fff; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+#mod_bgmusic .modth {
+	
+}
+#mod_bgmusic {
+	DISPLAY: block; no-repeat: 
+}
+#phx {
+	FILTER: Alpha(Opacity=100, FinishOpacity=10, Style=2, StartX=20, StartY=40, FinishX=0, FinishY=0) gray; WIDTH: 200px; HEIGHT: 32px
+}
