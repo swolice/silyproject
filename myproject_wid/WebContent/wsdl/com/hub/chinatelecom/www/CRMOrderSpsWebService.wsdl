@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.ordersps.webservice.crm.cthq.com" xmlns:impl="http://ws.ordersps.webservice.crm.cthq.com" xmlns:intf="http://ws.ordersps.webservice.crm.cthq.com" xmlns:tns2="http://xml.apache.org/xml-soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Item">
+    <all>
+     <element name="key" type="xsd:anyType"/>
+     <element name="value" type="xsd:anyType"/>
+    </all>
+   </complexType>
+   <complexType name="Map">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns2:Item"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://ws.ordersps.webservice.crm.cthq.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://xml.apache.org/xml-soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <element name="exChangeDataResponse">
+    <complexType>
+     <sequence>
+      <element name="exChangeDataReturn" nillable="true" type="tns2:Map"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="exChangeData">
+    <complexType>
+     <sequence>
+      <element name="map" nillable="true" type="tns2:Map"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="exChangeDataRequest">
+     <wsdl:part element="impl:exChangeData" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="exChangeDataResponse">
+     <wsdl:part element="impl:exChangeDataResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="CRMOrderSpsWebService">
+     <wsdl:operation name="exChangeData">
+       <wsdl:input message="impl:exChangeDataRequest" name="exChangeDataRequest"/>
+
+       <wsdl:output message="impl:exChangeDataResponse" name="exChangeDataResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="CRMOrderSpsWebServiceSoapBinding" type="impl:CRMOrderSpsWebService">
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="exChangeData">
+       <wsdlsoap:operation soapAction=""/>
+
+       <wsdl:input name="exChangeDataRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="exChangeDataResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="CRMOrderSpsWebServiceService">
+     <wsdl:port binding="impl:CRMOrderSpsWebServiceSoapBinding" name="CRMOrderSpsWebService">
+       <wsdlsoap:address location="http://localhost:9080/CRMHUB/services/CRMOrderSpsWebService"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

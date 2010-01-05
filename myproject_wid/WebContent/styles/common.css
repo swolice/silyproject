@@ -1,0 +1,537 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*  定义grid的要素 */
+.main_title {
+	text-indent: 5px;
+	vertical-align: bottom;
+	border-bottom-color:#3399FF;
+	height:20px;
+	color: #000099;
+	font-weight:bold;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	
+}
+
+.left_title {
+	text-indent: 7px;
+	vertical-align: bottom;
+	border-bottom-color:#3399FF;
+	height:25px;
+	color: #000099;
+	font-weight:bold;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	
+}
+
+
+/*图片button的定义*/
+.button2 { 
+	BORDER-TOP-WIDTH: 0px; 
+	FONT-WEIGHT: bold; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BACKGROUND-IMAGE: url(../images/button2.gif);
+	BORDER-BOTTOM-WIDTH: 0px; 
+	WIDTH: 48px; 
+	CURSOR: pointer; 
+	COLOR: #fff; 
+	PADDING-TOP: 3px; 
+	HEIGHT: 20px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+.button4 {
+	BORDER-TOP-WIDTH: 0px; 
+	FONT-WEIGHT: bold; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BACKGROUND-IMAGE: url(../images/button4.gif);
+	BORDER-BOTTOM-WIDTH: 0px; 
+	WIDTH: 80px; 
+	CURSOR: pointer; 
+	COLOR: #fff; 
+	PADDING-TOP: 3px; 
+	HEIGHT: 22px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+.button6 {
+	BORDER-TOP-WIDTH: 0px; 
+	FONT-WEIGHT: bold; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BACKGROUND-IMAGE: url(../images/button6.gif);
+	BORDER-BOTTOM-WIDTH: 0px; 
+	WIDTH: 120px; 
+	CURSOR: pointer; 
+	COLOR: #fff; 
+	PADDING-TOP: 3px; 
+	HEIGHT: 22px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+.button8 { 
+	BORDER-TOP-WIDTH: 0px; 
+	FONT-WEIGHT: bold; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BACKGROUND-IMAGE: url(../images/button2.gif);
+	BORDER-BOTTOM-WIDTH: 0px; 
+	WIDTH: 48px; 
+	CURSOR: pointer; 
+	COLOR: #98c0f4;; 
+	PADDING-TOP: 3px; 
+	HEIGHT: 20px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+
+.buttongrey2 { 
+	BORDER-TOP-WIDTH: 0px; 
+	FONT-WEIGHT: bold; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BACKGROUND-IMAGE: url(../images/buttongrey2.gif);
+	BORDER-BOTTOM-WIDTH: 0px; 
+	WIDTH: 50px; 
+	CURSOR: pointer; 
+	COLOR: #fff; 
+	PADDING-TOP: 3px; 
+	HEIGHT: 22px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+
+.buttongrey4 { 
+	BORDER-TOP-WIDTH: 0px; 
+	FONT-WEIGHT: bold; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BACKGROUND-IMAGE: url(../images/buttongrey4.gif);
+	BORDER-BOTTOM-WIDTH: 0px; 
+	WIDTH: 80px; 
+	CURSOR: pointer; 
+	COLOR: #fff; 
+	PADDING-TOP: 3px; 
+	HEIGHT: 22px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+
+
+/* 定义颜色级别 */
+.level-first {
+	color: #FF0000;
+}
+.level-second {
+	color: #FFCC00;
+}
+.level-third {
+	color: #009900;
+}
+/* 定义下划线级别 开始*/
+.border_blue{
+	border-bottom-width: 1px;
+	border-bottom-style:dotted;
+	border-bottom-color:#98c0f4;
+
+}
+/*textfield属性*/
+.textfield {
+	color: #223344;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+	HEIGHT: 16px;
+	width:100px;
+}
+
+.textfieldread {
+	color: #797979;
+	background-color: #EEEEEE;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+	HEIGHT: 16px;
+	width:100px;
+}
+.textfield-li {
+	color: #223344;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+	HEIGHT: 16px;
+	width:80px;
+}
+.textfieldread-li {
+	color: #797979;
+	background-color: #EEEEEE;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+	HEIGHT: 16px;
+	width:80px;
+}
+
+/*textarea 属性*/
+.textarea {
+	color: #223344;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+}
+.textarearead {
+
+	color: #797979;
+	background-color: #EEEEEE;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+}
+
+/*select属性*/
+
+.selectread {
+
+	color: #797979;
+	background-color: #EEEEEE;
+	text-indent: 1px;
+	BORDER-RIGHT: #ace 1px solid; 
+	BORDER-TOP: #ace 1px solid; 
+	BORDER-LEFT: #ace 1px solid; 
+	BORDER-BOTTOM: #ace 1px solid;  
+	LINE-HEIGHT: 18px; 
+	HEIGHT: 18px;
+}
+
+/*不同背景色彩设置*/
+.blue1 {  background-color: #D0E3F0;}
+.blue2 {  background-color: #E9F2F8;}
+.blue3 {  background-color: #DCF0FA;}
+.blue4 {  background-color: #85B6DA;}
+
+.orange1 {  background-color: #FFCC66;}
+.orange2 {  background-color: #FF9900;}
+.orange3 {  background-color: #FF9933;}
+.orange4 {  background-color: #FF6600;}
+
+.green1 {  background-color: #99FF99;}
+.green2 {  background-color: #66FF66;}
+.green3 {  background-color: #00CC00;}
+.green4 {  background-color: #009900;}
+
+/*只读的文字设置*/
+.no_read{
+	color:#D4D0C8;
+	}
+	
+	
+/*tab设置*/
+ol li { margin:8px}
+#con { font-size:12px; width:99%; margin:0 auto}
+#tags { height:23px; width:100%; margin:0; padding:0; margin-left:2px}
+#tags li { float:left; margin-right:1px; background:url(../images/tagleft.gif) no-repeat left bottom; height:23px; list-style-type:none}
+#tags li a { text-decoration:none; float:left; background:url(../images/tagright.gif) no-repeat right bottom; height:23px; padding:0px 10px; line-height:23px; color:#999}
+#tags li.emptyTag { width:4px; background:none}
+#tags li.selectTag { background-position: left top; position:relative; height:25px; margin-bottom:-2px}
+#tags li.selectTag a { background-position: right top; color:#000; height:25px; line-height:25px;}
+#tagContent { background:url(../images/bg.gif) repeat-x; padding:1px; background-color:#fff; border:1px solid #aecbd4; }
+.tagContent { background-position:top; vertical-align:top; padding-top:15px; padding-bottom:15px;color:#474747; height:100%; width:100%; display:none}
+#tagContent div.selectTag{ display:block}
+
+/*时间input设置*/
+/*textfield属性*/
+.time {
+	font-size: 12px;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	height: 16px;
+	border: 1px solid #4E7EA3;
+	color: #223344;
+	width:140px;
+
+}
+
+/*表单中的表格*/
+.form-table {
+	line-height: 20px;
+}
+.form-table td.label{
+	text-align: right;
+	width: 100px;
+}
+.form-table td.label-req{
+	text-align: right;
+	width: 100px;
+	background-attachment: fixed;
+	background-image: url(../images/field-req.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-right: 4px;
+}
+.form-fieldset {
+	margin-top: 10px;
+
+}
+.body-border {
+	border: 1px solid #98C0F4;
+}
+#table1px{ border-collapse:collapse; width:100%; }
+#table1px td{ border:1px solid #cccccc; }
+
+.tcsb{ border-collapse:collapse;}
+.tcsb td{ border:1px solid #cccccc; word-break:break-all; position:fixed;}
+
+
+/*margin设置*/
+.margin6{
+	margin:10 10 10 10;
+
+}
+INPUT.warning
+{
+    BORDER-RIGHT: #ff0000 2px groove;
+    BORDER-TOP: #ff0000 2px groove;
+    BORDER-LEFT: #ff0000 2px groove;
+    BORDER-BOTTOM: #ff0000 2px groove;
+}
+/*begin 定义button add chenyf*/
+.btn
+{
+    border-right: #7b9ebd 1px solid;
+    padding-right: 2px;
+    border-top: #7b9ebd 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#cecfde);
+    border-left: #7b9ebd 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7b9ebd 1px solid;
+}
+.btn1_mouseout
+{
+    border-right: #7EBF4F 1px solid;
+    padding-right: 2px;
+    border-top: #7EBF4F 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#B3D997);
+    border-left: #7EBF4F 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7EBF4F 1px solid;
+}
+.btn1_mouseover
+{
+    border-right: #7EBF4F 1px solid;
+    padding-right: 2px;
+    border-top: #7EBF4F 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#CAE4B6);
+    border-left: #7EBF4F 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7EBF4F 1px solid;
+}
+.btn2
+{
+    padding: 2 4 0 4;
+    font-size: 12px;
+    height: 23;
+    background-color: #ece9d8;
+    border-width: 1;
+}
+.btn3_mouseout
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+}
+.btn3_mouseover
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#D7E7FA);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+}
+.btn3_mousedown
+{
+    border-right: #FFE400 1px solid;
+    padding-right: 2px;
+    border-top: #FFE400 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #FFE400 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #FFE400 1px solid;
+}
+.btn3_mouseup
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+}
+.btn4
+{
+    border-right: #002D96 1px solid;
+    padding-right: 2px;
+    border-top: #002D96 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#FFFFFF,  EndColorStr=#C3DAF5);
+    border-left: #002D96 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #002D96 1px solid;
+}
+/*end 定义button add chenyf*/
+/*begin 动态加载用*/
+.dynamictablecss{
+	border:1px solid #99ccff;
+}
+.dynamictablecss{
+	text-align:left;	
+}
+
+.dynamictablecss td{
+	padding:2px;
+	background-color:#DDE9FC;
+}
+.tabheadcss{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #98C0F4;
+	border-right-color: #98C0F4;
+	border-bottom-color: #DDE9FC;
+	border-left-color: #98C0F4;
+	line-height: 18px;
+}
+.tabheadcss{
+	text-align:left;	
+}
+
+.tabheadcss td{
+	padding:2px;
+	background-color:#DDE9FC;
+}
+
+.selectd {
+	BACKGROUND: url(../images/smenu_s.gif) no-repeat left top; CURSOR: pointer;
+	
+	color: #FF0000;
+	
+}
+.noselectd {
+	BACKGROUND: url(../images/smenu_n.gif) no-repeat left top; CURSOR: pointer;
+	
+	color: #000099;
+}
+.unnamed1 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px; TEXT-ALIGN: left
+}
+.style3 {
+	COLOR: #064ca1;
+	
+}
+.td11{
+	border-bottom:#064ca1 1px solid;
+}
+
+.select * { 
+margin: 0; 
+padding: 0; 
+} 
+
+.select { 
+border:1px solid #ffffff; 
+float: left; 
+display: inline; 
+} 
+
+.select div { 
+border:1px solid #7b9ebd; 
+float: left; 
+} 
+
+/* 子选择器，在FF等非IE浏览器中识别 */ 
+.select>div { 
+width:120px; 
+height: 17px; 
+overflow:hidden; 
+} 
+
+/* 通配选择符，只在IE浏览器中识别 */ 
+* html .select div select { 
+display:block; 
+float: left; 
+margin: -2px; 
+} 
+
+.select div>select { 
+display:block; 
+width:124px; 
+float:none; 
+margin: -2px; 
+padding: 0px; 
+} 
+
+.select:hover { 
+border:1px solid #666666; //鼠标移上的效果 
+} 
+
+.select select>option { 
+text-indent: 2px; //option在FF等非IE浏览器缩进2px 
+/*end 动态加载用*/
+
+
+
+
+
+
