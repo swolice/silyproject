@@ -16,7 +16,7 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 public class XMLParser { 
-	//Éú³É
+	//ç”Ÿæˆ
 	public void generateDocument() {
 		Document document = DocumentHelper.createDocument();
 		Element catalogElement = document.addElement("catalog");
@@ -50,7 +50,7 @@ public class XMLParser {
 		}
 	}
 
-	//ĞŞ¸Ä
+	//ä¿®æ”¹
 	public void modifyDocument(File inputXml) {
 		try {
 			SAXReader saxReader = new SAXReader();
