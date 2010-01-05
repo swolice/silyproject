@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:impl="http://service.elecmaintain.webservice.crm.cthq.com" xmlns:intf="http://service.elecmaintain.webservice.crm.cthq.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.elecmaintain.webservice.crm.cthq.com">
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.elecmaintain.webservice.crm.cthq.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="xml" nillable="true" type="xsd:string"/>
+   <element name="CustCirInfoUpdateEOMReturn" nillable="true" type="xsd:string"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="CustCirInfoUpdateEOMResponse">
+     <wsdl:part name="CustCirInfoUpdateEOMReturn" type="xsd:string"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="CustCirInfoUpdateEOMRequest">
+     <wsdl:part name="xml" type="xsd:string"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="CrmElecMaintainEom">
+     <wsdl:operation name="CustCirInfoUpdateEOM" parameterOrder="xml">
+       <wsdl:input message="impl:CustCirInfoUpdateEOMRequest" name="CustCirInfoUpdateEOMRequest"/>
+
+       <wsdl:output message="impl:CustCirInfoUpdateEOMResponse" name="CustCirInfoUpdateEOMResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="CrmElecMaintainEomSoapBinding" type="impl:CrmElecMaintainEom">
+     <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="CustCirInfoUpdateEOM">
+       <wsdlsoap:operation soapAction=""/>
+
+       <wsdl:input name="CustCirInfoUpdateEOMRequest">
+         <wsdlsoap:body namespace="http://service.elecmaintain.webservice.crm.cthq.com" use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="CustCirInfoUpdateEOMResponse">
+         <wsdlsoap:body namespace="http://service.elecmaintain.webservice.crm.cthq.com" use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="CrmElecMaintainEomService">
+     <wsdl:port binding="impl:CrmElecMaintainEomSoapBinding" name="CrmElecMaintainEom">
+       <wsdlsoap:address location="http://localhost:9080/CRM-DEP/services/CrmElecMaintainEom"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

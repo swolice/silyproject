@@ -1,0 +1,220 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body  {
+	font-family: "宋体",Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	background: #FFFFFF;
+	margin: 0; /* 最好将 body 元素的边距和填充设置为 0 以覆盖不同的浏览器默认值 */
+	padding: 0;/*text-align: center;  在 IE 5* 浏览器中，这会将容器居中。文本随后将在 #container 选择器中设置为默认左对齐 */
+	color: #000000;
+	border:0 none;
+	/*height: 100%;*/
+scrollbar-arrow-color: #333399;   /*三角箭头的颜色*/
+scrollbar-face-color: #D3E4FB;       /*立体滚动条的颜色*/
+scrollbar-3dlight-color: #D3E4FB;    /*立体滚动条亮边的颜色*/
+scrollbar-highlight-color: #ffffff;  /*滚动条空白部分的颜色*/
+scrollbar-shadow-color: #ffffff;     /*立体滚动条阴影的颜色*/
+scrollbar-darkshadow-color: #cccccc; /*滚动条强阴影颜色*/
+scrollbar-track-color: #f1f1f1;      /*立体滚动条背景颜色*/
+scrollbar-base-color: #f8f8f8;    /*滚动条的基本颜色*/
+}
+
+.td{
+	LINE-HEIGHT: 18px; 
+		}
+
+/*不同链接的设置-开始*/
+a:link {
+	font-family: "宋体";
+	font-size: 9pt;
+	color:#000066;
+	text-decoration:none;
+}
+a:hover {
+	font-family: "宋体";
+	font-size: 9p
+	           t;
+	color:#FF3300;
+	text-decoration:underline;
+}
+a:active {
+	font-family: "宋体";
+	font-size: 9pt;
+	color:#000066;
+	text-decoration: none;
+}
+a:visited {
+	font-family: "宋体";
+	font-size: 9pt;
+	color:#000066;
+	text-decoration: none;
+}
+
+a.drop_down{
+    width:150px;
+    text-align:left;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height:20px;
+    font-weight:normal;
+    color:#33338c;
+    background-color:#fff;
+    padding:2px 5px 2px 5px;
+    border-top:1px solid #fafafa;
+    border-bottom:1px solid #d3d3d3;
+    display:block;
+}
+
+a.drop_down:Hover{
+    padding:2px 5px 2px 5px;
+    width:150px;
+    text-align:left;
+    color:blue;
+    font-weight:normal;
+    text-decoration:underline;
+    background-color:#dadada;
+}
+
+.drop_mnu {
+	BORDER-RIGHT: #d3d3d3 1px solid; PADDING-RIGHT: 0px; OVERFLOW-Y: hidden; DISPLAY: none; PADDING-LEFT: 0px; Z-INDEX: 1000000001; LEFT: 0px; OVERFLOW-X: hidden; PADDING-BOTTOM: 0px; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 150px; PADDING-TOP: 0px; BORDER-BOTTOM: #d3d3d3 1px solid; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #eee; TEXT-ALIGN: left
+}
+
+
+.bgwhite{
+	background-color:white;
+}
+
+/* 搜索的文字设定*/
+.collapse {
+	text-align: left;
+	line-height: 20px;
+	cursor: pointer;
+	color: #0000FF;
+}
+
+/* 定义不同的对齐方式-开始 */
+.center {
+	text-align:center;
+	vertical-align:middle;
+	width:100px;
+	}
+
+.menu_center {
+	text-align:center;
+	vertical-align:middle;
+	width:80px;
+	}
+
+/* 定义menu-开始 */
+.table_border{
+	vertical-align:top;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #98C0F4;
+	border-right-color: #98C0F4;
+	border-bottom-color: #98C0F4;
+	border-left-color: #98C0F4;
+	}
+.menu_bg {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #ffffff;
+	border-right-color: #ffffff;
+	border-bottom-color: #98C0F4;
+	border-left-color: #ffffff;
+	line-height: 18px;
+	background-image: url(../images/menu_bg.gif);
+	background-repeat: repeat-x;
+	text-indent: 10px;
+	font-weight: bold;
+	color: #000099;
+	height: 20px;
+}
+
+.menu_tree {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #ffffff;
+	border-right-color: #ffffff;
+	border-bottom-color: #A9BFD3;
+	border-left-color: #ffffff;
+	line-height: 24px;
+	background-image: url(../images/menu_tree.jpg);
+	background-repeat: repeat-x;
+	text-indent: 10px;
+	font-weight: normal;
+	color: #333333;
+}
+/* 定义数据表格*/
+.data-tbl {
+}
+.data-tbl tr {
+	line-height: 20px;
+}
+.data-tbl th {
+	background: url(../images/menu_over.jpg);
+	text-align: left;
+	font-weight: normal;
+	padding-left: 5px;
+	line-height: 22px;
+}
+.data-tbl td {
+	padding-left: 5px;
+}
+/* 定义数据表格 结束*/
+
+/*定义talbe空间*/
+.special {
+	OVERFLOW-Y: auto; OVERFLOW-X: auto; HEIGHT: 210px ; WIDTH: 100%;
+}
+.special_sale_top {
+	OVERFLOW-Y: auto; OVERFLOW-X: auto; HEIGHT: 335px ; WIDTH: 100%;
+}
+.special_sale_bottom {
+	OVERFLOW-Y: auto; OVERFLOW-X: auto; HEIGHT: 195px ; WIDTH: 100%;
+}
+.td_font {
+	white-space:nowrap;
+	margin:0 5 0 5;
+	line-height:20px;
+	background-image:url('../images/menu_over.jpg');
+}
+.nowrap{	
+	white-space:nowrap;
+	padding-left:5px;
+	padding-right:5px;
+
+	}
+		
+	.td_font_order {
+	white-space:nowrap;
+	margin:0 5 0 5;
+	line-height:20px;
+	CURSOR: pointer;
+	background-image:url('../images/menu_over.jpg');
+}
+.td_font_link{
+	white-space:nowrap;
+	margin:0 5 0 5;
+	line-height:20px;
+	background-image:url('../images/menu_over.jpg');
+	CURSOR: pointer;
+}

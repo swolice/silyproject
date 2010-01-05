@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.syncust.cthq.com" xmlns:impl="http://service.syncust.cthq.com" xmlns:intf="http://service.syncust.cthq.com" xmlns:tns2="http://dto.syncust.cthq.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://dto.syncust.cthq.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://service.syncust.cthq.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://service.syncust.cthq.com"/>
+   <complexType name="ContractRoot">
+    <sequence>
+     <element name="tcpCont" nillable="true" type="tns2:TcpCont"/>
+     <element name="svcCont" nillable="true" type="tns2:SvcCont"/>
+    </sequence>
+   </complexType>
+   <complexType name="TcpCont">
+    <sequence>
+     <element name="busCode" nillable="true" type="xsd:string"/>
+     <element name="serviceCode" nillable="true" type="xsd:string"/>
+     <element name="serviceContractVer" nillable="true" type="xsd:string"/>
+     <element name="actionCode" nillable="true" type="xsd:string"/>
+     <element name="transactionID" nillable="true" type="xsd:string"/>
+     <element name="serviceLevel" nillable="true" type="xsd:string"/>
+     <element name="srcOrgID" nillable="true" type="xsd:string"/>
+     <element name="srcSysID" nillable="true" type="xsd:string"/>
+     <element name="srcSysSign" nillable="true" type="xsd:string"/>
+     <element name="dstOrgID" nillable="true" type="xsd:string"/>
+     <element name="dstSysID" nillable="true" type="xsd:string"/>
+     <element name="reqTime" nillable="true" type="xsd:string"/>
+     <element name="request" nillable="true" type="impl:ArrayOf_tns2_nillable_Request"/>
+    </sequence>
+   </complexType>
+   <complexType name="Request">
+    <sequence>
+     <element name="reqType" nillable="true" type="xsd:string"/>
+     <element name="reqCode" nillable="true" type="xsd:string"/>
+     <element name="reqDesc" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SvcCont">
+    <sequence>
+     <element name="custCreateUpdate" nillable="true" type="tns2:CustCreateUpdate"/>
+    </sequence>
+   </complexType>
+   <complexType name="CustCreateUpdate">
+    <sequence>
+     <element name="eventType" nillable="true" type="tns2:EventType"/>
+     <element name="PARTYID" nillable="true" type="xsd:string"/>
+     <element name="partyInfo" nillable="true" type="tns2:PartyInfo"/>
+     <element name="eventTime" nillable="true" type="xsd:string"/>
+     <element name="staffInfo" nillable="true" type="tns2:StaffInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="EventType">
+    <sequence>
+     <element name="actionType" nillable="true" type="xsd:string"/>
+     <element name="actionContent" nillable="true" type="impl:ArrayOf_tns2_nillable_ActionContent"/>
+    </sequence>
+   </complexType>
+   <complexType name="ActionContent">
+    <sequence>
+     <element name="actionCd" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PartyInfo">
+    <sequence>
+     <element name="accountInfo" nillable="true" type="impl:ArrayOf_tns2_nillable_AccountInfo"/>
+     <element name="belongInfo" nillable="true" type="tns2:BelongInfo"/>
+     <element name="identityInfo" nillable="true" type="impl:ArrayOf_tns2_nillable_IdentityInfo"/>
+     <element name="managerInfo" nillable="true" type="impl:ArrayOf_tns2_nillable_ManagerInfo"/>
+     <element name="partyBaseInfo" nillable="true" type="tns2:PartyBaseInfo"/>
+     <element name="partyCodeInfo" nillable="true" type="tns2:PartyCodeInfo"/>
+     <element name="partyRelaInfo" nillable="true" type="impl:ArrayOf_tns2_nillable_PartyRelaInfo"/>
+     <element name="propertyInfo" nillable="true" type="impl:ArrayOf_tns2_nillable_PropertyInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="AccountInfo">
+    <sequence>
+     <element name="accountCd" nillable="true" type="xsd:string"/>
+     <element name="accountName" nillable="true" type="xsd:string"/>
+     <element name="bankAccount" nillable="true" type="xsd:string"/>
+     <element name="bankName" nillable="true" type="xsd:string"/>
+     <element name="payMethod" nillable="true" type="xsd:string"/>
+     <element name="postAddress" nillable="true" type="xsd:string"/>
+     <element name="postCode" nillable="true" type="xsd:string"/>
+     <element name="postCont" nillable="true" type="xsd:string"/>
+     <element name="postType" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="BelongInfo">
+    <sequence>
+     <element name="provinceCode" nillable="true" type="xsd:string"/>
+     <element name="provinceName" nillable="true" type="xsd:string"/>
+     <element name="cityCode" nillable="true" type="xsd:string"/>
+     <element name="cityName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="IdentityInfo">
+    <sequence>
+     <element name="identNum" nillable="true" type="xsd:string"/>
+     <element name="identType" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ManagerInfo">
+    <sequence>
+     <element name="belongInfo" nillable="true" type="tns2:BelongInfo"/>
+     <element name="managerName" nillable="true" type="xsd:string"/>
+     <element name="managerNbr" nillable="true" type="xsd:string"/>
+     <element name="managerPhoneNbr" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PartyBaseInfo">
+    <sequence>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="cpassword" nillable="true" type="xsd:string"/>
+     <element name="creditGrade" nillable="true" type="xsd:string"/>
+     <element name="custAddress" nillable="true" type="xsd:string"/>
+     <element name="custBrand" nillable="true" type="xsd:string"/>
+     <element name="custGrade" nillable="true" type="xsd:string"/>
+     <element name="custGroup" nillable="true" type="xsd:string"/>
+     <element name="custGroupSub" nillable="true" type="xsd:string"/>
+     <element name="custName" nillable="true" type="xsd:string"/>
+     <element name="custState" nillable="true" type="xsd:string"/>
+     <element name="habitancyAddress" nillable="true" type="xsd:string"/>
+     <element name="IDAddress" nillable="true" type="xsd:string"/>
+     <element name="industyCode" nillable="true" type="xsd:string"/>
+     <element name="ISVip" nillable="true" type="xsd:string"/>
+     <element name="postCode" nillable="true" type="xsd:string"/>
+     <element name="serviceLevel" nillable="true" type="xsd:string"/>
+     <element name="vipCardNo" nillable="true" type="xsd:string"/>
+     <element name="vipGrade" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PartyCodeInfo">
+    <sequence>
+     <element name="cityCode" nillable="true" type="xsd:string"/>
+     <element name="codeType" nillable="true" type="xsd:string"/>
+     <element name="codeValue" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PartyRelaInfo">
+    <sequence>
+     <element name="linkInfo" nillable="true" type="impl:ArrayOf_tns2_nillable_LinkInfo"/>
+     <element name="partyRelaRole" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="LinkInfo">
+    <sequence>
+     <element name="linkFax" nillable="true" type="xsd:string"/>
+     <element name="linkMail" nillable="true" type="xsd:string"/>
+     <element name="linkMan" nillable="true" type="xsd:string"/>
+     <element name="linkNbr" nillable="true" type="xsd:string"/>
+     <element name="linkNbr2" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PropertyInfo">
+    <sequence>
+     <element name="itemID" nillable="true" type="xsd:string"/>
+     <element name="itemName" nillable="true" type="xsd:string"/>
+     <element name="itemValue" nillable="true" type="xsd:string"/>
+     <element name="itemValueName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="StaffInfo">
+    <sequence>
+     <element name="belongInfo" nillable="true" type="tns2:BelongInfo"/>
+     <element name="staffNbr" nillable="true" type="xsd:string"/>
+     <element name="staffName" nillable="true" type="xsd:string"/>
+     <element name="staffPhoneNbr" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SynCustDTO">
+    <sequence>
+     <element name="args" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     <element name="partyCode" nillable="true" type="xsd:string"/>
+     <element name="sstOrgID" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://service.syncust.cthq.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://dto.syncust.cthq.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dto.syncust.cthq.com"/>
+   <complexType name="ArrayOf_tns2_nillable_Request">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="Request" nillable="true" type="tns2:Request"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_ActionContent">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="ActionContent" nillable="true" type="tns2:ActionContent"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_AccountInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="AccountInfo" nillable="true" type="tns2:AccountInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_IdentityInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="IdentityInfo" nillable="true" type="tns2:IdentityInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_ManagerInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="ManagerInfo" nillable="true" type="tns2:ManagerInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_LinkInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="LinkInfo" nillable="true" type="tns2:LinkInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_PartyRelaInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="PartyRelaInfo" nillable="true" type="tns2:PartyRelaInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns2_nillable_PropertyInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="PropertyInfo" nillable="true" type="tns2:PropertyInfo"/>
+    </sequence>
+   </complexType>
+   <element name="synCustInfoResponse">
+    <complexType>
+     <sequence/>
+    </complexType>
+   </element>
+   <element name="synCustInfoByPCode">
+    <complexType>
+     <sequence>
+      <element name="s" nillable="true" type="tns2:SynCustDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="synCustInfoByPCodeResponse">
+    <complexType>
+     <sequence/>
+    </complexType>
+   </element>
+   <element name="synCustInfo">
+    <complexType>
+     <sequence>
+      <element name="para" nillable="true" type="tns2:ContractRoot"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="synCustInfoResponse">
+     <wsdl:part element="impl:synCustInfoResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="synCustInfoRequest">
+     <wsdl:part element="impl:synCustInfo" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="synCustInfoByPCodeResponse">
+     <wsdl:part element="impl:synCustInfoByPCodeResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="synCustInfoByPCodeRequest">
+     <wsdl:part element="impl:synCustInfoByPCode" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="SynCustInfoService">
+     <wsdl:operation name="synCustInfo">
+       <wsdl:input message="impl:synCustInfoRequest" name="synCustInfoRequest"/>
+
+       <wsdl:output message="impl:synCustInfoResponse" name="synCustInfoResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="synCustInfoByPCode">
+       <wsdl:input message="impl:synCustInfoByPCodeRequest" name="synCustInfoByPCodeRequest"/>
+
+       <wsdl:output message="impl:synCustInfoByPCodeResponse" name="synCustInfoByPCodeResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="SynCustInfoServiceSoapBinding" type="impl:SynCustInfoService">
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="synCustInfo">
+       <wsdlsoap:operation soapAction=""/>
+
+       <wsdl:input name="synCustInfoRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="synCustInfoResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="synCustInfoByPCode">
+       <wsdlsoap:operation soapAction=""/>
+
+       <wsdl:input name="synCustInfoByPCodeRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="synCustInfoByPCodeResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="SynCustInfoServiceService">
+     <wsdl:port binding="impl:SynCustInfoServiceSoapBinding" name="SynCustInfoService">
+       <wsdlsoap:address location="http://localhost:9080/HubService/services/SynCustInfoService"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://www.chinatelecom.hub.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.chinatelecom.hub.com">
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.chinatelecom.hub.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="exchange">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="exchangeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="exchangeRequest">
+		<wsdl:part element="tns:exchange" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="exchangeResponse">
+		<wsdl:part element="tns:exchangeResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:portType name="DEPServicePortType">
+		<wsdl:operation name="exchange">
+			<wsdl:input message="tns:exchangeRequest" name="exchangeRequest"/>
+			<wsdl:output message="tns:exchangeResponse" name="exchangeResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DEPServiceHttpBinding" type="tns:DEPServicePortType">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="exchange">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="exchangeRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="exchangeResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DEPService">
+		<wsdl:port binding="tns:DEPServiceHttpBinding" name="DEPServiceHttpPort">
+			<wsdlsoap:address location="http://localhost:9080/CRMHUB/services/DEPServiceHttpPort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
