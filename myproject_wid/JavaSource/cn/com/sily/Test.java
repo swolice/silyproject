@@ -74,11 +74,11 @@ public class Test {
 //		} catch (FileNotFoundException e) {
 //			e.printStackTrace();
 //		}
-		Pattern pattern = Pattern.compile("1|2|3");
-		Matcher matcher = pattern.matcher("1123");
-		boolean b= matcher.matches();
-		//当条件满足时，将返回true，否则返回false
-		System.out.println(b);
+//		Pattern pattern = Pattern.compile("1|2|3");
+//		Matcher matcher = pattern.matcher("1123");
+//		boolean b= matcher.matches();
+//		//当条件满足时，将返回true，否则返回false
+		System.out.println(20/7);
 
 	}
 }
