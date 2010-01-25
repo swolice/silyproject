@@ -20,18 +20,22 @@ import java.io.IOException;
 public class ReplaceSpace {
 
 	public static void main(String[] args) {
-		try {
-			FileReader fr = new FileReader("d:/2009年10月14日.xml");
-			BufferedReader br = new BufferedReader(fr);
-			String str = "";
-			while((str = br.readLine())!= null ){
-				str.replaceAll("\n","").replaceAll("\t","");
-				System.out.print(str.trim());
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			FileReader fr = new FileReader("d:/2009年10月14日.xml");
+//			BufferedReader br = new BufferedReader(fr);
+//			String str = "";
+//			while((str = br.readLine())!= null ){
+//				str.replaceAll("\n","").replaceAll("\t","");
+//				System.out.print(str.trim());
+//			}
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		
+		
+		String str = "00" + "1";
+		System.out.println(str.substring(str.length()-2));
 	}
 }
