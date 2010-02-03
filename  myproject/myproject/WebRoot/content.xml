@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- Java and XML Contents -->
+<book xmlns="http://www.oreilly.com/javaxml2"
+	xmlns:ora="http://www.oreilly.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.oreilly.com/javaxml2 XSD/contents.xsd 
+                           http://www.oreilly.com XSD/contents-ora.xsd">
+	<title ora:series="Java">Java and XML</title>
+	<!-- Chapter List -->
+	<contents>
+		<chapter title="Introduction" number="1">
+			<topic name="XML Matters" />
+			<topic name="What's Important" />
+			<topic name="The Essentials" />
+			<topic name="What&apos;s Next?" />
+		</chapter>
+		<chapter title="Nuts and Bolts" number="2">
+			<topic name="The Basics" />
+			<topic name="Constraints" />
+			<topic name="Transformations" />
+			<topic name="And More..." />
+			<topic name="What&apos;s Next?" />
+		</chapter>
+		<chapter title="SAX" number="3">
+			<topic name="Getting Prepared" />
+			<topic name="SAX Readers" />
+			<topic name="Content Handlers" />
+			<topic name="Gotcha!" />
+			<topic name="What&apos;s Next?" />
+		</chapter>
+	</contents>
+</book>
