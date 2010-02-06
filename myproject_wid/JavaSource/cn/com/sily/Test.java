@@ -78,7 +78,22 @@ public class Test {
 //		Matcher matcher = pattern.matcher("1123");
 //		boolean b= matcher.matches();
 //		//当条件满足时，将返回true，否则返回false
-		System.out.println(20/7);
-
+//		System.out.println(20/7);
+		
+		
+//		String str = "测试java程序的截取字符问题";
+//		int count = str.length()%2 == 0 ? str.length()/2 :str.length()/2+1; 
+//		for (int i = 0; i < count; i++) {
+//			if(str.length() < 2*(i+1)){
+//				System.out.println(str.substring(i*2,str.length()));
+//			}else{
+//				System.out.println(str.substring(i*2,2*(i+1)));
+//			}
+//			
+//		}
+		
+		String[] ss = "1231,,,,12321".split(",");
+		
+		System.out.println(ss.length);
 	}
 }
