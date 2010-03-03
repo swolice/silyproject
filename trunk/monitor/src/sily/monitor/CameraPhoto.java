@@ -26,11 +26,17 @@ public class CameraPhoto {
 
 	private Player player = null;
 
-	public static void main(String[] args) {
-		new CameraPhoto().createPhoto();
+	private static final CameraPhoto cameraPhone = new CameraPhoto();
+	
+	private CameraPhoto(){
+		this.initCameraPhoto();
 	}
-
-	public void createPhoto() {
+	
+	public static CameraPhoto getInstance(){
+		return cameraPhone;
+	}
+	
+	private void initCameraPhoto() {
 		CaptureDeviceManager
 				.getDevice("vfw:Microsoft WDM Image Capture (Win32):0");
 
@@ -47,36 +53,6 @@ public class CameraPhoto {
 			if ((comp = player.getVisualComponent()) != null) {
 
 				comp.setBounds(0, 0, 250, 300);
-
-				while (true) {
-
-					FrameGrabbingControl fgc = (FrameGrabbingControl) player
-							.getControl("javax.media.control.FrameGrabbingControl");
-
-					Buffer buffer = fgc.grabFrame();
-
-					BufferToImage bufferToImage = new BufferToImage(
-							(VideoFormat) buffer.getFormat());
-					Image image = bufferToImage.createImage(buffer);
-					
-					if (null == image) {
-						Thread.sleep(1000);
-						// System.out.println("length " + buffer.getLength());
-					} else {
-						String filePath = "f:/photo/"+ System.currentTimeMillis() + ".jpg";
-						File file = new File("f:/photo");
-						if(!file.exists()){
-							file.mkdirs();
-						}
-						saveImage(image, filePath);
-					}
-					try {
-						Thread.sleep(10*1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-
-				}
 			}
 		} catch (Exception e) {
 
@@ -85,9 +61,29 @@ public class CameraPhoto {
 		}
 	}
 
+	public void createPhoto() {
+		FrameGrabbingControl fgc = (FrameGrabbingControl) player
+				.getControl("javax.media.control.FrameGrabbingControl");
+
+		Buffer buffer = fgc.grabFrame();
+
+		BufferToImage bufferToImage = new BufferToImage((VideoFormat) buffer
+				.getFormat());
+		Image image = bufferToImage.createImage(buffer);
+
+		if (null != image) {
+			String filePath = "f:/photo/" + System.currentTimeMillis() + ".jpg";
+			File file = new File("f:/photo");
+			if (!file.exists()) {
+				file.mkdirs();
+			}
+			saveImage(image, filePath);
+		}
+	}
+
 	// 保存图片
 
-	public void saveImage(Image image, String path) {
+	private void saveImage(Image image, String path) {
 
 		// 图片缓存
 
