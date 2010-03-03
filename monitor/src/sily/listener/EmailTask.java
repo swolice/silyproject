@@ -1,21 +1,22 @@
 package sily.listener;
 
+import java.util.Calendar;
 import java.util.TimerTask;
 
 import javax.servlet.ServletContext;
 
-import sily.monitor.CameraPhoto;
 import sily.monitor.SendEmail;
 
-public class PhotoTask extends TimerTask {
+public class EmailTask extends TimerTask {
 //	private static final int C_SCHEDULE_HOUR = 0;
 	private static boolean isRunning = false;
 	private ServletContext context = null;
+	private static final SendEmail semail = new SendEmail();
 	
-	public PhotoTask() {
+	public EmailTask() {
 	}
 
-	public PhotoTask(ServletContext context) {
+	public EmailTask(ServletContext context) {
 		this.context = context;
 	}
 
@@ -28,7 +29,7 @@ public class PhotoTask extends TimerTask {
 				context.log("开始执行指定任务");
 				// TODO 添加自定义的详细任务，以下只是示例
 				// 系统定时发送邮件
-				CameraPhoto.getInstance().createPhoto();
+				semail.sendMonitorPhoto();
 
 				isRunning = false;
 				context.log("指定任务执行结束");
@@ -37,4 +38,5 @@ public class PhotoTask extends TimerTask {
 			context.log("上一次任务执行还未结束");
 		}
 	}
+
 }

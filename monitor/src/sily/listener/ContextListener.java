@@ -4,7 +4,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpServlet;
 
-import sily.monitor.TestCamera;
+import sily.monitor.CameraPhoto;
 
 public class ContextListener extends HttpServlet implements
 		ServletContextListener {
@@ -20,13 +20,14 @@ public class ContextListener extends HttpServlet implements
 	private java.util.Timer timer1 = null;
 
 	public void contextInitialized(ServletContextEvent event) {
-		timer = new java.util.Timer(true);
+		//打开摄像头
 		event.getServletContext().log("定时器已启动");
-		timer.schedule(new MyTask(event.getServletContext()), 0,
+		timer = new java.util.Timer(true);
+		timer.schedule(new EmailTask(event.getServletContext()), 0,
 						2 * 1000);
 		timer1 = new java.util.Timer(true);
 		timer1.schedule(new PhotoTask(event.getServletContext()), 0,
-				24 * 60 * 60 * 1000);
+				10 * 1000);
 		event.getServletContext().log("已经添加任务调度表");
 	}
 
