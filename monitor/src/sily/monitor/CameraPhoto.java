@@ -20,14 +20,14 @@ import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
-public class TestCamera {
+public class CameraPhoto {
 
 	private MediaLocator mediaLocator = null;
 
 	private Player player = null;
 
 	public static void main(String[] args) {
-		new TestCamera().createPhoto();
+		new CameraPhoto().createPhoto();
 	}
 
 	public void createPhoto() {
