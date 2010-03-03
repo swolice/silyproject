@@ -27,7 +27,7 @@ public class ReceiveMail {
 
 	public static void main(String[] args) {
 		new ReceiveMail().receive("jishijun204@163.com", "jishijun204",
-				"58413142727527");
+				"");
 	}
 
 	// 处理任何邮件时需要的方法
