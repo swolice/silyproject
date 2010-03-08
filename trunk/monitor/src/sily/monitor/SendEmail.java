@@ -25,6 +25,7 @@ public class SendEmail {
 	private Session mailSession;
 	private MimeMessage mailMessage;
 	private Transport trans;
+	private String receiveBody = "43971491@qq.com";
 
 	public SendEmail() {
 	}
@@ -32,7 +33,7 @@ public class SendEmail {
 	// public static void main(String args[]){
 	// new SendEmail().sendMail();
 	// }
-	public void sendMail(List<String> filePathList) {
+	public void sendMail(List<String> filePathList) throws Exception {
 		try {
 			Multipart mm = new MimeMultipart();
 
@@ -51,11 +52,11 @@ public class SendEmail {
 			mailSession.setDebug(true);
 			// 建立消息对象
 			mailMessage = new MimeMessage(mailSession);
-			// 发件�?
+			// 发件�re人
 			mailMessage.setFrom(new InternetAddress("jishijun204@163.com"));
-			// 收件�?
+			// 收件�人
 			mailMessage.setRecipient(MimeMessage.RecipientType.TO,
-					new InternetAddress("43971491@qq.com"));
+					new InternetAddress(receiveBody));
 			// 主题
 			mailMessage.setSubject("我的监控信息");
 
@@ -105,7 +106,10 @@ public class SendEmail {
 			trans.send(mailMessage);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			if(e.getMessage().trim().startsWith("554 MI:STC 0")){
+				this.setReceiveBody("jishijun2003@yahoo.com.cn");
+			}
+			throw e;
 		} finally {
 			try {
 				trans.close();
@@ -132,13 +136,23 @@ public class SendEmail {
 			for (int i = 0; i < files.length; i++) {
 				list.add(files[i].getAbsolutePath());
 				if (list.size() == 20) {
-					sendMail(list);
+					try {
+						sendMail(list);
+					} catch (Exception e) {
+						list.clear();
+						continue;
+					}
 					deleteFile(list);
 					list.clear();
 				}
 			}
 			if (list.size()> 0) {
-				sendMail(list);
+				try {
+					sendMail(list);
+				} catch (Exception e) {
+					list.clear();
+					return;
+				}
 				deleteFile(list);
 				list.clear();
 			}
@@ -148,6 +162,14 @@ public class SendEmail {
 	public static void main(String[] args) {
 		SendEmail se = new SendEmail();
 		se.sendMonitorPhoto();
+	}
+
+	public String getReceiveBody() {
+		return receiveBody;
+	}
+
+	public void setReceiveBody(String receiveBody) {
+		this.receiveBody = receiveBody;
 	}
 
 }
