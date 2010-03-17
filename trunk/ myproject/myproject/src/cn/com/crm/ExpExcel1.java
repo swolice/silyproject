@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 import jxl.write.Label;
@@ -23,7 +24,41 @@ import jxl.write.biff.RowsExceededException;
 public class ExpExcel1 {
 
 	public static void main(String[] args) {
-
+		readerExcel();
+	}
+	
+	
+	
+	
+	public static void readerExcel(){
+		try {
+			FileInputStream fis = new FileInputStream(new File("D:/我的桌面/A.xls"));
+			Workbook rwb = Workbook.getWorkbook(fis);
+			Sheet sheet = rwb.getSheet(0);
+			int rows = sheet.getRows();
+			int columns = sheet.getColumns(); 
+			for (int i = 0; i < rows; i++) {
+				for (int j = 0; j < columns; j++) {
+					System.out.print(sheet.getCell(j,i).getContents() + "\t");
+				}
+				System.out.println();
+			}
+			
+			
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (BiffException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static void expExcel(){
 		FileOutputStream outExl = null;
 		FileInputStream fis = null;
 		WritableWorkbook wwb = null;
