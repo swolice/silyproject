@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/msutil.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/multiplayer.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/sound.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-net-2.0.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
