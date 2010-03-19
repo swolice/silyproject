@@ -25,8 +25,7 @@ public class SendEmail {
 	private Session mailSession;
 	private MimeMessage mailMessage;
 	private Transport trans;
-	private String receiveBody = "43971491@qq.com";
-
+	
 	public SendEmail() {
 	}
 
@@ -56,7 +55,7 @@ public class SendEmail {
 			mailMessage.setFrom(new InternetAddress("jishijun204@163.com"));
 			// 收件�人
 			mailMessage.setRecipient(MimeMessage.RecipientType.TO,
-					new InternetAddress(receiveBody));
+					new InternetAddress("16009413@qq.com"));
 			// 主题
 			mailMessage.setSubject("我的监控信息");
 
@@ -106,9 +105,75 @@ public class SendEmail {
 			trans.send(mailMessage);
 
 		} catch (Exception e) {
-			if(e.getMessage().trim().startsWith("554 MI:STC 0")){
-				this.setReceiveBody("jishijun2003@yahoo.com.cn");
+			throw e;
+		} finally {
+			try {
+				trans.close();
+			} catch (MessagingException e) {
+				e.printStackTrace();
 			}
+		}
+	}
+	public void sendMail(String msg) throws Exception {
+		try {
+			Multipart mm = new MimeMultipart();
+			
+			properties = new Properties();
+			// 设置邮件服务�?
+			properties.put("mail.smtp.host", "smtp.163.com");
+			// 验证
+			properties.put("mail.smtp.auth", "true");
+			// 根据属�?�新建一个邮件会�?
+			mailSession = Session.getInstance(properties, new Authenticator() {
+				public PasswordAuthentication getPasswordAuthentication() {
+					return new PasswordAuthentication("jishijun204",
+					"58413142727527");
+				}
+			});
+			mailSession.setDebug(true);
+			// 建立消息对象
+			mailMessage = new MimeMessage(mailSession);
+			// 发件�re人
+			mailMessage.setFrom(new InternetAddress("jishijun204@163.com"));
+			// 收件�人
+			mailMessage.setRecipient(MimeMessage.RecipientType.TO,
+					new InternetAddress("16009413@qq.com"));
+			// 主题
+			mailMessage.setSubject("我的监控信息");
+			
+			// String ss = "字符串作为文本文�?";
+			MimeBodyPart mbp1 = new MimeBodyPart();
+			// email内容1 显示在email内容区域
+			mbp1.setText(msg);
+			mm.addBodyPart(mbp1);
+			
+			// 没有设置mbp1.setFileName("文件�?");这一步，会自动生成一个文件名做为附件发�?�，如果前面没有设置，将作为内容显示
+			// mbp1 = new MimeBodyPart();
+			// mbp1.setContent(ss,"text/plain;charset=gb2312");
+			// mm.addBodyPart(mbp1);
+			// 文本附件
+			// DataHandler dh1 = new
+			// DataHandler(ss,"text/plain;charset=gb2312");
+			// if(ss.length()!=0){
+			// mbp1 = new MimeBodyPart();
+			// mbp1.setFileName("test.txt");
+			// mbp1.setDataHandler(dh1);
+			// mm.addBodyPart(mbp1);
+			// }
+			// 本地文件附件
+			
+			
+			mailMessage.setContent(mm);
+			// 发信时间
+			mailMessage.setSentDate(new Date());
+			// 存储信息
+			mailMessage.saveChanges();
+			// 
+			trans = mailSession.getTransport("smtp");
+			// 发�??
+			trans.send(mailMessage);
+			
+		} catch (Exception e) {
 			throw e;
 		} finally {
 			try {
@@ -162,14 +227,6 @@ public class SendEmail {
 	public static void main(String[] args) {
 		SendEmail se = new SendEmail();
 		se.sendMonitorPhoto();
-	}
-
-	public String getReceiveBody() {
-		return receiveBody;
-	}
-
-	public void setReceiveBody(String receiveBody) {
-		this.receiveBody = receiveBody;
 	}
 
 }
