@@ -118,11 +118,14 @@ public class FtpServerLogic{
     		
     		File localFiles[] = fileUploadLocalPath.listFiles();
     		for( int i=0; i< localFiles.length; i++) {
-    			syslogger.info("上传文件名： " + localFiles[i].getName());
+    			syslogger.info("上传文件名： 【" + localFiles[i].getName() + "】开始");
     			InputStream input = new FileInputStream(localFiles[i]);
     			ftp.storeFile(localFiles[i].getName(), input);
     			input.close();
+    			syslogger.info("上传文件名： 【" + localFiles[i].getName() + "】结束");
     			localFiles[i].delete();
+    			
+    			syslogger.info("删除已上传的： 【" + localFiles[i].getName() + "】结束");
     		}
 			ftp.logout();
 		} catch (IOException e) {
