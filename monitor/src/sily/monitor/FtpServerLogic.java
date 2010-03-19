@@ -120,7 +120,14 @@ public class FtpServerLogic{
     		for( int i=0; i< localFiles.length; i++) {
     			syslogger.info("上传文件名： 【" + localFiles[i].getName() + "】开始");
     			InputStream input = new FileInputStream(localFiles[i]);
+    			
+    			MonitorThread mt = new MonitorThread(ftp,30000);
+    			mt.start();
+    			
     			ftp.storeFile(localFiles[i].getName(), input);
+
+    			mt.flag = false;
+    			
     			input.close();
     			syslogger.info("上传文件名： 【" + localFiles[i].getName() + "】结束");
     			localFiles[i].delete();
@@ -199,6 +206,35 @@ public class FtpServerLogic{
 		}
 		return success;
 	}
+
+	private static class MonitorThread extends Thread {
+        long timeOut;
+        FTPClient ftp;
+        public boolean flag = true;
+        public MonitorThread(FTPClient ftp,long expiredTime) {
+            timeOut = expiredTime;
+            this.ftp = ftp;
+        }
+		public void run(){
+			int i = 0;
+			while(flag){
+				try {
+					Thread.sleep(1000);
+					i++;
+					if(i == timeOut){
+						try {
+							ftp.disconnect();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						flag = false;
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+    }
 
 	
 	
