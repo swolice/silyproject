@@ -16,27 +16,37 @@ import javax.media.control.FrameGrabbingControl;
 import javax.media.format.VideoFormat;
 import javax.media.util.BufferToImage;
 
+import org.apache.log4j.Logger;
+
+import sily.util.MonitorResourceBundle;
+import sily.util.PropertyWrapper;
+
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 public class CameraPhoto {
 
+	Logger syslogger = Logger.getLogger(CameraPhoto.class.getName());
+
 	private MediaLocator mediaLocator = null;
 
 	private Player player = null;
 
 	private static final CameraPhoto cameraPhone = new CameraPhoto();
-	
-	private CameraPhoto(){
+
+	PropertyWrapper propWrapper = new PropertyWrapper();
+
+	private CameraPhoto() {
 		this.initCameraPhoto();
 	}
-	
-	public static CameraPhoto getInstance(){
+
+	public static CameraPhoto getInstance() {
 		return cameraPhone;
 	}
-	
+
 	private void initCameraPhoto() {
+		syslogger.info("initCameraPhoto start");
 		CaptureDeviceManager
 				.getDevice("vfw:Microsoft WDM Image Capture (Win32):0");
 
@@ -56,9 +66,16 @@ public class CameraPhoto {
 			}
 		} catch (Exception e) {
 
-			e.printStackTrace();
+			syslogger.error(e.getMessage(), e);
 
 		}
+		try {
+			propWrapper.loadProperty(MonitorResourceBundle
+					.getResourseFilePath("monitor.properties"));
+		} catch (Exception ex) {
+			syslogger.error(ex.getMessage(), ex);
+		}
+		syslogger.info("initCameraPhoto end");
 	}
 
 	public void createPhoto() {
@@ -72,8 +89,10 @@ public class CameraPhoto {
 		Image image = bufferToImage.createImage(buffer);
 
 		if (null != image) {
-			String filePath = "f:/photo/" + System.currentTimeMillis() + ".jpg";
-			File file = new File("f:/photo");
+			String filePath = propWrapper.getProperty("ftpSendFileDir")
+					+ "/" + System.currentTimeMillis() + ".jpg";
+			File file = new File(propWrapper
+					.getProperty("FTP_UPLOAD_FILE_PATH"));
 			if (!file.exists()) {
 				file.mkdirs();
 			}
@@ -84,6 +103,7 @@ public class CameraPhoto {
 	// 保存图片
 
 	private void saveImage(Image image, String path) {
+		syslogger.info("保存图片 start" + path);
 
 		// 图片缓存
 
@@ -121,9 +141,10 @@ public class CameraPhoto {
 
 			fos.close();
 
+			syslogger.info("保存图片 end");
 		} catch (Exception e) {
 
-			e.printStackTrace();
+			syslogger.error(e.getMessage(), e);
 
 		}
 
