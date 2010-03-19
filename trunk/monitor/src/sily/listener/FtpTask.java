@@ -12,9 +12,6 @@ public class FtpTask extends TimerTask {
 	private ServletContext context = null;
 	private static final FtpServerLogic ftpServ = new FtpServerLogic();
 	
-	public FtpTask() {
-	}
-
 	public FtpTask(ServletContext context) {
 		this.context = context;
 	}
@@ -28,7 +25,9 @@ public class FtpTask extends TimerTask {
 				//context.log("开始执行指定任务");
 				// TODO 添加自定义的详细任务，以下只是示例
 				// 系统定时发送邮件
+				context.log("------上传文件开始------");
 				ftpServ.uploadMonitorImg();
+				context.log("------上传文件结束------");
 
 				isRunning = false;
 				//context.log("指定任务执行结束");

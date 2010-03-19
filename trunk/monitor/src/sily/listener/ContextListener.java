@@ -24,7 +24,7 @@ public class ContextListener extends HttpServlet implements
 		event.getServletContext().log("定时器已启动");
 		timer = new java.util.Timer(true);
 		timer.schedule(new FtpTask(event.getServletContext()), 0,
-						5 * 1000);
+						1 * 1000);
 		timer1 = new java.util.Timer(true);
 		timer1.schedule(new PhotoTask(event.getServletContext()), 0,
 				10 * 1000);
