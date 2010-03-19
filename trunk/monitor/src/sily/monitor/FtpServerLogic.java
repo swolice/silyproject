@@ -48,6 +48,7 @@ public class FtpServerLogic{
 	 * @param input 输入流
 	 */
 	public void uploadMonitorImg(){
+		syslogger.info("uploadMonitorImg");
 		FTPClient ftp = new FTPClient();
 		try {
 			
@@ -118,6 +119,9 @@ public class FtpServerLogic{
     		
     		File localFiles[] = fileUploadLocalPath.listFiles();
     		for( int i=0; i< localFiles.length; i++) {
+    			if(!ftp.isConnected())
+    				return;
+    			
     			syslogger.info("上传文件名： 【" + localFiles[i].getName() + "】开始");
     			InputStream input = new FileInputStream(localFiles[i]);
     			
@@ -125,7 +129,8 @@ public class FtpServerLogic{
     			mt.start();
     			
     			ftp.storeFile(localFiles[i].getName(), input);
-
+    			
+    			
     			mt.flag = false;
     			
     			input.close();
@@ -135,6 +140,7 @@ public class FtpServerLogic{
     			syslogger.info("删除已上传的： 【" + localFiles[i].getName() + "】结束");
     		}
 			ftp.logout();
+			syslogger.info("uploadMonitorImg");
 		} catch (IOException e) {
 			syslogger.error("上传文件失败",e);
 			try {
@@ -208,6 +214,7 @@ public class FtpServerLogic{
 	}
 
 	private static class MonitorThread extends Thread {
+		Logger syslogger = Logger.getLogger(MonitorThread.class.getName());
         long timeOut;
         FTPClient ftp;
         public boolean flag = true;
@@ -221,16 +228,18 @@ public class FtpServerLogic{
 				try {
 					Thread.sleep(1000);
 					i++;
-					if(i == timeOut){
+					if(i*1000 == timeOut){
 						try {
+							ftp.logout();
 							ftp.disconnect();
+							syslogger.error("连接关闭。。。。"+ftp.hashCode());
 						} catch (IOException e) {
-							e.printStackTrace();
+							syslogger.error("连接关闭。。。。", e);
 						}
 						flag = false;
 					}
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+					syslogger.error(e.getMessage(), e);
 				}
 			}
 		}
