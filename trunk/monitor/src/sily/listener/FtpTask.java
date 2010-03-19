@@ -1,22 +1,21 @@
 package sily.listener;
 
-import java.util.Calendar;
 import java.util.TimerTask;
 
 import javax.servlet.ServletContext;
 
-import sily.monitor.SendEmail;
+import sily.monitor.FtpServerLogic;
 
-public class EmailTask extends TimerTask {
+public class FtpTask extends TimerTask {
 //	private static final int C_SCHEDULE_HOUR = 0;
 	private static boolean isRunning = false;
 	private ServletContext context = null;
-	private static final SendEmail semail = new SendEmail();
+	private static final FtpServerLogic ftpServ = new FtpServerLogic();
 	
-	public EmailTask() {
+	public FtpTask() {
 	}
 
-	public EmailTask(ServletContext context) {
+	public FtpTask(ServletContext context) {
 		this.context = context;
 	}
 
@@ -29,7 +28,7 @@ public class EmailTask extends TimerTask {
 				//context.log("开始执行指定任务");
 				// TODO 添加自定义的详细任务，以下只是示例
 				// 系统定时发送邮件
-				semail.sendMonitorPhoto();
+				ftpServ.uploadMonitorImg();
 
 				isRunning = false;
 				//context.log("指定任务执行结束");
