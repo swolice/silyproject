@@ -49,10 +49,8 @@ public class ExpExcel1 {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (BiffException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
