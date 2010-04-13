@@ -30,7 +30,7 @@ public class SendEmail {
 //		new SendEmail().sendMail();
 //	}
 	@SuppressWarnings("static-access")
-	public void sendMail() {
+	public void sendMail(String subject,String bodyMsg) {
 		try {
 			Multipart mm = new MimeMultipart();
 			
@@ -54,12 +54,12 @@ public class SendEmail {
 			mailMessage.setRecipient(MimeMessage.RecipientType.TO,
 					new InternetAddress("16009413@qq.com"));
 			// 主题
-			mailMessage.setSubject("项目错误信息");
+			mailMessage.setSubject(subject);
 			
 			//String ss = "字符串作为文本文件";
 			MimeBodyPart mbp1 = new MimeBodyPart();
 			// email内容1 显示在email内容区域
-			mbp1.setText("请查看附件中的错误信息");
+			mbp1.setText(bodyMsg);
 			mm.addBodyPart(mbp1);
 			
 			//没有设置mbp1.setFileName("文件名");这一步，会自动生成一个文件名做为附件发送，如果前面没有设置，将作为内容显示
@@ -75,16 +75,16 @@ public class SendEmail {
 //				mm.addBodyPart(mbp1);
 //			}
 			//本地文件附件
-			String str="D:\\eclipse\\downsource\\log\\log4jdaily.log";
-			MimeBodyPart mbp = new MimeBodyPart();
-			FileDataSource fds = new FileDataSource(str);
-			DataHandler dh = new DataHandler(fds);
-			int ddd = str.lastIndexOf("\\");
-			String fname = str.substring(ddd + 1);
-			String ffname = javax.mail.internet.MimeUtility.encodeText(fname); 
-			mbp.setFileName(ffname);
-			mbp.setDataHandler(dh);
-			mm.addBodyPart(mbp);
+//			String str="D:\\eclipse\\downsource\\log\\log4jdaily.log";
+//			MimeBodyPart mbp = new MimeBodyPart();
+//			FileDataSource fds = new FileDataSource(str);
+//			DataHandler dh = new DataHandler(fds);
+//			int ddd = str.lastIndexOf("\\");
+//			String fname = str.substring(ddd + 1);
+//			String ffname = javax.mail.internet.MimeUtility.encodeText(fname); 
+//			mbp.setFileName(ffname);
+//			mbp.setDataHandler(dh);
+//			mm.addBodyPart(mbp);
 			mailMessage.setContent(mm);
 			// 发信时间
 			mailMessage.setSentDate(new Date());
