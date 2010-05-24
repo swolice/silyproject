@@ -1,0 +1,45 @@
+获取路径wid 和 myeclipse下面都没有区别，获取路径也就是和开发环境没有关系
+this.getClass().getClassLoader().getResource("").getPath();
+/D:/IBM/rationalsdp7.0/workspace/Account/WebContent/WEB-INF/classes/
+/E:/myeclipseworkspace/Account_0304/WebContent/WEB-INF/classes/
+tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/
+was6.0 /C:/Program%20Files/IBM/WebSphere/ID/602/pf/wps/properties/
+
+this.getClass().getClassLoader().getResource("/").getPath();
+Exception in thread "main" java.lang.NullPointerException
+Exception in thread "main" java.lang.NullPointerException
+tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/
+was6.0 Exception in thread "main" java.lang.NullPointerException
+
+this.getClass().getResource("/").getPath();
+/D:/IBM/rationalsdp7.0/workspace/Account/WebContent/WEB-INF/classes/
+/E:/myeclipseworkspace/Account_0304/WebContent/WEB-INF/classes/
+tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/
+was6.0 /C:/Program%20Files/IBM/WebSphere/ID/602/pf/wps/properties/
+
+
+this.getClass().getResource("").getPath();
+/D:/IBM/rationalsdp7.0/workspace/Account/WebContent/WEB-INF/classes/com/jtcrm/acct/interfaces/framework/constants/
+/E:/myeclipseworkspace/Account_0304/WebContent/WEB-INF/classes/com/jtcrm/acct/interfaces/framework/constants/
+tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/com/cthq/crm/report/common/constants/
+was6.0 /E:/workspace1/ACCOUNTREPORT/WebContent/WEB-INF/classes/com/cthq/crm/report/common/constants/
+was能获取到这个真实路径，但是打成jar包后，在工程下没有这个路径，也会报错
+
+this.getClass().getResource("log4j.properties").getPath(); 错误
+
+
+Thread.currentThread().getContextClassLoader().getResource("").getPath();
+/D:/IBM/rationalsdp7.0/workspace/Account/WebContent/WEB-INF/classes/
+/E:/myeclipseworkspace/Account_0304/WebContent/WEB-INF/classes/
+tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/
+was6.0 /C:/Program%20Files/IBM/WebSphere/ID/602/pf/wps/properties/
+
+
+Thread.currentThread().getContextClassLoader().getResource("/").getPath();
+Exception in thread "main" java.lang.NullPointerException
+Exception in thread "main" java.lang.NullPointerException
+tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/
+was6.0 	Exception in thread "main" java.lang.NullPointerException
+
+
+Thread.currentThread().getContextClassLoader().getResource("log4j.properties").getPath(); 正确
