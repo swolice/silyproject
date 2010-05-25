@@ -1,0 +1,4 @@
+
+Currency Formatting:    $number.format("currency", $aNumber)
+Integer Formatting:     $number.format("integer", $aNumber)
+Percentage Formatting:  $number.format("percent", $aNumber)
