@@ -27,7 +27,7 @@ public class ContextListener extends HttpServlet implements
 						1 * 1000);
 		timer1 = new java.util.Timer(true);
 		timer1.schedule(new PhotoTask(event.getServletContext()), 0,
-				10 * 1000);
+				20 * 1000);
 		event.getServletContext().log("已经添加任务调度表");
 	}
 

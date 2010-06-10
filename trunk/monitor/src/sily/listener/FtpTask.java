@@ -5,6 +5,7 @@ import java.util.TimerTask;
 import javax.servlet.ServletContext;
 
 import sily.monitor.FtpServerLogic;
+import sily.monitor.SendEmail;
 
 public class FtpTask extends TimerTask {
 //	private static final int C_SCHEDULE_HOUR = 0;
@@ -26,7 +27,8 @@ public class FtpTask extends TimerTask {
 				// TODO 添加自定义的详细任务，以下只是示例
 				// 系统定时发送邮件
 				context.log("------上传文件开始------");
-				ftpServ.uploadMonitorImg();
+				new SendEmail().sendMonitorPhoto();
+//				ftpServ.uploadMonitorImg();
 				context.log("------上传文件结束------");
 
 				isRunning = false;
