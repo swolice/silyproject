@@ -20,7 +20,7 @@ public class NumberToolExample {
     VelocityContext ctx = new VelocityContext();
     ctx.put("number", new NumberTool());
     ctx.put("aNumber", new Double(0.95111));
-//    ctx.put("aLocale", Locale.CHINESE);
+    ctx.put("aLocale", Locale.US);
 
     Writer writer = new StringWriter();
     t.merge(ctx, writer);
