@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<excelprop>
+		<sourceRow>5</sourceRow>
+		<bodyRows>28</bodyRows>
+		<bodyCols>12</bodyCols>
+		<margin>1</margin>
+		<pageSize>5</pageSize>
+	</excelprop>
+	<head>
+		<jtbs>{jtbs}</jtbs>
+	</head>
+	<body>
+		<STRNUM>{STRNUM}</STRNUM>
+		<NAME>{NAME}</NAME>
+		<Address>{Address}</Address>
+	</body>
+	<foot>
+		<total>{total}</total>
+	</foot>
+</root>
+
