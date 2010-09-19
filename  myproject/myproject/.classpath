@@ -17,7 +17,13 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.0.5-bin.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/sound.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xercesImpl.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jxl.jar" sourcepath="E:/安装文件/jexcelapi/src"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/velocity-1.6.2-dep.jar" sourcepath="E:/安装文件/velocity-1.6.2/src"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/velocity-tools-1.1-rc1.jar" sourcepath="E:/安装文件/velocity-1.6.2/src"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/crm-jdbc.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jsoup-1.2.3.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
