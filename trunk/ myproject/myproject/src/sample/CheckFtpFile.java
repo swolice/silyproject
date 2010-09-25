@@ -3,16 +3,15 @@
  */
 package sample;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
 
 import com.cthq.crm.webservice.common.xml.imp.XMLBaseReader;
 import com.cthq.crm.webservice.common.xml.imp.XMLCommonReader;
 import com.cthq.crm.webservice.common.xml.imp.XMLNode;
 import com.cthq.crm.webservice.common.xml.imp.XMLNodeCollection.Entry;
+import com.cthq.crm.webservice.common.xml.interfaces.IXMLAttribute;
 import com.cthq.crm.webservice.util.ReadFile;
 
 /**
@@ -35,6 +34,15 @@ public class CheckFtpFile {
 		}
 		List returnList = getXmlLevelItemList(xCommonReader,"root");
 		System.out.println(returnList);
+		returnList = (List)returnList.get(0);
+		for (int i = 0; i < returnList.size(); i++) {
+			List attrList = (List)returnList.get(i);
+			for (int j = 0; j < attrList.size(); j++) {
+				IXMLAttribute xmlAttr = (IXMLAttribute)attrList.get(j); 
+				System.out.print(xmlAttr.getName() + ":" + xmlAttr.getValue());
+			}
+			System.out.println("======="+i+"======");
+		}
 	}
 	
 	/**
