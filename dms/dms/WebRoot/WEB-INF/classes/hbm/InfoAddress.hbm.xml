@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.InfoAddress" table="info_address">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="INFO_ID" length="11" name="infoId" type="java.lang.Integer"/>
+<property column="ADDRESS" length="254" name="address" type="java.lang.String"/>
+<property column="LON" length="11" name="lon" type="java.lang.Integer"/>
+<property column="LAT" length="11" name="lat" type="java.lang.Integer"/>
+<property column="VIEW_NAME" length="254" name="viewName" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

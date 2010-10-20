@@ -1,0 +1,26 @@
+<xml>
+	<seg new="1" loop="1" ID="i100816014309">
+		<value ID="i100816014417">
+			<name><![CDATA[ORG_PRICE]]></name>
+			<reg><![CDATA[<strong class="original">[^0-9]*([0-9.]+)</strong>]]></reg>
+		</value>
+		<value ID="i100816014441">
+			<name><![CDATA[DISCOUNT]]></name>
+			<reg><![CDATA[<strong>([0-9.]+)折</strong>]]></reg>
+		</value>
+		<value ID="i100816014545">
+			<name><![CDATA[USER_COUNT]]></name>
+			<reg><![CDATA[<span class="num">(\d+)</span>]]></reg>
+		</value>
+		<value ID="i100816014355">
+			<name><![CDATA[SELL_PRICE]]></name>
+			<reg><![CDATA[<p class="cur-price"><span class="unit">.*</span>([0-9.]+)</p>]]></reg>
+		</value>
+		<start><![CDATA[<p class="legend">现价</p>]]></start>
+		<end><![CDATA[<span>把下面的内容通过]]></end>
+	</seg>
+	<domain ID="domain">4</domain>
+	<city ID="city">2</city>
+	<url ID="url">http://www.nuomi.com</url>
+	<charset ID="charset">utf-8</charset>
+</xml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+<bean id="siteLogic" class="logic.SiteLogic"></bean>
+<bean id="cityLogic" class="logic.CityLogic"></bean>
+<bean id="ruleLogic" class="logic.RuleLogic"></bean>
+<bean id="infoLogic" class="logic.InfoLogic"></bean>
+<bean id="poiLogic" class="logic.PoiLogic"></bean>
+<bean id="indexLogic" class="logic.IndexLogic"></bean>
+<bean id="passportLogic" class="logic.PassportLogic"></bean>
+<bean id="cdLogic" class="logic.CityDomainLogic"></bean>
+<bean id="userLogic" class="logic.UserLogic"></bean>
+<bean id="commentLogic" class="logic.CommentLogic"></bean>
+<bean id="homeLogic" class="logic.HomeLogic"></bean>
+<bean id="serviceLogic" class="logic.ServiceLogic"></bean>
+<bean id="groupLogic" class="logic.GroupLogic"></bean>
+<bean id="complainLogic" class="logic.ComplainLogic"></bean>
+</beans>

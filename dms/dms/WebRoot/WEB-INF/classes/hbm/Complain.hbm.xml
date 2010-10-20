@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.Complain" table="complain">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="USER_ID" length="11" name="userId" type="java.lang.Integer"/>
+<property column="INFO_ID" length="11" name="infoId" type="java.lang.Integer"/>
+<property column="CONTENT" length="65535" name="content" type="java.lang.String"/>
+<property column="COMMENT_TYPE" length="11" name="commentType" type="java.lang.Integer"/>
+<property column="VIEW_TYPE" length="11" name="viewType" type="java.lang.Integer"/>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="AUDIT_FLAG" length="11" name="auditFlag" type="java.lang.Integer"/>
+<property column="USERNAME" length="255" name="username" type="java.lang.String"/>
+<property column="EMAIL" length="255" name="email" type="java.lang.String"/>
+<property column="PHONE" length="255" name="phone" type="java.lang.String"/>
+<property column="REPLY" length="65535" name="reply" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

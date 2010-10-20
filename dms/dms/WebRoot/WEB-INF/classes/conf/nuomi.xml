@@ -1,0 +1,30 @@
+<xml>
+<domain>nuomi</domain>
+<url>http://www.nuomi.com/</url>
+<charset>UTF-8</charset>
+<city>北京</city>
+<seg>
+<start><![CDATA[<p class="legend">现价</p>]]></start>
+<end><![CDATA[<span>把下面的内容通过]]></end>
+<value>
+<name>SellPrice</name>
+<reg><![CDATA[<p class="cur-price"><span class="unit">¥</span>([0-9.]+)</p>]]></reg>
+</value>
+<value>
+<name>OrgPrice</name>
+<reg><![CDATA[<strong class="original">¥([0-9.]+)</strong>]]></reg>
+</value>
+<value>
+<name>Discount</name>
+<reg><![CDATA[<strong>([0-9.]+)折</strong>]]></reg>
+</value>
+<value>
+<name>reduce</name>
+<reg><![CDATA[<td><strong>¥([0-9.]+)</strong></td>]]></reg>
+</value>
+<value>
+<name>UserCount</name>
+<reg><![CDATA[<span class="num">(\d+)</span>]]></reg>
+</value>
+</seg>
+</xml>
