@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.Sites" table="sites">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="SITE_NAME" length="100" name="siteName" type="java.lang.String"/>
+<property column="PIC_URL" length="254" name="picUrl" type="java.lang.String"/>
+<property column="WEB_PAGE" length="100" name="webPage" type="java.lang.String"/>
+<property column="ADDRESS" length="254" name="address" type="java.lang.String"/>
+<property column="DOMAIN" length="100" name="domain" type="java.lang.String"/>
+<property column="CONFIG_XML" length="100" name="configXml" type="java.lang.String"/>
+<property column="ONLINE_TIME" length="100" name="onlineTime" type="java.lang.String"/>
+<property column="PURCHASE_TYPE" length="100" name="purchaseType" type="java.lang.String"/>
+<property column="SITE_TYPE" length="100" name="siteType" type="java.lang.String"/>
+<property column="FREQUENCY" length="100" name="frequency" type="java.lang.String"/>
+<property column="AVERAGE_PURCHASER" length="100" name="averagePurchaser" type="java.lang.String"/>
+<property column="BRIEF" length="65535" name="brief" type="java.lang.String"/>
+<property column="EMAIL" length="100" name="email" type="java.lang.String"/>
+<property column="QQ" length="20" name="qq" type="java.lang.String"/>
+<property column="MSN" length="100" name="msn" type="java.lang.String"/>
+<property column="PHONE" length="100" name="phone" type="java.lang.String"/>
+<property column="VIEW_FLAG" length="11" name="viewFlag" type="java.lang.Integer"/>
+<property column="DELETE_FLAG" length="11" name="deleteFlag" type="java.lang.Integer"/>
+<property column="PROMOTE_COUNT" length="11" name="promoteCount" type="java.lang.Integer"/>
+<property column="COMMENT_COUNT" length="11" name="commentCount" type="java.lang.Integer"/>
+<property column="POSITIVE_COUNT" length="11" name="positiveCount" type="java.lang.Integer"/>
+<property column="MODERATE_COUNT" length="11" name="moderateCount" type="java.lang.Integer"/>
+<property column="NEGATIVE_COUNT" length="11" name="negativeCount" type="java.lang.Integer"/>
+<property column="CLICK_COUNT" length="11" name="clickCount" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.Userinfo" table="userinfo">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="USERNAME" length="254" name="username" type="java.lang.String"/>
+<property column="PASSWORD" length="254" name="password" type="java.lang.String"/>
+<property column="EMAIL" length="254" name="email" type="java.lang.String"/>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="ACTIVE_FLAG" length="11" name="activeFlag" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

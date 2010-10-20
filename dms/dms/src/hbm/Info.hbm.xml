@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.Info" table="info">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="CATEGORY" length="11" name="category" type="java.lang.Integer"/>
+<property column="CITY" length="11" name="city" type="java.lang.Integer"/>
+<property column="RULE_ID" length="11" name="ruleId" type="java.lang.Integer"/>
+<property column="END_FLAG" length="11" name="endFlag" type="java.lang.Integer"/>
+<property column="URL" length="254" name="url" type="java.lang.String"/>
+<property column="URL1" length="254" name="url1" type="java.lang.String"/>
+<property column="START_TIME" length="19" name="startTime" type="java.util.Date"/>
+<property column="END_TIME" length="19" name="endTime" type="java.util.Date"/>
+<property column="ORG_PRICE" length="11" name="orgPrice" type="java.lang.Integer"/>
+<property column="SELL_PRICE" length="11" name="sellPrice" type="java.lang.Integer"/>
+<property column="DISCOUNT" length="11" name="discount" type="java.lang.Integer"/>
+<property column="TITLE" length="254" name="title" type="java.lang.String"/>
+<property column="PIC_URL" length="254" name="picUrl" type="java.lang.String"/>
+<property column="VIEW_NAME" length="254" name="viewName" type="java.lang.String"/>
+<property column="SITE_ID" length="11" name="siteId" type="java.lang.Integer"/>
+<property column="DETAIL" length="65535" name="detail" type="java.lang.String"/>
+<property column="ADDRESS" length="65535" name="address" type="java.lang.String"/>
+<property column="USER_COUNT" length="11" name="userCount" type="java.lang.Integer"/>
+<property column="VIEW_FLAG" length="11" name="viewFlag" type="java.lang.Integer"/>
+<property column="DELETE_FLAG" length="11" name="deleteFlag" type="java.lang.Integer"/>
+<property column="PHONE" length="254" name="phone" type="java.lang.String"/>
+<property column="WEB_SITE" length="254" name="webSite" type="java.lang.String"/>
+<property column="TRAFFIC_INFO" length="254" name="trafficInfo" type="java.lang.String"/>
+<property column="BIEFE" length="65535" name="biefe" type="java.lang.String"/>
+<property column="LATLON" length="65535" name="latlon" type="java.lang.String"/>
+<property column="AREA" length="200" name="area" type="java.lang.String"/>
+<property column="IF_TEST" length="11" name="ifTest" type="java.lang.Integer"/>
+<property column="CLICK_COUNT" length="11" name="clickCount" type="java.lang.Integer"/>
+<property column="PROMOTE_COUNT" length="11" name="promoteCount" type="java.lang.Integer"/>
+<property column="COMMENT_COUNT" length="11" name="commentCount" type="java.lang.Integer"/>
+<property column="PRO1" length="254" name="pro1" type="java.lang.String"/>
+<property column="PRO2" length="254" name="pro2" type="java.lang.String"/>
+<property column="PRO3" length="254" name="pro3" type="java.lang.String"/>
+<property column="PRO4" length="254" name="pro4" type="java.lang.String"/>
+<property column="PRO5" length="254" name="pro5" type="java.lang.String"/>
+<property column="POSITIVE_COUNT" length="11" name="positiveCount" type="java.lang.Integer"/>
+<property column="MODERATE_COUNT" length="11" name="moderateCount" type="java.lang.Integer"/>
+<property column="NEGATIVE_COUNT" length="11" name="negativeCount" type="java.lang.Integer"/>
+<property column="GROUP1" length="11" name="group" type="java.lang.Integer"/>
+<property column="SERVICE" length="11" name="service" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

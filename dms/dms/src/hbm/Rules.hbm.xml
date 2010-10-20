@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.Rules" table="rules">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="DOMAIN_ID" length="11" name="domainId" type="java.lang.Integer"/>
+<property column="CITY" length="11" name="city" type="java.lang.Integer"/>
+<property column="RULE_XML" length="65535" name="ruleXml" type="java.lang.String"/>
+<property column="PRO1" length="254" name="pro1" type="java.lang.String"/>
+<property column="PRO2" length="254" name="pro2" type="java.lang.String"/>
+<property column="PRO3" length="254" name="pro3" type="java.lang.String"/>
+<property column="PRO4" length="254" name="pro4" type="java.lang.String"/>
+<property column="PRO5" length="254" name="pro5" type="java.lang.String"/>
+<property column="ACTIVE_FLAG" length="11" name="activeFlag" type="java.lang.Integer"/>
+<property column="DELETE_FLAG" length="11" name="deleteFlag" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

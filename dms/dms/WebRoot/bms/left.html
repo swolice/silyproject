@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>siderbar-left</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK REL="stylesheet" TYPE="text/css" HREF="../css/style.css" />
+<link href="../css/navbar-pix.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../js/li_navbar.js"></script>
+
+<style type="text/css">
+html {
+overflow-x:hidden!important;
+*overflow-x:hidden;
+}
+
+</style>
+</head>
+<body>
+
+<script language="JavaScript" type="text/JavaScript">
+var show = true;
+var hide = false;
+//修改菜单的上下箭头符号
+function my_on(head,body)
+{
+	var tag_a;
+	for(var i=0;i<head.childNodes.length;i++)
+	{
+		if (head.childNodes[i].nodeName=="A")
+		{
+			tag_a=head.childNodes[i];
+			break;
+		}
+	}
+	tag_a.className="on";
+}
+function my_off(head,body)
+{
+	var tag_a;
+	for(var i=0;i<head.childNodes.length;i++)
+	{
+		if (head.childNodes[i].nodeName=="A")
+		{
+			tag_a=head.childNodes[i];
+			break;
+		}
+	}
+	tag_a.className="off";
+}
+//添加菜单	
+window.onload=function()
+{
+	m1 =new Menu("menu1",'menu1_child','dtu','100',show,my_on,my_off);
+	m1.init();
+	m2 =new Menu("menu2",'menu2_child','dtu','100',hide,my_on,my_off);
+	m2.init();
+	m3 =new Menu("menu3",'menu3_child','dtu','100',hide,my_on,my_off);
+	m3.init();
+	m4 =new Menu("menu4",'menu4_child','dtu','100',hide,my_on,my_off);
+	m4.init();
+	m41 =new Menu("menu41",'menu41_child','dtu','100',hide,my_on,my_off);
+	m41.init();	
+	m5 =new Menu("menu5",'menu5_child','dtu','100',hide,my_on,my_off);
+	m5.init();
+	m6 =new Menu("menu6",'menu6_child','dtu','100',hide,my_on,my_off);
+	m6.init();	
+	m61 =new Menu("menu61",'menu61_child','dtu','100',hide,my_on,my_off);
+	m61.init();	
+	m7 =new Menu("menu7",'menu7_child','dtu','100',hide,my_on,my_off);
+	m7.init();	
+		m8 =new Menu("menu8",'menu8_child','dtu','100',hide,my_on,my_off);
+	m8.init();		
+		m9 =new Menu("menu9",'menu9_child','dtu','100',hide,my_on,my_off);
+	m9.init();	
+}
+</script>
+
+<div id="left_tit"><img src="../images/left_tit1.gif" alt="" /></div>
+
+<noscript title="系统提示">
+<div class="tit" id="menu0" ><a href="" class="on"  title="折叠菜单" name="nojs" id="nojs" >系统提示</a> </div>
+<div class="list" id="menu0_child">
+  <p><strong>您的设备不支持js,不能使用菜的折叠功能</strong></p>
+</div>
+</noscript>
+
+<div id="menu">
+	<div class="tit" id="menu1" title="菜单标题">
+		<div class="titpic" id="pc1"></div>
+		<a href="#nojs" title="折叠菜单" target="" class="on" id="menu1_a" tabindex="1" >渠道管理</a> </div>
+	<div class="list" id="menu1_child" >
+		<ul>
+			<li><a href="manage/channel_add.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />新建渠道</a></li>
+			<li><a href="manage/channel_list.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />渠道管理</a></li>
+			<!--li><a href="manage/channel_mod.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />修改渠道</a></li-->
+		</ul>
+	</div>
+	<div class="tit" id="menu2" title="菜单标题" >
+		<div class="titpic" id="pc2"></div>
+		<a href="#nojs" title="折叠菜单" target="" class="on" id="menu2_a" tabindex="2">分成比例管理</a> </div>
+	<div class="list" id="menu2_child">
+		<ul>
+			<li id="m2_1" ><a href="manage/share_add.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />新建渠道分成比例</a></li>
+			<li id="m2_2" ><a href="manage/share_list.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />渠道分成比例管理</a></li>
+			<li id="m2_3" ><a href="manage/game_share_add.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />新建产品分成比例</a></li>
+			<li id="m2_4" ><a href="manage/game_share_list.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />产品分成比例管理</a></li>
+		</ul>
+	</div>
+	<div class="tit" id="menu3" title="菜单标题" >
+		<div class="titpic" id="pc3"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu3_a" tabindex="3">资源位置管理</a> </div>
+	<div class="list" id="menu3_child">
+		<ul>
+			<li id="m3_1" ><a href="manage/resource_add.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />新建资源位置</a></li>
+			<li id="m3_2" ><a href="manage/resource_list.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />资源位置管理</a></li>
+		</ul>
+	</div>
+	<div class="tit" id="menu4" title="菜单标题" >
+		<div class="titpic" id="pc4"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu4_a" tabindex="4">单渠道收入统计</a> </div>
+	<div class="list" id="menu4_child">
+		<ul>
+			<li id="m4_1" ><a href="stat/channel_daily.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />每日收入统计</a></li>
+			<li id="m4_2" ><a href="stat/game_daily.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />每日各产品线收入统计</a></li>
+		</ul>
+	</div>
+	<div class="tit" id="menu41" title="菜单标题" >
+		<div class="titpic" id="pc41"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu41_a" tabindex="5">单渠道用户统计</a> </div>
+	<div class="list" id="menu41_child">
+		<ul>
+			<li id="m41_1" ><a href="stat/user_daily.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />每日用户统计</a></li>
+			<li id="m41_2" ><a href="stat/user_game_daily.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />每日各产品线用户统计</a></li>
+		</ul>
+	</div>	
+	<div class="tit" id="menu5" title="菜单标题" >
+		<div class="titpic" id="pc5"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu5_a" tabindex="6">多渠道收入统计</a> </div>
+	<div class="list" id="menu5_child">
+		<ul>
+			<li id="m5_1" ><a href="stat/daily.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />每日总收入统计</a></li>
+			<li id="m5_2" ><a href="stat/channels_daily.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />每日各渠道收入统计</a></li>
+		</ul>
+	</div>
+	<div class="tit" id="menu6" title="菜单标题" >
+		<div class="titpic" id="pc6"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu6_a" tabindex="6">月收入报表统计</a> </div>
+	<div class="list" id="menu6_child">
+		<ul>
+			<li id="m6_1" ><a href="stat/monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />月收入统计报表</a></li>
+			<li id="m6_2" ><a href="stat/channels_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />多渠道月收入统计报表</a></li>
+			<li id="m6_3" ><a href="stat/game_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品多渠道月收入统计报表</a></li>
+			<li id="m6_4" ><a href="stat/channel_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单渠道各月份收入统计报表</a></li>
+			<li id="m6_5" ><a href="stat/game1_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品各月份收入统计报表</a></li>
+			<li id="m6_6" ><a href="stat/game_channel_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品单渠道各月份收入统计报</a></li>
+		</ul>
+	</div>
+	<div class="tit" id="menu61" title="菜单标题" >
+		<div class="titpic" id="pc61"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu6_a" tabindex="6">月用户报表统计</a> </div>
+	<div class="list" id="menu61_child">
+		<ul>
+			<li id="m61_1" ><a href="stat/user_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />月用户统计报表</a></li>
+			<li id="m61_2" ><a href="stat/user_channels_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />多渠道月用户统计报表</a></li>
+			<li id="m61_3" ><a href="stat/user_game_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品多渠道月用户统计报表</a></li>
+			<li id="m61_4" ><a href="stat/user_channel_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单渠道各月份用户统计报表</a></li>
+			<li id="m61_5" ><a href="stat/user_game1_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品各月份用户统计报表</a></li>
+			<li id="m61_6" ><a href="stat/user_game_channel_monthly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品单渠道各月份用户统计报表</a></li>
+		</ul>
+	</div>	
+	
+	<div class="tit" id="menu7" title="菜单标题" >
+		<div class="titpic" id="pc7"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu7_a" tabindex="7">周收入报表统计</a> </div>
+	<div class="list" id="menu7_child">
+		<ul>
+			<li id="m7_1" ><a href="stat/weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />周收入统计报表</a></li>
+			<li id="m7_2" ><a href="stat/channels_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />多渠道周收入统计报表</a></li>
+			<li id="m7_3" ><a href="stat/game_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品多渠道周收入统计报表</a></li>
+			<li id="m7_4" ><a href="stat/channel_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单渠道各周收入统计报表</a></li>
+			<li id="m7_5" ><a href="stat/game1_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品各周收入统计报表</a></li>
+			<li id="m7_6" ><a href="stat/game_channel_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品单渠道各周收入统计报</a></li>
+		</ul>
+	</div>
+
+
+	<div class="tit" id="menu8" title="菜单标题" >
+		<div class="titpic" id="pc8"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu8_a" tabindex="7">周用户报表统计</a> </div>
+	<div class="list" id="menu8_child">
+		<ul>
+			<li id="m8_1" ><a href="stat/user_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />周用户统计报表</a></li>
+			<li id="m8_2" ><a href="stat/user_channels_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />多渠道周用户统计报表</a></li>
+			<li id="m8_3" ><a href="stat/user_game_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品多渠道周用户统计报表</a></li>
+			<li id="m8_4" ><a href="stat/user_channel_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单渠道各周用户统计报表</a></li>
+			<li id="m8_5" ><a href="stat/user_game1_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品各周用户统计报表</a></li>
+			<li id="m8_6" ><a href="stat/user_game_channel_weekly.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />单品单渠道各周用户统计报表</a></li>
+		</ul>
+	</div>
+	
+	<div class="tit" id="menu9" title="菜单标题" >
+		<div class="titpic" id="pc9"></div>
+		<a href="" title="折叠菜单" target="" class="on" id="menu9_a" tabindex="7">用户归属地统计</a> </div>
+	<div class="list" id="menu9_child">
+		<ul>
+			<li id="m9_1" ><a href="stat/user_province.jsp" target="mainFrame"><img src="../images/ico/2.gif" alt="" />用户归属地统计</a></li>
+		</ul>
+	</div>	
+
+</div>
+</body> 
+</html> 

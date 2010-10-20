@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <form-beans >
+  	<form-bean name="siteForm" type="form.SiteForm" ></form-bean>
+  	<form-bean name="cityForm" type="form.CityForm" ></form-bean>
+  	<form-bean name="ruleForm" type="form.RuleForm" ></form-bean>
+  	<form-bean name="infoForm" type="form.InfoForm" ></form-bean>
+  	<form-bean name="addressForm" type="form.AddressForm" ></form-bean>
+  	<form-bean name="regForm" type="form.RegForm" ></form-bean>
+  	<form-bean name="cdForm" type="form.CityDomainForm" ></form-bean>
+  	<form-bean name="serviceForm" type="form.ServiceForm" ></form-bean>
+  	<form-bean name="groupForm" type="form.GroupForm" ></form-bean>
+  	<form-bean name="complainForm" type="form.ComplainForm" ></form-bean>
+  </form-beans>
+  
+  <action-mappings>
+  		<action name="siteForm" parameter="method" path="/bms/site" scope="request" type="action.SiteAction">
+			<forward name="view" 	path="/bms/site.jsp" />
+			<forward name="list" 	path="/bms/siteList.jsp" />
+		</action>
+  		<action name="cityForm" parameter="method" path="/bms/city" scope="request" type="action.CityAction">
+			<forward name="view" 	path="/bms/city.jsp" />
+			<forward name="list" 	path="/bms/cityList.jsp" />
+		</action>
+  		<action name="serviceForm" parameter="method" path="/bms/service" scope="request" type="action.ServiceAction">
+			<forward name="view" 	path="/bms/service.jsp" />
+			<forward name="list" 	path="/bms/serviceList.jsp" />
+		</action>
+		<action name="groupForm" parameter="method" path="/bms/group" scope="request" type="action.GroupAction">
+			<forward name="view" 	path="/bms/group.jsp" />
+			<forward name="list" 	path="/bms/groupList.jsp" />
+		</action>
+  		<action name="cdForm" parameter="method" path="/bms/cd" scope="request" type="action.CityDomainAction">
+			<forward name="view" 	path="/bms/cityDomain.jsp" />
+			<forward name="list" 	path="/bms/cityDomainList.jsp" />
+		</action>		
+  		<action name="ruleForm" parameter="method" path="/bms/rule" scope="request" type="action.RuleAction">
+			<forward name="view" 	path="/bms/rule.jsp" />
+			<forward name="list" 	path="/bms/ruleList.jsp" />
+			<forward name="detail" 	path="/bms/xml.jsp" />
+			<forward name="crawlView" 	path="/bms/crawlView.jsp" />
+		</action>		
+  	<action  parameter="method" path="/bms/user" scope="request" type="action.UserAction">
+			<forward name="list" 	path="/bms/userList.jsp" />
+		</action>
+  	<action  parameter="method" path="/bms/comment" scope="request" type="action.CommentAction">
+			<forward name="list" 	path="/bms/commentList.jsp" />
+			<forward name="view" 	path="/bms/comment.jsp" />
+		</action>					
+		 <action name="infoForm" parameter="method" path="/bms/info" scope="request" type="action.InfoAction">
+			<forward name="view" 	path="/bms/info.jsp" />
+			<forward name="list" 	path="/bms/infoList.jsp" />
+		</action>
+		 <action name="addressForm" parameter="method" path="/bms/poi" scope="request" type="action.PoiAction">
+			<forward name="view" 	path="/bms/poi.jsp" />
+			<forward name="list" 	path="/bms/poiList.jsp" />
+		</action>		
+		 <action parameter="method" path="/index" scope="request" type="action.IndexAction">
+			<forward name="list" 	path="/list.jsp" />
+			<forward name="list1" 	path="/list1.jsp" />
+			<forward name="mapView" 	path="/map.jsp" />
+			<forward name="mapView1" 	path="/map1.jsp" />
+			<forward name="detail" 	path="/detail.jsp" />
+			<forward name="site" 	path="/site.jsp" />
+			<forward name="nav" 	path="/nav.jsp" />
+			<forward name="listComment" 	path="/commentList.jsp" />			
+			<forward name="top" 	path="/top.jsp" />			
+			<forward name="newComment" 	path="/newComment.jsp" />			
+			<forward name="test" 	path="/listTest.jsp" />			
+			<forward name="service" 	path="/service.jsp" />			
+		</action>		
+		<action name="regForm"  parameter="method" path="/passport" scope="request" type="action.PassportAction">
+			<forward name="regok" 	path="/regok.jsp" />
+			<forward name="regerr" 	path="/regist.jsp" />
+			<forward name="loginok" 	path="/loginok.jsp" />
+			<forward name="loginerr" 	path="/login.jsp" />
+			<forward name="logoutok" 	path="/logoutok.jsp" />
+		  <forward name="resetok" 	path="/resetok.jsp" />
+			<forward name="reseterr" 	path="/password_reset.jsp" />
+		</action>		
+		<action  parameter="method" path="/home" scope="request" type="action.HomeAction">
+		<forward name="home" 	path="/home.jsp" />
+		<forward name="comment" 	path="/comment.jsp" />
+		<forward name="comment1" 	path="/comment1.jsp" />
+		<forward name="sendMsg" 	path="/send.jsp" />
+		<forward name="mymsg" 	path="/mymsg.jsp" />
+		</action>		
+		<action  name="complainForm" parameter="method" path="/complain" scope="request" type="action.ComplainAction">
+		<forward name="success" 	path="/feedback.jsp" />
+		<forward name="list" 	path="/feedbackList.jsp" />
+		</action>
+		<action  parameter="method" path="/bms/complain" scope="request" type="action.BmsComplainAction">
+		<forward name="list" 	path="/bms/feedbackList.jsp" />
+		<forward name="view" 	path="/bms/reply.jsp" />
+		</action>		
+  </action-mappings>
+    <message-resources parameter="ApplicationResources" />
+</struts-config>

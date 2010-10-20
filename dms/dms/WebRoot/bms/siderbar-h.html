@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>siderbar-left</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK REL="stylesheet" TYPE="text/css" HREF="../style/style.css" />
+<style type="text/css">
+.tdbg {
+	background:url(../images/topbottombg_center.gif);
+
+}
+.tdbgover {
+	background:url(../images/topbottombg_center.gif);
+
+}
+.tdbg2 {
+	background:url(../images/topbottombg_center.gif);
+
+}
+.tdbgover2 {
+	background:url(../images/topbottombg_center.gif);
+
+}
+</style>
+<script src="../js/li_time.js"></script>
+
+<script type="text/javascript"><!--
+function switchSysBar(){
+ if (parent.document.getElementById('topmain').rows=="120,31,*"){
+  document.getElementById('topbar').style.display="";
+  parent.document.getElementById('topmain').rows="0,31,*";
+ }
+ else{
+  parent.document.getElementById('topmain').rows="120,31,*";
+  document.getElementById('topbar').style.display="none"
+ }
+}
+function load(){
+    if (parent.document.getElementById('topmain').rows=="0,31,*"){
+  document.getElementById('topbar').style.display="";
+ }
+}
+// --></script>
+</head>
+<body onload="load();">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="20" height="31" background="../images/topbottombg_left.gif">&nbsp;</td>
+    <td background="../images/topbottombg_left.gif" style="padding-top:8px; vertical-align:top;"><span class="f_14b_orange"></span>您好，欢迎登录本系统！</td>
+    <td width="150" background="../images/topbottombg_center.gif" style="padding-top:8px; vertical-align:top;">
+	
+	
+<script language=javascript><!--
+function getFullYear(d){//d is a date object
+yr=d.getYear();if(yr<1000)
+yr+=1900;return yr;}document.write("<table>");
+document.write("<TR><TD class='f_12_blue'>"+getFullYear(today)+"年"+isnMonths[today.getMonth()]+""+today.getDate()+"日&nbsp;&nbsp;"+isnDays[today.getDay()]
+);document.write("</table>"); 
+//-->
+  </script></td>
+    <td width="24" background="../images/topbottombg_center.gif" style="padding-top:6px; vertical-align:top;"><a href="#" onclick="top.location.href='/logout.jsp'" target=""><img src="../images/top_exit.gif" alt="退出" /></a></td>
+    <td width="60" background="../images/topbottombg_center.gif" style="padding-top:10px; vertical-align:top;"><a href="#" onclick="top.location.href='/logout.jsp'" target="">退出</a></td>
+    <td width="20" background="../images/topbottombg_center.gif"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="tdbg" id="topbar" style="display:none" title='展开' onmouseover="javascript:this.className='tdbgover'" onmouseout="javascript:this.className='tdbg'"><a href="javascript:;" onclick="switchSysBar()"><img src="../images/bottombar.gif" alt='展开' vspace="4" /></a></td>
+      </tr>
+      <tr>
+        <td valign="top" class="tdbg2" id="bottombar" title='收缩' onmouseover="javascript:this.className='tdbgover2'" onmouseout="javascript:this.className='tdbg2'"><a href="javascript:;" onclick="switchSysBar()"><img src="../images/topbar.gif" alt='收缩' vspace="2" /></a></td>
+      </tr>
+    </table></td>
+    <td width="20" background="../images/topbottombg_center.gif">&nbsp;</td>
+  </tr>
+</table>
+</body> 
+</html> 

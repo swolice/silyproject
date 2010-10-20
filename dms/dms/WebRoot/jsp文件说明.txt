@@ -1,0 +1,33 @@
+网站根目录：
+
+commentList.jsp : 评论列表页面，只是评论部分，通过ajax加载到页面上，用到的页面有团购详细页，站点详细页 ，对应 http://www.magickylin.com/tuan/detail.htm 和 http://www.magickylin.com/tuan/manzuo.htm 下方的用户评论
+map.jsp : 地图展示页面 对应 http://www.magickylin.com/tuan/map.htm
+header.jsp : 共用的网站头文件
+feedbackList.jsp：投诉列表显示页面
+feedback.jsp ： 团购投诉录入提交页面 http://www.magickylin.com/tuan/feedback.htm
+ad.html ：共用广告页面，修改广告可在此文件中进行。
+nav.jsp ：团购导航页面，对应 http://www.magickylin.com/tuan/site.htm
+listTest.jsp : 试团页面，http://www.magickylin.com/tuan/shituan.htm
+list.jsp : 首页面，包含_list.jsp是对应http://www.magickylin.com/tuan/index.htm，包含_list1.jsp时对应http://www.magickylin.com/tuan/index01.htm
+map1.jsp : 地图展示页拖动地图时左侧动态加载的团购列表页面
+login.jsp ： 登录页面 http://www.magickylin.com/tuan/signin.htm
+regist.jsp ： 注册页面 http://www.magickylin.com/tuan/signup.htm
+mymsg.jsp : 我的消息列表页面
+send.jsp ： 发送短消息页面
+home.jsp ： 登录后主页面，http://www.magickylin.com/tuan/mytuanjieke.htm
+comment.jsp : 我的团购评论，http://www.magickylin.com/tuan/deal_comments.htm
+comment1.jsp ：我的团网评论,http://www.magickylin.com/tuan/site_comments.htm
+logout.jsp : 退出
+city.jsp   ： 头文件中选择城市部分
+top.jsp    ： 主页面中的销量，点击排行榜部分
+newComment.jsp ：主页面中最新团购，网站评论部分
+resetok.jsp ： 修改密码成功页面 http://www.magickylin.com/tuan/password_reset_succ.htm
+password_reset.jsp : 修改密码页面，http://www.magickylin.com/tuan/password_reset.htm
+loginok.jsp ：登录成功跳转页面
+regok.jsp ： 注册成功页面http://www.magickylin.com/tuan/signup_succ.htm
+service.jsp ： 保障服务列表页面
+bottom.jsp ：共用的网站底部文件
+site.jsp ： 站点详细页面 http://www.magickylin.com/tuan/manzuo.htm
+detail.jsp ：团购详细页面 http://www.magickylin.com/tuan/detail.htm
+
+后台管理部分，位于bms目录下，基本没有模板

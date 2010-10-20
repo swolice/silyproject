@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background:#deeef6;/*整个网页的背景颜色*/
+}
+/*.tit为每个菜单的标题样式  .list 为菜单项目的样式*/
+.tit , .list{ width:197px; float:right; /*菜单的宽度*/
+} 
+
+/*======================================标题部分===============================*/
+.tit {/*菜单标题的样式*/
+	height: 29px;/*底部边框没有*/
+	line-height:29px;
+	background:#D8E1EC url(../images/pix/bar-close.png) ;/*背景样式依次为：颜色，图片路径，横向重复*/
+	color: #023787;/*前景色*/
+	font:bold 12px/22px "lucida Grande", verdana, lucida, Arial, helvetica, "宋体", sans-serif;/*文字样式依次为：粗体 大小/行高 字族*/
+	text-indent: 65px;/*文字缩进*/
+	margin-bottom:2px;/*外填充*/
+	position: relative;
+	border-left: 0px solid #76a7d6;
+
+}
+.tit a ,.tit a:link , .tit a hover{/*菜单标题中的链接的样式，共同的部分*/
+	color: #023787;
+	font-weight:bold;
+	display:block;
+	text-decoration:none;
+	width:188px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	cursor: pointer;
+}
+.tit a:hover{
+	color: #023787;/*鼠标经过时的颜色*/
+}
+/*====================
+	菜单标题中的箭头图片
+======================*/
+.on{
+	background-image: url(../images/pix/open.png); height:28px;line-height:28px;*向上的箭头-暗色*/
+}
+.on:hover{
+	background-image: url(../images/pix/open-o.png); height:28px;line-height:28px;/*向上的箭头-亮色*/
+}
+.off{
+	background-image: url(../images/pix/close.png); height:28px;line-height:28px;/*向下的箭头-暗色*/
+}
+.off:hover{
+	background-image: url(../images/pix/close-o.png); height:28px;line-height:28px;/*向下的箭头-亮色*/
+}
+/*标题图标样式*/
+.titpic {
+	position: absolute;
+	height: 29px;
+	line-height:29px;
+	width: 24px;
+	left: 0px;
+	bottom: 0px;
+}
+
+
+/*每一个标题图标，可变的部分*/
+#pc1{
+	background: url(../images/pepo.png) no-repeat;
+}
+#pc2{
+	background: url(../images/st.png) no-repeat;
+}
+#pc3{
+	background: url(../images/ring.png) no-repeat;
+}
+#pc4{
+	background: url(../images/pic.png) no-repeat;
+}
+#pc5{
+	background: url(../images/mv.png) no-repeat;
+}
+#pc6{
+	background: url(../images/up.png) no-repeat;
+}
+#pc7{
+	background: url(../images/help.png) no-repeat;
+}
+/*==========================================菜单体部分======================================*/
+/*====================
+	菜单列表的样式
+======================*/
+.list{
+	font-size: 12px;
+	color: #002280;
+	background: #f9fafc no-repeat right bottom;
+	width: 197px;/*宽度*/
+	border-bottom: 1px solid #cbd6e0;
+	border-left: 1px solid #819db1;
+	text-align:left;
+	padding:0;
+	voice-family:"\"}\"";
+	voice-family:inherit;
+	width:197px;
+	overflow:hidden;
+	margin-top:-2px;
+}
+html>body .list {
+width:197px;
+}
+.list ul{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+.list li{
+margin:0;
+padding-top:5px;
+line-height:22px;
+height:22px;
+border-bottom:1px solid #cbd6e0;
+}
+/*============
+菜单链接的样式
+==============*/
+.list a{
+color:#4b4b4b;
+text-decoration:none;
+}
+.list a:link{
+color:#4b4b4b;
+}
+.list a:visited{
+color:#4b4b4b;
+}
+.list a:hover{
+color:#205c7a;
+}
+
+.list .crumb:link{
+color:#e73910;
+}
+.list .crumb:visited{
+color:#e73910;
+}
+.list .crumb:hover{
+color:#e73910;
+}
+
+
+
+#left_tit{
+    float:right;
+	margin-top:5px;
+	padding:0;
+}

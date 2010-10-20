@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!--MySql 简单配置
+    <property name="hibernate.connection.url">
+    jdbc:mysql://localhost:3306/meijing?characterEncoding=gbk
+    </property>
+    <property name="hibernate.connection.driver_class">
+    com.mysql.jdbc.Driver
+    </property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">123456</property>
+    <property name="dialect">
+    org.hibernate.dialect.MySQLDialect
+    </property>
+    -->
+
+    <!--Proxool数据源 配置-->
+    <property name="hibernate.connection.driver_class">
+    com.mysql.jdbc.Driver
+    </property>
+    <property name="hibernate.proxool.pool_alias">DBPool</property>
+    <property name="hibernate.proxool.xml">conf/proxool.xml</property>
+    <!-- MySql方言配置-->
+    <property name="dialect">
+    comm.dialect.MySQLDialect
+    </property>
+    <!-- Oracle方言配置-->
+    <!--property name="dialect">
+    org.hibernate.dialect.OracleDialect
+    </property-->
+
+    <!-- 相关属性配置 -->
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.transaction.factory_class">
+    org.hibernate.transaction.JDBCTransactionFactory
+    </property>
+
+    <!--property name="hibernate.hbm2ddl.auto">update</property-->
+
+    <!-- 映射文件配置 -->
+
+    <!--mapping resource="hbm/OperatorLog.hbm.xml" /-->
+
+
+  </session-factory>
+</hibernate-configuration>
