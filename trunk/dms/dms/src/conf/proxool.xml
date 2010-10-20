@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<proxool>
+		<alias>DBPool</alias>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-url>
+			jdbc:mysql://192.168.0.2:3306/tuan?autoConnect=true
+		</driver-url>
+		<driver-properties>
+		<property name="user" value="abc"/>
+		<property name="password" value="123456"/>
+		<property name="characterEncoding" value="UTF-8"/>
+		<property name="useUnicode" value="true"/>
+		</driver-properties>
+		<maximum-connection-count>5</maximum-connection-count>
+		<minimum-connection-count>1</minimum-connection-count>
+		<statistics>1m,10m,1d</statistics>
+		<maximum-active-time>6000000</maximum-active-time>
+		<test-before-use>true</test-before-use>
+		<house-keeping-test-sql>SELECT CURRENT_USER</house-keeping-test-sql>
+	</proxool>
+</root>

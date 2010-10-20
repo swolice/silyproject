@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.City" table="city">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="CREATE_TIME" length="19" name="createTime" type="java.util.Date"/>
+<property column="EDIT_TIME" length="19" name="editTime" type="java.util.Date"/>
+<property column="CITY_NAME" length="50" name="cityName" type="java.lang.String"/>
+<property column="SORT_ORDER" length="11" name="sortOrder" type="java.lang.Integer"/>
+<property column="HOT" length="11" name="hot" type="java.lang.Integer"/>
+<property column="CITY_GROUP" length="50" name="cityGroup" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

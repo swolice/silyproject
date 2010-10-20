@@ -1,0 +1,11 @@
+<%
+out.write(request.getHeader("Referer"));
+out.write("<br/>");
+out.write(request.getParameter("fid"));
+out.write("<br/>");
+out.write(request.getParameter("ftype"));
+out.write("<br/>");
+out.write(request.getParameter("start"));
+out.write("<br/>");
+out.write(request.getParameter("isNew"));
+%>

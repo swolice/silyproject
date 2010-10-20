@@ -1,0 +1,247 @@
+
+ 
+.button01
+{
+    background:url(../../../../images/button01.gif);
+    height:21px;
+	width:50px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+.button02
+{
+    background:url(../../../../images/button02.gif);
+    height:21px;
+	width:70px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+.button03
+{
+    background:url(../../../../images/button03.gif);
+    height:21px;
+	width:90px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+.button04
+{
+    background:url(../../../../images/button04.gif);
+    height:21px;
+	width:110px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+.button_biaozhu
+{
+    background:url(../../../../images/button_biaozhu.gif);
+    height:22px;
+	width:58px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+
+.button_sear{
+    background:url(../../../../images/button_sear.gif);
+    height:21px;
+	width:50px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+	padding-left:19px;
+}
+.button_go{
+    background:url(../../../../images/butt_go.gif);
+    height:21px;
+	width:29px;
+	border:0px;
+}
+
+
+
+.button_caiji
+{
+    background:url(../../../../images/button_caiji.gif);
+    height:22px;
+	width:100px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+.button_jieshou
+{
+    background:url(../../../../images/button_jieshou.gif);
+    height:22px;
+	width:100px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+
+.button_add
+{
+    background:url(../../../../images/butt_add.gif);
+    height:22px;
+	width:58px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+.button_del
+{
+    background:url(../../../../images/butt_del.gif);
+    height:22px;
+	width:58px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+.button_find
+{
+    background:url(../../../../images/butt_find.gif);
+    height:22px;
+	width:58px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+.button_addtable
+{
+    background:url(../../../../images/butt_addtable.gif);
+    height:22px;
+	width:58px;
+    color:#49687b;
+	font-weight:normal;
+	font-size:12px;
+    text-align:center;
+	border:0px;
+}
+
+
+
+
+.input{
+    border:#7da7bc 1px solid;
+    padding:2px;
+	color: #001e7a;
+}
+
+.input_readonly{
+    border:#CFCFCF 1px solid;
+    padding:2px;
+	color: #757575;
+	background-color: #EFEFEF;
+}
+
+
+.input_gray1{
+    border:#dadada 1px solid;
+    padding:1px;
+	color: #353535;
+}
+
+.textarea{
+    border:#7da7bc 1px solid;
+    padding:4px;
+	background:#fff;
+	font-size:12px;
+	color:#001e7a
+}
+
+.textarea_img {background:url(../../../../images/li_alert.gif) no-repeat center center; }
+
+
+.select{
+     BORDER: #6d8fa2 1px solid;
+	 COLOR: #001e7a;
+	 FONT-FAMILY: 宋体, Arial, Helvetica, sans-serif
+}
+
+
+#channelform label.error {
+  background:url("../../images/unchecked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #EA5200;
+}
+
+#channelform label.checked {
+  background:url("../../images/checked.gif") no-repeat 0px 0px;
+}
+
+#shareform label.error {
+  background:url("../../images/unchecked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #EA5200;
+}
+
+#shareform label.checked {
+  background:url("../../images/checked.gif") no-repeat 0px 0px;
+}
+
+#resourceform label.error {
+  background:url("../../images/unchecked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #EA5200;
+}
+
+#resourceform label.checked {
+  background:url("../../images/checked.gif") no-repeat 0px 0px;
+}
+
+  /*列表页样式*/
+.table_list{
+margin:0 auto;
+text-align:center;
+border-collapse:collapse;/*细线表格代码*/
+}
+.table_list td{
+border:1px solid #c0d5ef;/*细线表格线条颜色*/
+height:22px;
+}
+.table_list caption{text-align:left;font-size:12px;font-weight:bold;margin:0 auto; height:30px; line-height:30px; color:#FF7E00;}
+.table_list tr.t1 td {background-color:#fff;}/* 交替行第一行的背景色 */
+.table_list tr.t2 td {background-color:#e4f0fa;}/* 交替行第二行的背景色 */
+.table_list tr.t3 td {background-color:#c0def6;}/* 鼠标经过时的背景色 */
+.table_list th{font-weight:bold;text-align:center;background:url(../../../../images/table_list_th_bg.gif); height:28px; line-height:28px; border:1px solid #c4dbec}
+.table_list tfoot tr td{background:#fff;line-height:26px;height:26px;}
+.table_list thead{border:1px solid #c4dbec;}
+.table_list thead tr td{text-align:center;}

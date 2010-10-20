@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dms.data.Group" table="groups">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="identity"/>
+</id>
+<property column="NAME" length="255" name="name" type="java.lang.String"/>
+<property column="KEYWORD" length="255" name="keyword" type="java.lang.String"/>
+<property column="CITY" length="11" name="city" type="java.lang.Integer"/>
+<property column="REMARK" length="255" name="remark" type="java.lang.String"/>
+<property column="SORT_ORDER" length="11" name="sortOrder" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>
