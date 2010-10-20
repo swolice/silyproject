@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <excelprop>
+        <sourceRow>2</sourceRow>
+        <bodyRows>1</bodyRows>
+        <bodyCols>16</bodyCols>
+        <margin>0</margin>
+        <pageSize>5000</pageSize>
+    </excelprop>
+    <body>
+        <ROW_ID>{ROW_ID}</ROW_ID>
+        <BUSI_ID numberStyle="##0.00">{BUSI_ID}</BUSI_ID>
+        <ORDER_LINE_ID  numberStyle="##,##0.00">{ORDER_LINE_ID}</ORDER_LINE_ID>
+        <INTERFACE_TYPE>{INTERFACE_TYPE}</INTERFACE_TYPE>
+        <SEND_FLAG>{SEND_FLAG}</SEND_FLAG>
+        <CREATE_BY>{CREATE_BY}</CREATE_BY>
+        <CREATE_TIME numberStyle="##,##0.00">{CREATE_TIME}</CREATE_TIME>
+        <ORDER_NBR>{ORDER_NBR}</ORDER_NBR>
+        <ORDER_NUM>{ORDER_NUM}</ORDER_NUM>
+        <SERV_NBR>{SERV_NBR}</SERV_NBR>
+        <BASE001>{BASE001}</BASE001>
+        <BASE002>{BASE002}</BASE002>
+        <BASE003>{BASE003}</BASE003>
+        <BASE004>{BASE004}</BASE004>
+        <BASE005>{BASE005}</BASE005>
+        <BASE006>{BASE006}</BASE006>
+    </body>
+</root>
