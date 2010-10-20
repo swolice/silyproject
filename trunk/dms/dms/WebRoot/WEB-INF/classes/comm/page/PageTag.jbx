@@ -1,0 +1,10 @@
+[PropertyInfo]
+action,String,false,false,action,action,true,<default>
+formName,String,false,false,formName,formName,true,<default>
+name,String,false,false, , ,true,<default>
+type,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

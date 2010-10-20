@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+<aop:aspectj-autoproxy proxy-target-class="true" />
+<!-- Aop事务与日志 -->
+<!-- 统一缓存 -->
+<bean id="memCache" class="comm.cache.LocalCache"></bean>
+
+<!-- Spring 事务管理 	-->
+<tx:annotation-driven transaction-manager="transactionManager"
+proxy-target-class="true" />
+<bean id="dataSource"
+class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName">
+  <value>org.logicalcobwebs.proxool.ProxoolDriver</value>
+</property>
+<property name="url">
+  <value>proxool.DBPool</value>
+</property>
+</bean>
+<bean id="sessionFactory"
+class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+<property name="configLocation"
+value="classpath:conf/hibernate.cfg.xml" />
+<property name="mappingLocations">
+  <list>
+    <value>classpath*:hbm/*.hbm.xml</value>
+  </list>
+</property>
+
+</bean>
+<bean id="hibernateTemplate"
+class="org.springframework.orm.hibernate3.HibernateTemplate">
+<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+<bean id="transactionManager"
+class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+
+<bean id="nativeJdbcExtractor"
+class="org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor"
+lazy-init="true">
+</bean>
+<bean id="lobHandler"
+class="org.springframework.jdbc.support.lob.OracleLobHandler"
+lazy-init="true">
+<property name="nativeJdbcExtractor">
+  <ref local="nativeJdbcExtractor" />
+</property>
+</bean>
+
+<aop:config>
+  <aop:pointcut id="serviceMethod"
+  expression="execution(* dms.dao.AopDaoImpl.*(..))" />
+  <aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
+</aop:config>
+<tx:advice id="txAdvice" transaction-manager="transactionManager">
+  <tx:attributes>
+    <tx:method name="load*" read-only="true" />
+    <tx:method name="find*" read-only="true" />
+    <tx:method name="get" read-only="true" />
+    <tx:method name="bulk*" />
+    <tx:method name="delete*" />
+    <tx:method name="execute*" />
+    <tx:method name="lock" />
+    <tx:method name="save*" />
+    <tx:method name="persist*" />
+    <tx:method name="update*" />
+    <tx:method name="list*" />
+  </tx:attributes>
+</tx:advice>
+<bean id="baseDao" class="dms.dao.AopDaoImpl">
+  <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+</bean>
+
+</beans>
