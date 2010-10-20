@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <excelprop>
+        <sourceRow>3</sourceRow>
+        <bodyRows>1</bodyRows>
+        <bodyCols>9</bodyCols>
+        <bodyGroupRows_1></bodyGroupRows_1>
+        <bodyGroupCols_1></bodyGroupCols_1>
+        <headRows>0,1</headRows>
+        <headCols>0,8</headCols>
+        <footRows>4,4</footRows>
+        <footCols>0,8</footCols>        
+        <margin>0</margin>
+        <pageSize>50000</pageSize>
+    </excelprop>
+    <head>
+    	<YSNY>{YSNY}</YSNY>
+    	<DYRQ>{DYRQ}</DYRQ>
+    </head>
+    <body>
+    	<CUST_DEPT_NAME>{CUST_DEPT_NAME}</CUST_DEPT_NAME>
+    	<NEW_CUST_ID>{NEW_CUST_ID}</NEW_CUST_ID>
+    	<NEW_CUST_NAME>{NEW_CUST_NAME}</NEW_CUST_NAME>
+    	<CYCLE_TYPE_NAME>{CYCLE_TYPE_NAME}</CYCLE_TYPE_NAME>
+    	<KDXSR>{KDXSR}</KDXSR>
+    	<FKDXSR>{FKDXSR}</FKDXSR>
+    	<ALL_RMB>{ALL_RMB}</ALL_RMB>
+    	<ALL_US>{ALL_US}</ALL_US>
+    </body>
+    <bodyGroup>
+    	<bodyGroup1> </bodyGroup1>
+    	<bodyGroup2> </bodyGroup2>
+    	<bodyGroup3> </bodyGroup3>
+    	<bodyGroup4> </bodyGroup4>
+    </bodyGroup>
+    <foot>
+    	<KDXSR>{KDXSR}</KDXSR>
+    	<FKDXSR>{FKDXSR}</FKDXSR>
+    	<ALL_RMB>{ALL_RMB}</ALL_RMB>
+    	<ALL_US>{ALL_US}</ALL_US>
+    </foot>
+    <bodyMergeCols>
+    </bodyMergeCols>
+</root>

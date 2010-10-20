@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<excelprop>
+		<sourceRow>5</sourceRow>
+		<bodyRows>28</bodyRows>
+		<bodyCols>12</bodyCols>
+		<margin>1</margin>
+		<pageSize>5000</pageSize>
+	</excelprop>
+	<body>
+		<STRNUM>{STRNUM}</STRNUM>
+		<ROW_ID>{ROW_ID}</ROW_ID>
+		<ORDER_NBR>{ORDER_NBR}</ORDER_NBR>
+		<ORDER_TYPE_CD>{ORDER_TYPE_CD}</ORDER_TYPE_CD>
+		<CUST_EMAIL>{CUST_EMAIL}</CUST_EMAIL>
+		<DEL_USER>{DEL_USER}</DEL_USER>
+		<ARC_FLAG>{ARC_FLAG}</ARC_FLAG>
+		<AUD_FLAG>{AUD_FLAG}</AUD_FLAG>
+	</body>
+</root>

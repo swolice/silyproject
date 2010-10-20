@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <body>
+        <cell isMust="1"  isRange="是,否">
+        	<item>禁催禁停</item>
+        	<dbfield>base001</dbfield>
+        </cell>
+        <cell isMust="1"  isRange="完成,未完成">
+        	<item>完成情况</item>
+        	<dbfield>base002</dbfield>
+        </cell>  
+        <cell isMust="1" isDate="1" >
+        	<item>订单行ID</item>
+        	<dbfield>base003</dbfield>
+        </cell>
+        <cell isMust="1" >
+        	<item>交易流水号</item>
+        	<dbfield>base003</dbfield>
+        </cell>      
+        <cell isMust="1" chkClazz="" chkMethod="">
+        	<item>完成时间</item>
+        	<dbfield>base003</dbfield>
+        </cell>            
+    </body>
+</root>

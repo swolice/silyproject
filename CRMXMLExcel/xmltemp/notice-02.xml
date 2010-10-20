@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <excelprop>
+     	<sourceRow>0</sourceRow>
+        <bodyRows>0</bodyRows>
+        <bodyCols>0</bodyCols>
+        <headRows>0,11</headRows>
+        <headCols>0,5</headCols>
+        <bodyColMerges></bodyColMerges>
+        <footRows></footRows>
+        <footCols></footCols>             
+        <margin>0</margin>
+    </excelprop>
+    <head>
+        <NOTICE_NBR>{NOTICE_NBR}</NOTICE_NBR>
+        <MONEY_TYPE>{MONEY_TYPE}</MONEY_TYPE>
+        <ACCT_NAME>{ACCT_NAME}</ACCT_NAME>
+        <CUST_YM>{CUST_YM}</CUST_YM>
+        <ORG_NAME>{ORG_NAME}</ORG_NAME>
+        <RMB_ALL_CN>{RMB_ALL_CN}</RMB_ALL_CN>
+        <RMB_ALL>{RMB_ALL}</RMB_ALL>
+        <BANK_NAME>{BANK_NAME}</BANK_NAME>
+        <BANK_NBR>{BANK_NBR}</BANK_NBR>
+        <REMARK>{REMARK}</REMARK>
+        <DEPT_USER_NAME>{DEPT_USER_NAME}</DEPT_USER_NAME>
+        <BILL_USER_NAME>{BILL_USER_NAME}</BILL_USER_NAME>
+        <BZ_ORG_NAME>{BZ_ORG_NAME}</BZ_ORG_NAME>
+        <AUD_USER_NAME>{AUD_USER_NAME}</AUD_USER_NAME>
+        <CREATE_BY>{CREATE_BY}</CREATE_BY>
+    </head>
+</root>

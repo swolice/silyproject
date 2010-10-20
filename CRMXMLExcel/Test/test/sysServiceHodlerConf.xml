@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean name="serviceHolderTarget" class="com.cthq.crm.project.common.database.service.ServiceHolder" singleton="false">
+		<property name="baseDao" ref="baseImplDao"/>
+	</bean>
+	<bean name="baseImplDao" class="com.cthq.crm.project.common.database.access.DbBaseDao" singleton="false">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="serviceHolder" parent="abstractTransactionProxy">
+    <property name="target" ref="serviceHolderTarget"></property>
+ </bean>
+ 
+</beans>
