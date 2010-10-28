@@ -24,8 +24,8 @@ public class DatabaseTool {
 	public Connection getConnection() {
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String connName = "jdbc:oracle:thin:@172.16.1.252:1521:newcrm";
-			Connection con = DriverManager.getConnection(connName, "jtcrm_app","jtcrm123");
+			String connName = "jdbc:oracle:thin:@172.16.1.252:1521:crmtest";
+			Connection con = DriverManager.getConnection(connName, "jtbill","jtbill123");
 
 			return con;        
         }catch(Exception ex){        
@@ -90,7 +90,7 @@ public class DatabaseTool {
 			ResultSetMetaData meta = rs.getMetaData();
 			int colCount = meta.getColumnCount();
 			List columnList = new ArrayList();
-			for (int i = 0; i < colCount; i++) {
+			for (int i = 1; i < colCount+1; i++) {
 				String data = meta.getColumnName(i);
 				columnList.add(data);
 			}
