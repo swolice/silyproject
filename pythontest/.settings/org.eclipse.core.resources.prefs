@@ -1,6 +1,10 @@
-#Wed Oct 27 21:36:59 CST 2010
+#Sun Oct 31 22:25:27 CST 2010
 eclipse.preferences.version=1
 encoding//src/unit1/CDay41.py=UTF-8
 encoding//src/unit1/pycdc-v0.1.py=GBK
 encoding//src/unit2/cdctools.py=utf-8
 encoding//src/unit2/pycdc-v0.4.py=gb2312
+encoding//src/unit2/pycdini.py=utf-8
+encoding//src/unit2/smartcode.py=utf-8
+encoding//src/unit2/tryrcp.py=gb2312
+encoding/<project>=UTF-8

@@ -33,11 +33,13 @@ class PyCDC(cmd.Cmd):
         self.CDDIR = pathname
         print "指定保存/搜索目录:'%s' ;默认是:'%s'" % (pathname,self.CDDIR)
     
-    def help_dir(self):
+    def help_find(self):
         print "请输入关键字"
-    def do_dir(self,keywork):
+    def do_find(self,keywork):
         if keywork == "" : keywork = raw_input("输入关键字:")
-        print "输入关键字：'%s'" % filename
+        print "输入关键字为：'%s'" % filename
+        cdcGrep(self.CDDIR,keywork)
+        
 if __name__ == '__main__':
     cdc = PyCDC()
     cdc.cmdloop()
