@@ -6,6 +6,7 @@ def testrcp():
     cfg.set("Info","ImagePath","Z:/python2-chardet-2.0.1/docs/images/tip.png")
     cfg.set("Info","foo","CD пео╒")
     cfg.write(open("try.ini","w"))
+    print cfg.get("Info", "foo")
     
 if __name__ == "__main__":
     testrcp()

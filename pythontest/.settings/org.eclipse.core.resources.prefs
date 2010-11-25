@@ -1,8 +1,20 @@
-#Sun Oct 31 22:25:27 CST 2010
+#Mon Nov 22 22:49:29 CST 2010
 eclipse.preferences.version=1
+encoding//src/KDays/dict4ini-0.9.2/dict4ini/dict4ini.py=utf-8
+encoding//src/KDays/js/validation-framework.js=UTF-8
+encoding//src/KDays/kday2/Karrigell_QuickForm.py=utf-8
+encoding//src/KDays/kday2/dict4ini.py=utf-8
+encoding//src/KDays/kday3/foo.py=utf-8
+encoding//src/KDays/kday6/foo.py=utf-8
+encoding//src/KDays/kday6/xslmm/testxml.py=utf-8
+encoding//src/KDays/kdayN/Karrigell_QuickForm.py=utf-8
+encoding//src/KDays/kdayN/dict4ini.py=utf-8
 encoding//src/unit1/CDay41.py=UTF-8
 encoding//src/unit1/pycdc-v0.1.py=GBK
+encoding//src/unit2/Karrigell_QuickForm.py=utf-8
 encoding//src/unit2/cdctools.py=utf-8
+encoding//src/unit2/grepIt.py=utf-8
+encoding//src/unit2/index.py=UTF-8
 encoding//src/unit2/pycdc-v0.4.py=gb2312
 encoding//src/unit2/pycdini.py=utf-8
 encoding//src/unit2/smartcode.py=utf-8

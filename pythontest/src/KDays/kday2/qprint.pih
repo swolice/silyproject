@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>
+<%
+print "自由问卷 之 啄木鸟基本知晓 - Powered by Karrigell"
+%>
+</title>
+<meta content="text/html; charset=utf-8" http-equiv=content-type>
+</head>
+<body>
+<h1>实际生成的效果</h1>
+
+<%# 最简单的方式将实际处理脚本包含到页面中适当的位置
+Include("qprint.py")
+%>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+<h2>Http header</h2>
+<%
+a = "hello world!"
+print dir(a)
+%>

@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import os
-from cdctools import _smartcode
+from cdctools import smartcode
 from ConfigParser import RawConfigParser as rcp
 
 def iniCDinfo(cdrom,cdcfile):
@@ -16,7 +16,7 @@ def iniCDinfo(cdrom,cdcfile):
     for root, dirs, files in os.walk(cdrom):
         walker[root]=(dirs,files) # 这里是个需要理解的地方
         for af in files:
-            filesAll.append("%s/%s"%(_smartcode(root),_smartcode(af)))
+            filesAll.append("%s/%s"%(smartcode(root),smartcode(af)))
 #            print "%s/%s"%(_smartcode(root),_smartcode(af))
         cfg = rcp()
         cfg.add_section("Info")
@@ -48,9 +48,9 @@ def findThirdMax(fileAll):
 #            if(os.stat(i).st_size<os.stat(j).st_size):
                 
     print fileAll
-    print fileAll[0],_smartcode('大小：'),os.stat(fileAll[0]).st_size
-    print fileAll[1],_smartcode('大小：'),os.stat(fileAll[1]).st_size
-    print fileAll[2],_smartcode('大小：'),os.stat(fileAll[2]).st_size
+    print fileAll[0],smartcode('大小：'),os.stat(fileAll[0]).st_size
+    print fileAll[1],smartcode('大小：'),os.stat(fileAll[1]).st_size
+    print fileAll[2],smartcode('大小：'),os.stat(fileAll[2]).st_size
 
 if __name__ == "__main__":
 #    print "111111"
