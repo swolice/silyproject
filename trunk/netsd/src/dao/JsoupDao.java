@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class JsoupDao {
 	/**
@@ -45,8 +48,8 @@ public class JsoupDao {
 	 * @return 
 	 */
 	public static void insertUrlHref(String urlhref,String urltype,String title,String uphref) {
-		String sql = "insert into url_info(url_href,url_type,html_title,up_url_href) " +
-				"values(?,?,?,?)";
+		String sql = "insert into url_info(url_href,url_type,html_title,up_url_href,row_id,create_time) " +
+				"values(?,?,?,?,?,?)";
 		
 		Connection connection = DatabaseTool.getInstance().getConnection();
 		PreparedStatement pStatement = null;
@@ -56,6 +59,8 @@ public class JsoupDao {
 			pStatement.setString(2, urltype);
 			pStatement.setString(3, title);
 			pStatement.setString(4, uphref);
+			pStatement.setString(5, UUID.randomUUID().toString().replaceAll("-", ""));
+			pStatement.setTimestamp(6, new Timestamp(new Date().getTime()));
 			pStatement.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,10 +75,10 @@ public class JsoupDao {
 	}
 	
 	public static List<String> getFileList() {
-		String sql = "SELECT distinct url_href FROM url_info where url_type=2 and vflag=0 order by row_id desc limit 0,10 ";
+		String sql = "SELECT distinct url_href FROM url_info where url_type=2 and vflag=0 order by create_time desc limit 0,10 ";
 		String updatesql = "update url_info set vflag=1 where url_href in("
 						+ "select t.url_href from "
-						+ "(SELECT distinct url_href FROM url_info where url_type=2 and vflag=0 order by row_id desc limit 0,10) t) ";
+						+ "(SELECT distinct url_href FROM url_info where url_type=2 and vflag=0 order by create_time desc limit 0,10) t) ";
 		Connection connection = DatabaseTool.getInstance().getConnection();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
