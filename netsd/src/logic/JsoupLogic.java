@@ -216,7 +216,7 @@ public class JsoupLogic {
 		}
 	}
 
-	private static String getCommonProp(String key) {
+	public static String getCommonProp(String key) {
 		Properties prop = new Properties();
 		try {
 			prop.load(new FileInputStream(MyResourceBundle
