@@ -36,6 +36,15 @@ public class MyResourceBundle{
 		tmpdir = tmpdir.replaceAll("%20"," ").split("WEB-INF")[0];
 		return tmpdir;
 	}
+	/**
+	 * 获取应用的绝对路径 
+	 * @param relationPath
+	 * @return
+	 */
+	public static String getDBAbstractPath() {
+		String tmpdir = Thread.currentThread().getContextClassLoader().getResource("dao/url_info.db").getPath(); 
+		return tmpdir;
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(getAppAbstractPath());
