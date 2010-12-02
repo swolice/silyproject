@@ -2,6 +2,7 @@ package alltest;
 
 import java.io.FileReader;
 
+
 import com.cthq.crm.webservice.encode.Base64;
 import com.cthq.crm.webservice.util.ReadFile;
 
@@ -16,6 +17,10 @@ public class TestDecode {
 		byte valByte[] = base64.decodeFromCharToByte(str.toCharArray());
 		String result = new String(valByte);
 		System.out.println(result);
+	}
+	
+	public String name() {
+		return "";	
 	}
 }
 
