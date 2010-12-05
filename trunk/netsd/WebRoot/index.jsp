@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="logic.JsoupLogic" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,9 +19,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<meta name="Refresh" content="1;<%=basePath%>index.jsp"> 
+
+	
   </head>
   
   <body>
-    This is my JSP page. <br>
+    This is my JSP page. 
+	<br>
+	<%out.print(JsoupLogic.getStateus()); %>
   </body>
 </html>
