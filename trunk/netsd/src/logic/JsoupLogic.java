@@ -1,5 +1,6 @@
 package logic;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,8 +12,10 @@ import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -27,6 +30,18 @@ import dao.JsoupDao;
 public class JsoupLogic {
 
 	private static Logger logger = Logger.getLogger("log");
+	private static String downpath = getCommonProp("downloadpath");
+
+	private static Set<String> urlSet = new HashSet<String>();
+	private static Set<String> imgSet = new HashSet<String>();
+	
+	public static String getStateus(){
+		String aaaString = "网址链接数：" + urlSet.size();
+		aaaString += "图片连接数：" + imgSet.size();
+		
+		return aaaString;
+	}
+	
 	/**
 	 * @param args
 	 */
@@ -41,39 +56,54 @@ public class JsoupLogic {
 			new Thread(new DownloadTread()).start();
 		}
 	}
-	
-	public static void appStart(){
+
+	/**
+	 * 
+	 */
+	public static void appStart() {
+		if(!new File(downpath).exists()){
+			new File(downpath).mkdirs();
+		}
 		for (int i = 0; i < 10; i++) {
 			try {
 				Thread.currentThread().sleep(10000);
 			} catch (InterruptedException e) {
-				logger.error(e.getMessage(),e);
+				logger.error(e.getMessage(), e);
 			}
 			new Thread(new JsoupThread()).start();
 			new Thread(new DownloadTread()).start();
 		}
 	}
 	
-
+	/**
+	 * 
+	 */
 	public static void process() {
 		String starturl = getCommonProp("starturl");
 		String urls[] = starturl.split(";");
-		
+
 		for (int i = 0; i < urls.length; i++) {
-			
+
 			String starturl1 = urls[i];
-		//if (!JsoupDao.hasUrlHref(starturl, "1")){
+			// if (!JsoupDao.hasUrlHref(starturl, "1")){
 			Document doc = null;
 			try {
 				doc = getDocument(starturl1);
 			} catch (SocketTimeoutException e) {
-				logger.error(e.getMessage(),e);
+				logger.error(e.getMessage(), e);
 			}
-			//JsoupDao.insertUrlHref(starturl, "1", doc.title(), starturl);
-			
+			if (null == doc)
+				continue;
+			// JsoupDao.insertUrlHref(starturl, "1", doc.title(), starturl);
+
 			Elements links = doc.select("a[href]");
 			for (Element link : links) {
 				String absHref = link.attr("abs:href");
+				if(urlSet.contains(absHref)){
+					continue;
+				}else{
+					urlSet.add(absHref);
+				}
 				if (JsoupDao.hasUrlHref(absHref, "1"))
 					continue;
 				if (!absHref.startsWith("http://"))
@@ -83,29 +113,36 @@ public class JsoupLogic {
 				try {
 					doc1 = getDocument(absHref);
 				} catch (SocketTimeoutException e) {
-					logger.error(e.getMessage(),e);
+					logger.error(e.getMessage(), e);
 				}
-				
-				
 				if (null == doc1)
 					continue;
+				
 				JsoupDao.insertUrlHref(absHref, "1", doc.title(), starturl1);
+				urlSet.remove(absHref);
+				
 				Elements imgs = doc1.select("[src]");
 				for (Element img : imgs) {
 					if (img.attr("type").equals("image")) {
 						String imgurl = img.attr("abs:src");
+						if(imgSet.contains(imgurl)){
+							continue;
+						}else{
+							imgSet.add(imgurl);
+						}
 						if (JsoupDao.hasUrlHref(imgurl, "2")) {
 							continue;
 						}
-						JsoupDao.insertUrlHref(imgurl, "2", doc1.title(), absHref);
+						JsoupDao.insertUrlHref(imgurl, "2", doc1.title(),
+								absHref);
+						imgSet.remove(imgurl);
 					}
 				}
 			}
 			JsoupDao.updateVflag(starturl1);
-		//}
 		}
 		processDBhref();
-		
+
 	}
 
 	public static void processDBhref() {
@@ -116,34 +153,35 @@ public class JsoupLogic {
 			try {
 				doc = getDocument(dbhrefurl);
 			} catch (SocketTimeoutException e) {
-				logger.error(e.getMessage(),e);
+				logger.error(e.getMessage(), e);
 			}
-			
-			Elements links = doc.select("a[href]");
-			for (Element link : links) {
-				String absHref = link.attr("abs:href");
-				if (JsoupDao.hasUrlHref(absHref, "1"))
-					continue;
-				if (!absHref.startsWith("http://"))
-					continue;
-				Document doc1 = null;
-				try {
-					doc1 = getDocument(absHref);
-				} catch (SocketTimeoutException e) {
-					logger.error(e.getMessage(),e);
-				}
-				if (null == doc1)
-					continue;
-				JsoupDao.insertUrlHref(absHref, "1", doc.title(), dbhrefurl);
-				Elements imgs = doc1.select("[src]");
-				for (Element img : imgs) {
-					if (img.attr("type").equals("image")) {
-						String imgurl = img.attr("abs:src");
-						if (JsoupDao.hasUrlHref(imgurl, "2")) {
-							continue;
+			if (null != doc) {
+				Elements links = doc.select("a[href]");
+				for (Element link : links) {
+					String absHref = link.attr("abs:href");
+					if (JsoupDao.hasUrlHref(absHref, "1"))
+						continue;
+					if (!absHref.startsWith("http://"))
+						continue;
+					Document doc1 = null;
+					try {
+						doc1 = getDocument(absHref);
+					} catch (SocketTimeoutException e) {
+						logger.error(e.getMessage(), e);
+					}
+					if (null == doc1)
+						continue;
+					JsoupDao.insertUrlHref(absHref, "1", doc.title(), dbhrefurl);
+					Elements imgs = doc1.select("[src]");
+					for (Element img : imgs) {
+						if (img.attr("type").equals("image")) {
+							String imgurl = img.attr("abs:src");
+							if (JsoupDao.hasUrlHref(imgurl, "2")) {
+								continue;
+							}
+							JsoupDao.insertUrlHref(imgurl, "2", doc1.title(),
+									absHref);
 						}
-						JsoupDao.insertUrlHref(imgurl, "2", doc1.title(),
-								absHref);
 					}
 				}
 			}
@@ -152,7 +190,8 @@ public class JsoupLogic {
 		processDBhref();
 	}
 
-	private static Document getDocument(String urlStr) throws SocketTimeoutException {
+	private static Document getDocument(String urlStr)
+			throws SocketTimeoutException {
 		if (StringUtils.isEmpty(urlStr))
 			return null;
 
@@ -164,11 +203,11 @@ public class JsoupLogic {
 			url = new URL(urlStr);
 			doc = Jsoup.parse(url, 3 * 2000);
 		} catch (MalformedURLException e) {
-			logger.error(e.getMessage(),e);
+			logger.error(e.getMessage(), e);
 		} catch (IOException e) {
-			logger.error(e.getMessage(),e);
+			logger.error(e.getMessage(), e);
 		} catch (Exception e) {
-			logger.error(e.getMessage(),e);
+			logger.error(e.getMessage(), e);
 		}
 
 		return doc;
@@ -181,7 +220,7 @@ public class JsoupLogic {
 			try {
 				downloadFile(list.get(i));
 			} catch (ConnectException e) {
-				logger.error(e.getMessage(),e);
+				logger.error(e.getMessage(), e);
 			}
 		}
 		downFileByList();
@@ -201,7 +240,9 @@ public class JsoupLogic {
 			String filename = url.substring(url.lastIndexOf("/") + 1);
 			filename = filename.replaceAll("[\\-\\:：\\<>|\\?]", "_")
 					.replaceAll("\\s", "");
-			filename = getCommonProp("downloadpath") + filename;
+			
+			filename = downpath + filename;
+			
 			OutputStream os = new FileOutputStream(filename);
 			int tmp = 0;
 			while ((tmp = is.read()) != -1) {
@@ -210,9 +251,9 @@ public class JsoupLogic {
 			os.close();
 			is.close();
 		} catch (IOException e) {
-			logger.error(e.getMessage(),e);
-		}  catch (Exception e) {
-			logger.error(e.getMessage(),e);
+			logger.error(e.getMessage(), e);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
 		}
 	}
 
@@ -223,9 +264,9 @@ public class JsoupLogic {
 					.getResourcesAbsolutePath("conf/common.properties")));
 			return prop.get(key).toString();
 		} catch (FileNotFoundException e) {
-			logger.error(e.getMessage(),e);
+			logger.error(e.getMessage(), e);
 		} catch (IOException e) {
-			logger.error(e.getMessage(),e);
+			logger.error(e.getMessage(), e);
 		}
 		return "";
 	}
