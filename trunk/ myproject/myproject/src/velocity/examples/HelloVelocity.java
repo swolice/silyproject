@@ -1,14 +1,14 @@
 package velocity.examples;
 
 import java.io.StringWriter;
-
-import java.util.*;
-
-import org.apache.velocity.app.VelocityEngine;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
 
 import org.apache.velocity.Template;
-
 import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
 
 /**
  * 
