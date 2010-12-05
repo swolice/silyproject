@@ -36,7 +36,7 @@ public class DatabaseTool {
 //			Class.forName("org.sqlite.JDBC");    
 //			String conn_str = "jdbc:sqlite:" + JsoupLogic.getCommonProp("db_path");;
 //			Connection conn = DriverManager.getConnection(conn_str);   
-			
+//			
             return conn;        
         }catch(Exception ex){        
         	logger.error(ex.getMessage(),ex);   
