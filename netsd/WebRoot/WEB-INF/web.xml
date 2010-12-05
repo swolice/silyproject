@@ -16,6 +16,6 @@
 			<param-name>log4j-init-conf</param-name>
 			<param-value>WEB-INF/classes/log4j.properties</param-value>
 		</init-param>
-	<load-on-startup>0</load-on-startup>
+		<load-on-startup>0</load-on-startup>
 	</servlet>
 </web-app>
