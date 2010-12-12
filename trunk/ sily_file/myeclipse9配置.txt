@@ -1,0 +1,175 @@
+和下面配置差不多 ，很关键的是一个是1:添加软件,可以是在线更新的URL,也可以是本地的文件夹.一般用下载工具把插件下载到本地,在这里添加一个本地的文件夹来安装插件，看到这个才知道可以添加本地文件
+
+
+MyEclipse 8.5 开发环境配置、插件安装、汉化、Aptana2.0插件,SVN 插件,Flex Builder 3/4 插件安装
+下载MyEclipse 8.5 
+可以通过代理http://www.proxyie.cn/访问MyEclipse的官方网站下载软件 
+下载地址:http://downloads.myeclipseide.com/downloads/products/eworkbench /galileo/myeclipse-8.5.0-win32.exe 
+文件大小: 825.84 MB 
+MD5 : a9038148dcde9066abc3711bf8ee636c 
+--------------------------------------------------- 
+环境说明: 
+MyEclipse安装路径  E:\MyEclipse\MyEclipse8.5 
+Common安装路径     E:\MyEclipse\Common 
+新建一个            E:\MyEclipse\myPlugin专放我们后加入的插件 
+--------------------------------------------------- 
+MyEclipse Configuration Center 管理MyEclipse插件的一种手段 
+
+  
+
+参考:<Myeclipse8.5GA优化笔记> http://isy.javaeye.com/blog/639767 
+dashboard—   插件面板,可以添加和删除Myeclipse的插件 
+
+software  —   自定义添加其他软件 
+
+collaboration  —可以分享你的配置信息和团队协作的支持 
+
+subscription   —  注册信息,去下一篇文章里找的注册码可以贴在这里 
+
+1:添加软件,可以是在线更新的URL,也可以是本地的文件夹.一般用下载工具把插件下载到本地,在这里添加一个本地的文件夹来安装插件. 
+
+2:对前面添加的地址进行验证,从中找到插件. 在找到的插件上,右击鼠标,选"Add to Profile",插件被添加到"4"的位置 
+
+3:可以对以添加的插件删除 
+
+4:被添加的插件 
+
+5:将要被添加的插件, 
+
+6:执行添加动作 
+
+MyEclipse Configuration Center不太好用,反应较慢,有时要关了再开才会达到效果,由其删除时. 
+--------------------------------------------------- 
+汉化MyEclipse 8.5 
+首先下载汉化包文件： 
+http://www.blogjava.net/Files/sy1214520/Myeclipse8.5%20汉化.zip 
+
+1、将解压后的“language”文件夹中的features与plugins文件夹放入 
+E:\MyEclipse\myPlugin\language里面。 
+
+2、打开MyEclipse创建一个java项目，将压缩包中的CreatePluginsConfig.java复制进去。在Main函数中， 需要写入“E:\\MyEclipse\\myPlugin\\language\\plugins”，也就是指向刚才language的plugins 目录。然后执行。正确的情况下，将在控制台输入一大串英文。 
+
+3、用文本编辑器打开“E:\MyEclipse 8.5\configuration\org.eclipse.equinox.simpleconfigurator”目录下的 bundles.info文件。将在第二部中生成的一大串英文复制到该文件的下面。 
+
+3、找到E:\MyEclipse\MyEclipse8.5目录下找到myeclipse.ini文件，用记事本打开在最后一行加多一条语句  -Duser.language=zh 
+
+4、删除E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.update文件夹 
+
+5、保存，启动你的MyEclipse吧，这里你就可以看到中文的界面了。 
+
+--------------------------------------------------- 
+Aptana2.0插件安装 
+
+补充:安装完成后*.jsp打开时错误,还是不要安为好 
+
+1、下载aptana2.0Eclipse Plugin插件. 
+
+2、解压出features与plugins文件夹,COPY到E:\MyEclipse\myPlugin\aptana2.0 
+
+3、在E:\MyEclipse\MyEclipse8.5\dropins在新建文件aptana.link,内容是path=E: \\MyEclipse\\myPlugin\\aptana2.0,保存 
+
+4、删除E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.update文件夹 
+
+5、重启完成 
+--------------------------------------------------- 
+安装Flex Builder 4 插件版 
+1: 因为MyEclipse8.5使用的是eclipse3.5.2,所以安装Flex Builder 4版本是最匹配的. 
+2:下载FlashBuilder_4_Plugin_LS10.exe 
+
+3:运行后提示释放安装文件到C:\Documents and Settings\IBM\桌面\Adobe Flash Builder 4 Plugin,这里要千万注意 ,一个要修改这个路径,其它不能有中文,安装文件的存放路径也不能有中文,不然会提示"正在安装"就不走了. 
+
+4:选择一下myEclipse8.5的安装路径, 安装完成. 很好安装 
+--------------------------------------------------- 
+安装Flex Builder 3 插件版 有点麻烦 
+
+1 下载文件FB3_WWEJ_Plugin插件版eclipse3.3.exe 
+
+2 安装到一个空目录E:\Adobe\Flex Builder 3 Plug-in 
+
+3 插件就在E:\Adobe\Flex Builder 3 Plug-in\com.adobe.flexbuilder.update.site中 
+
+4 在E:\MyEclipse\MyEclipse8.5\dropins在新建文件flexBuilder.link,内容是path=E: \\Adobe\\Flex Builder 3 Plug-in\\com.adobe.flexbuilder.update.site,保存 
+
+5 删除E:\Adobe\Flex Builder 3 Plug-in\com.adobe.flexbuilder.update.site下site.xml文件,index.html文件,web文件夹 
+
+6、删除E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.update文件夹 
+
+7. 重启myeclipse8.5 
+
+8. 进行Flex的配置. 
+在Eclipse中.点击->Window->Preferences->Flex->Installed Flex SDKs 
+修改Flex SDKs 2.0 .和 Flex SDKs 3.0的路径点，其中Flex SDKs 3.0.1打上小勾，最后我们Apply让设置成效. 
+重启Eclipse..你就可以开发Flex了. 
+
+注意,第一次时报表错: 
+Error 
+Fri Apr 30 17:41:01 CST 2010 
+未能对 com.adobe.flexbuilder.apollo.content-type-apollo 创建内容描述器。内容类型已被禁用。 
+
+--------------------------------------------------- 
+安装subclipse, SVN 插件 
+1、从官网下载site-1.6.9.zip文件,网址是:subclipse.tigris.org, 
+
+2、从中解压出features与plugins文件夹，复制到E:\MyEclipse\myPlugin\svn里面，其它的*.xml文件不要。 
+
+3、在E:\MyEclipse\MyEclipse8.5\dropins下新建文件svn.link,内容是:path=E: \\MyEclipse\\myPlugin\\svn 保存。 
+
+4、删除E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.update文件夹 
+
+5、重启myeclipse就一切正常了。 
+
+--------------------------------------------------- 
+性能优化 
+
+1 、关闭MyEclipse的自动validation 
+      windows > perferences > myeclipse > validation 
+      将Build下全部勾取消 
+      如果你需要验证某个文件的时候，我们可以单独去验证它。方法是： 
+      在需要验证的文件上( 右键 -> MyEclipse -> Run   Validation 。 
+
+2、 启动优化，关闭不需要使用的模块 
+     所以可以将一些不使用的模块禁止 加载启动。 
+     Window > Preferences > General > Startup andy Shutdown 在这里列出的是MyEclipse启动时加载的模块 
+     我这里只让它加载tomcat6 勾选 MyEclipse EASIE Tomcat 6 。 
+          WTP ：一个跟myeclipse差不多的东西，主要差别是 WTP 是免费的，如果使用myeclipse，这个可以取消 
+          Mylyn：组队任务管理工具，类似于 CVS ，以任务为单位管理项目进度，没用到的可以取消 
+          Derby：一种保存成 jar 形式的数据库，我没用到，取消 
+          一大排以 MyEclipse EASIE 打头的启动项：myeclipse 支持的服务器，只选自己用的，其他取消， 
+         比如我只选了    tomcat 。 
+
+3 、去掉MyEclipse的拼写检查（如果你觉的有用可以不去） 
+      拼写检查会给我们带来不少的麻烦，我们的方法命名都会是单词的缩写，他也会提示有错， 
+      所以最好去掉，没有多大的用处 
+      Window > perferences > General > Editors > Text Editors > Spelling > 将Enable spell checking复选框的勾选去掉。 
+
+
+4 、修改MyEclipse编辑JSP页面时的编辑工具 
+      Window > perferences > General > Editors > File Associations > 
+      在File types 中选择 *.jsp > 在Associated editors 中将"MyEclipse JSP Editor"设置为默认。 
+      还有XML文件的默认编辑器 
+
+5 、修改MyEclipse安装目录的myeclipse.ini文件，加大JVM的非堆内存 
+      具体内容如下： 
+      -configuration 
+      configuration 
+      -vmargs 
+      -Xms256m 
+      -Xmx512m 
+      -XX:PermSize=128M 
+      -XX:MaxPermSize=256m 
+      -XX:ReservedCodeCacheSize=64m 
+
+6、使用JRockit作为Eclipse的Java VM 
+Eclipse启动参数，指定eclipse启动时使用的jre 
+"E:\MyEclipse8.0\MyEclipse Blue Edition 8.0 GA\myeclipse-blue.exe" -vm E:\JRockit\jrrt-3.1.2-1.6.0\bin\javaw.exe -vmargs -Xms256m -Xmx512m 
+
+在Eclipse里面，Window > Preferences，然后选择Java > Installed JREs添加JRockit，并设置为默认。 这样，就可以用JRockit来编译项目了。 
+
+7. 关闭自动更新 
+1.window->Perferences->General->Startup and Shutdown 勾掉 Automatic Updates Scheduler(自动更新调度程序) 
+
+2.window->Perferences->MyEclipse->Maven4MyEclipse 勾上 Enable Maven4MyEclipse featrures ;确定关闭窗口;该步骤是为了显示第3步中的Maven节点 
+
+3.window->Perferences->MyEclipse->Maven4MyEclipse –>Maven 勾掉 Download repository index updates on startup 
+
+本文来自CSDN博客，转载请标明出处：http://blog.csdn.net/jackpk/archive/2010/05/13 /5587633.aspx 
