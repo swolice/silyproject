@@ -1,0 +1,184 @@
+在本文中将详细讲述struts.xml文件的常用配置及注意事项。
+1.  使用<include>标签重用配置文件
+在Struts2中提供了一个默认的struts.xml文件，但如果package、action、interceptors等配置比较多时，都放到一个struts.xml文件不太容易维护。因此，就需要将struts.xml文件分成多个配置文件，然后在struts.xml文件中使用<include>标签引用这些配置文件。这样做的优点如下：
+
+结构更清晰，更容易维护配置信息。
+配置文件可以复用。如果在多个Web程序中都使用类似或相同的配置文件，那么可以使用<include>标签来引用这些配置文件，这样可以减少工作量。
+假设有一个配置文件，文件名为newstruts.xml，代码如下：
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="demo" extends="struts-default"
+>
+<action name="submit"  class="action.MoreSubmitAction">
+<result name="save"
+>
+                /result.jsp
+            </result>
+<result name="print">
+                /result.jsp
+            </result>
+</action>
+</package>
+</struts>
+
+
+
+则struts.xml引用newstruts.xml文件的代码如下：
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<include file="newstruts.xml"/>
+<package name="test" extends="struts-default">
+    
+    </package>
+</struts>
+
+
+大家要注意一下，用<include>引用的xml文件也必须是完成的struts2的配置。实际上<include>在引用时是单独解析的xml文件，而不是将被引用的文件插入到struts.xml文件中。
+2. action的别名
+
+    在默认情况下，Struts2会调用动作类的execute方法。但有些时候，我们需要在一个动作类中处理不同的动作。也就是用户请求不同的动作时，执行动作类中的不同的方法。为了达到这个目的，可以在<action>标签中通过method方法指定要指行的动作类的方法名，并且需要为不同的动作起不同的名子（也称为别名）。如下面代码所示：
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="demo" extends="struts-default"
+>
+<action name="test"  class="action.MyAction">
+       
+    </action>
+<action name="my"  class="action. MyAction" method="my">
+        
+    </action>
+</package>
+</struts>
+
+上面代码的两个动作的class属性都指向同一个类，name为这个类起了两个动作别名：test和my。在动作my中，使用了method属性指定要要运行的方法名为my。
+
+在MyAction类中必须要有my方法，代码如下：
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public
+class MyAction extends ActionSupport
+{
+    
+    public String execute() throws Exception
+    {
+        // 处理test动作的代码
+    }
+    public String my() throws Exception
+    {
+          // 处理my动作的代码
+    }
+    
+}
+
+
+
+除了在struts.xml中配置别名，还可以通过请求参数来描述指定动作（并不需要在struts.xml中配置）。请求参数的格式如下：
+http://localhost:8080/contextPath/actionName!method.action
+关于通过请求指定动作的详细内容，请参阅笔者写的《Struts2教程2：处理一个form多个submit》。
+3. 为action指定参数
+在struts2中还可以为action指定一个或多个参数。大家还记着struts1.x是如何设置的action参数不？在struts1.x中可以使用<action>标签的parameter属性为其指定一个action参数，如果要指定多个，就只能通过逗号（,）或其他的分隔符将不同的参数隔开。而在struts2中可以通过<param>标签指定任意多个参数。代码如下：
+
+
+<action name="submit"  class="action.MyAction">
+<param name="param1">value1</param>
+<param name="param2">value2</param>
+<result name="save"
+>
+        /result.jsp
+    </result>
+    
+</action>
+
+
+    当然，在action中读这些参数也非常简单，只需要象获取请求参数一样在action类中定义相应的setter方法即可（一般不用定义getter方法）。如下面的代码将读取param1和param2参数的值：
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public
+class MyAction extends ActionSupport
+{
+    private String param1;
+    private String param2;
+
+    public String execute() throws Exception
+    {
+        System.out.println(param1 + param2);
+    }
+    public
+void setParam1(String param1)
+    {
+        this.param1 = param1;
+    }
+    public
+void setParam2(String param2)
+    {
+        this.param2 = param2;
+    }
+    
+}
+
+
+当struts2在调用execute之前，param1和param2的值就已经是相应参数的值了，因此，在execute方法中可以直接使用param1和param2。
+4. 选择result类型
+
+在默认时，<result>标签的type属性值是“dispatcher”（实际上就是转发，forward）。开发人员可以根据自己的需要指定不同的类型，如redirect、stream等。如下面代码所示：
+
+<result name="save" type="redirect">
+       /result.jsp
+</result>
+这此result-type可以在struts2-core-2.0.11.1.jar包或struts2源代码中的struts-default.xml文件中找到，在这个文件中找到<result-types>标签，所有的result-type都在里面定义了。代码如下：
+
+
+<result-types>
+<result-type name="chain" class="com.opensymphony.xwork2.ActionChainResult"/>
+<result-type name="dispatcher" class="org.apache.struts2.dispatcher.ServletDispatcherResult" default="true"/>
+<result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult"/>
+<result-type name="httpheader" class="org.apache.struts2.dispatcher.HttpHeaderResult"/>
+<result-type name="redirect" class="org.apache.struts2.dispatcher.ServletRedirectResult"/>
+<result-type name="redirectAction" class="org.apache.struts2.dispatcher.ServletActionRedirectResult"/>
+<result-type name="stream" class="org.apache.struts2.dispatcher.StreamResult"/>
+<result-type name="velocity" class="org.apache.struts2.dispatcher.VelocityResult"/>
+<result-type name="xslt" class="org.apache.struts2.views.xslt.XSLTResult"/>
+<result-type name="plainText" class="org.apache.struts2.dispatcher.PlainTextResult"
+/>
+<!-- Deprecated name form scheduled for removal in Struts 2.1.0. The camelCase versions are preferred. See ww-1707 -->
+<result-type name="redirect-action" class="org.apache.struts2.dispatcher.ServletActionRedirectResult"/>
+<result-type name="plaintext" class="org.apache.struts2.dispatcher.PlainTextResult"
+/>
+</result-types>
+
+
+5. 全局result
+有很多时候一个<result>初很多<action>使用，这时可以使用<global-results>标签来定义全局的<result>，代码如下：
+
+<struts>
+<package name="demo" extends="struts-default">
+<global-results>
+<result name="print">/result.jsp</result>
+</global-results>
+<action name="submit" class="action.MoreSubmitAction">
+        
+        </action>
+<action name="my" class="action.MoreSubmitAction" method="my">
+        
+        </action>
+</package>
+</struts>
+
+
+   如果<action>中没有相应的<result>，Struts2就会使用全局的<result>。
+
