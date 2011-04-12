@@ -1,155 +1,155 @@
-ºÍÏÂÃæÅäÖÃ²î²»¶à £¬ºÜ¹Ø¼üµÄÊÇÒ»¸öÊÇ1:Ìí¼ÓÈí¼ş,¿ÉÒÔÊÇÔÚÏß¸üĞÂµÄURL,Ò²¿ÉÒÔÊÇ±¾µØµÄÎÄ¼ş¼Ğ.Ò»°ãÓÃÏÂÔØ¹¤¾ß°Ñ²å¼şÏÂÔØµ½±¾µØ,ÔÚÕâÀïÌí¼ÓÒ»¸ö±¾µØµÄÎÄ¼ş¼ĞÀ´°²×°²å¼ş£¬¿´µ½Õâ¸ö²ÅÖªµÀ¿ÉÒÔÌí¼Ó±¾µØÎÄ¼ş
+å’Œä¸‹é¢é…ç½®å·®ä¸å¤š ï¼Œå¾ˆå…³é”®çš„æ˜¯ä¸€ä¸ªæ˜¯1:æ·»åŠ è½¯ä»¶,å¯ä»¥æ˜¯åœ¨çº¿æ›´æ–°çš„URL,ä¹Ÿå¯ä»¥æ˜¯æœ¬åœ°çš„æ–‡ä»¶å¤¹.ä¸€èˆ¬ç”¨ä¸‹è½½å·¥å…·æŠŠæ’ä»¶ä¸‹è½½åˆ°æœ¬åœ°,åœ¨è¿™é‡Œæ·»åŠ ä¸€ä¸ªæœ¬åœ°çš„æ–‡ä»¶å¤¹æ¥å®‰è£…æ’ä»¶ï¼Œçœ‹åˆ°è¿™ä¸ªæ‰çŸ¥é“å¯ä»¥æ·»åŠ æœ¬åœ°æ–‡ä»¶
 
 
-MyEclipse 8.5 ¿ª·¢»·¾³ÅäÖÃ¡¢²å¼ş°²×°¡¢ºº»¯¡¢Aptana2.0²å¼ş,SVN ²å¼ş,Flex Builder 3/4 ²å¼ş°²×°
-ÏÂÔØMyEclipse 8.5 
-¿ÉÒÔÍ¨¹ı´úÀíhttp://www.proxyie.cn/·ÃÎÊMyEclipseµÄ¹Ù·½ÍøÕ¾ÏÂÔØÈí¼ş 
-ÏÂÔØµØÖ·:http://downloads.myeclipseide.com/downloads/products/eworkbench /galileo/myeclipse-8.5.0-win32.exe 
-ÎÄ¼ş´óĞ¡: 825.84 MB 
+MyEclipse 8.5 å¼€å‘ç¯å¢ƒé…ç½®ã€æ’ä»¶å®‰è£…ã€æ±‰åŒ–ã€Aptana2.0æ’ä»¶,SVN æ’ä»¶,Flex Builder 3/4 æ’ä»¶å®‰è£…
+ä¸‹è½½MyEclipse 8.5 
+å¯ä»¥é€šè¿‡ä»£ç†http://www.proxyie.cn/è®¿é—®MyEclipseçš„å®˜æ–¹ç½‘ç«™ä¸‹è½½è½¯ä»¶ 
+ä¸‹è½½åœ°å€:http://downloads.myeclipseide.com/downloads/products/eworkbench /galileo/myeclipse-8.5.0-win32.exe 
+æ–‡ä»¶å¤§å°: 825.84 MB 
 MD5 : a9038148dcde9066abc3711bf8ee636c 
 --------------------------------------------------- 
-»·¾³ËµÃ÷: 
-MyEclipse°²×°Â·¾¶  E:\MyEclipse\MyEclipse8.5 
-Common°²×°Â·¾¶     E:\MyEclipse\Common 
-ĞÂ½¨Ò»¸ö            E:\MyEclipse\myPlugin×¨·ÅÎÒÃÇºó¼ÓÈëµÄ²å¼ş 
+ç¯å¢ƒè¯´æ˜: 
+MyEclipseå®‰è£…è·¯å¾„  E:\MyEclipse\MyEclipse8.5 
+Commonå®‰è£…è·¯å¾„     E:\MyEclipse\Common 
+æ–°å»ºä¸€ä¸ª            E:\MyEclipse\myPluginä¸“æ”¾æˆ‘ä»¬ååŠ å…¥çš„æ’ä»¶ 
 --------------------------------------------------- 
-MyEclipse Configuration Center ¹ÜÀíMyEclipse²å¼şµÄÒ»ÖÖÊÖ¶Î 
+MyEclipse Configuration Center ç®¡ç†MyEclipseæ’ä»¶çš„ä¸€ç§æ‰‹æ®µ 
 
   
 
-²Î¿¼:<Myeclipse8.5GAÓÅ»¯±Ê¼Ç> http://isy.javaeye.com/blog/639767 
-dashboard¡ª   ²å¼şÃæ°å,¿ÉÒÔÌí¼ÓºÍÉ¾³ıMyeclipseµÄ²å¼ş 
+å‚è€ƒ:<Myeclipse8.5GAä¼˜åŒ–ç¬”è®°> http://isy.javaeye.com/blog/639767 
+dashboardâ€”   æ’ä»¶é¢æ¿,å¯ä»¥æ·»åŠ å’Œåˆ é™¤Myeclipseçš„æ’ä»¶ 
 
-software  ¡ª   ×Ô¶¨ÒåÌí¼ÓÆäËûÈí¼ş 
+software  â€”   è‡ªå®šä¹‰æ·»åŠ å…¶ä»–è½¯ä»¶ 
 
-collaboration  ¡ª¿ÉÒÔ·ÖÏíÄãµÄÅäÖÃĞÅÏ¢ºÍÍÅ¶ÓĞ­×÷µÄÖ§³Ö 
+collaboration  â€”å¯ä»¥åˆ†äº«ä½ çš„é…ç½®ä¿¡æ¯å’Œå›¢é˜Ÿåä½œçš„æ”¯æŒ 
 
-subscription   ¡ª  ×¢²áĞÅÏ¢,È¥ÏÂÒ»ÆªÎÄÕÂÀïÕÒµÄ×¢²áÂë¿ÉÒÔÌùÔÚÕâÀï 
+subscription   â€”  æ³¨å†Œä¿¡æ¯,å»ä¸‹ä¸€ç¯‡æ–‡ç« é‡Œæ‰¾çš„æ³¨å†Œç å¯ä»¥è´´åœ¨è¿™é‡Œ 
 
-1:Ìí¼ÓÈí¼ş,¿ÉÒÔÊÇÔÚÏß¸üĞÂµÄURL,Ò²¿ÉÒÔÊÇ±¾µØµÄÎÄ¼ş¼Ğ.Ò»°ãÓÃÏÂÔØ¹¤¾ß°Ñ²å¼şÏÂÔØµ½±¾µØ,ÔÚÕâÀïÌí¼ÓÒ»¸ö±¾µØµÄÎÄ¼ş¼ĞÀ´°²×°²å¼ş. 
+1:æ·»åŠ è½¯ä»¶,å¯ä»¥æ˜¯åœ¨çº¿æ›´æ–°çš„URL,ä¹Ÿå¯ä»¥æ˜¯æœ¬åœ°çš„æ–‡ä»¶å¤¹.ä¸€èˆ¬ç”¨ä¸‹è½½å·¥å…·æŠŠæ’ä»¶ä¸‹è½½åˆ°æœ¬åœ°,åœ¨è¿™é‡Œæ·»åŠ ä¸€ä¸ªæœ¬åœ°çš„æ–‡ä»¶å¤¹æ¥å®‰è£…æ’ä»¶. 
 
-2:¶ÔÇ°ÃæÌí¼ÓµÄµØÖ·½øĞĞÑéÖ¤,´ÓÖĞÕÒµ½²å¼ş. ÔÚÕÒµ½µÄ²å¼şÉÏ,ÓÒ»÷Êó±ê,Ñ¡"Add to Profile",²å¼ş±»Ìí¼Óµ½"4"µÄÎ»ÖÃ 
+2:å¯¹å‰é¢æ·»åŠ çš„åœ°å€è¿›è¡ŒéªŒè¯,ä»ä¸­æ‰¾åˆ°æ’ä»¶. åœ¨æ‰¾åˆ°çš„æ’ä»¶ä¸Š,å³å‡»é¼ æ ‡,é€‰"Add to Profile",æ’ä»¶è¢«æ·»åŠ åˆ°"4"çš„ä½ç½® 
 
-3:¿ÉÒÔ¶ÔÒÔÌí¼ÓµÄ²å¼şÉ¾³ı 
+3:å¯ä»¥å¯¹ä»¥æ·»åŠ çš„æ’ä»¶åˆ é™¤ 
 
-4:±»Ìí¼ÓµÄ²å¼ş 
+4:è¢«æ·»åŠ çš„æ’ä»¶ 
 
-5:½«Òª±»Ìí¼ÓµÄ²å¼ş, 
+5:å°†è¦è¢«æ·»åŠ çš„æ’ä»¶, 
 
-6:Ö´ĞĞÌí¼Ó¶¯×÷ 
+6:æ‰§è¡Œæ·»åŠ åŠ¨ä½œ 
 
-MyEclipse Configuration Center²»Ì«ºÃÓÃ,·´Ó¦½ÏÂı,ÓĞÊ±Òª¹ØÁËÔÙ¿ª²Å»á´ïµ½Ğ§¹û,ÓÉÆäÉ¾³ıÊ±. 
+MyEclipse Configuration Centerä¸å¤ªå¥½ç”¨,ååº”è¾ƒæ…¢,æœ‰æ—¶è¦å…³äº†å†å¼€æ‰ä¼šè¾¾åˆ°æ•ˆæœ,ç”±å…¶åˆ é™¤æ—¶. 
 --------------------------------------------------- 
-ºº»¯MyEclipse 8.5 
-Ê×ÏÈÏÂÔØºº»¯°üÎÄ¼ş£º 
-http://www.blogjava.net/Files/sy1214520/Myeclipse8.5%20ºº»¯.zip 
+æ±‰åŒ–MyEclipse 8.5 
+é¦–å…ˆä¸‹è½½æ±‰åŒ–åŒ…æ–‡ä»¶ï¼š 
+http://www.blogjava.net/Files/sy1214520/Myeclipse8.5%20æ±‰åŒ–.zip 
 
-1¡¢½«½âÑ¹ºóµÄ¡°language¡±ÎÄ¼ş¼ĞÖĞµÄfeaturesÓëpluginsÎÄ¼ş¼Ğ·ÅÈë 
-E:\MyEclipse\myPlugin\languageÀïÃæ¡£ 
+1ã€å°†è§£å‹åçš„â€œlanguageâ€æ–‡ä»¶å¤¹ä¸­çš„featuresä¸pluginsæ–‡ä»¶å¤¹æ”¾å…¥ 
+E:\MyEclipse\myPlugin\languageé‡Œé¢ã€‚ 
 
-2¡¢´ò¿ªMyEclipse´´½¨Ò»¸öjavaÏîÄ¿£¬½«Ñ¹Ëõ°üÖĞµÄCreatePluginsConfig.java¸´ÖÆ½øÈ¥¡£ÔÚMainº¯ÊıÖĞ£¬ ĞèÒªĞ´Èë¡°E:\\MyEclipse\\myPlugin\\language\\plugins¡±£¬Ò²¾ÍÊÇÖ¸Ïò¸Õ²ÅlanguageµÄplugins Ä¿Â¼¡£È»ºóÖ´ĞĞ¡£ÕıÈ·µÄÇé¿öÏÂ£¬½«ÔÚ¿ØÖÆÌ¨ÊäÈëÒ»´ó´®Ó¢ÎÄ¡£ 
+2ã€æ‰“å¼€MyEclipseåˆ›å»ºä¸€ä¸ªjavaé¡¹ç›®ï¼Œå°†å‹ç¼©åŒ…ä¸­çš„CreatePluginsConfig.javaå¤åˆ¶è¿›å»ã€‚åœ¨Mainå‡½æ•°ä¸­ï¼Œ éœ€è¦å†™å…¥â€œE:\\MyEclipse\\myPlugin\\language\\pluginsâ€ï¼Œä¹Ÿå°±æ˜¯æŒ‡å‘åˆšæ‰languageçš„plugins ç›®å½•ã€‚ç„¶åæ‰§è¡Œã€‚æ­£ç¡®çš„æƒ…å†µä¸‹ï¼Œå°†åœ¨æ§åˆ¶å°è¾“å…¥ä¸€å¤§ä¸²è‹±æ–‡ã€‚ 
 
-3¡¢ÓÃÎÄ±¾±à¼­Æ÷´ò¿ª¡°E:\MyEclipse 8.5\configuration\org.eclipse.equinox.simpleconfigurator¡±Ä¿Â¼ÏÂµÄ bundles.infoÎÄ¼ş¡£½«ÔÚµÚ¶ş²¿ÖĞÉú³ÉµÄÒ»´ó´®Ó¢ÎÄ¸´ÖÆµ½¸ÃÎÄ¼şµÄÏÂÃæ¡£ 
+3ã€ç”¨æ–‡æœ¬ç¼–è¾‘å™¨æ‰“å¼€â€œE:\MyEclipse 8.5\configuration\org.eclipse.equinox.simpleconfiguratorâ€ç›®å½•ä¸‹çš„ bundles.infoæ–‡ä»¶ã€‚å°†åœ¨ç¬¬äºŒéƒ¨ä¸­ç”Ÿæˆçš„ä¸€å¤§ä¸²è‹±æ–‡å¤åˆ¶åˆ°è¯¥æ–‡ä»¶çš„ä¸‹é¢ã€‚ 
 
-3¡¢ÕÒµ½E:\MyEclipse\MyEclipse8.5Ä¿Â¼ÏÂÕÒµ½myeclipse.iniÎÄ¼ş£¬ÓÃ¼ÇÊÂ±¾´ò¿ªÔÚ×îºóÒ»ĞĞ¼Ó¶àÒ»ÌõÓï¾ä  -Duser.language=zh 
+3ã€æ‰¾åˆ°E:\MyEclipse\MyEclipse8.5ç›®å½•ä¸‹æ‰¾åˆ°myeclipse.iniæ–‡ä»¶ï¼Œç”¨è®°äº‹æœ¬æ‰“å¼€åœ¨æœ€åä¸€è¡ŒåŠ å¤šä¸€æ¡è¯­å¥  -Duser.language=zh 
 
-4¡¢É¾³ıE:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateÎÄ¼ş¼Ğ 
+4ã€åˆ é™¤E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateæ–‡ä»¶å¤¹ 
 
-5¡¢±£´æ£¬Æô¶¯ÄãµÄMyEclipse°É£¬ÕâÀïÄã¾Í¿ÉÒÔ¿´µ½ÖĞÎÄµÄ½çÃæÁË¡£ 
+5ã€ä¿å­˜ï¼Œå¯åŠ¨ä½ çš„MyEclipseå§ï¼Œè¿™é‡Œä½ å°±å¯ä»¥çœ‹åˆ°ä¸­æ–‡çš„ç•Œé¢äº†ã€‚ 
 
 --------------------------------------------------- 
-Aptana2.0²å¼ş°²×° 
+Aptana2.0æ’ä»¶å®‰è£… 
 
-²¹³ä:°²×°Íê³Éºó*.jsp´ò¿ªÊ±´íÎó,»¹ÊÇ²»Òª°²ÎªºÃ 
+è¡¥å……:å®‰è£…å®Œæˆå*.jspæ‰“å¼€æ—¶é”™è¯¯,è¿˜æ˜¯ä¸è¦å®‰ä¸ºå¥½ 
 
-1¡¢ÏÂÔØaptana2.0Eclipse Plugin²å¼ş. 
+1ã€ä¸‹è½½aptana2.0Eclipse Pluginæ’ä»¶. 
 
-2¡¢½âÑ¹³öfeaturesÓëpluginsÎÄ¼ş¼Ğ,COPYµ½E:\MyEclipse\myPlugin\aptana2.0 
+2ã€è§£å‹å‡ºfeaturesä¸pluginsæ–‡ä»¶å¤¹,COPYåˆ°E:\MyEclipse\myPlugin\aptana2.0 
 
-3¡¢ÔÚE:\MyEclipse\MyEclipse8.5\dropinsÔÚĞÂ½¨ÎÄ¼şaptana.link,ÄÚÈİÊÇpath=E: \\MyEclipse\\myPlugin\\aptana2.0,±£´æ 
+3ã€åœ¨E:\MyEclipse\MyEclipse8.5\dropinsåœ¨æ–°å»ºæ–‡ä»¶aptana.link,å†…å®¹æ˜¯path=E: \\MyEclipse\\myPlugin\\aptana2.0,ä¿å­˜ 
 
-4¡¢É¾³ıE:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateÎÄ¼ş¼Ğ 
+4ã€åˆ é™¤E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateæ–‡ä»¶å¤¹ 
 
-5¡¢ÖØÆôÍê³É 
+5ã€é‡å¯å®Œæˆ 
 --------------------------------------------------- 
-°²×°Flex Builder 4 ²å¼ş°æ 
-1: ÒòÎªMyEclipse8.5Ê¹ÓÃµÄÊÇeclipse3.5.2,ËùÒÔ°²×°Flex Builder 4°æ±¾ÊÇ×îÆ¥ÅäµÄ. 
-2:ÏÂÔØFlashBuilder_4_Plugin_LS10.exe 
+å®‰è£…Flex Builder 4 æ’ä»¶ç‰ˆ 
+1: å› ä¸ºMyEclipse8.5ä½¿ç”¨çš„æ˜¯eclipse3.5.2,æ‰€ä»¥å®‰è£…Flex Builder 4ç‰ˆæœ¬æ˜¯æœ€åŒ¹é…çš„. 
+2:ä¸‹è½½FlashBuilder_4_Plugin_LS10.exe 
 
-3:ÔËĞĞºóÌáÊ¾ÊÍ·Å°²×°ÎÄ¼şµ½C:\Documents and Settings\IBM\×ÀÃæ\Adobe Flash Builder 4 Plugin,ÕâÀïÒªÇ§Íò×¢Òâ ,Ò»¸öÒªĞŞ¸ÄÕâ¸öÂ·¾¶,ÆäËü²»ÄÜÓĞÖĞÎÄ,°²×°ÎÄ¼şµÄ´æ·ÅÂ·¾¶Ò²²»ÄÜÓĞÖĞÎÄ,²»È»»áÌáÊ¾"ÕıÔÚ°²×°"¾Í²»×ßÁË. 
+3:è¿è¡Œåæç¤ºé‡Šæ”¾å®‰è£…æ–‡ä»¶åˆ°C:\Documents and Settings\IBM\æ¡Œé¢\Adobe Flash Builder 4 Plugin,è¿™é‡Œè¦åƒä¸‡æ³¨æ„ ,ä¸€ä¸ªè¦ä¿®æ”¹è¿™ä¸ªè·¯å¾„,å…¶å®ƒä¸èƒ½æœ‰ä¸­æ–‡,å®‰è£…æ–‡ä»¶çš„å­˜æ”¾è·¯å¾„ä¹Ÿä¸èƒ½æœ‰ä¸­æ–‡,ä¸ç„¶ä¼šæç¤º"æ­£åœ¨å®‰è£…"å°±ä¸èµ°äº†. 
 
-4:Ñ¡ÔñÒ»ÏÂmyEclipse8.5µÄ°²×°Â·¾¶, °²×°Íê³É. ºÜºÃ°²×° 
+4:é€‰æ‹©ä¸€ä¸‹myEclipse8.5çš„å®‰è£…è·¯å¾„, å®‰è£…å®Œæˆ. å¾ˆå¥½å®‰è£… 
 --------------------------------------------------- 
-°²×°Flex Builder 3 ²å¼ş°æ ÓĞµãÂé·³ 
+å®‰è£…Flex Builder 3 æ’ä»¶ç‰ˆ æœ‰ç‚¹éº»çƒ¦ 
 
-1 ÏÂÔØÎÄ¼şFB3_WWEJ_Plugin²å¼ş°æeclipse3.3.exe 
+1 ä¸‹è½½æ–‡ä»¶FB3_WWEJ_Pluginæ’ä»¶ç‰ˆeclipse3.3.exe 
 
-2 °²×°µ½Ò»¸ö¿ÕÄ¿Â¼E:\Adobe\Flex Builder 3 Plug-in 
+2 å®‰è£…åˆ°ä¸€ä¸ªç©ºç›®å½•E:\Adobe\Flex Builder 3 Plug-in 
 
-3 ²å¼ş¾ÍÔÚE:\Adobe\Flex Builder 3 Plug-in\com.adobe.flexbuilder.update.siteÖĞ 
+3 æ’ä»¶å°±åœ¨E:\Adobe\Flex Builder 3 Plug-in\com.adobe.flexbuilder.update.siteä¸­ 
 
-4 ÔÚE:\MyEclipse\MyEclipse8.5\dropinsÔÚĞÂ½¨ÎÄ¼şflexBuilder.link,ÄÚÈİÊÇpath=E: \\Adobe\\Flex Builder 3 Plug-in\\com.adobe.flexbuilder.update.site,±£´æ 
+4 åœ¨E:\MyEclipse\MyEclipse8.5\dropinsåœ¨æ–°å»ºæ–‡ä»¶flexBuilder.link,å†…å®¹æ˜¯path=E: \\Adobe\\Flex Builder 3 Plug-in\\com.adobe.flexbuilder.update.site,ä¿å­˜ 
 
-5 É¾³ıE:\Adobe\Flex Builder 3 Plug-in\com.adobe.flexbuilder.update.siteÏÂsite.xmlÎÄ¼ş,index.htmlÎÄ¼ş,webÎÄ¼ş¼Ğ 
+5 åˆ é™¤E:\Adobe\Flex Builder 3 Plug-in\com.adobe.flexbuilder.update.siteä¸‹site.xmlæ–‡ä»¶,index.htmlæ–‡ä»¶,webæ–‡ä»¶å¤¹ 
 
-6¡¢É¾³ıE:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateÎÄ¼ş¼Ğ 
+6ã€åˆ é™¤E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateæ–‡ä»¶å¤¹ 
 
-7. ÖØÆômyeclipse8.5 
+7. é‡å¯myeclipse8.5 
 
-8. ½øĞĞFlexµÄÅäÖÃ. 
-ÔÚEclipseÖĞ.µã»÷->Window->Preferences->Flex->Installed Flex SDKs 
-ĞŞ¸ÄFlex SDKs 2.0 .ºÍ Flex SDKs 3.0µÄÂ·¾¶µã£¬ÆäÖĞFlex SDKs 3.0.1´òÉÏĞ¡¹´£¬×îºóÎÒÃÇApplyÈÃÉèÖÃ³ÉĞ§. 
-ÖØÆôEclipse..Äã¾Í¿ÉÒÔ¿ª·¢FlexÁË. 
+8. è¿›è¡ŒFlexçš„é…ç½®. 
+åœ¨Eclipseä¸­.ç‚¹å‡»->Window->Preferences->Flex->Installed Flex SDKs 
+ä¿®æ”¹Flex SDKs 2.0 .å’Œ Flex SDKs 3.0çš„è·¯å¾„ç‚¹ï¼Œå…¶ä¸­Flex SDKs 3.0.1æ‰“ä¸Šå°å‹¾ï¼Œæœ€åæˆ‘ä»¬Applyè®©è®¾ç½®æˆæ•ˆ. 
+é‡å¯Eclipse..ä½ å°±å¯ä»¥å¼€å‘Flexäº†. 
 
-×¢Òâ,µÚÒ»´ÎÊ±±¨±í´í: 
+æ³¨æ„,ç¬¬ä¸€æ¬¡æ—¶æŠ¥è¡¨é”™: 
 Error 
 Fri Apr 30 17:41:01 CST 2010 
-Î´ÄÜ¶Ô com.adobe.flexbuilder.apollo.content-type-apollo ´´½¨ÄÚÈİÃèÊöÆ÷¡£ÄÚÈİÀàĞÍÒÑ±»½ûÓÃ¡£ 
+æœªèƒ½å¯¹ com.adobe.flexbuilder.apollo.content-type-apollo åˆ›å»ºå†…å®¹æè¿°å™¨ã€‚å†…å®¹ç±»å‹å·²è¢«ç¦ç”¨ã€‚ 
 
 --------------------------------------------------- 
-°²×°subclipse, SVN ²å¼ş 
-1¡¢´Ó¹ÙÍøÏÂÔØsite-1.6.9.zipÎÄ¼ş,ÍøÖ·ÊÇ:subclipse.tigris.org, 
+å®‰è£…subclipse, SVN æ’ä»¶ 
+1ã€ä»å®˜ç½‘ä¸‹è½½site-1.6.9.zipæ–‡ä»¶,ç½‘å€æ˜¯:subclipse.tigris.org, 
 
-2¡¢´ÓÖĞ½âÑ¹³öfeaturesÓëpluginsÎÄ¼ş¼Ğ£¬¸´ÖÆµ½E:\MyEclipse\myPlugin\svnÀïÃæ£¬ÆäËüµÄ*.xmlÎÄ¼ş²»Òª¡£ 
+2ã€ä»ä¸­è§£å‹å‡ºfeaturesä¸pluginsæ–‡ä»¶å¤¹ï¼Œå¤åˆ¶åˆ°E:\MyEclipse\myPlugin\svné‡Œé¢ï¼Œå…¶å®ƒçš„*.xmlæ–‡ä»¶ä¸è¦ã€‚ 
 
-3¡¢ÔÚE:\MyEclipse\MyEclipse8.5\dropinsÏÂĞÂ½¨ÎÄ¼şsvn.link,ÄÚÈİÊÇ:path=E: \\MyEclipse\\myPlugin\\svn ±£´æ¡£ 
+3ã€åœ¨E:\MyEclipse\MyEclipse8.5\dropinsä¸‹æ–°å»ºæ–‡ä»¶svn.link,å†…å®¹æ˜¯:path=E: \\MyEclipse\\myPlugin\\svn ä¿å­˜ã€‚ 
 
-4¡¢É¾³ıE:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateÎÄ¼ş¼Ğ 
+4ã€åˆ é™¤E:\MyEclipse\MyEclipse8.5\configuration\org.eclipse.updateæ–‡ä»¶å¤¹ 
 
-5¡¢ÖØÆômyeclipse¾ÍÒ»ÇĞÕı³£ÁË¡£ 
+5ã€é‡å¯myeclipseå°±ä¸€åˆ‡æ­£å¸¸äº†ã€‚ 
 
 --------------------------------------------------- 
-ĞÔÄÜÓÅ»¯ 
+æ€§èƒ½ä¼˜åŒ– 
 
-1 ¡¢¹Ø±ÕMyEclipseµÄ×Ô¶¯validation 
+1 ã€å…³é—­MyEclipseçš„è‡ªåŠ¨validation 
       windows > perferences > myeclipse > validation 
-      ½«BuildÏÂÈ«²¿¹´È¡Ïû 
-      Èç¹ûÄãĞèÒªÑéÖ¤Ä³¸öÎÄ¼şµÄÊ±ºò£¬ÎÒÃÇ¿ÉÒÔµ¥¶ÀÈ¥ÑéÖ¤Ëü¡£·½·¨ÊÇ£º 
-      ÔÚĞèÒªÑéÖ¤µÄÎÄ¼şÉÏ( ÓÒ¼ü -> MyEclipse -> Run   Validation ¡£ 
+      å°†Buildä¸‹å…¨éƒ¨å‹¾å–æ¶ˆ 
+      å¦‚æœä½ éœ€è¦éªŒè¯æŸä¸ªæ–‡ä»¶çš„æ—¶å€™ï¼Œæˆ‘ä»¬å¯ä»¥å•ç‹¬å»éªŒè¯å®ƒã€‚æ–¹æ³•æ˜¯ï¼š 
+      åœ¨éœ€è¦éªŒè¯çš„æ–‡ä»¶ä¸Š( å³é”® -> MyEclipse -> Run   Validation ã€‚ 
 
-2¡¢ Æô¶¯ÓÅ»¯£¬¹Ø±Õ²»ĞèÒªÊ¹ÓÃµÄÄ£¿é 
-     ËùÒÔ¿ÉÒÔ½«Ò»Ğ©²»Ê¹ÓÃµÄÄ£¿é½ûÖ¹ ¼ÓÔØÆô¶¯¡£ 
-     Window > Preferences > General > Startup andy Shutdown ÔÚÕâÀïÁĞ³öµÄÊÇMyEclipseÆô¶¯Ê±¼ÓÔØµÄÄ£¿é 
-     ÎÒÕâÀïÖ»ÈÃËü¼ÓÔØtomcat6 ¹´Ñ¡ MyEclipse EASIE Tomcat 6 ¡£ 
-          WTP £ºÒ»¸ö¸úmyeclipse²î²»¶àµÄ¶«Î÷£¬Ö÷Òª²î±ğÊÇ WTP ÊÇÃâ·ÑµÄ£¬Èç¹ûÊ¹ÓÃmyeclipse£¬Õâ¸ö¿ÉÒÔÈ¡Ïû 
-          Mylyn£º×é¶ÓÈÎÎñ¹ÜÀí¹¤¾ß£¬ÀàËÆÓÚ CVS £¬ÒÔÈÎÎñÎªµ¥Î»¹ÜÀíÏîÄ¿½ø¶È£¬Ã»ÓÃµ½µÄ¿ÉÒÔÈ¡Ïû 
-          Derby£ºÒ»ÖÖ±£´æ³É jar ĞÎÊ½µÄÊı¾İ¿â£¬ÎÒÃ»ÓÃµ½£¬È¡Ïû 
-          Ò»´óÅÅÒÔ MyEclipse EASIE ´òÍ·µÄÆô¶¯Ïî£ºmyeclipse Ö§³ÖµÄ·şÎñÆ÷£¬Ö»Ñ¡×Ô¼ºÓÃµÄ£¬ÆäËûÈ¡Ïû£¬ 
-         ±ÈÈçÎÒÖ»Ñ¡ÁË    tomcat ¡£ 
+2ã€ å¯åŠ¨ä¼˜åŒ–ï¼Œå…³é—­ä¸éœ€è¦ä½¿ç”¨çš„æ¨¡å— 
+     æ‰€ä»¥å¯ä»¥å°†ä¸€äº›ä¸ä½¿ç”¨çš„æ¨¡å—ç¦æ­¢ åŠ è½½å¯åŠ¨ã€‚ 
+     Window > Preferences > General > Startup andy Shutdown åœ¨è¿™é‡Œåˆ—å‡ºçš„æ˜¯MyEclipseå¯åŠ¨æ—¶åŠ è½½çš„æ¨¡å— 
+     æˆ‘è¿™é‡Œåªè®©å®ƒåŠ è½½tomcat6 å‹¾é€‰ MyEclipse EASIE Tomcat 6 ã€‚ 
+          WTP ï¼šä¸€ä¸ªè·Ÿmyeclipseå·®ä¸å¤šçš„ä¸œè¥¿ï¼Œä¸»è¦å·®åˆ«æ˜¯ WTP æ˜¯å…è´¹çš„ï¼Œå¦‚æœä½¿ç”¨myeclipseï¼Œè¿™ä¸ªå¯ä»¥å–æ¶ˆ 
+          Mylynï¼šç»„é˜Ÿä»»åŠ¡ç®¡ç†å·¥å…·ï¼Œç±»ä¼¼äº CVS ï¼Œä»¥ä»»åŠ¡ä¸ºå•ä½ç®¡ç†é¡¹ç›®è¿›åº¦ï¼Œæ²¡ç”¨åˆ°çš„å¯ä»¥å–æ¶ˆ 
+          Derbyï¼šä¸€ç§ä¿å­˜æˆ jar å½¢å¼çš„æ•°æ®åº“ï¼Œæˆ‘æ²¡ç”¨åˆ°ï¼Œå–æ¶ˆ 
+          ä¸€å¤§æ’ä»¥ MyEclipse EASIE æ‰“å¤´çš„å¯åŠ¨é¡¹ï¼šmyeclipse æ”¯æŒçš„æœåŠ¡å™¨ï¼Œåªé€‰è‡ªå·±ç”¨çš„ï¼Œå…¶ä»–å–æ¶ˆï¼Œ 
+         æ¯”å¦‚æˆ‘åªé€‰äº†    tomcat ã€‚ 
 
-3 ¡¢È¥µôMyEclipseµÄÆ´Ğ´¼ì²é£¨Èç¹ûÄã¾õµÄÓĞÓÃ¿ÉÒÔ²»È¥£© 
-      Æ´Ğ´¼ì²é»á¸øÎÒÃÇ´øÀ´²»ÉÙµÄÂé·³£¬ÎÒÃÇµÄ·½·¨ÃüÃû¶¼»áÊÇµ¥´ÊµÄËõĞ´£¬ËûÒ²»áÌáÊ¾ÓĞ´í£¬ 
-      ËùÒÔ×îºÃÈ¥µô£¬Ã»ÓĞ¶à´óµÄÓÃ´¦ 
-      Window > perferences > General > Editors > Text Editors > Spelling > ½«Enable spell checking¸´Ñ¡¿òµÄ¹´Ñ¡È¥µô¡£ 
+3 ã€å»æ‰MyEclipseçš„æ‹¼å†™æ£€æŸ¥ï¼ˆå¦‚æœä½ è§‰çš„æœ‰ç”¨å¯ä»¥ä¸å»ï¼‰ 
+      æ‹¼å†™æ£€æŸ¥ä¼šç»™æˆ‘ä»¬å¸¦æ¥ä¸å°‘çš„éº»çƒ¦ï¼Œæˆ‘ä»¬çš„æ–¹æ³•å‘½åéƒ½ä¼šæ˜¯å•è¯çš„ç¼©å†™ï¼Œä»–ä¹Ÿä¼šæç¤ºæœ‰é”™ï¼Œ 
+      æ‰€ä»¥æœ€å¥½å»æ‰ï¼Œæ²¡æœ‰å¤šå¤§çš„ç”¨å¤„ 
+      Window > perferences > General > Editors > Text Editors > Spelling > å°†Enable spell checkingå¤é€‰æ¡†çš„å‹¾é€‰å»æ‰ã€‚ 
 
 
-4 ¡¢ĞŞ¸ÄMyEclipse±à¼­JSPÒ³ÃæÊ±µÄ±à¼­¹¤¾ß 
+4 ã€ä¿®æ”¹MyEclipseç¼–è¾‘JSPé¡µé¢æ—¶çš„ç¼–è¾‘å·¥å…· 
       Window > perferences > General > Editors > File Associations > 
-      ÔÚFile types ÖĞÑ¡Ôñ *.jsp > ÔÚAssociated editors ÖĞ½«"MyEclipse JSP Editor"ÉèÖÃÎªÄ¬ÈÏ¡£ 
-      »¹ÓĞXMLÎÄ¼şµÄÄ¬ÈÏ±à¼­Æ÷ 
+      åœ¨File types ä¸­é€‰æ‹© *.jsp > åœ¨Associated editors ä¸­å°†"MyEclipse JSP Editor"è®¾ç½®ä¸ºé»˜è®¤ã€‚ 
+      è¿˜æœ‰XMLæ–‡ä»¶çš„é»˜è®¤ç¼–è¾‘å™¨ 
 
-5 ¡¢ĞŞ¸ÄMyEclipse°²×°Ä¿Â¼µÄmyeclipse.iniÎÄ¼ş£¬¼Ó´óJVMµÄ·Ç¶ÑÄÚ´æ 
-      ¾ßÌåÄÚÈİÈçÏÂ£º 
+5 ã€ä¿®æ”¹MyEclipseå®‰è£…ç›®å½•çš„myeclipse.iniæ–‡ä»¶ï¼ŒåŠ å¤§JVMçš„éå †å†…å­˜ 
+      å…·ä½“å†…å®¹å¦‚ä¸‹ï¼š 
       -configuration 
       configuration 
       -vmargs 
@@ -159,17 +159,17 @@ Fri Apr 30 17:41:01 CST 2010
       -XX:MaxPermSize=256m 
       -XX:ReservedCodeCacheSize=64m 
 
-6¡¢Ê¹ÓÃJRockit×÷ÎªEclipseµÄJava VM 
-EclipseÆô¶¯²ÎÊı£¬Ö¸¶¨eclipseÆô¶¯Ê±Ê¹ÓÃµÄjre 
+6ã€ä½¿ç”¨JRockitä½œä¸ºEclipseçš„Java VM 
+Eclipseå¯åŠ¨å‚æ•°ï¼ŒæŒ‡å®šeclipseå¯åŠ¨æ—¶ä½¿ç”¨çš„jre 
 "E:\MyEclipse8.0\MyEclipse Blue Edition 8.0 GA\myeclipse-blue.exe" -vm E:\JRockit\jrrt-3.1.2-1.6.0\bin\javaw.exe -vmargs -Xms256m -Xmx512m 
 
-ÔÚEclipseÀïÃæ£¬Window > Preferences£¬È»ºóÑ¡ÔñJava > Installed JREsÌí¼ÓJRockit£¬²¢ÉèÖÃÎªÄ¬ÈÏ¡£ ÕâÑù£¬¾Í¿ÉÒÔÓÃJRockitÀ´±àÒëÏîÄ¿ÁË¡£ 
+åœ¨Eclipseé‡Œé¢ï¼ŒWindow > Preferencesï¼Œç„¶åé€‰æ‹©Java > Installed JREsæ·»åŠ JRockitï¼Œå¹¶è®¾ç½®ä¸ºé»˜è®¤ã€‚ è¿™æ ·ï¼Œå°±å¯ä»¥ç”¨JRockitæ¥ç¼–è¯‘é¡¹ç›®äº†ã€‚ 
 
-7. ¹Ø±Õ×Ô¶¯¸üĞÂ 
-1.window->Perferences->General->Startup and Shutdown ¹´µô Automatic Updates Scheduler(×Ô¶¯¸üĞÂµ÷¶È³ÌĞò) 
+7. å…³é—­è‡ªåŠ¨æ›´æ–° 
+1.window->Perferences->General->Startup and Shutdown å‹¾æ‰ Automatic Updates Scheduler(è‡ªåŠ¨æ›´æ–°è°ƒåº¦ç¨‹åº) 
 
-2.window->Perferences->MyEclipse->Maven4MyEclipse ¹´ÉÏ Enable Maven4MyEclipse featrures ;È·¶¨¹Ø±Õ´°¿Ú;¸Ã²½ÖèÊÇÎªÁËÏÔÊ¾µÚ3²½ÖĞµÄMaven½Úµã 
+2.window->Perferences->MyEclipse->Maven4MyEclipse å‹¾ä¸Š Enable Maven4MyEclipse featrures ;ç¡®å®šå…³é—­çª—å£;è¯¥æ­¥éª¤æ˜¯ä¸ºäº†æ˜¾ç¤ºç¬¬3æ­¥ä¸­çš„MavenèŠ‚ç‚¹ 
 
-3.window->Perferences->MyEclipse->Maven4MyEclipse ¨C>Maven ¹´µô Download repository index updates on startup 
+3.window->Perferences->MyEclipse->Maven4MyEclipse â€“>Maven å‹¾æ‰ Download repository index updates on startup 
 
-±¾ÎÄÀ´×ÔCSDN²©¿Í£¬×ªÔØÇë±êÃ÷³ö´¦£ºhttp://blog.csdn.net/jackpk/archive/2010/05/13 /5587633.aspx 
+æœ¬æ–‡æ¥è‡ªCSDNåšå®¢ï¼Œè½¬è½½è¯·æ ‡æ˜å‡ºå¤„ï¼šhttp://blog.csdn.net/jackpk/archive/2010/05/13 /5587633.aspx 

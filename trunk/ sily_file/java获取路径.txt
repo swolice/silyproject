@@ -1,122 +1,122 @@
-Ò»¡¢¹ØÓÚ¾ø¶ÔÂ·¾¶ºÍÏà¶ÔÂ·¾¶
+ä¸€ã€å…³äºç»å¯¹è·¯å¾„å’Œç›¸å¯¹è·¯å¾„
 
-1.»ù±¾¸ÅÄîµÄÀí½â¾ø¶ÔÂ·¾¶£º¾ø¶ÔÂ·¾¶¾ÍÊÇÄãµÄÖ÷Ò³ÉÏµÄÎÄ¼ş»òÄ¿Â¼ÔÚÓ²ÅÌÉÏÕæÕıµÄÂ·¾¶£¬(URLºÍÎïÀíÂ·¾¶)ÀıÈç:C:xyz est.txt´ú±íÁËtest.txtÎÄ¼şµÄ¾ø¶ÔÂ·¾¶¡£http://www.s.com/inx.htmÒ²´ú±íÁËÒ»¸öURL¾ø¶ÔÂ·¾¶¡£Ïà¶ÔÂ·¾¶£ºÏà¶ÔÓÚÄ³¸ö»ù×¼Ä¿Â¼µÄÂ·¾¶¡£°üº¬WebµÄÏà¶ÔÂ·¾¶£¨HTMLÖĞµÄÏà¶ÔÄ¿Â¼£©£¬ÀıÈç£ºÔÚServletÖĞ£¬"/"´ú±íWebÓ¦ÓÃµÄ¸úÄ¿Â¼¡£ºÍÎïÀíÂ·¾¶µÄÏà¶Ô±íÊ¾¡£ÀıÈç£º"./" ´ú±íµ±Ç°Ä¿Â¼,"../"´ú±íÉÏ¼¶Ä¿Â¼¡£ÕâÖÖÀàËÆµÄ±íÊ¾£¬Ò²ÊÇÊôÓÚÏà¶ÔÂ·¾¶¡£ÁíÍâ¹ØÓÚURI£¬URL,URNµÈÄÚÈİ£¬Çë²Î¿¼RFCÏà¹ØÎÄµµ±ê×¼¡£RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax,(http://www.ietf.org/rfc/rfc2396.txt)2.¹ØÓÚJSP/ServletÖĞµÄÏà¶ÔÂ·¾¶ºÍ¾ø¶ÔÂ·¾¶¡£ 2.1·şÎñÆ÷¶ËµÄµØÖ··şÎñÆ÷¶ËµÄÏà¶ÔµØÖ·Ö¸µÄÊÇÏà¶ÔÓÚÄãµÄwebÓ¦ÓÃµÄµØÖ·£¬Õâ¸öµØÖ·ÊÇÔÚ·şÎñÆ÷¶Ë½âÎöµÄ£¨²»Í¬ÓÚhtmlºÍjavascriptÖĞµÄÏà¶ÔµØÖ·£¬ËûÃÇÊÇÓÉ¿Í»§¶Ëä¯ÀÀÆ÷½âÎöµÄ£©
+1.åŸºæœ¬æ¦‚å¿µçš„ç†è§£ç»å¯¹è·¯å¾„ï¼šç»å¯¹è·¯å¾„å°±æ˜¯ä½ çš„ä¸»é¡µä¸Šçš„æ–‡ä»¶æˆ–ç›®å½•åœ¨ç¡¬ç›˜ä¸ŠçœŸæ­£çš„è·¯å¾„ï¼Œ(URLå’Œç‰©ç†è·¯å¾„)ä¾‹å¦‚:C:xyz est.txtä»£è¡¨äº†test.txtæ–‡ä»¶çš„ç»å¯¹è·¯å¾„ã€‚http://www.s.com/inx.htmä¹Ÿä»£è¡¨äº†ä¸€ä¸ªURLç»å¯¹è·¯å¾„ã€‚ç›¸å¯¹è·¯å¾„ï¼šç›¸å¯¹äºæŸä¸ªåŸºå‡†ç›®å½•çš„è·¯å¾„ã€‚åŒ…å«Webçš„ç›¸å¯¹è·¯å¾„ï¼ˆHTMLä¸­çš„ç›¸å¯¹ç›®å½•ï¼‰ï¼Œä¾‹å¦‚ï¼šåœ¨Servletä¸­ï¼Œ"/"ä»£è¡¨Webåº”ç”¨çš„è·Ÿç›®å½•ã€‚å’Œç‰©ç†è·¯å¾„çš„ç›¸å¯¹è¡¨ç¤ºã€‚ä¾‹å¦‚ï¼š"./" ä»£è¡¨å½“å‰ç›®å½•,"../"ä»£è¡¨ä¸Šçº§ç›®å½•ã€‚è¿™ç§ç±»ä¼¼çš„è¡¨ç¤ºï¼Œä¹Ÿæ˜¯å±äºç›¸å¯¹è·¯å¾„ã€‚å¦å¤–å…³äºURIï¼ŒURL,URNç­‰å†…å®¹ï¼Œè¯·å‚è€ƒRFCç›¸å…³æ–‡æ¡£æ ‡å‡†ã€‚RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax,(http://www.ietf.org/rfc/rfc2396.txt)2.å…³äºJSP/Servletä¸­çš„ç›¸å¯¹è·¯å¾„å’Œç»å¯¹è·¯å¾„ã€‚ 2.1æœåŠ¡å™¨ç«¯çš„åœ°å€æœåŠ¡å™¨ç«¯çš„ç›¸å¯¹åœ°å€æŒ‡çš„æ˜¯ç›¸å¯¹äºä½ çš„webåº”ç”¨çš„åœ°å€ï¼Œè¿™ä¸ªåœ°å€æ˜¯åœ¨æœåŠ¡å™¨ç«¯è§£æçš„ï¼ˆä¸åŒäºhtmlå’Œjavascriptä¸­çš„ç›¸å¯¹åœ°å€ï¼Œä»–ä»¬æ˜¯ç”±å®¢æˆ·ç«¯æµè§ˆå™¨è§£æçš„ï¼‰
 
-1¡¢request.getRealPath
+1ã€request.getRealPath
 
-·½·¨£ºrequest.getRealPath("/")
-µÃµ½µÄÂ·¾¶£ºC:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTest
+æ–¹æ³•ï¼šrequest.getRealPath("/")
+å¾—åˆ°çš„è·¯å¾„ï¼šC:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTest
 
-·½·¨£ºrequest.getRealPath(".")
-µÃµ½µÄÂ·¾¶£ºC:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTest.
+æ–¹æ³•ï¼šrequest.getRealPath(".")
+å¾—åˆ°çš„è·¯å¾„ï¼šC:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTest.
 
-·½·¨£ºrequest.getRealPath("")
-µÃµ½µÄÂ·¾¶£ºC:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTest
+æ–¹æ³•ï¼šrequest.getRealPath("")
+å¾—åˆ°çš„è·¯å¾„ï¼šC:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTest
 
 request.getRealPath("web.xml")
 C:Program FilesApache Software FoundationTomcat 5.5webappsstrutsTestweb.xml
 
-2¡¢request.getParameter("");
+2ã€request.getParameter("");
     ActionForm.getMyFile();
 
-·½·¨£ºString filepath = request.getParameter("myFile");
-µÃµ½µÄÂ·¾¶£ºD:VSS°²×°Ä¿Â¼users.txt
+æ–¹æ³•ï¼šString filepath = request.getParameter("myFile");
+å¾—åˆ°çš„è·¯å¾„ï¼šD:VSSå®‰è£…ç›®å½•users.txt
 
-·½·¨£ºString filepath = ActionForm.getMyFile();
-µÃµ½µÄÂ·¾¶£ºD:VSS°²×°Ä¿Â¼users.txt
+æ–¹æ³•ï¼šString filepath = ActionForm.getMyFile();
+å¾—åˆ°çš„è·¯å¾„ï¼šD:VSSå®‰è£…ç›®å½•users.txt
 
-
---------------------------------------------------
-strutsTest Îª¹¤³ÌÃû
-
-myFile ÔÚActionFormÖĞ£¬Îªprivate String myFile;
-ÔÚjspÒ³ÃæÖĞ£ºÎª<html:file property="myFile"></html:file>
 
 --------------------------------------------------
+strutsTest ä¸ºå·¥ç¨‹å
 
-3¡¢»ñµÃÏµÍ³Â·¾¶
+myFile åœ¨ActionFormä¸­ï¼Œä¸ºprivate String myFile;
+åœ¨jspé¡µé¢ä¸­ï¼šä¸º<html:file property="myFile"></html:file>
 
-ÔÚApplicationÖĞ: 
+--------------------------------------------------
+
+3ã€è·å¾—ç³»ç»Ÿè·¯å¾„
+
+åœ¨Applicationä¸­: 
 System.getProperty("user.dir") 
 
 
-ÔÚServletÖĞ: 
+åœ¨Servletä¸­: 
 ServletContext servletContext = config.getServletContext(); 
 String rootPath = servletContext.getRealPath("/"); 
 
 
-ÔÚjspÖĞ:
+åœ¨jspä¸­:
 application.getRealPath("") 
 
-4¡¢ÆäËû1
+4ã€å…¶ä»–1
 
-1.¿ÉÒÔÔÚservletµÄinit·½·¨Àï
+1.å¯ä»¥åœ¨servletçš„initæ–¹æ³•é‡Œ
 
 String path = getServletContext().getRealPath("/");
 
-Õâ½«»ñÈ¡webÏîÄ¿µÄÈ«Â·¾¶
+è¿™å°†è·å–webé¡¹ç›®çš„å…¨è·¯å¾„
 
-ÀıÈç :E:eclipseM9workspacetree
+ä¾‹å¦‚ :E:eclipseM9workspacetree
 
-treeÊÇÎÒwebÏîÄ¿µÄ¸ùÄ¿Â¼
+treeæ˜¯æˆ‘webé¡¹ç›®çš„æ ¹ç›®å½•
 
-2.ÄãÒ²¿ÉÒÔËæÊ±ÔÚÈÎÒâµÄclassÀïµ÷ÓÃ
+2.ä½ ä¹Ÿå¯ä»¥éšæ—¶åœ¨ä»»æ„çš„classé‡Œè°ƒç”¨
 
 this.getClass().getClassLoader().getResource("").getPath();
 
-Õâ½«»ñÈ¡µ½classesÄ¿Â¼µÄÈ«Â·¾¶
+è¿™å°†è·å–åˆ°classesç›®å½•çš„å…¨è·¯å¾„
 
-ÀıÈç : /D:/workspace/strutsTest/WebRoot/WEB-INF/classes/
+ä¾‹å¦‚ : /D:/workspace/strutsTest/WebRoot/WEB-INF/classes/
 
-»¹ÓĞ this.getClass().getResource("").getPath().toString();
+è¿˜æœ‰ this.getClass().getResource("").getPath().toString();
 
-Õâ½«»ñÈ¡ µ½ /D:/workspace/strutsTest/WebRoot/WEB-INF/classes/bl/
+è¿™å°†è·å– åˆ° /D:/workspace/strutsTest/WebRoot/WEB-INF/classes/bl/
 
-Õâ¸ö·½·¨Ò²¿ÉÒÔ²»ÔÚweb»·¾³ÀïÈ·¶¨Â·¾¶,±È½ÏºÃÓÃ
+è¿™ä¸ªæ–¹æ³•ä¹Ÿå¯ä»¥ä¸åœ¨webç¯å¢ƒé‡Œç¡®å®šè·¯å¾„,æ¯”è¾ƒå¥½ç”¨
 
 3.request.getContextPath();
 
-»ñµÃweb¸ùµÄÉÏÏÂÎÄ»·¾³
+è·å¾—webæ ¹çš„ä¸Šä¸‹æ–‡ç¯å¢ƒ
 
-Èç /tree
+å¦‚ /tree
 
-treeÊÇÎÒµÄwebÏîÄ¿µÄroot context
+treeæ˜¯æˆ‘çš„webé¡¹ç›®çš„root context
 
-5¡¢ÆäËû2
+5ã€å…¶ä»–2
 
-java»ñÈ¡Â·¾¶¼¸ÖÖÍ¾¾¶-
+javaè·å–è·¯å¾„å‡ ç§é€”å¾„-
 
-jdkÈçºÎÅĞ¶Ï³ÌĞòÖĞµÄÂ·¾¶ÄØ£¿Ò»°ãÔÚ±à³ÌÖĞ£¬ÎÄ¼şÂ·¾¶·ÖÎªÏà¶ÔÂ·¾¶ºÍ¾ø¶ÔÂ·¾¶£¬¾ø¶ÔÂ·¾¶ÊÇ±È½ÏºÃ´¦ÀíµÄ£¬µ«ÊÇ²»Áé»î£¬Òò´ËÎÒÃÇÔÚ±à³ÌÖĞ¶ÔÎÄ¼ş½øĞĞ²Ù×÷µÄÊ±ºò£¬Ò»°ã¶¼ÊÇ¶ÁÈ¡ÎÄ¼şµÄÏà¶ÔÂ·¾¶£¬Ïà¶ÔÂ·¾¶¿ÉÄÜ»á¸´ÔÓÒ»µã£¬µ«ÊÇÒ²ÊÇ±È½Ï¼òµ¥µÄ£¬Ïà¶ÔµÄÂ·¾¶£¬Ö÷ÒªÊÇÏà¶ÔÓÚË­£¬¿ÉÒÔÊÇÀà¼ÓÔØÆ÷µÄÂ·¾¶£¬»òÕßÊÇµ±Ç° javaÎÄ¼şÏÂµÄÂ·¾¶£¬ÔÚjsp±à³ÌÖĞ¿ÉÄÜÊÇÏà¶ÔÓÚÕ¾µãµÄÂ·¾¶£¬Ïà¶ÔÓÚÕ¾µãµÄÂ·¾¶£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ı getServletContext().getRealPath("") ºÍrequest.getRealPath(""):Õâ¸öÊÇÈ¡µÃÕ¾µãµÄ¾ø¶ÔÂ·¾¶£» ¶øgetContextPath():È¡µÃÕ¾µãµÄĞéÄâÂ·¾¶£»
+jdkå¦‚ä½•åˆ¤æ–­ç¨‹åºä¸­çš„è·¯å¾„å‘¢ï¼Ÿä¸€èˆ¬åœ¨ç¼–ç¨‹ä¸­ï¼Œæ–‡ä»¶è·¯å¾„åˆ†ä¸ºç›¸å¯¹è·¯å¾„å’Œç»å¯¹è·¯å¾„ï¼Œç»å¯¹è·¯å¾„æ˜¯æ¯”è¾ƒå¥½å¤„ç†çš„ï¼Œä½†æ˜¯ä¸çµæ´»ï¼Œå› æ­¤æˆ‘ä»¬åœ¨ç¼–ç¨‹ä¸­å¯¹æ–‡ä»¶è¿›è¡Œæ“ä½œçš„æ—¶å€™ï¼Œä¸€èˆ¬éƒ½æ˜¯è¯»å–æ–‡ä»¶çš„ç›¸å¯¹è·¯å¾„ï¼Œç›¸å¯¹è·¯å¾„å¯èƒ½ä¼šå¤æ‚ä¸€ç‚¹ï¼Œä½†æ˜¯ä¹Ÿæ˜¯æ¯”è¾ƒç®€å•çš„ï¼Œç›¸å¯¹çš„è·¯å¾„ï¼Œä¸»è¦æ˜¯ç›¸å¯¹äºè°ï¼Œå¯ä»¥æ˜¯ç±»åŠ è½½å™¨çš„è·¯å¾„ï¼Œæˆ–è€…æ˜¯å½“å‰ javaæ–‡ä»¶ä¸‹çš„è·¯å¾„ï¼Œåœ¨jspç¼–ç¨‹ä¸­å¯èƒ½æ˜¯ç›¸å¯¹äºç«™ç‚¹çš„è·¯å¾„ï¼Œç›¸å¯¹äºç«™ç‚¹çš„è·¯å¾„ï¼Œæˆ‘ä»¬å¯ä»¥é€šè¿‡ getServletContext().getRealPath("") å’Œrequest.getRealPath(""):è¿™ä¸ªæ˜¯å–å¾—ç«™ç‚¹çš„ç»å¯¹è·¯å¾„ï¼› è€ŒgetContextPath():å–å¾—ç«™ç‚¹çš„è™šæ‹Ÿè·¯å¾„ï¼›
 
-2:class.getClassLoader.getPath():È¡µÃÀà¼ÓÔØÆ÷µÄÂ·¾¶£ºÊ²Ã´ÊÇÀà¼ÓÔØÆ÷ÄØ£¿Ò»°ãÀà¼ÓÔØÆ÷ÓĞÏµÍ³µÄºÍÓÃ»§×Ô¼º¶¨ÒåµÄ£»ÏµÍ³µÄClassLoader¾ÍÊÇjdkÌá¹©µÄ£¬ËûµÄÂ·¾¶¾ÍÊÇjdkÏÂµÄÂ·¾¶£¬»òÕßÔÚjsp±à³Ì£¬±ÈÈçTomcat £¬È¡µÃµÄÀà¼ÓÔØÆ÷µÄÎ»ÖÃ¾ÍÊÇtomaca×Ô¼ºÉè¼ÆµÄ¼ÓÔØÆ÷µÄÂ·¾¶£¬Ã÷°×ÁËÕâĞ©Ö®ºó£¬¶ÔÓÚÎÄ¼şÂ·¾¶µÄ²Ù×÷¾Í»áÏàµ±µÄÇå³ş£¬ÎÒÃÇÔÚ±à³ÌµÄÊ±ºò£¬Ö»ÒªÏëÇå³şÎÒÃÇËù²Ù×÷µÄÎÄ¼şÊÇÏà¶ÔÓÚÊ²Ã´Â·¾¶ÏÂµÄ£¬È¡µÃÏà¶ÔÂ·¾¶¾Í¿ÉÒÔÁË.
+2:class.getClassLoader.getPath():å–å¾—ç±»åŠ è½½å™¨çš„è·¯å¾„ï¼šä»€ä¹ˆæ˜¯ç±»åŠ è½½å™¨å‘¢ï¼Ÿä¸€èˆ¬ç±»åŠ è½½å™¨æœ‰ç³»ç»Ÿçš„å’Œç”¨æˆ·è‡ªå·±å®šä¹‰çš„ï¼›ç³»ç»Ÿçš„ClassLoaderå°±æ˜¯jdkæä¾›çš„ï¼Œä»–çš„è·¯å¾„å°±æ˜¯jdkä¸‹çš„è·¯å¾„ï¼Œæˆ–è€…åœ¨jspç¼–ç¨‹ï¼Œæ¯”å¦‚Tomcat ï¼Œå–å¾—çš„ç±»åŠ è½½å™¨çš„ä½ç½®å°±æ˜¯tomacaè‡ªå·±è®¾è®¡çš„åŠ è½½å™¨çš„è·¯å¾„ï¼Œæ˜ç™½äº†è¿™äº›ä¹‹åï¼Œå¯¹äºæ–‡ä»¶è·¯å¾„çš„æ“ä½œå°±ä¼šç›¸å½“çš„æ¸…æ¥šï¼Œæˆ‘ä»¬åœ¨ç¼–ç¨‹çš„æ—¶å€™ï¼Œåªè¦æƒ³æ¸…æ¥šæˆ‘ä»¬æ‰€æ“ä½œçš„æ–‡ä»¶æ˜¯ç›¸å¯¹äºä»€ä¹ˆè·¯å¾„ä¸‹çš„ï¼Œå–å¾—ç›¸å¯¹è·¯å¾„å°±å¯ä»¥äº†.
 
-6¡¢×Ü½á
+6ã€æ€»ç»“
 
-1¡¢»ñÈ¡web·şÎñÆ÷ÏÂµÄÎÄ¼şÂ·¾¶
+1ã€è·å–webæœåŠ¡å™¨ä¸‹çš„æ–‡ä»¶è·¯å¾„
 request.getRealPath("/")
-application.getRealPath("")¡¾jspÖĞ ¡¿
+application.getRealPath("")ã€jspä¸­ ã€‘
 ServletContext().getRealPath("")
 
-System.getProperty("user.dir")¡¾²»Í¬Î»ÖÃµ÷ÓÃ£¬»ñÈ¡µÄÂ·¾¶ÊÇ¶¯Ì¬±ä»¯µÄ¡¿
+System.getProperty("user.dir")ã€ä¸åŒä½ç½®è°ƒç”¨ï¼Œè·å–çš„è·¯å¾„æ˜¯åŠ¨æ€å˜åŒ–çš„ã€‘
 
-2¡¢»ñÈ¡±¾µØÂ·¾¶
+2ã€è·å–æœ¬åœ°è·¯å¾„
 
-jspÖĞ£¬<html:file property="myFile"/> 
+jspä¸­ï¼Œ<html:file property="myFile"/> 
 
 request.getParameter("myFile");
 ActionForm.getMyFile();
-»ñÈ¡µÄÖµÏàÍ¬£ºÈçD:VSS°²×°Ä¿Â¼users.txt
+è·å–çš„å€¼ç›¸åŒï¼šå¦‚D:VSSå®‰è£…ç›®å½•users.txt
 
 *********************************
 
 this.getClass().getClassLoader().getResource("").getPath();
-£½£½/D:/workspace/strutsTest/WebRoot/WEB-INF/classes/
+ï¼ï¼/D:/workspace/strutsTest/WebRoot/WEB-INF/classes/
 this.getClass().getResource("").getPath().toString();
-£½£½/D:/workspace/strutsTest/WebRoot/WEB-INF/classes/bl/
+ï¼ï¼/D:/workspace/strutsTest/WebRoot/WEB-INF/classes/bl/
 
-3¡¢»ñÈ¡Ïà¶ÔÂ·¾¶
+3ã€è·å–ç›¸å¯¹è·¯å¾„
 
 request.getContextPath();
 
-Èç£º/strutsTest
+å¦‚ï¼š/strutsTest
 

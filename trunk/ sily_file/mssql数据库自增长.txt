@@ -1,4 +1,4 @@
 create   table   (id   int   indentity(1,1),....)   
 alter   table   student   add   id   int   identity(1,1)   
-  �½��˱�ʱ��ID��ΪINT����,Ȼ����IdentityΪyes,����Ϊ1�����Ϳ�����.   
-  ������ű��Ѿ�����,��������һ���ֶν�ID,Ȼ�������һ������,Ȼ�󱣴漴������.(һ��Ҫ�������ڱ���)   
+  新建此表时把ID设为INT类型,然后设Identity为yes,种子为1递增就可以了.   
+  如果这张表已经建了,你在最后加一个字段叫ID,然后和上面一样操作,然后保存即可自增.(一定要设置完在保存)   

@@ -1,4 +1,4 @@
-»ñÈ¡Â·¾¶wid ºÍ myeclipseÏÂÃæ¶¼Ã»ÓĞÇø±ğ£¬»ñÈ¡Â·¾¶Ò²¾ÍÊÇºÍ¿ª·¢»·¾³Ã»ÓĞ¹ØÏµ
+è·å–è·¯å¾„wid å’Œ myeclipseä¸‹é¢éƒ½æ²¡æœ‰åŒºåˆ«ï¼Œè·å–è·¯å¾„ä¹Ÿå°±æ˜¯å’Œå¼€å‘ç¯å¢ƒæ²¡æœ‰å…³ç³»
 this.getClass().getClassLoader().getResource("").getPath();
 /D:/IBM/rationalsdp7.0/workspace/Account/WebContent/WEB-INF/classes/
 /E:/myeclipseworkspace/Account_0304/WebContent/WEB-INF/classes/
@@ -23,9 +23,9 @@ this.getClass().getResource("").getPath();
 /E:/myeclipseworkspace/Account_0304/WebContent/WEB-INF/classes/com/jtcrm/acct/interfaces/framework/constants/
 tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomcat.myeclipse/tomcat/webapps/ACCOUNTREPORT/WEB-INF/classes/com/cthq/crm/report/common/constants/
 was6.0 /E:/workspace1/ACCOUNTREPORT/WebContent/WEB-INF/classes/com/cthq/crm/report/common/constants/
-wasÄÜ»ñÈ¡µ½Õâ¸öÕæÊµÂ·¾¶£¬µ«ÊÇ´ò³Éjar°üºó£¬ÔÚ¹¤³ÌÏÂÃ»ÓĞÕâ¸öÂ·¾¶£¬Ò²»á±¨´í
+wasèƒ½è·å–åˆ°è¿™ä¸ªçœŸå®è·¯å¾„ï¼Œä½†æ˜¯æ‰“æˆjaråŒ…åï¼Œåœ¨å·¥ç¨‹ä¸‹æ²¡æœ‰è¿™ä¸ªè·¯å¾„ï¼Œä¹Ÿä¼šæŠ¥é”™
 
-this.getClass().getResource("log4j.properties").getPath(); ´íÎó
+this.getClass().getResource("log4j.properties").getPath(); é”™è¯¯
 
 
 Thread.currentThread().getContextClassLoader().getResource("").getPath();
@@ -42,4 +42,4 @@ tomcat /E:/myeclipseworkspace/.metadata/.plugins/com.genuitec.eclipse.easie.tomc
 was6.0 	Exception in thread "main" java.lang.NullPointerException
 
 
-Thread.currentThread().getContextClassLoader().getResource("log4j.properties").getPath(); ÕıÈ·
+Thread.currentThread().getContextClassLoader().getResource("log4j.properties").getPath(); æ­£ç¡®
