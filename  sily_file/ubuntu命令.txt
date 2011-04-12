@@ -1,5 +1,5 @@
 chmod +x jdk-1_5_0_13-linux-i586-rpm.bin
 ./jdk-1_5_0_13-linux-i586-rpm.bin
-Ö´ĞĞbinÎÄ¼ş
+æ‰§è¡Œbinæ–‡ä»¶
 
 sudo atp-get install eva

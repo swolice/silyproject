@@ -1,96 +1,96 @@
-¼òµ¥Îå²½ÖÆ×÷ÍêÃÀµÄÁªÏëOEM XP SP3ÏµÍ³¹âÅÌ 
-  Ò»Ð©ÓÃÁªÏëµçÄÔµÄÅóÓÑ£¬ÔÚÓÃOEM XP SP2¼¯³ÉSP3²¹¶¡ºó£¨ÕâÑù¿ÉÒÔÊ¡Ðí¶àÂé·³£©£¬²âÊÔ°²×°Óöµ½ÎÊÌâ£¬ÐèÒªÊäÈë°²×°ÃÜÔ¿£¬ÊäÈëSP2µÄ°²×°ÃÜÔ¿ÓÖÌáÊ¾²»¶Ô¡£ÆäÊµ£¬¿ÉÒÔÓÃÁíÒ»ÖÖ·½·¨ÖÆ×÷ÍêÃÀµÄÁªÏëOEM XP SP3ÏµÍ³¹âÅÌ¡£´Ë·½·¨£¬×îÔç³öÏÖÓÚÔ¶¾°ÂÛÌ³£¬ºó¾­Ò»Ð©ÏµÍ³°®ºÃÕß½øÐÐÁË¸Ä½ø£¬·½·¨¸ü¼òµ¥¡¢¸ü³ÉÊì¡£ÏÖ½«Ïà¹ØÒªµã¼òÊöÈçÏÂ£º ¡¡¡¡Ò»¡¢Ïà¹Ø×¼±¸¹¤×÷ ¡¡¡¡1¡¢ÏÂÔØXP SP3 ¼òÌåÖÐÎÄÁãÊÛ°æ         ¿ÉÒÔÔÚbaiduºÍgoogleÖÐÑ°ÕÒÏÂÔØ×ÊÔ´£¬ÏÖÌá¹©Ò»¸öÏÂÔØµØÖ·¡£         XP SP3²¹¶¡ÍÆ³ö²»¾Ã£¬MSDN¾ÍÍÆ³öÁËXP SP3 ¼òÌåÖÐÎÄÁãÊÛ°æ£¬³ÉÁËÏµÍ³°®ºÃÕßÊÕ²ØµÄÊ×ÏÈ°æ±¾Ö®Ò»¡£           Ñ¸À×Ö±½ÓÏÂÔØ£º MSDN Windows XP SP3 ¼òÌåÖÐÎÄÁãÊÛ°æ        2¡¢Í¬Ñù£¬ÔÚbaiduºÍgoogleÏÂÔØÁªÏëoem xp SP2ÏµÍ³£¬ÌáÈ¡Ïà¹ØÎÄ¼þ¡£²Ù×÷·½·¨Çë¼û¡¶ÖÆ×÷Ãâ¼¤»î×Ô¶¯°²×°µÄXP SP3 OEMÏµÍ³°²×°ÅÌ¡·¡£         3¡¢ÏÂÔØ±à¼­ISOÎÄ¼þ³£ÓÃÈí¼þUltraISO V9.2£¨ÈíµúÍ¨£©²¢°²×°¡£       ÏÂÔØµØÖ·Çë²Î¿¼¡¶ÈíµúÍ¨UltraISO V9.2.0¼òÌåÖÐÎÄ°æÏÂÔØ¼°×¢²áÂë¡· ¡¡¡¡¶þ¡¢ÖÆ×÷²½Öè     ¡¡1¡¢½âÑ¹ÁªÏëoem xp SP3Ñ¹ËõÎÄ¼þ·ÅÔÚDÅÌµÄSP3ÎÄ¼þ¼ÐÀï±¸ÓÃ¡£  ¡¡¡¡2¡¢ÓÃUltraISO´ò¿ªSP3ÁãÊÛ°æISOÎÄ¼þ£¬Í¬Ê±ÔÚÏÂÃæ¡°±¾µØÄ¿Â¼¡±ÖÐ´ò¿ªDÅÌÖÐµÄÁªÏëoem xp SP3ÎÄ¼þ¡£ÁªÏëoem xp SP3ÎÄ¼þÖÐÓÐÁ½¸öÎÄ¼þ¼Ð£¬Ò»¸öÊÇ$OEM$£¬ÁíÒ»¸öÊÇi386¡£ 
-      3¡¢°Ñ$OEM$ÎÄ¼þ¼ÐÖ±½Ó´Ó¡°±¾µØÄ¿Â¼¡±ÍÏµ½¡°¹âÅÌÄ¿Â¼¡±XP SP3 ¼òÌåÖÐÎÄÁãÊÛ°æISOÎÄ¼þ¸ùÄ¿Â¼ÏÂ¡£È»ºóÔÙ´ò¿ª¡°¹âÅÌÄ¿Â¼¡±XP SP3 ¼òÌåÖÐÎÄÁãÊÛ°æISOÎÄ¼þµÄI386ÎÄ¼þ£¬°Ñ¡°±¾µØÄ¿Â¼¡±i386ÎÄ¼þÀïµÄ8¸öÎÄ¼þÈ«²¿ÍÏµ½I386ÎÄ¼þÀï¸²¸ÇÔ­ÓÐÎÄ¼þ¡£ 
+ç®€å•äº”æ­¥åˆ¶ä½œå®Œç¾Žçš„è”æƒ³OEM XP SP3ç³»ç»Ÿå…‰ç›˜ 
+  ä¸€äº›ç”¨è”æƒ³ç”µè„‘çš„æœ‹å‹ï¼Œåœ¨ç”¨OEM XP SP2é›†æˆSP3è¡¥ä¸åŽï¼ˆè¿™æ ·å¯ä»¥çœè®¸å¤šéº»çƒ¦ï¼‰ï¼Œæµ‹è¯•å®‰è£…é‡åˆ°é—®é¢˜ï¼Œéœ€è¦è¾“å…¥å®‰è£…å¯†é’¥ï¼Œè¾“å…¥SP2çš„å®‰è£…å¯†é’¥åˆæç¤ºä¸å¯¹ã€‚å…¶å®žï¼Œå¯ä»¥ç”¨å¦ä¸€ç§æ–¹æ³•åˆ¶ä½œå®Œç¾Žçš„è”æƒ³OEM XP SP3ç³»ç»Ÿå…‰ç›˜ã€‚æ­¤æ–¹æ³•ï¼Œæœ€æ—©å‡ºçŽ°äºŽè¿œæ™¯è®ºå›ï¼ŒåŽç»ä¸€äº›ç³»ç»Ÿçˆ±å¥½è€…è¿›è¡Œäº†æ”¹è¿›ï¼Œæ–¹æ³•æ›´ç®€å•ã€æ›´æˆç†Ÿã€‚çŽ°å°†ç›¸å…³è¦ç‚¹ç®€è¿°å¦‚ä¸‹ï¼š ã€€ã€€ä¸€ã€ç›¸å…³å‡†å¤‡å·¥ä½œ ã€€ã€€1ã€ä¸‹è½½XP SP3 ç®€ä½“ä¸­æ–‡é›¶å”®ç‰ˆ         å¯ä»¥åœ¨baiduå’Œgoogleä¸­å¯»æ‰¾ä¸‹è½½èµ„æºï¼ŒçŽ°æä¾›ä¸€ä¸ªä¸‹è½½åœ°å€ã€‚         XP SP3è¡¥ä¸æŽ¨å‡ºä¸ä¹…ï¼ŒMSDNå°±æŽ¨å‡ºäº†XP SP3 ç®€ä½“ä¸­æ–‡é›¶å”®ç‰ˆï¼Œæˆäº†ç³»ç»Ÿçˆ±å¥½è€…æ”¶è—çš„é¦–å…ˆç‰ˆæœ¬ä¹‹ä¸€ã€‚           è¿…é›·ç›´æŽ¥ä¸‹è½½ï¼š MSDN Windows XP SP3 ç®€ä½“ä¸­æ–‡é›¶å”®ç‰ˆ        2ã€åŒæ ·ï¼Œåœ¨baiduå’Œgoogleä¸‹è½½è”æƒ³oem xp SP2ç³»ç»Ÿï¼Œæå–ç›¸å…³æ–‡ä»¶ã€‚æ“ä½œæ–¹æ³•è¯·è§ã€Šåˆ¶ä½œå…æ¿€æ´»è‡ªåŠ¨å®‰è£…çš„XP SP3 OEMç³»ç»Ÿå®‰è£…ç›˜ã€‹ã€‚         3ã€ä¸‹è½½ç¼–è¾‘ISOæ–‡ä»¶å¸¸ç”¨è½¯ä»¶UltraISO V9.2ï¼ˆè½¯ç¢Ÿé€šï¼‰å¹¶å®‰è£…ã€‚       ä¸‹è½½åœ°å€è¯·å‚è€ƒã€Šè½¯ç¢Ÿé€šUltraISO V9.2.0ç®€ä½“ä¸­æ–‡ç‰ˆä¸‹è½½åŠæ³¨å†Œç ã€‹ ã€€ã€€äºŒã€åˆ¶ä½œæ­¥éª¤     ã€€1ã€è§£åŽ‹è”æƒ³oem xp SP3åŽ‹ç¼©æ–‡ä»¶æ”¾åœ¨Dç›˜çš„SP3æ–‡ä»¶å¤¹é‡Œå¤‡ç”¨ã€‚  ã€€ã€€2ã€ç”¨UltraISOæ‰“å¼€SP3é›¶å”®ç‰ˆISOæ–‡ä»¶ï¼ŒåŒæ—¶åœ¨ä¸‹é¢â€œæœ¬åœ°ç›®å½•â€ä¸­æ‰“å¼€Dç›˜ä¸­çš„è”æƒ³oem xp SP3æ–‡ä»¶ã€‚è”æƒ³oem xp SP3æ–‡ä»¶ä¸­æœ‰ä¸¤ä¸ªæ–‡ä»¶å¤¹ï¼Œä¸€ä¸ªæ˜¯$OEM$ï¼Œå¦ä¸€ä¸ªæ˜¯i386ã€‚ 
+      3ã€æŠŠ$OEM$æ–‡ä»¶å¤¹ç›´æŽ¥ä»Žâ€œæœ¬åœ°ç›®å½•â€æ‹–åˆ°â€œå…‰ç›˜ç›®å½•â€XP SP3 ç®€ä½“ä¸­æ–‡é›¶å”®ç‰ˆISOæ–‡ä»¶æ ¹ç›®å½•ä¸‹ã€‚ç„¶åŽå†æ‰“å¼€â€œå…‰ç›˜ç›®å½•â€XP SP3 ç®€ä½“ä¸­æ–‡é›¶å”®ç‰ˆISOæ–‡ä»¶çš„I386æ–‡ä»¶ï¼ŒæŠŠâ€œæœ¬åœ°ç›®å½•â€i386æ–‡ä»¶é‡Œçš„8ä¸ªæ–‡ä»¶å…¨éƒ¨æ‹–åˆ°I386æ–‡ä»¶é‡Œè¦†ç›–åŽŸæœ‰æ–‡ä»¶ã€‚ 
 
 
-¡¡¡¡£´¡¢ÔÚUltraISO¡°ÎÄ¼þ¡±ÏÂÀ­²Ëµ¥ÖÐÑ¡Ôñ¡°Áí´æÎª¡±£¬°´ÕÕÌáÊ¾°ÑISOÎÄ¼þÁí´æÎª¡°LENOVO XP SP3¡±¾Í¿ÉÒÔÁË¡£±£´æ¹ý³Ì´ó¸ÅÐèÒª3¡ª5·ÖÖÓ¡£            5¡¢±£´æºÃºó£¬¹Ø±ÕUltraISOÈ»ºóÔÙ´ò¿ª LENOVO XP SP3 ISOÎÄ¼þ£¬ÔÚ¹âÇýÖÐ·ÅÈëÒ»ÕÅ¿Õ°×CD£¬ÔÚUltraISO¡°¹¤¾ß¡±ÏÂÀ­²Ëµ¥ÖÐÑ¡Ôñ¡°¿ÌÂ¼¹âÅÌÓ³Ïñ¡±£¬ÔÚµ¯³öµÄ¶Ô»°¿òÖÐ£¬Ñ¡ÔñÐ´ÈëËÙ¶ÈÎª8X£¬È»ºó¾Í¿ÉÒÔ¿ªÊ¼¿ÌÂ¼¡£         ¾­¹ýÒÔÉÏÎå²½£¬Ò»ÕÅÍêÃÀµÄÁªÏëXP SP3ÏµÍ³¹âÅÌ¾ÍÖÆ×÷³É¹¦ÁË¡£ÓÃ´Ë·½·¨ÖÆ×÷µÄÏµÍ³¹âÅÌ£¬¾ø¶ÔÄÜ±£Ö¤ÏµÍ³µÄÍêÕûÐÔºÍ°²È«ÐÔ¡£ÔÚÁªÏëÆ·ÅÆ»úÉÏ²âÊÔ£¬×Ô¶¯°²×°£¨ÒªÌáÊ¾ÊÇ·ñ¸ñÊ½»¯CÅÌµÈ£©£¬Ãâ¼¤»î£¬Ë³ÀûÍ¨¹ýÎ¢Èí×îÎªÑÏ¸ñµÄÕý°æÑéÖ¤¡£        Î¢ÈíÕý°æ×îÑÏ¸ñµÄÑéÖ¤µØÖ·£¨ÓÐÐËÈ¤µÄÅóÓÑ¿ÉÒÔÑéÖ¤²âÊÔÒ»ÏÂ£©£º http://www.microsoft.com/genuine/downloads/TryAgain.aspx?displaylang=zh-cn&sGuid=93b6cc3a-d0db-4fc5-b4f6-1097c9cd0311 ¡¡¡¡ÎÂÜ°ÌáÐÑ£ºÈç¹ûÄãµÄÁªÏëµçÄÔµÄÓ²ÅÌÊÇSATAµÄ£¬ÔòÐèÒªÔÚ¹âÅÌÖÐ¼¯³ÉSATAÇý¶¯£¬·½·¨ÁíÇë²Î¿¼¡¶´òÔì¼¯³ÉSATAÇý¶¯³ÌÐòµÄXP SP3ÏµÍ³ÅÌ¡·¡£·ñÔò¿ÉÄÜÔÚ°²×°¹ý³ÌÖÐÌáÊ¾ÕÒ²»µ½Ó²ÅÌ¡£         ¸½°²×°²âÊÔ³É¹¦ºó½ØÍ¼£ºÍêÈ«µÄLOGO±êÊ¶ºÍÖÐÎÄOEMÐÅÏ¢±êÊ¶¡£ 
+ã€€ã€€ï¼”ã€åœ¨UltraISOâ€œæ–‡ä»¶â€ä¸‹æ‹‰èœå•ä¸­é€‰æ‹©â€œå¦å­˜ä¸ºâ€ï¼ŒæŒ‰ç…§æç¤ºæŠŠISOæ–‡ä»¶å¦å­˜ä¸ºâ€œLENOVO XP SP3â€å°±å¯ä»¥äº†ã€‚ä¿å­˜è¿‡ç¨‹å¤§æ¦‚éœ€è¦3â€”5åˆ†é’Ÿã€‚            5ã€ä¿å­˜å¥½åŽï¼Œå…³é—­UltraISOç„¶åŽå†æ‰“å¼€ LENOVO XP SP3 ISOæ–‡ä»¶ï¼Œåœ¨å…‰é©±ä¸­æ”¾å…¥ä¸€å¼ ç©ºç™½CDï¼Œåœ¨UltraISOâ€œå·¥å…·â€ä¸‹æ‹‰èœå•ä¸­é€‰æ‹©â€œåˆ»å½•å…‰ç›˜æ˜ åƒâ€ï¼Œåœ¨å¼¹å‡ºçš„å¯¹è¯æ¡†ä¸­ï¼Œé€‰æ‹©å†™å…¥é€Ÿåº¦ä¸º8Xï¼Œç„¶åŽå°±å¯ä»¥å¼€å§‹åˆ»å½•ã€‚         ç»è¿‡ä»¥ä¸Šäº”æ­¥ï¼Œä¸€å¼ å®Œç¾Žçš„è”æƒ³XP SP3ç³»ç»Ÿå…‰ç›˜å°±åˆ¶ä½œæˆåŠŸäº†ã€‚ç”¨æ­¤æ–¹æ³•åˆ¶ä½œçš„ç³»ç»Ÿå…‰ç›˜ï¼Œç»å¯¹èƒ½ä¿è¯ç³»ç»Ÿçš„å®Œæ•´æ€§å’Œå®‰å…¨æ€§ã€‚åœ¨è”æƒ³å“ç‰Œæœºä¸Šæµ‹è¯•ï¼Œè‡ªåŠ¨å®‰è£…ï¼ˆè¦æç¤ºæ˜¯å¦æ ¼å¼åŒ–Cç›˜ç­‰ï¼‰ï¼Œå…æ¿€æ´»ï¼Œé¡ºåˆ©é€šè¿‡å¾®è½¯æœ€ä¸ºä¸¥æ ¼çš„æ­£ç‰ˆéªŒè¯ã€‚        å¾®è½¯æ­£ç‰ˆæœ€ä¸¥æ ¼çš„éªŒè¯åœ°å€ï¼ˆæœ‰å…´è¶£çš„æœ‹å‹å¯ä»¥éªŒè¯æµ‹è¯•ä¸€ä¸‹ï¼‰ï¼š http://www.microsoft.com/genuine/downloads/TryAgain.aspx?displaylang=zh-cn&sGuid=93b6cc3a-d0db-4fc5-b4f6-1097c9cd0311 ã€€ã€€æ¸©é¦¨æé†’ï¼šå¦‚æžœä½ çš„è”æƒ³ç”µè„‘çš„ç¡¬ç›˜æ˜¯SATAçš„ï¼Œåˆ™éœ€è¦åœ¨å…‰ç›˜ä¸­é›†æˆSATAé©±åŠ¨ï¼Œæ–¹æ³•å¦è¯·å‚è€ƒã€Šæ‰“é€ é›†æˆSATAé©±åŠ¨ç¨‹åºçš„XP SP3ç³»ç»Ÿç›˜ã€‹ã€‚å¦åˆ™å¯èƒ½åœ¨å®‰è£…è¿‡ç¨‹ä¸­æç¤ºæ‰¾ä¸åˆ°ç¡¬ç›˜ã€‚         é™„å®‰è£…æµ‹è¯•æˆåŠŸåŽæˆªå›¾ï¼šå®Œå…¨çš„LOGOæ ‡è¯†å’Œä¸­æ–‡OEMä¿¡æ¯æ ‡è¯†ã€‚ 
 
 
-    ÎÂÜ°ÌáÊ¾£º±¾·½·¨²Î¿¼ÁËÔ¶¾°ÂÛÌ³¡¢ÏµÍ³Ö®¼Ò¡¢Éî¶ÈÂÛÌ³µÈ¶àÆªÎÄÕÂ¡£ÓÃ±¾·½·¨ÖÆ×÷µÄ¾µÏñÎÄ¼þ£¬½öÓÃÓÚÑ§Ï°ÑÐ¾¿£¬ÇëÖ§³ÖÎ¢ÈíÕý°æ²úÆ·!±¾ÎÄËùÓÐ×ÊÔ´£¬¾ùÀ´×Ô»¥ÁªÍø£¬±ÊÕß²»¶ÔISOÎÄ¼þµÄÕæÊµÐÔ¸ºÔð£¬Ò²ÌáÐÑ¹ã´óÏµÍ³°®ºÃÕß£¬´Ë×ÊÔ´½ö¹©²âÊÔ£¬ÇëÏÂÔØ²âÊÔºó×ÔÐÐÉ¾³ý£¬²»µÃÓÃÓÚÈÎºÎÉÌÒµÓÃÍ¾£¬·ñÔòÒ»ÇÐºó¹û×Ô¸º£¡ 
+    æ¸©é¦¨æç¤ºï¼šæœ¬æ–¹æ³•å‚è€ƒäº†è¿œæ™¯è®ºå›ã€ç³»ç»Ÿä¹‹å®¶ã€æ·±åº¦è®ºå›ç­‰å¤šç¯‡æ–‡ç« ã€‚ç”¨æœ¬æ–¹æ³•åˆ¶ä½œçš„é•œåƒæ–‡ä»¶ï¼Œä»…ç”¨äºŽå­¦ä¹ ç ”ç©¶ï¼Œè¯·æ”¯æŒå¾®è½¯æ­£ç‰ˆäº§å“!æœ¬æ–‡æ‰€æœ‰èµ„æºï¼Œå‡æ¥è‡ªäº’è”ç½‘ï¼Œç¬”è€…ä¸å¯¹ISOæ–‡ä»¶çš„çœŸå®žæ€§è´Ÿè´£ï¼Œä¹Ÿæé†’å¹¿å¤§ç³»ç»Ÿçˆ±å¥½è€…ï¼Œæ­¤èµ„æºä»…ä¾›æµ‹è¯•ï¼Œè¯·ä¸‹è½½æµ‹è¯•åŽè‡ªè¡Œåˆ é™¤ï¼Œä¸å¾—ç”¨äºŽä»»ä½•å•†ä¸šç”¨é€”ï¼Œå¦åˆ™ä¸€åˆ‡åŽæžœè‡ªè´Ÿï¼ 
 
 
 
-´òÔì¼¯³ÉSATAÇý¶¯³ÌÐòµÄXP SP3ÏµÍ³ÅÌ
+æ‰“é€ é›†æˆSATAé©±åŠ¨ç¨‹åºçš„XP SP3ç³»ç»Ÿç›˜
 
-2008-08-26 16:41:34    ·ÖÀà£ºÍøÂç×ÊÔ´ | Òµ½ç |  ÆÀÂÛ(104) |  ä¯ÀÀ(439313) 
-¡¡¡¡Ä¿Ç°£¬´ó¶àÊýÆ·ÅÆµçÄÔ¶¼ÊÇÔ¤×°µÄVISTAÏµÍ³£¬µ«¶ÔÏ°¹ßÓÚÓÃXPÏµÍ³µÄÅóÓÑÀ´Ëµ£¬Õâ¡°¸¶Ç®µÄÎç²Í¡±¾Í²»ºÜ¿É¿Ú£¬Èç¹û¸Ä×°XPÏµÍ³£¬ÔòÌáÊ¾ÕÒ²»µ½Ó²ÅÌ¡£ÕâÊÇÒòÎªÏÖÔÚ´ó¶àÊýµçÄÔ³§¼Ò¶¼Ñ¡ÓÃµÄ´®¿ÚÀàÐÍµÄÓ²ÅÌ´ó²¿·Ö¡£ÕâÀàÓ²ÅÌ£¬´æ´¢ºÍ¶ÁÈ¡Êý¾ÝÃ÷ÏÔÒª¿ìÓÚÒÔÇ°µÄ²¢¿ÚÓ²ÅÌ¡£µ«Òª°²×°XPÏµÍ³£¬ÔòÒªÌí¼ÓSATAÇý¶¯£¬¶øÇÒ¹ý³ÌºÜÂé·³¡£Èç¹û½«SATAÇý¶¯³ÌÐò¼¯³Éµ½XPÏµÍ³¹âÅÌ£¬¡°·³ÄÕ¡±¾ÍÓ­ÈÐ¶ø½âÁË¡£ÏÖ¾ÍÈçºÎÖÆ×÷¼¯³ÉSATAÇý¶¯³ÌÐòµÄXP SP3ÏµÍ³°²×°¹âÅÌ×÷Ò»¼òÒª½éÉÜ¡£ 
+2008-08-26 16:41:34    åˆ†ç±»ï¼šç½‘ç»œèµ„æº | ä¸šç•Œ |  è¯„è®º(104) |  æµè§ˆ(439313) 
+ã€€ã€€ç›®å‰ï¼Œå¤§å¤šæ•°å“ç‰Œç”µè„‘éƒ½æ˜¯é¢„è£…çš„VISTAç³»ç»Ÿï¼Œä½†å¯¹ä¹ æƒ¯äºŽç”¨XPç³»ç»Ÿçš„æœ‹å‹æ¥è¯´ï¼Œè¿™â€œä»˜é’±çš„åˆé¤â€å°±ä¸å¾ˆå¯å£ï¼Œå¦‚æžœæ”¹è£…XPç³»ç»Ÿï¼Œåˆ™æç¤ºæ‰¾ä¸åˆ°ç¡¬ç›˜ã€‚è¿™æ˜¯å› ä¸ºçŽ°åœ¨å¤§å¤šæ•°ç”µè„‘åŽ‚å®¶éƒ½é€‰ç”¨çš„ä¸²å£ç±»åž‹çš„ç¡¬ç›˜å¤§éƒ¨åˆ†ã€‚è¿™ç±»ç¡¬ç›˜ï¼Œå­˜å‚¨å’Œè¯»å–æ•°æ®æ˜Žæ˜¾è¦å¿«äºŽä»¥å‰çš„å¹¶å£ç¡¬ç›˜ã€‚ä½†è¦å®‰è£…XPç³»ç»Ÿï¼Œåˆ™è¦æ·»åŠ SATAé©±åŠ¨ï¼Œè€Œä¸”è¿‡ç¨‹å¾ˆéº»çƒ¦ã€‚å¦‚æžœå°†SATAé©±åŠ¨ç¨‹åºé›†æˆåˆ°XPç³»ç»Ÿå…‰ç›˜ï¼Œâ€œçƒ¦æ¼â€å°±è¿Žåˆƒè€Œè§£äº†ã€‚çŽ°å°±å¦‚ä½•åˆ¶ä½œé›†æˆSATAé©±åŠ¨ç¨‹åºçš„XP SP3ç³»ç»Ÿå®‰è£…å…‰ç›˜ä½œä¸€ç®€è¦ä»‹ç»ã€‚ 
 
-¡¡¡¡Ò»¡¢ÏµÍ³×¼±¸
+ã€€ã€€ä¸€ã€ç³»ç»Ÿå‡†å¤‡
 
-    Ä¿Ç°£¬XP SP3 VOL°æÏµÍ³MDSNÒÑ·Å³ö£¬°²×°XP SP3²»½öÓÃ²»×Å´ò²¹¶¡£¬¶øÇÒÏµÍ³ÐÔÄÜÓÐËù¸ÄÉÆ£¬Òò´ËÏò¸÷Î»ÅóÓÑÍÆ¼öXP SP3 VOL°æ¡£
+    ç›®å‰ï¼ŒXP SP3 VOLç‰ˆç³»ç»ŸMDSNå·²æ”¾å‡ºï¼Œå®‰è£…XP SP3ä¸ä»…ç”¨ä¸ç€æ‰“è¡¥ä¸ï¼Œè€Œä¸”ç³»ç»Ÿæ€§èƒ½æœ‰æ‰€æ”¹å–„ï¼Œå› æ­¤å‘å„ä½æœ‹å‹æŽ¨èXP SP3 VOLç‰ˆã€‚
 
-    1¡¢ÔÚÍøÂç×ÊÔ´ÖÐÏÂÔØMSDN¹Ù·½¼¯³ÉµÄXP SP3 VOL°æÏµÍ³¡£µØÖ·Çëµ½°Ù¶ÈÖÐËÑË÷¡£
+    1ã€åœ¨ç½‘ç»œèµ„æºä¸­ä¸‹è½½MSDNå®˜æ–¹é›†æˆçš„XP SP3 VOLç‰ˆç³»ç»Ÿã€‚åœ°å€è¯·åˆ°ç™¾åº¦ä¸­æœç´¢ã€‚
 
-     ¶þ¡¢Èí¼þ×¼±¸ 
+     äºŒã€è½¯ä»¶å‡†å¤‡ 
 
-¡¡¡¡1¡¢DriverPacks BASE
-¡¡¡¡
-¡¡¡¡ÏÂÔØµØÖ·£º
+ã€€ã€€1ã€DriverPacks BASE
+ã€€ã€€
+ã€€ã€€ä¸‹è½½åœ°å€ï¼š
 
-¡¡¡¡http://driverpacks.net/DriverPacks/download.php?pag=b
+ã€€ã€€http://driverpacks.net/DriverPacks/download.php?pag=b
 
-    £²¡¢DriverPackMassStorage
+    ï¼’ã€DriverPackMassStorage
 
-¡¡¡¡ÏÂÔØµØÖ·£º
+ã€€ã€€ä¸‹è½½åœ°å€ï¼š
 
-¡¡¡¡http://driverpacks.net/DriverPacks/download.php?pag=m
+ã€€ã€€http://driverpacks.net/DriverPacks/download.php?pag=m
 
-¡¡¡¡Õâ¸ödriverpack massstorageÀïÃæ°üº¬ÓÐÎÒÃÇÒªÌí¼ÓµÄSATAÇý¶¯¡£
-
-
-¡¡¡¡£³¡¢Ultraiso£¨ÈíµúÍ¨£©ÏÂÔØ¼°Ê¹ÓÃ·½·¨Çë²Î¿¼¡¶ÈíµúÍ¨UltraISO V9.2.0¼òÌåÖÐÎÄ°æÏÂÔØ¼°×¢²áÂë¡·
-
-¡¡¡¡Èý¡¢¼¯³ÉSATAÇý¶¯ÏêÏ¸¹ý³Ì
-
-     1¡¢¸´ÖÆWindows XP¹âÅÌÀïµÄÎÄ¼þÖÁÓ²ÅÌ(Èç¹ûÊÇ´ÓÍøÂç×ÊÔ´ÖÐÏÂÔØµÄISOÎÄ¼þ,Ö±½Ó½âÑ¹µ½Ó²ÅÌÄ³Ò»ÎÄ¼þ¼Ð), ±ÈÈçD:WinXP¡£
+ã€€ã€€è¿™ä¸ªdriverpack massstorageé‡Œé¢åŒ…å«æœ‰æˆ‘ä»¬è¦æ·»åŠ çš„SATAé©±åŠ¨ã€‚
 
 
-¡¡¡¡2¡¢°²×°DrivePacks¡£Ó²ÅÌÀïÐÂ½¨Ò»¸öÄ¿Â¼£¨ÈçE:DriverPacks£©£¬°ÑÏÂÔØµ½µÄDriverPacks BASEÎÄ¼þ·Å½øÀ´£¬ÔËÐÐ£¬ËùÓÐ³ÌÐòÎÄ¼þ½«±»×Ô½âÑ¹µ½¸ÃÄ¿Â¼ÏÂ¡£
+ã€€ã€€ï¼“ã€Ultraisoï¼ˆè½¯ç¢Ÿé€šï¼‰ä¸‹è½½åŠä½¿ç”¨æ–¹æ³•è¯·å‚è€ƒã€Šè½¯ç¢Ÿé€šUltraISO V9.2.0ç®€ä½“ä¸­æ–‡ç‰ˆä¸‹è½½åŠæ³¨å†Œç ã€‹
 
-¡¡¡¡3¡¢°ÑDriverPack MassStorageµÄ7zip¸ñÊ½Ñ¹Ëõ°ü·Åµ½E:DriverPacksDriverPacksÄ¿Â¼ÏÂ£¬²»ÐèÒª½âÑ¹Ëõ¡£ÕâÊÇDriverPacksÐ¡×éÖÆ×÷ºÃµÄSATA/SCSIÇý¶¯°ü£¬°üÀ¨³£¼ûµÄ´ó¶àÊý´ÅÅÌÉè±¸£¬¿ÉÒÔµ½Õâ¸öÒ³Ãæ²é¿´ËùÖ§³ÖÉè±¸µÄÁÐ±íºÍÇý¶¯°æ±¾£º
+ã€€ã€€ä¸‰ã€é›†æˆSATAé©±åŠ¨è¯¦ç»†è¿‡ç¨‹
+
+     1ã€å¤åˆ¶Windows XPå…‰ç›˜é‡Œçš„æ–‡ä»¶è‡³ç¡¬ç›˜(å¦‚æžœæ˜¯ä»Žç½‘ç»œèµ„æºä¸­ä¸‹è½½çš„ISOæ–‡ä»¶,ç›´æŽ¥è§£åŽ‹åˆ°ç¡¬ç›˜æŸä¸€æ–‡ä»¶å¤¹), æ¯”å¦‚D:WinXPã€‚
+
+
+ã€€ã€€2ã€å®‰è£…DrivePacksã€‚ç¡¬ç›˜é‡Œæ–°å»ºä¸€ä¸ªç›®å½•ï¼ˆå¦‚E:DriverPacksï¼‰ï¼ŒæŠŠä¸‹è½½åˆ°çš„DriverPacks BASEæ–‡ä»¶æ”¾è¿›æ¥ï¼Œè¿è¡Œï¼Œæ‰€æœ‰ç¨‹åºæ–‡ä»¶å°†è¢«è‡ªè§£åŽ‹åˆ°è¯¥ç›®å½•ä¸‹ã€‚
+
+ã€€ã€€3ã€æŠŠDriverPack MassStorageçš„7zipæ ¼å¼åŽ‹ç¼©åŒ…æ”¾åˆ°E:DriverPacksDriverPacksç›®å½•ä¸‹ï¼Œä¸éœ€è¦è§£åŽ‹ç¼©ã€‚è¿™æ˜¯DriverPackså°ç»„åˆ¶ä½œå¥½çš„SATA/SCSIé©±åŠ¨åŒ…ï¼ŒåŒ…æ‹¬å¸¸è§çš„å¤§å¤šæ•°ç£ç›˜è®¾å¤‡ï¼Œå¯ä»¥åˆ°è¿™ä¸ªé¡µé¢æŸ¥çœ‹æ‰€æ”¯æŒè®¾å¤‡çš„åˆ—è¡¨å’Œé©±åŠ¨ç‰ˆæœ¬ï¼š
 
     http://driverpacks.net/DriverPacks/devices.php?pag=m 
 
-¡¡¡¡4¡¢ÔËÐÐE:DriverPacks DPs_BASE.exe¡£³õÊ¼½çÃæ¿ÉÒÔÑ¡ÔñÓïÑÔ¡£
+ã€€ã€€4ã€è¿è¡ŒE:DriverPacks DPs_BASE.exeã€‚åˆå§‹ç•Œé¢å¯ä»¥é€‰æ‹©è¯­è¨€ã€‚
 
-¡¡¡¡5¡¢Ñ¡Ôñ¡°ÉèÖÃ-Î»ÖÃ¡±£¬Ñ¡ÖÐ¡°´ÅÅÌ¡±Ïî£¬µã»÷¡°ä¯ÀÀ¡±°´Å¥¡£Ñ¡ÖÐ¸Õ²ÅµÄD:WinXPÄ¿Â¼£¬È·¶¨¡£ÕâÊ±ºò×ó±ßµÄ´°¿Ú»á¶à³ö¼¸ÏîÉèÖÃÄÚÈÝ¡£
+ã€€ã€€5ã€é€‰æ‹©â€œè®¾ç½®-ä½ç½®â€ï¼Œé€‰ä¸­â€œç£ç›˜â€é¡¹ï¼Œç‚¹å‡»â€œæµè§ˆâ€æŒ‰é’®ã€‚é€‰ä¸­åˆšæ‰çš„D:WinXPç›®å½•ï¼Œç¡®å®šã€‚è¿™æ—¶å€™å·¦è¾¹çš„çª—å£ä¼šå¤šå‡ºå‡ é¡¹è®¾ç½®å†…å®¹ã€‚
 
 
-¡¡¡¡6¡¢ÔÚ¡°ÉèÖÃ-Çý¶¯°ü¡±ÖÐÑ¡ÖÐ¡°DriverPack MassStorage 9.01¡±¡£Õâ¸öÈí¼þÒ²¿ÉÒÔ¼¯³ÉÏÔÊ¾¿¨Çý¶¯¡¢Ð¾Æ¬×éÇý¶¯µÈ,ÆäËüÇý¶¯ÏêÏ¸Ö¸ÄÏÇë·ÃÎÊ 
+ã€€ã€€6ã€åœ¨â€œè®¾ç½®-é©±åŠ¨åŒ…â€ä¸­é€‰ä¸­â€œDriverPack MassStorage 9.01â€ã€‚è¿™ä¸ªè½¯ä»¶ä¹Ÿå¯ä»¥é›†æˆæ˜¾ç¤ºå¡é©±åŠ¨ã€èŠ¯ç‰‡ç»„é©±åŠ¨ç­‰,å…¶å®ƒé©±åŠ¨è¯¦ç»†æŒ‡å—è¯·è®¿é—® 
 
    http://forum.driverpacks.net/viewtopic.php?id=1449 
 
 
-¡¡¡¡7¡¢¡°Çý¶¯°üÕûºÏ·½Ê½¡±Ñ¡Ôñ·½Ê½2¡£·½Ê½1ËäÈ»±È½ÏÕýÍ³£¬µ«ÊÇ»áÊÜµ½Windows°²×°³ÌÐò¼ìË÷ÎÄ¼þ¼ÐÊýÁ¿µÄÏÞÖÆ£¬µ¼ÖÂÓÐ²¿·ÖÇý¶¯¿ÉÄÜÎÞ·¨±»ÔØÈë¡£
+ã€€ã€€7ã€â€œé©±åŠ¨åŒ…æ•´åˆæ–¹å¼â€é€‰æ‹©æ–¹å¼2ã€‚æ–¹å¼1è™½ç„¶æ¯”è¾ƒæ­£ç»Ÿï¼Œä½†æ˜¯ä¼šå—åˆ°Windowså®‰è£…ç¨‹åºæ£€ç´¢æ–‡ä»¶å¤¹æ•°é‡çš„é™åˆ¶ï¼Œå¯¼è‡´æœ‰éƒ¨åˆ†é©±åŠ¨å¯èƒ½æ— æ³•è¢«è½½å…¥ã€‚
 
 
-¡¡¡¡8¡¢ÔÚ¡°Ñ¡ÏîÉèÖÃ-¿ìËÙÕûºÏ»º´æ¡±ÀïÑ¡ÖÐµÚÒ»Ïî¡£
+ã€€ã€€8ã€åœ¨â€œé€‰é¡¹è®¾ç½®-å¿«é€Ÿæ•´åˆç¼“å­˜â€é‡Œé€‰ä¸­ç¬¬ä¸€é¡¹ã€‚
 
-¡¡¡¡9¡¢µã»÷¡°ÕûºÏ¡±°´Å¥£¬ÎÒÃÇÒ»°ãÊÇ¡°½ûÓÃKTD¡±¡£³ÌÐò»á×Ô¶¯°ÑÇý¶¯ÕûºÏ½øWindows XP°²×°Ä¿Â¼Àï¡£Õâ¸ö¹ý³Ì±È½Ï³¤£¬´ó¸ÅÒªÈýµ½Îå·ÖÖÓ×óÓÒ£¬ÒªÓÐÄÍÐÄµÈ´ý¡£
-
-
-    ¼¯³ÉÍê³Éºó£¬ÔÚD:WinXPÄ¿Â¼ÖÐ¶àÁË¸öOEMÎÄ¼þ¼Ð£¬ÕâÊÇ¼¯³ÉµÄSATAÇý¶¯ÎÄ¼þ°ü¡£
-
-¡¡¡¡ËÄ¡¢·â×°¡¢¿ÌÂ¼¿É¹âÅÌÆô¶¯µÄXP SP3ÏµÍ³¡¡¡¡
-
-¡¡¡¡£±¡¢´ò¿ªUltraISOÈí¼þ£¬ÔÚ¡°ÎÄ¼þ¡±ÏÂÀ­²Ëµ¥Àïµã¡°´ò¿ª¡±£¬Ö±½Ó´ò¿ª¸Õ²ÅÏÂÔØµÄÔ­°æWindowsXP sp3 VOL²Ù×÷ÏµÍ³µÄ¾µÏñÎÄ¼þ¡£
-
-¡¡¡¡£²¡¢ÔÚ¡°Æô¶¯¹âÅÌ¡±ÏÂÀ­²Ëµ¥Àïµã¡°±£´æÒýµ¼ÎÄ¼þ¡±£¬°´µ¯³öµÄ¶Ô»°¿òÌáÊ¾£¬°ÑÒýµ¼ÎÄ¼þÁí´æÔÚ×ÀÃæÉÏ£¨ÎÄ¼þÃûËæ±ã£©¡£µ±È»£¬ÎÒÃÇÊÖÖÐÒÑÓÐÒ»ÕÅÔ­°æµÄWindowsXP sp2¹âÅÌÒ²ÐÐ£¬Ö±½ÓÔÚ¡°Æô¶¯¹âÅÌ¡±ÏÂÀ­²Ëµ¥Àïµã¡°´ÓCD/DVDÌáÈ¡Òýµ¼ÎÄ¼þ¡±,Ò²ÄÜÌáÈ¡Ò»¸öÒýµ¼ÎÄ¼þ¡£
-
-    3¡¢°ÑD:WinXPÄ¿Â¼ÏÂµÄÈ«²¿ÎÄ¼þºÍÎÄ¼þ¼ÐÍÏ·Åµ½ÉÏÀ¸ÓÒ±ßµÄ´°¿Ú£¬ÔÚ¡°Æô¶¯¹âÅÌ¡±ÏÂÀ­²Ëµ¥Àïµã¡°¼ÓÔØÒýµ¼ÎÄ¼þ¡±£¬°´ÕÕÌáÊ¾´Ó×ÀÃæÉÏ°Ñ¸Õ²ÅÌáÈ¡µÄÒýµ¼ÎÄ¼þ¼ÓÔØµ½¼¯³ÉÁËSATAÇý¶¯³ÌÐòµÄxp sp3 VOL¾µÏñÎÄ¼þÀï¡£
+ã€€ã€€9ã€ç‚¹å‡»â€œæ•´åˆâ€æŒ‰é’®ï¼Œæˆ‘ä»¬ä¸€èˆ¬æ˜¯â€œç¦ç”¨KTDâ€ã€‚ç¨‹åºä¼šè‡ªåŠ¨æŠŠé©±åŠ¨æ•´åˆè¿›Windows XPå®‰è£…ç›®å½•é‡Œã€‚è¿™ä¸ªè¿‡ç¨‹æ¯”è¾ƒé•¿ï¼Œå¤§æ¦‚è¦ä¸‰åˆ°äº”åˆ†é’Ÿå·¦å³ï¼Œè¦æœ‰è€å¿ƒç­‰å¾…ã€‚
 
 
-   4¡¢ÔÚÎÄ¼þÏÂÀ­²Ëµ¥ÖÐµã¡°±£´æ¡±£¬ÎÄ¼þËæ±ãÈ¡¡£ÕâÑù£¬Ò»¸ö¼¯³ÉSATAÇý¶¯³ÌÐòµÄXP SP3 VOLÏµÍ³¾Í×öºÃÁË£¬½ÓÏÂÀ´¾ÍÉÏ¿ÌÂ¼³É¹âÅÌÁË¡£
+    é›†æˆå®ŒæˆåŽï¼Œåœ¨D:WinXPç›®å½•ä¸­å¤šäº†ä¸ªOEMæ–‡ä»¶å¤¹ï¼Œè¿™æ˜¯é›†æˆçš„SATAé©±åŠ¨æ–‡ä»¶åŒ…ã€‚
 
-¡¡¡¡ÌØ±ðÌáÊ¾:
+ã€€ã€€å››ã€å°è£…ã€åˆ»å½•å¯å…‰ç›˜å¯åŠ¨çš„XP SP3ç³»ç»Ÿã€€ã€€
 
-¡¡¡¡2¡¢ÔÚÑ¡ÔñÇý¶¯°üµÄÒ³ÃæÉÏ×¢Òâ°ÑÏÂÃæµÄDriverPack MassStorage text mode¹´ÉÏ¡£
+ã€€ã€€ï¼‘ã€æ‰“å¼€UltraISOè½¯ä»¶ï¼Œåœ¨â€œæ–‡ä»¶â€ä¸‹æ‹‰èœå•é‡Œç‚¹â€œæ‰“å¼€â€ï¼Œç›´æŽ¥æ‰“å¼€åˆšæ‰ä¸‹è½½çš„åŽŸç‰ˆWindowsXP sp3 VOLæ“ä½œç³»ç»Ÿçš„é•œåƒæ–‡ä»¶ã€‚
 
-¡¡    3¡¢ÓÃ´Ë·½·¨Á½Ñù¿ÉÒÔÔÚXP SP2ºÍOEM XP SP2¡¢OEM XP SP3ÖÐ¼¯³ÉSATAÇý¶¯³ÌÐò¡£
+ã€€ã€€ï¼’ã€åœ¨â€œå¯åŠ¨å…‰ç›˜â€ä¸‹æ‹‰èœå•é‡Œç‚¹â€œä¿å­˜å¼•å¯¼æ–‡ä»¶â€ï¼ŒæŒ‰å¼¹å‡ºçš„å¯¹è¯æ¡†æç¤ºï¼ŒæŠŠå¼•å¯¼æ–‡ä»¶å¦å­˜åœ¨æ¡Œé¢ä¸Šï¼ˆæ–‡ä»¶åéšä¾¿ï¼‰ã€‚å½“ç„¶ï¼Œæˆ‘ä»¬æ‰‹ä¸­å·²æœ‰ä¸€å¼ åŽŸç‰ˆçš„WindowsXP sp2å…‰ç›˜ä¹Ÿè¡Œï¼Œç›´æŽ¥åœ¨â€œå¯åŠ¨å…‰ç›˜â€ä¸‹æ‹‰èœå•é‡Œç‚¹â€œä»ŽCD/DVDæå–å¼•å¯¼æ–‡ä»¶â€,ä¹Ÿèƒ½æå–ä¸€ä¸ªå¼•å¯¼æ–‡ä»¶ã€‚
+
+    3ã€æŠŠD:WinXPç›®å½•ä¸‹çš„å…¨éƒ¨æ–‡ä»¶å’Œæ–‡ä»¶å¤¹æ‹–æ”¾åˆ°ä¸Šæ å³è¾¹çš„çª—å£ï¼Œåœ¨â€œå¯åŠ¨å…‰ç›˜â€ä¸‹æ‹‰èœå•é‡Œç‚¹â€œåŠ è½½å¼•å¯¼æ–‡ä»¶â€ï¼ŒæŒ‰ç…§æç¤ºä»Žæ¡Œé¢ä¸ŠæŠŠåˆšæ‰æå–çš„å¼•å¯¼æ–‡ä»¶åŠ è½½åˆ°é›†æˆäº†SATAé©±åŠ¨ç¨‹åºçš„xp sp3 VOLé•œåƒæ–‡ä»¶é‡Œã€‚
+
+
+   4ã€åœ¨æ–‡ä»¶ä¸‹æ‹‰èœå•ä¸­ç‚¹â€œä¿å­˜â€ï¼Œæ–‡ä»¶éšä¾¿å–ã€‚è¿™æ ·ï¼Œä¸€ä¸ªé›†æˆSATAé©±åŠ¨ç¨‹åºçš„XP SP3 VOLç³»ç»Ÿå°±åšå¥½äº†ï¼ŒæŽ¥ä¸‹æ¥å°±ä¸Šåˆ»å½•æˆå…‰ç›˜äº†ã€‚
+
+ã€€ã€€ç‰¹åˆ«æç¤º:
+
+ã€€ã€€2ã€åœ¨é€‰æ‹©é©±åŠ¨åŒ…çš„é¡µé¢ä¸Šæ³¨æ„æŠŠä¸‹é¢çš„DriverPack MassStorage text modeå‹¾ä¸Šã€‚
+
+ã€€    3ã€ç”¨æ­¤æ–¹æ³•ä¸¤æ ·å¯ä»¥åœ¨XP SP2å’ŒOEM XP SP2ã€OEM XP SP3ä¸­é›†æˆSATAé©±åŠ¨ç¨‹åºã€‚
 
  
 
-   ÓÑÇéÌáÐÑ:Èç»¹ÓÐÃ÷°×µÄµØ·½,Çë²Î¿¼ÎÒ×îÐÂµÄ²©ÎÄ£¬ÅäÍ¼Ïê½â¼¯³É¹ý³Ì¼°×¢ÒâÊÂÏî¡£Çë²Î¿¼¡¶ÊÍÒÉ½â»ó£ºÏêÏ¸Í¼½âÈçºÎÔÚXP SP3ÏµÍ³¹âÅÌÖÐ¼¯³ÉSATAÇý¶¯¡·
+   å‹æƒ…æé†’:å¦‚è¿˜æœ‰æ˜Žç™½çš„åœ°æ–¹,è¯·å‚è€ƒæˆ‘æœ€æ–°çš„åšæ–‡ï¼Œé…å›¾è¯¦è§£é›†æˆè¿‡ç¨‹åŠæ³¨æ„äº‹é¡¹ã€‚è¯·å‚è€ƒã€Šé‡Šç–‘è§£æƒ‘ï¼šè¯¦ç»†å›¾è§£å¦‚ä½•åœ¨XP SP3ç³»ç»Ÿå…‰ç›˜ä¸­é›†æˆSATAé©±åŠ¨ã€‹
 
  
 

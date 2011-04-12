@@ -1,103 +1,103 @@
-ÔÚb/s¿ª·¢ÖĞ¾­³£ÓÃµ½µÄjavaScript¼¼Êõ 
-Ò»¡¢ÑéÖ¤Àà
-1¡¢Êı×ÖÑéÖ¤ÄÚ
-  1.1 ÕûÊı
-  1.2 ´óÓÚ0µÄÕûÊı £¨ÓÃÓÚ´«À´µÄIDµÄÑéÖ¤)
-  1.3 ¸ºÕûÊıµÄÑéÖ¤
-  1.4 ÕûÊı²»ÄÜ´óÓÚiMax
-  1.5 ÕûÊı²»ÄÜĞ¡ÓÚiMin
-2¡¢Ê±¼äÀà
-  2.1 ¶ÌÊ±¼ä£¬ĞÎÈç (13:04:06)
-  2.2 ¶ÌÈÕÆÚ£¬ĞÎÈç (2003-12-05)
-  2.3 ³¤Ê±¼ä£¬ĞÎÈç (2003-12-05 13:04:06)
-  2.4 Ö»ÓĞÄêºÍÔÂ¡£ĞÎÈç(2003-05,»òÕß2003-5)
-  2.5 Ö»ÓĞĞ¡Ê±ºÍ·ÖÖÓ,ĞÎÈç(12:03)
-3¡¢±íµ¥Àà
-  3.1 ËùÓĞµÄ±íµ¥µÄÖµ¶¼²»ÄÜÎª¿Õ
-  3.2 ¶àĞĞÎÄ±¾¿òµÄÖµ²»ÄÜÎª¿Õ¡£
-  3.3 ¶àĞĞÎÄ±¾¿òµÄÖµ²»ÄÜ³¬¹ısMaxStrleng
-  3.4 ¶àĞĞÎÄ±¾¿òµÄÖµ²»ÄÜÉÙÓÚsMixStrleng
-  3.5 ÅĞ¶Ïµ¥Ñ¡¿òÊÇ·ñÑ¡Ôñ¡£
-  3.6 ÅĞ¶Ï¸´Ñ¡¿òÊÇ·ñÑ¡Ôñ.
-  3.7 ¸´Ñ¡¿òµÄÈ«Ñ¡£¬¶àÑ¡£¬È«²»Ñ¡£¬·´Ñ¡
-  3.8 ÎÄ¼şÉÏ´«¹ı³ÌÖĞÅĞ¶ÏÎÄ¼şÀàĞÍ
-4¡¢×Ö·ûÀà
-  4.1 ÅĞ¶Ï×Ö·ûÈ«²¿ÓÉa-Z»òÕßÊÇA-ZµÄ×Ö×ÖÄ¸×é³É
-  4.2 ÅĞ¶Ï×Ö·ûÓÉ×ÖÄ¸ºÍÊı×Ö×é³É¡£
-  4.3 ÅĞ¶Ï×Ö·ûÓÉ×ÖÄ¸ºÍÊı×Ö£¬ÏÂ»®Ïß,µãºÅ×é³É.ÇÒ¿ªÍ·µÄÖ»ÄÜÊÇÏÂ»®ÏßºÍ×ÖÄ¸
-  4.4 ×Ö·û´®Ìæ»»º¯Êı.Replace();
-5¡¢ä¯ÀÀÆ÷Àà
-  5.1 ÅĞ¶Ïä¯ÀÀÆ÷µÄÀàĞÍ
-  5.2 ÅĞ¶ÏieµÄ°æ±¾
-  5.3 ÅĞ¶Ï¿Í»§¶ËµÄ·Ö±æÂÊ
+åœ¨b/så¼€å‘ä¸­ç»å¸¸ç”¨åˆ°çš„javaScriptæŠ€æœ¯ 
+ä¸€ã€éªŒè¯ç±»
+1ã€æ•°å­—éªŒè¯å†…
+  1.1 æ•´æ•°
+  1.2 å¤§äº0çš„æ•´æ•° ï¼ˆç”¨äºä¼ æ¥çš„IDçš„éªŒè¯)
+  1.3 è´Ÿæ•´æ•°çš„éªŒè¯
+  1.4 æ•´æ•°ä¸èƒ½å¤§äºiMax
+  1.5 æ•´æ•°ä¸èƒ½å°äºiMin
+2ã€æ—¶é—´ç±»
+  2.1 çŸ­æ—¶é—´ï¼Œå½¢å¦‚ (13:04:06)
+  2.2 çŸ­æ—¥æœŸï¼Œå½¢å¦‚ (2003-12-05)
+  2.3 é•¿æ—¶é—´ï¼Œå½¢å¦‚ (2003-12-05 13:04:06)
+  2.4 åªæœ‰å¹´å’Œæœˆã€‚å½¢å¦‚(2003-05,æˆ–è€…2003-5)
+  2.5 åªæœ‰å°æ—¶å’Œåˆ†é’Ÿ,å½¢å¦‚(12:03)
+3ã€è¡¨å•ç±»
+  3.1 æ‰€æœ‰çš„è¡¨å•çš„å€¼éƒ½ä¸èƒ½ä¸ºç©º
+  3.2 å¤šè¡Œæ–‡æœ¬æ¡†çš„å€¼ä¸èƒ½ä¸ºç©ºã€‚
+  3.3 å¤šè¡Œæ–‡æœ¬æ¡†çš„å€¼ä¸èƒ½è¶…è¿‡sMaxStrleng
+  3.4 å¤šè¡Œæ–‡æœ¬æ¡†çš„å€¼ä¸èƒ½å°‘äºsMixStrleng
+  3.5 åˆ¤æ–­å•é€‰æ¡†æ˜¯å¦é€‰æ‹©ã€‚
+  3.6 åˆ¤æ–­å¤é€‰æ¡†æ˜¯å¦é€‰æ‹©.
+  3.7 å¤é€‰æ¡†çš„å…¨é€‰ï¼Œå¤šé€‰ï¼Œå…¨ä¸é€‰ï¼Œåé€‰
+  3.8 æ–‡ä»¶ä¸Šä¼ è¿‡ç¨‹ä¸­åˆ¤æ–­æ–‡ä»¶ç±»å‹
+4ã€å­—ç¬¦ç±»
+  4.1 åˆ¤æ–­å­—ç¬¦å…¨éƒ¨ç”±a-Zæˆ–è€…æ˜¯A-Zçš„å­—å­—æ¯ç»„æˆ
+  4.2 åˆ¤æ–­å­—ç¬¦ç”±å­—æ¯å’Œæ•°å­—ç»„æˆã€‚
+  4.3 åˆ¤æ–­å­—ç¬¦ç”±å­—æ¯å’Œæ•°å­—ï¼Œä¸‹åˆ’çº¿,ç‚¹å·ç»„æˆ.ä¸”å¼€å¤´çš„åªèƒ½æ˜¯ä¸‹åˆ’çº¿å’Œå­—æ¯
+  4.4 å­—ç¬¦ä¸²æ›¿æ¢å‡½æ•°.Replace();
+5ã€æµè§ˆå™¨ç±»
+  5.1 åˆ¤æ–­æµè§ˆå™¨çš„ç±»å‹
+  5.2 åˆ¤æ–­ieçš„ç‰ˆæœ¬
+  5.3 åˆ¤æ–­å®¢æˆ·ç«¯çš„åˆ†è¾¨ç‡
   
-6¡¢½áºÏÀà
-  6.1 emailµÄÅĞ¶Ï¡£
-  6.2 ÊÖ»úºÅÂëµÄÑéÖ¤
-  6.3 Éí·İÖ¤µÄÑéÖ¤
+6ã€ç»“åˆç±»
+  6.1 emailçš„åˆ¤æ–­ã€‚
+  6.2 æ‰‹æœºå·ç çš„éªŒè¯
+  6.3 èº«ä»½è¯çš„éªŒè¯
   
 
-¶ş¡¢¹¦ÄÜÀà
+äºŒã€åŠŸèƒ½ç±»
 
-1¡¢Ê±¼äÓëÏà¹Ø¿Ø¼şÀà
-  1.1 ÈÕÀú
-  1.2 Ê±¼ä¿Ø¼ş
-  1.3 ÍòÄêÀú
-  1.4 ÏÔÊ¾¶¯Ì¬ÏÔÊ¾Ê±ÖÓĞ§¹û£¨ÎÄ±¾£¬ÈçOAÖĞÊ±¼ä£©
-  1.5 ÏÔÊ¾¶¯Ì¬ÏÔÊ¾Ê±ÖÓĞ§¹û (Í¼Ïñ£¬ÏñÊÖ±í) 
-2¡¢±íµ¥Àà
-  2.1 ×Ô¶¯Éú³É±íµ¥
-  2.2 ¶¯Ì¬Ìí¼Ó£¬ĞŞ¸Ä£¬É¾³ıÏÂÀ­¿òÖĞµÄÔªËØ
-  2.3 ¿ÉÒÔÊäÈëÄÚÈİµÄÏÂÀ­¿ò
-  2.4 ¶àĞĞÎÄ±¾¿òÖĞÖ»ÄÜÊäÈëiMaxÎÄ×Ö¡£Èç¹û¶àÊäÈëÁË£¬×Ô¶¯¼õÉÙµ½iMax¸öÎÄ×Ö£¨¶àÓÃÓÚ¶ÌĞÅ·¢ËÍ)
+1ã€æ—¶é—´ä¸ç›¸å…³æ§ä»¶ç±»
+  1.1 æ—¥å†
+  1.2 æ—¶é—´æ§ä»¶
+  1.3 ä¸‡å¹´å†
+  1.4 æ˜¾ç¤ºåŠ¨æ€æ˜¾ç¤ºæ—¶é’Ÿæ•ˆæœï¼ˆæ–‡æœ¬ï¼Œå¦‚OAä¸­æ—¶é—´ï¼‰
+  1.5 æ˜¾ç¤ºåŠ¨æ€æ˜¾ç¤ºæ—¶é’Ÿæ•ˆæœ (å›¾åƒï¼Œåƒæ‰‹è¡¨) 
+2ã€è¡¨å•ç±»
+  2.1 è‡ªåŠ¨ç”Ÿæˆè¡¨å•
+  2.2 åŠ¨æ€æ·»åŠ ï¼Œä¿®æ”¹ï¼Œåˆ é™¤ä¸‹æ‹‰æ¡†ä¸­çš„å…ƒç´ 
+  2.3 å¯ä»¥è¾“å…¥å†…å®¹çš„ä¸‹æ‹‰æ¡†
+  2.4 å¤šè¡Œæ–‡æœ¬æ¡†ä¸­åªèƒ½è¾“å…¥iMaxæ–‡å­—ã€‚å¦‚æœå¤šè¾“å…¥äº†ï¼Œè‡ªåŠ¨å‡å°‘åˆ°iMaxä¸ªæ–‡å­—ï¼ˆå¤šç”¨äºçŸ­ä¿¡å‘é€)
   
-3¡¢´òÓ¡Àà
-  3.1 ´òÓ¡¿Ø¼ş
-4¡¢ÊÂ¼şÀà
-  4.1 ÆÁ±ÎÓÒ¼ü
-  4.2 ÆÁ±ÎËùÓĞ¹¦ÄÜ¼ü
-  4.3 --> ºÍ<-- F5 F11,F9,F1
-  4.4 ÆÁ±Î×éºÏ¼üctrl+N
-5¡¢ÍøÒ³Éè¼ÆÀà
-  5.1 Á¬Ğø¹ö¶¯µÄÎÄ×Ö£¬Í¼Æ¬£¨×¢ÒâÊÇÁ¬ĞøµÄ£¬Á½¶ÎÎÄ×ÖºÍÍ¼Æ¬ÖĞÃ»ÓĞ¿Õ°×³öÏÖ£©
-  5.2 html±à¼­¿Ø¼şÀà
-  5.3 ÑÕÉ«Ñ¡È¡¿ò¿Ø¼ş
-  5.4 ÏÂÀ­²Ëµ¥
-  5.5 Á½²ã»ò¶à²ã´ÎµÄÏÂÀ­²Ëµ¥
-  5.6 ·ÂIE²Ëµ¥µÄ°´Å¥¡££¨Ğ§¹ûÈçrongshuxa.comµÄµ¼º½À¸Ä¿)
-  5.7 ×´Ì¬À¸£¬titleÀ¸µÄ¶¯Ì¬Ğ§¹û£¨Àı×ÓºÜ¶à£¬¿ÉÒÔÑĞ¾¿Ò»ÏÂ£©
-  5.8 Ë«»÷ºó£¬ÍøÒ³×Ô¶¯¹öÆÁ
-6¡¢Ê÷ĞÍ½á¹¹¡£
-  6.1 asp+SQL°æ
-  6.2 asp+xml+sql°æ
-  6.3 java+sql»òÕßjava+sql+xml
-7¡¢ÎŞ±ß¿òĞ§¹ûµÄÖÆ×÷
-8¡¢Á¬¶¯ÏÂÀ­¿ò¼¼Êõ
-9¡¢ÎÄ±¾ÅÅĞò
+3ã€æ‰“å°ç±»
+  3.1 æ‰“å°æ§ä»¶
+4ã€äº‹ä»¶ç±»
+  4.1 å±è”½å³é”®
+  4.2 å±è”½æ‰€æœ‰åŠŸèƒ½é”®
+  4.3 --> å’Œ<-- F5 F11,F9,F1
+  4.4 å±è”½ç»„åˆé”®ctrl+N
+5ã€ç½‘é¡µè®¾è®¡ç±»
+  5.1 è¿ç»­æ»šåŠ¨çš„æ–‡å­—ï¼Œå›¾ç‰‡ï¼ˆæ³¨æ„æ˜¯è¿ç»­çš„ï¼Œä¸¤æ®µæ–‡å­—å’Œå›¾ç‰‡ä¸­æ²¡æœ‰ç©ºç™½å‡ºç°ï¼‰
+  5.2 htmlç¼–è¾‘æ§ä»¶ç±»
+  5.3 é¢œè‰²é€‰å–æ¡†æ§ä»¶
+  5.4 ä¸‹æ‹‰èœå•
+  5.5 ä¸¤å±‚æˆ–å¤šå±‚æ¬¡çš„ä¸‹æ‹‰èœå•
+  5.6 ä»¿IEèœå•çš„æŒ‰é’®ã€‚ï¼ˆæ•ˆæœå¦‚rongshuxa.comçš„å¯¼èˆªæ ç›®)
+  5.7 çŠ¶æ€æ ï¼Œtitleæ çš„åŠ¨æ€æ•ˆæœï¼ˆä¾‹å­å¾ˆå¤šï¼Œå¯ä»¥ç ”ç©¶ä¸€ä¸‹ï¼‰
+  5.8 åŒå‡»åï¼Œç½‘é¡µè‡ªåŠ¨æ»šå±
+6ã€æ ‘å‹ç»“æ„ã€‚
+  6.1 asp+SQLç‰ˆ
+  6.2 asp+xml+sqlç‰ˆ
+  6.3 java+sqlæˆ–è€…java+sql+xml
+7ã€æ— è¾¹æ¡†æ•ˆæœçš„åˆ¶ä½œ
+8ã€è¿åŠ¨ä¸‹æ‹‰æ¡†æŠ€æœ¯
+9ã€æ–‡æœ¬æ’åº
 
 
-Ò»¡¢ÑéÖ¤Àà
-1¡¢Êı×ÖÑéÖ¤ÄÚ
-  1.1 ÕûÊı
+ä¸€ã€éªŒè¯ç±»
+1ã€æ•°å­—éªŒè¯å†…
+  1.1 æ•´æ•°
       /^(-|\+)?\d+$/.test(str)
-  1.2 ´óÓÚ0µÄÕûÊı £¨ÓÃÓÚ´«À´µÄIDµÄÑéÖ¤)
+  1.2 å¤§äº0çš„æ•´æ•° ï¼ˆç”¨äºä¼ æ¥çš„IDçš„éªŒè¯)
       /^\d+$/.test(str)
-  1.3 ¸ºÕûÊıµÄÑéÖ¤
+  1.3 è´Ÿæ•´æ•°çš„éªŒè¯
       /^-\d+$/.test(str)
-2¡¢Ê±¼äÀà
-  2.1 ¶ÌÊ±¼ä£¬ĞÎÈç (13:04:06)
+2ã€æ—¶é—´ç±»
+  2.1 çŸ­æ—¶é—´ï¼Œå½¢å¦‚ (13:04:06)
       function isTime(str)
       {
         var a = str.match(/^(\d{1,2})(:)?(\d{1,2})\2(\d{1,2})$/);
-        if (a == null) {alert('ÊäÈëµÄ²ÎÊı²»ÊÇÊ±¼ä¸ñÊ½'); return false;}
+        if (a == null) {alert('è¾“å…¥çš„å‚æ•°ä¸æ˜¯æ—¶é—´æ ¼å¼'); return false;}
         if (a[1]>24 || a[3]>60 || a[4]>60)
         {
-          alert("Ê±¼ä¸ñÊ½²»¶Ô");
+          alert("æ—¶é—´æ ¼å¼ä¸å¯¹");
           return false
         }
         return true;
       }
-  2.2 ¶ÌÈÕÆÚ£¬ĞÎÈç (2003-12-05)
+  2.2 çŸ­æ—¥æœŸï¼Œå½¢å¦‚ (2003-12-05)
       function strDateTime(str)
       {
          var r = str.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/); 
@@ -105,7 +105,7 @@
          var d= new Date(r[1], r[3]-1, r[4]); 
          return (d.getFullYear()==r[1]&&(d.getMonth()+1)==r[3]&&d.getDate()==r[4]);
       }
-  2.3 ³¤Ê±¼ä£¬ĞÎÈç (2003-12-05 13:04:06)
+  2.3 é•¿æ—¶é—´ï¼Œå½¢å¦‚ (2003-12-05 13:04:06)
       function strDateTime(str)
       {
         var reg = /^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/; 
@@ -114,51 +114,51 @@
         var d= new Date(r[1], r[3]-1,r[4],r[5],r[6],r[7]); 
         return (d.getFullYear()==r[1]&&(d.getMonth()+1)==r[3]&&d.getDate()==r[4]&&d.getHours()==r[5]&&d.getMinutes()==r[6]&&d.getSeconds()==r[7]);
       }
-  2.4 Ö»ÓĞÄêºÍÔÂ¡£ĞÎÈç(2003-05,»òÕß2003-5)
-  2.5 Ö»ÓĞĞ¡Ê±ºÍ·ÖÖÓ,ĞÎÈç(12:03)
-3¡¢±íµ¥Àà
-  3.1 ËùÓĞµÄ±íµ¥µÄÖµ¶¼²»ÄÜÎª¿Õ
-      <input onblur="if(this.value.replace(/^\s+|\s+$/g,'')=='')alert('²»ÄÜÎª¿Õ!')">
-  3.2 ¶àĞĞÎÄ±¾¿òµÄÖµ²»ÄÜÎª¿Õ¡£
-  3.3 ¶àĞĞÎÄ±¾¿òµÄÖµ²»ÄÜ³¬¹ısMaxStrleng
-  3.4 ¶àĞĞÎÄ±¾¿òµÄÖµ²»ÄÜÉÙÓÚsMixStrleng
-  3.5 ÅĞ¶Ïµ¥Ñ¡¿òÊÇ·ñÑ¡Ôñ¡£
-  3.6 ÅĞ¶Ï¸´Ñ¡¿òÊÇ·ñÑ¡Ôñ.
-  3.7 ¸´Ñ¡¿òµÄÈ«Ñ¡£¬¶àÑ¡£¬È«²»Ñ¡£¬·´Ñ¡
-  3.8 ÎÄ¼şÉÏ´«¹ı³ÌÖĞÅĞ¶ÏÎÄ¼şÀàĞÍ
-4¡¢×Ö·ûÀà
-  4.1 ÅĞ¶Ï×Ö·ûÈ«²¿ÓÉa-Z»òÕßÊÇA-ZµÄ×Ö×ÖÄ¸×é³É
-      <input onblur="if(/[^a-zA-Z]/g.test(this.value))alert('ÓĞ´í')">
-  4.2 ÅĞ¶Ï×Ö·ûÓÉ×ÖÄ¸ºÍÊı×Ö×é³É¡£
-      <input onblur="if(/[^0-9a-zA-Z]/g.test(this.value))alert('ÓĞ´í')">
-  4.3 ÅĞ¶Ï×Ö·ûÓÉ×ÖÄ¸ºÍÊı×Ö£¬ÏÂ»®Ïß,µãºÅ×é³É.ÇÒ¿ªÍ·µÄÖ»ÄÜÊÇÏÂ»®ÏßºÍ×ÖÄ¸
+  2.4 åªæœ‰å¹´å’Œæœˆã€‚å½¢å¦‚(2003-05,æˆ–è€…2003-5)
+  2.5 åªæœ‰å°æ—¶å’Œåˆ†é’Ÿ,å½¢å¦‚(12:03)
+3ã€è¡¨å•ç±»
+  3.1 æ‰€æœ‰çš„è¡¨å•çš„å€¼éƒ½ä¸èƒ½ä¸ºç©º
+      <input onblur="if(this.value.replace(/^\s+|\s+$/g,'')=='')alert('ä¸èƒ½ä¸ºç©º!')">
+  3.2 å¤šè¡Œæ–‡æœ¬æ¡†çš„å€¼ä¸èƒ½ä¸ºç©ºã€‚
+  3.3 å¤šè¡Œæ–‡æœ¬æ¡†çš„å€¼ä¸èƒ½è¶…è¿‡sMaxStrleng
+  3.4 å¤šè¡Œæ–‡æœ¬æ¡†çš„å€¼ä¸èƒ½å°‘äºsMixStrleng
+  3.5 åˆ¤æ–­å•é€‰æ¡†æ˜¯å¦é€‰æ‹©ã€‚
+  3.6 åˆ¤æ–­å¤é€‰æ¡†æ˜¯å¦é€‰æ‹©.
+  3.7 å¤é€‰æ¡†çš„å…¨é€‰ï¼Œå¤šé€‰ï¼Œå…¨ä¸é€‰ï¼Œåé€‰
+  3.8 æ–‡ä»¶ä¸Šä¼ è¿‡ç¨‹ä¸­åˆ¤æ–­æ–‡ä»¶ç±»å‹
+4ã€å­—ç¬¦ç±»
+  4.1 åˆ¤æ–­å­—ç¬¦å…¨éƒ¨ç”±a-Zæˆ–è€…æ˜¯A-Zçš„å­—å­—æ¯ç»„æˆ
+      <input onblur="if(/[^a-zA-Z]/g.test(this.value))alert('æœ‰é”™')">
+  4.2 åˆ¤æ–­å­—ç¬¦ç”±å­—æ¯å’Œæ•°å­—ç»„æˆã€‚
+      <input onblur="if(/[^0-9a-zA-Z]/g.test(this.value))alert('æœ‰é”™')">
+  4.3 åˆ¤æ–­å­—ç¬¦ç”±å­—æ¯å’Œæ•°å­—ï¼Œä¸‹åˆ’çº¿,ç‚¹å·ç»„æˆ.ä¸”å¼€å¤´çš„åªèƒ½æ˜¯ä¸‹åˆ’çº¿å’Œå­—æ¯
       /^([a-zA-z_]{1})([\w]*)$/g.test(str)
-  4.4 ×Ö·û´®Ìæ»»º¯Êı.Replace();
-5¡¢ä¯ÀÀÆ÷Àà
-  5.1 ÅĞ¶Ïä¯ÀÀÆ÷µÄÀàĞÍ
+  4.4 å­—ç¬¦ä¸²æ›¿æ¢å‡½æ•°.Replace();
+5ã€æµè§ˆå™¨ç±»
+  5.1 åˆ¤æ–­æµè§ˆå™¨çš„ç±»å‹
       window.navigator.appName
-  5.2 ÅĞ¶ÏieµÄ°æ±¾
+  5.2 åˆ¤æ–­ieçš„ç‰ˆæœ¬
       window.navigator.appVersion
-  5.3 ÅĞ¶Ï¿Í»§¶ËµÄ·Ö±æÂÊ
+  5.3 åˆ¤æ–­å®¢æˆ·ç«¯çš„åˆ†è¾¨ç‡
       window.screen.height;  window.screen.width;
   
-6¡¢½áºÏÀà
-  6.1 emailµÄÅĞ¶Ï¡£
+6ã€ç»“åˆç±»
+  6.1 emailçš„åˆ¤æ–­ã€‚
       function ismail(mail)
       {
         return(new RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/).test(mail));
       }
-  6.2 ÊÖ»úºÅÂëµÄÑéÖ¤
-  6.3 Éí·İÖ¤µÄÑéÖ¤
+  6.2 æ‰‹æœºå·ç çš„éªŒè¯
+  6.3 èº«ä»½è¯çš„éªŒè¯
       function isIdCardNo(num)
       {
-        if (isNaN(num)) {alert("ÊäÈëµÄ²»ÊÇÊı×Ö£¡"); return false;}
+        if (isNaN(num)) {alert("è¾“å…¥çš„ä¸æ˜¯æ•°å­—ï¼"); return false;}
         var len = num.length, re; 
         if (len == 15)
           re = new RegExp(/^(\d{6})()?(\d{2})(\d{2})(\d{2})(\d{3})$/);
         else if (len == 18)
           re = new RegExp(/^(\d{6})()?(\d{4})(\d{2})(\d{2})(\d{3})(\d)$/);
-        else {alert("ÊäÈëµÄÊı×ÖÎ»Êı²»¶Ô£¡"); return false;}
+        else {alert("è¾“å…¥çš„æ•°å­—ä½æ•°ä¸å¯¹ï¼"); return false;}
         var a = num.match(re);
         if (a != null)
         {
@@ -172,14 +172,14 @@
             var D = new Date(a[3]+"/"+a[4]+"/"+a[5]);
             var B = D.getFullYear()==a[3]&&(D.getMonth()+1)==a[4]&&D.getDate()==a[5];
           }
-          if (!B) {alert("ÊäÈëµÄÉí·İÖ¤ºÅ "+ a[0] +" Àï³öÉúÈÕÆÚ²»¶Ô£¡"); return false;}
+          if (!B) {alert("è¾“å…¥çš„èº«ä»½è¯å· "+ a[0] +" é‡Œå‡ºç”Ÿæ—¥æœŸä¸å¯¹ï¼"); return false;}
         }
         return true;
       }
 
-3.7 ¸´Ñ¡¿òµÄÈ«Ñ¡£¬¶àÑ¡£¬È«²»Ñ¡£¬·´Ñ¡
+3.7 å¤é€‰æ¡†çš„å…¨é€‰ï¼Œå¤šé€‰ï¼Œå…¨ä¸é€‰ï¼Œåé€‰
 <form name=hrong>
-<input type=checkbox name=All onclick="checkAll('mm')">È«Ñ¡<br/>
+<input type=checkbox name=All onclick="checkAll('mm')">å…¨é€‰<br/>
 <input type=checkbox name=mm onclick="checkItem('All')"><br/>
 <input type=checkbox name=mm onclick="checkItem('All')"><br/>
 <input type=checkbox name=mm onclick="checkItem('All')"><br/>
@@ -187,7 +187,7 @@
 <input type=checkbox name=mm onclick="checkItem('All')"><br/><br/>
 
 
-<input type=checkbox name=All2 onclick="checkAll('mm2')">È«Ñ¡<br/>
+<input type=checkbox name=All2 onclick="checkAll('mm2')">å…¨é€‰<br/>
 <input type=checkbox name=mm2 onclick="checkItem('All2')"><br/>
 <input type=checkbox name=mm2 onclick="checkItem('All2')"><br/>
 <input type=checkbox name=mm2 onclick="checkItem('All2')"><br/>
@@ -221,10 +221,10 @@ function checkItem(str)
 }
 </SCRIPT>
 
-3.8 ÎÄ¼şÉÏ´«¹ı³ÌÖĞÅĞ¶ÏÎÄ¼şÀàĞÍ
+3.8 æ–‡ä»¶ä¸Šä¼ è¿‡ç¨‹ä¸­åˆ¤æ–­æ–‡ä»¶ç±»å‹
 <input type=file onchange="alert(this.value.match(/^(.*)(\.)(.{1,8})$/)[3])">
 
-»­Í¼:
+ç”»å›¾:
 <OBJECT 
 id=S 
 style="LEFT: 0px; WIDTH: 392px; TOP: 0px; HEIGHT: 240px" 
@@ -238,7 +238,7 @@ S.DrawingSurface.ArcRadians(30,0,0,30,50,60);
 S.DrawingSurface.Line(10,10,100,100);
 </SCRIPT>
 
-Ğ´×¢²á±í£º
+å†™æ³¨å†Œè¡¨ï¼š
 <SCRIPT>
 var WshShell = WScript.CreateObject("WScript.Shell");
 WshShell.RegWrite ("HKCU\\Software\\ACME\\FortuneTeller\\", 1, "REG_BINARY");
@@ -250,7 +250,7 @@ WshShell.RegDelete ("HKCU\\Software\\ACME\\FortuneTeller\\");
 WshShell.RegDelete ("HKCU\\Software\\ACME\\");
 </SCRIPT>
 
-TABLAEÏà¹Ø(¿Í»§¶Ë¶¯Ì¬Ôö¼ÓĞĞÁĞ£©
+TABLAEç›¸å…³(å®¢æˆ·ç«¯åŠ¨æ€å¢åŠ è¡Œåˆ—ï¼‰
 <HTML>
 <SCRIPT LANGUAGE="JScript">
 function numberCells() {
@@ -272,23 +272,23 @@ function numberCells() {
 </BODY>
 </HTML> 
 
-£±£®Éí·İÖ¤ÑÏ¸ñÑéÖ¤£º
+ï¼‘ï¼èº«ä»½è¯ä¸¥æ ¼éªŒè¯ï¼š
 
 <script>
-var aCity={11:"±±¾©",12:"Ìì½ò",13:"ºÓ±±",14:"É½Î÷",15:"ÄÚÃÉ¹Å",21:"ÁÉÄş",22:"¼ªÁÖ",23:"ºÚÁú½­",31:"ÉÏº£",32:"½­ËÕ",33:"Õã½­",34:"°²»Õ",35:"¸£½¨",36:"½­Î÷",37:"É½¶«",41:"ºÓÄÏ",42:"ºş±±",43:"ºşÄÏ",44:"¹ã¶«",45:"¹ãÎ÷",46:"º£ÄÏ",50:"ÖØÇì",51:"ËÄ´¨",52:"¹óÖİ",53:"ÔÆÄÏ",54:"Î÷²Ø",61:"ÉÂÎ÷",62:"¸ÊËà",63:"Çàº£",64:"ÄşÏÄ",65:"ĞÂ½®",71:"Ì¨Íå",81:"Ïã¸Û",82:"°ÄÃÅ",91:"¹úÍâ"}
+var aCity={11:"åŒ—äº¬",12:"å¤©æ´¥",13:"æ²³åŒ—",14:"å±±è¥¿",15:"å†…è’™å¤",21:"è¾½å®",22:"å‰æ—",23:"é»‘é¾™æ±Ÿ",31:"ä¸Šæµ·",32:"æ±Ÿè‹",33:"æµ™æ±Ÿ",34:"å®‰å¾½",35:"ç¦å»º",36:"æ±Ÿè¥¿",37:"å±±ä¸œ",41:"æ²³å—",42:"æ¹–åŒ—",43:"æ¹–å—",44:"å¹¿ä¸œ",45:"å¹¿è¥¿",46:"æµ·å—",50:"é‡åº†",51:"å››å·",52:"è´µå·",53:"äº‘å—",54:"è¥¿è—",61:"é™•è¥¿",62:"ç”˜è‚ƒ",63:"é’æµ·",64:"å®å¤",65:"æ–°ç–†",71:"å°æ¹¾",81:"é¦™æ¸¯",82:"æ¾³é—¨",91:"å›½å¤–"}
   
 function cidInfo(sId){
  var iSum=0
  var info=""
  if(!/^\d{17}(\d|x)$/i.test(sId))return false;
  sId=sId.replace(/x$/i,"a");
- if(aCity[parseInt(sId.substr(0,2))]==null)return "Error:·Ç·¨µØÇø";
+ if(aCity[parseInt(sId.substr(0,2))]==null)return "Error:éæ³•åœ°åŒº";
  sBirthday=sId.substr(6,4)+"-"+Number(sId.substr(10,2))+"-"+Number(sId.substr(12,2));
  var d=new Date(sBirthday.replace(/-/g,"/"))
- if(sBirthday!=(d.getFullYear()+"-"+ (d.getMonth()+1) + "-" + d.getDate()))return "Error:·Ç·¨ÉúÈÕ";
+ if(sBirthday!=(d.getFullYear()+"-"+ (d.getMonth()+1) + "-" + d.getDate()))return "Error:éæ³•ç”Ÿæ—¥";
  for(var i = 17;i>=0;i --) iSum += (Math.pow(2,i) % 11) * parseInt(sId.charAt(17 - i),11)
- if(iSum%11!=1)return "Error:·Ç·¨Ö¤ºÅ";
- return aCity[parseInt(sId.substr(0,2))]+","+sBirthday+","+(sId.substr(16,1)%2?"ÄĞ":"Å®")
+ if(iSum%11!=1)return "Error:éæ³•è¯å·";
+ return aCity[parseInt(sId.substr(0,2))]+","+sBirthday+","+(sId.substr(16,1)%2?"ç”·":"å¥³")
 }
 
 document.write(cidInfo("380524198002300016"),"<br/>");
@@ -297,7 +297,7 @@ document.write(cidInfo("340524197711111111"),"<br/>")
 document.write(cidInfo("34052419800101001x"),"<br/>");
 </script>
 
-£²£®ÑéÖ¤£É£ĞµØÖ·
+ï¼’ï¼éªŒè¯ï¼©ï¼°åœ°å€
 <SCRIPT LANGUAGE="JavaScript">
 function isip(s){
  var check=function(v){try{return (v<=255 && v>=0)}catch(x){return false}};
@@ -311,7 +311,7 @@ alert(isip(s))
 
  
 
-£³£®¼Ósp1ºó»¹ÄÜÓÃµÄÎŞ±ß¿ò´°¿Ú£¡£¡
+ï¼“ï¼åŠ sp1åè¿˜èƒ½ç”¨çš„æ— è¾¹æ¡†çª—å£ï¼ï¼
 <HTML XMLNS:IE>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <IE:Download ID="include" STYLE="behavior:url(#default#download)" />
@@ -413,18 +413,18 @@ function drag_up(e){
 </SCRIPT>
 </HTML>
 
-µç»°ºÅÂëµÄÑéÖ¤
+ç”µè¯å·ç çš„éªŒè¯
 
-ÒªÇó£º
-¡¡¡¡(1)µç»°ºÅÂëÓÉÊı×Ö¡¢"("¡¢")"ºÍ"-"¹¹³É
-¡¡¡¡(2)µç»°ºÅÂëÎª3µ½8Î»
-¡¡¡¡(3)Èç¹ûµç»°ºÅÂëÖĞ°üº¬ÓĞÇøºÅ£¬ÄÇÃ´ÇøºÅÎªÈıÎ»»òËÄÎ»
-¡¡¡¡(4)ÇøºÅÓÃ"("¡¢")"»ò"-"ºÍÆäËû²¿·Ö¸ô¿ª
-¡¡¡¡(5)ÒÆ¶¯µç»°ºÅÂëÎª11»ò12Î»£¬Èç¹ûÎª12Î»,ÄÇÃ´µÚÒ»Î»Îª0
-¡¡¡¡(6)11Î»ÒÆ¶¯µç»°ºÅÂëµÄµÚÒ»Î»ºÍµÚ¶şÎ»Îª"13"
-¡¡¡¡(7)12Î»ÒÆ¶¯µç»°ºÅÂëµÄµÚ¶şÎ»ºÍµÚÈıÎ»Îª"13"
-¡¡¡¡¸ù¾İÕâ¼¸Ìõ¹æÔò£¬¿ÉÒÔÓë³öÒÔÏÂÕıÔò±í´ïÊ½£º
-¡¡¡¡(^[0-9]{3,4}\-[0-9]{3,8}$)|(^[0-9]{3,8}$)|(^\([0-9]{3,4}\)[0-9]{3,8}$)|(^0{0,1}13[0-9]{9}$)
+è¦æ±‚ï¼š
+ã€€ã€€(1)ç”µè¯å·ç ç”±æ•°å­—ã€"("ã€")"å’Œ"-"æ„æˆ
+ã€€ã€€(2)ç”µè¯å·ç ä¸º3åˆ°8ä½
+ã€€ã€€(3)å¦‚æœç”µè¯å·ç ä¸­åŒ…å«æœ‰åŒºå·ï¼Œé‚£ä¹ˆåŒºå·ä¸ºä¸‰ä½æˆ–å››ä½
+ã€€ã€€(4)åŒºå·ç”¨"("ã€")"æˆ–"-"å’Œå…¶ä»–éƒ¨åˆ†éš”å¼€
+ã€€ã€€(5)ç§»åŠ¨ç”µè¯å·ç ä¸º11æˆ–12ä½ï¼Œå¦‚æœä¸º12ä½,é‚£ä¹ˆç¬¬ä¸€ä½ä¸º0
+ã€€ã€€(6)11ä½ç§»åŠ¨ç”µè¯å·ç çš„ç¬¬ä¸€ä½å’Œç¬¬äºŒä½ä¸º"13"
+ã€€ã€€(7)12ä½ç§»åŠ¨ç”µè¯å·ç çš„ç¬¬äºŒä½å’Œç¬¬ä¸‰ä½ä¸º"13"
+ã€€ã€€æ ¹æ®è¿™å‡ æ¡è§„åˆ™ï¼Œå¯ä»¥ä¸å‡ºä»¥ä¸‹æ­£åˆ™è¡¨è¾¾å¼ï¼š
+ã€€ã€€(^[0-9]{3,4}\-[0-9]{3,8}$)|(^[0-9]{3,8}$)|(^\([0-9]{3,4}\)[0-9]{3,8}$)|(^0{0,1}13[0-9]{9}$)
 
 
 <script language="javascript">
@@ -437,7 +437,7 @@ alert(reg.test(str));
 <input type=text name="iphone">
 <input type=button onclick="PhoneCheck(document.all.iphone.value)" value="Check">
 
-¾ßÓĞÔÚÊäÈë·ÇÊı×Ö×Ö·û²»»ØÏÔµÄĞ§¹û£¬¼´¶Ô·ÇÊı×Ö×Ö·ûµÄÊäÈë²»×÷·´Ó¦¡£
+å…·æœ‰åœ¨è¾“å…¥éæ•°å­—å­—ç¬¦ä¸å›æ˜¾çš„æ•ˆæœï¼Œå³å¯¹éæ•°å­—å­—ç¬¦çš„è¾“å…¥ä¸ä½œååº”ã€‚
 function numbersonly(field,event){
  var key,keychar;
  if(window.event){
@@ -463,38 +463,38 @@ function numbersonly(field,event){
  }
 }
 
-ÑéÖ¤ip 
+éªŒè¯ip 
 
 str=document.RegExpDemo.txtIP.value;
 if(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.test(str)==false)
 {
- window.alert('´íÎóµÄIPµØÖ·¸ñÊ½');
+ window.alert('é”™è¯¯çš„IPåœ°å€æ ¼å¼');
  document.RegExpDemo.txtIP.select();
  document.RegExpDemo.txtIP.focus();
  return;
 }
 if(RegExp.$1<1 || RegExp.$1>254||RegExp.$2<0||RegExp.$2>254||RegExp.$3<0||RegExp.$3>254||RegExp.$4<1||RegExp.$4>254)
 {
- window.alert('´íÎóµÄIPµØÖ·');
+ window.alert('é”™è¯¯çš„IPåœ°å€');
  document.RegExpDemo.txtIP.select();
  document.RegExpDemo.txtIP.focus();
  return;
 }
-//ÌŞ³ı Èç  010.020.020.03 Ç°Ãæ µÄ0 
+//å‰”é™¤ å¦‚  010.020.020.03 å‰é¢ çš„0 
 var str=str.replace(/0(\d)/g,"$1");
 str=str.replace(/0(\d)/g,"$1");
 window.alert(str);
  
 
-//Ò»ÏÂÊÇÈ¡Êı¾İµÄÀà
-//Obj²ÎÊıÖ¸¶¨Êı¾İµÄÀ´Ô´(ÏŞ¶¨Table),Ä¬ÈÏµÚÒ»ĞĞÎª×Ö¶ÎÃû³ÆĞĞ
-//GetTableDataÀàÌá¹©MoveNext·½·¨,²ÎÊıÊÇ±íµÄĞĞÏòÉÏ»òÏòÏÂÒÆ¶¯µÄÎ»Êı,ÕıÊıÏòÏÂÒÆ¶¯,¸ºÊıÏòÉÏ.
-//GetFieldData·½·¨»ñµÃÖ¸¶¨µÄÁĞÃûµÄÊı¾İ
-//Sort_desc·½·¨¶ÔÖ¸¶¨µÄÁĞ°´½µĞòÅÅÁĞ
-//Sort_asc·½·¨¶ÔÖ¸¶¨µÄÁĞ°´ÉıĞòÅÅÁĞ
-//GetData·½·¨·µ»Ø×Ö¶ÎÖµÎªÌØ¶¨ÖµµÄÊı¾İÊı×é,Ìá¹©Êı¾İ,¿ÉÒÔÔÚÍâ²¿½øĞĞÆäËû´¦Àí
-//Delete·½·¨É¾³ıµ±Ç°¼ÇÂ¼,Êı×é¼õÉÙÒ»ĞĞ
-//³õÊ¼»¯,Obj:tableµÄÃû×Ö,Leftlen:×óÃæ¶àÓàÊı¾İ³¤¶È,Rightlen:ÓÒÃæ¶àÓàÊı¾İ³¤¶È,
+//ä¸€ä¸‹æ˜¯å–æ•°æ®çš„ç±»
+//Objå‚æ•°æŒ‡å®šæ•°æ®çš„æ¥æº(é™å®šTable),é»˜è®¤ç¬¬ä¸€è¡Œä¸ºå­—æ®µåç§°è¡Œ
+//GetTableDataç±»æä¾›MoveNextæ–¹æ³•,å‚æ•°æ˜¯è¡¨çš„è¡Œå‘ä¸Šæˆ–å‘ä¸‹ç§»åŠ¨çš„ä½æ•°,æ­£æ•°å‘ä¸‹ç§»åŠ¨,è´Ÿæ•°å‘ä¸Š.
+//GetFieldDataæ–¹æ³•è·å¾—æŒ‡å®šçš„åˆ—åçš„æ•°æ®
+//Sort_descæ–¹æ³•å¯¹æŒ‡å®šçš„åˆ—æŒ‰é™åºæ’åˆ—
+//Sort_ascæ–¹æ³•å¯¹æŒ‡å®šçš„åˆ—æŒ‰å‡åºæ’åˆ—
+//GetDataæ–¹æ³•è¿”å›å­—æ®µå€¼ä¸ºç‰¹å®šå€¼çš„æ•°æ®æ•°ç»„,æä¾›æ•°æ®,å¯ä»¥åœ¨å¤–éƒ¨è¿›è¡Œå…¶ä»–å¤„ç†
+//Deleteæ–¹æ³•åˆ é™¤å½“å‰è®°å½•,æ•°ç»„å‡å°‘ä¸€è¡Œ
+//åˆå§‹åŒ–,Obj:tableçš„åå­—,Leftlen:å·¦é¢å¤šä½™æ•°æ®é•¿åº¦,Rightlen:å³é¢å¤šä½™æ•°æ®é•¿åº¦,
 function GetTableData(Obj,LeftLen,RightLen){
 var MyObj=document.all(Obj);
 var iRow=MyObj.rows.length;
@@ -572,7 +572,7 @@ var i=0;
 
  
 
-function sort_desc(){//½µĞò
+function sort_desc(){//é™åº
  var colindex=-1;
  var highindex=-1;
  desc_array=new Array();
@@ -613,7 +613,7 @@ for (n=0; n<arguments.length; n++){
 
  
 
-function sort_asc(){//ÉıĞò
+function sort_asc(){//å‡åº
  var colindex=-1;
  var highindex=-1;
  var i,j;
@@ -634,7 +634,7 @@ for (n=0; n<arguments.length; n++){
      for(i=1;i<this.rows;i++){
      asc_array[i]=this.TableData[1];
      highindex=1;
-      for(j=1;j<this.TableData.length;j++){//ÕÒ³ö×îĞ¡µÄÁĞÖµ
+      for(j=1;j<this.TableData.length;j++){//æ‰¾å‡ºæœ€å°çš„åˆ—å€¼
          if  (asc_array[i][colindex]>this.TableData[j][colindex]){ 
          asc_array[i]=this.TableData[j];   
          highindex=j;
@@ -723,11 +723,11 @@ GetTableData.prototype.Delete = DeletE;
 GetTableData.prototype.UpdateField = updateField;
 GetTableData.prototype.MoveFirst = movefirst;
 
-¾ßÌåµÄÀı×Ó£ºhttp://202.119.73.208/NetEAn/com/test/jsprint.htm
+å…·ä½“çš„ä¾‹å­ï¼šhttp://202.119.73.208/NetEAn/com/test/jsprint.htm
 
-ÔÚÃ¿¸öÎÄ±¾¿òµÄonblurÊÂ¼şÖĞµ÷ÓÃĞ£Ñé´úÂë,²¢ÇÒÃ¿¸öÎÄ±¾¿òÖĞonKeyDownÊÂ¼şÖĞĞ´Ò»¸öenter×ªtabº¯Êı
+åœ¨æ¯ä¸ªæ–‡æœ¬æ¡†çš„onbluräº‹ä»¶ä¸­è°ƒç”¨æ ¡éªŒä»£ç ,å¹¶ä¸”æ¯ä¸ªæ–‡æœ¬æ¡†ä¸­onKeyDownäº‹ä»¶ä¸­å†™ä¸€ä¸ªenterè½¬tabå‡½æ•°
 
-//»Ø³µ¼ü»»Îªtab
+//å›è½¦é”®æ¢ä¸ºtab
 function enterToTab()
 {
     if(event.srcElement.type != 'button' && event.srcElement.type != 'textarea'
@@ -737,8 +737,8 @@ function enterToTab()
     }
 }
 
-ÓĞÊ±ºò»¹ĞèÒª×ÔÓÉ±à¼­±í¸ñ---
-¸ø´ó¼ÒÒ»¸ö×ÔÓÉ±à¼­±í¸ñµÄĞ¡Àı×Ó,Ğ´µÄÓĞµãÂÒ,ºÇºÇ:£©
+æœ‰æ—¶å€™è¿˜éœ€è¦è‡ªç”±ç¼–è¾‘è¡¨æ ¼---
+ç»™å¤§å®¶ä¸€ä¸ªè‡ªç”±ç¼–è¾‘è¡¨æ ¼çš„å°ä¾‹å­,å†™çš„æœ‰ç‚¹ä¹±,å‘µå‘µ:ï¼‰
 
 //===============================start================================
 
@@ -746,9 +746,9 @@ function enterToTab()
 <HTML>
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=gb2312">
-<TITLE>²âÊÔĞŞ¸Ä±í¸ñ</TITLE>
+<TITLE>æµ‹è¯•ä¿®æ”¹è¡¨æ ¼</TITLE>
 <STYLE>
-/*ÌáÊ¾²ãµÄÑùÊ½*/
+/*æç¤ºå±‚çš„æ ·å¼*/
 div
 {
   BORDER-RIGHT: #80c144 1px solid;
@@ -758,40 +758,40 @@ div
   CURSOR: default;
   LINE-HEIGHT: 20px;
   BORDER-BOTTOM: #80c144 1px solid;
-  FONT-FAMILY: ËÎÌå;
+  FONT-FAMILY: å®‹ä½“;
   font-size:12px;
   POSITION: absolute;
   BACKGROUND-COLOR: #f6f6f6;
   TOP:30px;
   LEFT:30px;
 }
-/*trµÄÑùÊ½*/
+/*trçš„æ ·å¼*/
 tr
 {
-    font-family: "ËÎÌå";
+    font-family: "å®‹ä½“";
     color: #000000;
     background-color: #C1DBF5;
     font-size: 12px
 }
-/*table½Å×¢ÑùÊ½*/
+/*tableè„šæ³¨æ ·å¼*/
 .TrFoot
 {
     FONT-SIZE: 12px;
-    font-family:"ËÎÌå", "Verdana", "Arial";
+    font-family:"å®‹ä½“", "Verdana", "Arial";
     BACKGROUND-COLOR: #6699CC;
     COLOR:#FFFFFF;
     height: 25;
 }
-/*trheadÊôĞÔ*/
+/*trheadå±æ€§*/
 .TrHead
 {
     FONT-SIZE: 13px;
-    font-family:"ËÎÌå", "Verdana", "Arial";
+    font-family:"å®‹ä½“", "Verdana", "Arial";
     BACKGROUND-COLOR: #77AADD;
     COLOR:#FFFFFF;
     height: 25;
 }
-/*ÎÄ±¾¿òÑùÊ½*/
+/*æ–‡æœ¬æ¡†æ ·å¼*/
 INPUT
 {
     BORDER-COLOR: #AACEF7 #AACEF7 #AACEF7 #AACEF7;
@@ -800,11 +800,11 @@ INPUT
     BORDER-LEFT: 1px solid;
     BORDER-BOTTOM: 1px solid;
     FONT-SIZE: 12px;
-    FONT-FAMILY: "ËÎÌå","Verdana";
+    FONT-FAMILY: "å®‹ä½“","Verdana";
     color: #000000;
     BACKGROUND-COLOR: #E9EFF5;
 }
-/*buttonÑùÊ½*/
+/*buttonæ ·å¼*/
 button
 {
     BORDER-COLOR: #AACEF7 #AACEF7 #AACEF7 #AACEF7;
@@ -821,10 +821,10 @@ button
 </HEAD>
 <BODY>
 <SCRIPT language = "JavaScript">
-<!--È«¾Ö±äÁ¿
-//±êÖ¾Î»,ÖµÎªfalse´ú±íÎ´´ò¿ªÒ»¸ö±à¼­¿ò,ÖµÎªtrueÎªÒÑ¾­´ò¿ªÒ»¸ö±à¼­¿ò¿ªÊ¼±à¼­
+<!--å…¨å±€å˜é‡
+//æ ‡å¿—ä½,å€¼ä¸ºfalseä»£è¡¨æœªæ‰“å¼€ä¸€ä¸ªç¼–è¾‘æ¡†,å€¼ä¸ºtrueä¸ºå·²ç»æ‰“å¼€ä¸€ä¸ªç¼–è¾‘æ¡†å¼€å§‹ç¼–è¾‘
 var editer_table_cell_tag = false;
-//¿ªÆô±à¼­¹¦ÄÜ±êÖ¾,ÖµÎªtrueÊ±ÎªÔÊĞí±à¼­
+//å¼€å¯ç¼–è¾‘åŠŸèƒ½æ ‡å¿—,å€¼ä¸ºtrueæ—¶ä¸ºå…è®¸ç¼–è¾‘
 var run_edit_flag = false;
 //-->
 </SCRIPT>
@@ -832,12 +832,12 @@ var run_edit_flag = false;
 <SCRIPT language = "JavaScript">
 <!--
 /**
- * ±à¼­±í¸ñº¯Êı
- * µ¥»÷Ä³¸öµ¥Ôª¸ñ¿ÉÒÔ¶ÔÀïÃæµÄÄÚÈİ½øĞĞ×ÔÓÉ±à¼­
- * @para tableID ÎªÒª±à¼­µÄtableµÄid
- * @para noEdiID Îª²»Òª±à¼­µÄtdµÄID,±ÈÈçËµtableµÄ±êÌâ
- * ¿ÉÒÔĞ´Îª<TD id="no_editer">×ÔÓÉ±à¼­±í¸ñ</TD>
- * ´ËÊ±¸Ãtd²»¿É±à¼­
+ * ç¼–è¾‘è¡¨æ ¼å‡½æ•°
+ * å•å‡»æŸä¸ªå•å…ƒæ ¼å¯ä»¥å¯¹é‡Œé¢çš„å†…å®¹è¿›è¡Œè‡ªç”±ç¼–è¾‘
+ * @para tableID ä¸ºè¦ç¼–è¾‘çš„tableçš„id
+ * @para noEdiID ä¸ºä¸è¦ç¼–è¾‘çš„tdçš„ID,æ¯”å¦‚è¯´tableçš„æ ‡é¢˜
+ * å¯ä»¥å†™ä¸º<TD id="no_editer">è‡ªç”±ç¼–è¾‘è¡¨æ ¼</TD>
+ * æ­¤æ—¶è¯¥tdä¸å¯ç¼–è¾‘
  */
 function editerTableCell(tableId,noEdiId)
 {
@@ -845,12 +845,12 @@ function editerTableCell(tableId,noEdiId)
  var tObject = ((tdObject.parentNode).parentNode).parentNode;
  if(tObject.id == tableId &&tdObject.id != noEdiId&&editer_table_cell_tag == false && run_edit_flag == true)
  {
-  tdObject.innerHTML = "<input type=text id=edit_table_txt name=edit_table_txt value="+tdObject.innerText+" size='15' onKeyDown='enterToTab()'>  <input type=button value=' È·¶¨ ' onclick='certainEdit()'>";
+  tdObject.innerHTML = "<input type=text id=edit_table_txt name=edit_table_txt value="+tdObject.innerText+" size='15' onKeyDown='enterToTab()'>  <input type=button value=' ç¡®å®š ' onclick='certainEdit()'>";
   edit_table_txt.focus();
   edit_table_txt.select();
   editer_table_cell_tag = true;
-  //ĞŞ¸Ä°´Å¥ÌáÊ¾ĞÅÏ¢
-  editTip.innerText = "ÇëÏÈµãÈ·¶¨°´Å¥È·ÈÏĞŞ¸Ä!";  
+  //ä¿®æ”¹æŒ‰é’®æç¤ºä¿¡æ¯
+  editTip.innerText = "è¯·å…ˆç‚¹ç¡®å®šæŒ‰é’®ç¡®è®¤ä¿®æ”¹!";  
  }
  else
  {
@@ -859,7 +859,7 @@ function editerTableCell(tableId,noEdiId)
 }
 
 /**
- * È·¶¨ĞŞ¸Ä
+ * ç¡®å®šä¿®æ”¹
  */
 function certainEdit()
 {
@@ -867,10 +867,10 @@ function certainEdit()
  var tdObject = bObject.parentNode; 
  var txtObject = tdObject.firstChild;
  tdObject.innerHTML = txtObject.value;
- //´ú±í±à¼­¿òÒÑ¾­¹Ø±Õ
+ //ä»£è¡¨ç¼–è¾‘æ¡†å·²ç»å…³é—­
  editer_table_cell_tag = false;
- //ĞŞ¸Ä°´Å¥ÌáÊ¾ĞÅÏ¢
- editTip.innerText = "Çëµ¥»÷Ä³¸öµ¥Ôª¸ñ½øĞĞ±à¼­!";
+ //ä¿®æ”¹æŒ‰é’®æç¤ºä¿¡æ¯
+ editTip.innerText = "è¯·å•å‡»æŸä¸ªå•å…ƒæ ¼è¿›è¡Œç¼–è¾‘!";
 }
 
 function enterToTab()
@@ -883,34 +883,34 @@ function enterToTab()
 }
 
 /**
- * ¿ØÖÆÊÇ·ñ±à¼­
+ * æ§åˆ¶æ˜¯å¦ç¼–è¾‘
  */
 function editStart()
 {
- if(event.srcElement.value == "¿ªÊ¼±à¼­")
+ if(event.srcElement.value == "å¼€å§‹ç¼–è¾‘")
  {
-  event.srcElement.value = "±à¼­Íê³É";
+  event.srcElement.value = "ç¼–è¾‘å®Œæˆ";
   run_edit_flag = true;
  }
  else
  {
-  //Èç¹ûµ±Ç°Ã»ÓĞ±à¼­¿ò,Ôò±à¼­³É¹¦,·ñÔò,ÎŞ·¨Ìá½»
-  //±ØĞë°´È·¶¨°´Å¥ºó²ÅÄÜÕı³£Ìá½»
+  //å¦‚æœå½“å‰æ²¡æœ‰ç¼–è¾‘æ¡†,åˆ™ç¼–è¾‘æˆåŠŸ,å¦åˆ™,æ— æ³•æäº¤
+  //å¿…é¡»æŒ‰ç¡®å®šæŒ‰é’®åæ‰èƒ½æ­£å¸¸æäº¤
   if(editer_table_cell_tag == false)
   {
-   alert("±à¼­³É¹¦½áÊø!");
-   event.srcElement.value = "¿ªÊ¼±à¼­";
+   alert("ç¼–è¾‘æˆåŠŸç»“æŸ!");
+   event.srcElement.value = "å¼€å§‹ç¼–è¾‘";
    run_edit_flag = false;
   }
  }
 }
 
 /**
- * ¸ù¾İ²»Í¬µÄ°´Å¥Ìá¹©²»Í¬µÄÌáÊ¾ĞÅÏ¢
+ * æ ¹æ®ä¸åŒçš„æŒ‰é’®æä¾›ä¸åŒçš„æç¤ºä¿¡æ¯
  */
 function showTip()
 {
- if(event.srcElement.value == "±à¼­Íê³É")
+ if(event.srcElement.value == "ç¼–è¾‘å®Œæˆ")
  {
   editTip.style.top = event.y + 15;
   editTip.style.left = event.x + 12;
@@ -926,10 +926,10 @@ function showTip()
 <TABLE id="editer_table" width="100%" align="center" 
     onclick="editerTableCell('editer_table','no_editer')">  
     <TR class="TrHead">
-  <TD colspan="3" align="center" id="no_editer">×ÔÓÉ±à¼­±í¸ñ</TD>  
+  <TD colspan="3" align="center" id="no_editer">è‡ªç”±ç¼–è¾‘è¡¨æ ¼</TD>  
  </TR>
  <TR>
-  <TD width="33%">µ¥»÷¿ªÊ¼±à¼­°´Å¥,È»ºóµã»÷¸÷µ¥Ôª¸ñ±à¼­</TD>
+  <TD width="33%">å•å‡»å¼€å§‹ç¼–è¾‘æŒ‰é’®,ç„¶åç‚¹å‡»å„å•å…ƒæ ¼ç¼–è¾‘</TD>
   <TD width="33%">2</TD>
   <TD width="33%">3</TD>
  </TR>
@@ -950,10 +950,10 @@ function showTip()
  </TR>  
     <TR class="TrFoot">
   <TD colspan="3" align="center" id="no_editer">
-   <INPUT type="button" class="bt" value="¿ªÊ¼±à¼­" onClick="editStart()" onMouseOver="showTip()" onMouseMove="showTip()" onMouseOut="editTip.style.visibility = 'hidden';">
+   <INPUT type="button" class="bt" value="å¼€å§‹ç¼–è¾‘" onClick="editStart()" onMouseOver="showTip()" onMouseMove="showTip()" onMouseOut="editTip.style.visibility = 'hidden';">
   </TD>
  </TR> 
 </TABLE>
 </BODY>
-<DIV id="editTip">Çëµ¥»÷Ä³¸öµ¥Ôª¸ñ½øĞĞ±à¼­!</DIV> 
+<DIV id="editTip">è¯·å•å‡»æŸä¸ªå•å…ƒæ ¼è¿›è¡Œç¼–è¾‘!</DIV> 
 </HTML>

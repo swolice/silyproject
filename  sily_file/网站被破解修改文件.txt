@@ -1,6 +1,6 @@
-�൱�����ƣ���ѵĿռ��ѵ���ô�����ƽ�
+相当的郁闷，免费的空间难道那么容易破解
 
-����ѿռ������ϴ���һ��WordPress�� ƽʱ����ллblogʲô�ģ���¼һ��ƽʱ�����飬������Ҳû��ʱ��Ū��ֻ������ת��һ�����ҳ����ȥ�ˣ�http://myvod.tv/ �����ַ���ѵ����ṩ��ѿռ�Ĺٷ�����վ��Ҳû��̫ע�⣬����ʵ�����ƣ��Ϻ�̨����һ�£�һ���������ƻ��ˣ�����php���ļ������ˣ���tm���˲Ű� ����������������ˣ��ѱ��ص��ļ��滻һ�� ���Լ�����վ�ֳ����ˡ����ã�û���ƻ����ݿ���������� ��
+在免费空间里面上传了一个WordPress， 平时用来谢谢blog什么的，记录一下平时的事情，这俩天也没有时间弄，只发现跳转到一个别的页面上去了，http://myvod.tv/ 这个网址，难道是提供免费空间的官方的网站，也没有太注意，今天实在郁闷，上后台看了一下，一看还真郁闷坏了，把我php的文件都改了，真tm的人才啊 。都换成这个代码了，把本地的文件替换一下 ，自己的网站又出来了。还好，没有破坏数据库里面的数据 。
 
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Script courtesy of http://www.web-source.net - Your Guide to Professional Web Site Design and Development
@@ -10,18 +10,18 @@ window.location="http://myvod.tv/";
 
  
 
-�����漰����������վ��һ���Ƚ϶��ĵ���վ ǰ���Ǹ���˵ʲô
+里面涉及到了俩个网站，一个比较恶心的网站 前面那个还说什么
 
-��רҵ��վ����뿪��ָ��վ�㣬�������ķ����������Լ���վ�����һ��վ������ת��ȥ�ģ� ��վ��ʲô���ҵģ�������������һ����Ƶ��վ������Ҳ�㲻�������˭Ū�ġ����������ϴ����ҵ��ļ���what a fuck day����
-
- 
+您专业网站设计与开发指南站点，用这样的方法来宣传自己网站，最后一个站点是跳转过去的， 不站点什么国家的，反正看不懂，一个视频网站，反正也搞不清楚到底谁弄的。害我重新上传了我的文件。what a fuck day！！
 
  
 
-�ű��������ϵ�������� ����
+ 
 
-������ϵ�������򽻵�
-��Щ��֧�� JavaScript ���������ѽű���Ϊҳ�����������ʾ��Ϊ�˷�ֹ����������������ǿ���ʹ�������� HTML ע�ͱ�ǩ��
+脚本还兼容老的浏览器， 靠。
+
+如何与老的浏览器打交道
+那些不支持 JavaScript 的浏览器会把脚本作为页面的内容来显示。为了防止这种情况发生，我们可以使用这样的 HTML 注释标签：
 
 <html>
 <body>
@@ -32,21 +32,21 @@ document.write("Hello World!");
 </script>
 </body>
 </html>
-ע����ĩβ��������б���� JavaScript ��ע�ͷ��ţ�������ֹ JavaScript ����������һ�еı��롣
+注释行末尾的两个正斜杠是 JavaScript 的注释符号，它会阻止 JavaScript 编译器对这一行的编译。
 
  
 
-�����֧��javascript��ʱ��<!-- �� //-->
- ������javascript���붼����ִ�С�
+浏览器支持javascript的时候<!-- 和 //-->
+ 这两行javascript代码都不会执行。
 
-�������֧�ֵ�ʱ�� �������붼������ʾ<!--  -->�м���������ݡ�
+浏览器不支持的时候， 整个代码都不会显示<!--  -->中间区域的内容。
 
  
 
-���ˣ� ����Щphp�ļ��ĳ���
+对了， 还有些php文件改成了
 
 <?php
 // Silence is golden.
 ?>
 
-��Ȼ�ǳ�Ĭ�ǽ� ��������ֱ�������ˣ��������ˣ��һ��ܳ�Ĭ����ȥ�� 
+尽然是沉默是金 。。。简直是无奈了，都这样了，我还能沉默的下去吗？ 
