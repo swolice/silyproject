@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.chinatelecom.cn/SGW/SOAP" xmlns:tns="http://www.chinatelecom.cn/SGW/SOAP" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SGWService" targetNamespace="http://www.chinatelecom.cn/SGW/SOAP">
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.chinatelecom.cn/SGW/SOAP" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.chinatelecom.cn/SGW/SOAP" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<!--import
+				namespace="http://schemas.xmlsoap.org/soap/encoding/"
+				schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" /-->
+			<complexType name="SgwReq">
+				<sequence>
+					<element maxOccurs="1" minOccurs="1" name="MessageID" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="1" name="CommandCode" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="1" name="UserName" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="1" name="PassWord" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="0" name="RetransmitMmessage" nillable="true" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="1" name="ServiceContextID" type="xsd:string"/>
+					<element maxOccurs="100" minOccurs="1" name="DataInfomation" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<complexType name="SgwAck">
+				<sequence>
+					<element maxOccurs="1" minOccurs="1" name="MessageID" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="1" name="CommandCode" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="1" name="ResponseCode" type="xsd:string"/>
+					<element maxOccurs="1" minOccurs="0" name="ErrorMessage" nillable="true" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<element name="SgwReq" type="ns1:SgwReq"/>
+			<element name="SgwAck" type="ns1:SgwAck"/>
+		</schema>
+
+	</types>
+	<message name="SgwReq">
+		<part element="ns1:SgwReq" name="parameters"/>
+	</message>
+
+	<message name="SgwAck">
+		<part element="ns1:SgwAck" name="parameters"/>
+	</message>
+	<portType name="SGWService">
+		<operation name="SgwRequest">
+			<documentation/>
+			<input message="tns:SgwReq"/>
+			<output message="tns:SgwAck"/>
+		</operation>
+	</portType>
+
+	<binding name="SGWServiceSOAP" type="tns:SGWService">
+		<SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SgwRequest">
+			<SOAP:operation soapAction=""/>
+			<input>
+				<SOAP:body parts="parameters" use="literal"/>
+			</input>
+			<output>
+				<SOAP:body parts="parameters" use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="SGWService">
+		<documentation/>
+		<port binding="tns:SGWServiceSOAP" name="SGWServiceSOAP">
+			<SOAP:address location="http://localhost:9080/CRM-DEP/services/SGWServiceSOAP"/>
+		</port>
+	</service>
+
+
+</definitions>

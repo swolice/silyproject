@@ -1,0 +1,10 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+	xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="ACCTCRMInfoWebService" provider="java:RPC">
+		 <parameter name="wsdlTargetNamespace" value="http://acct.jtcrm.com/V1.0/"/>
+		<parameter name="className" value="com.jtcrm.acct.interfaces.webservice.bussiness.ACCTCRMInfoWebService" />
+		<parameter name="allowedMethods" value="*" />
+	</service>
+	
+</deployment>
+
