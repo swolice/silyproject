@@ -1,0 +1,62 @@
+ 前段时间，碰到一个问题，要将下拉框设为只读的，但下拉框没有readonly属性，只有disabled属性。
+
+如果用disabled属性能达到效果，但是不好看。想做成输入的只读的那种效果。
+
+相了许多办法都没有达到。
+
+    今天忙中偷闲，在http://ltf1660.javaeye.com/blog/580699（表示感谢，呵呵）看到一个思路，可以在下拉框select外包裹一个span标签，然后将span设为只读的 。
+
+    本来是用jQuery的，在下拉框外包裹span标签很方便，但是遇到了一个问题，用jQuery的对象好像没有
+
+    setCapture()，releaseCapture()方法。所以只好有jQuery包裹外面的标签，用js的方法使其只读了。
+
+    
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Untitled Document</title>
+        <script type="text/javascript" src="jquery-1.3.1.js">
+        </script>
+        <script type="text/javascript">
+            
+            
+            $(function(){
+            
+                $("select").wrap("<span id='wrap'></span>");
+                
+                var obj = document.getElementById("wrap");
+
+               //可以用var obj = $("#wrap")[0];
+                obj.onmouseover = function(){
+                    obj.setCapture();
+                }
+                obj.onmouseout = function(){
+                    obj.releaseCapture();
+                }
+                obj.onfocus = function(){
+                    obj.blur();
+                }
+                obj.onbeforeactivate = function(){
+                    return false;
+                }
+                
+            });
+        </script>
+    </head>
+    <body>
+        <br/>
+        <select id="single">
+            <option>选择1号</option>
+            <option>选择2号</option>
+            <option>选择3号</option>
+        </select>
+        <br/>
+        <br/>
+    </body>
+</html>
+
+
+我正在玩搜狐微博，快来“关注”我，了解我的最新动态吧。
+http://t.sohu.com/u/18703242
