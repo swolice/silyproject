@@ -45,7 +45,7 @@ public class SendEmail {
 			mailSession = Session.getInstance(properties, new Authenticator() {
 				public PasswordAuthentication getPasswordAuthentication() {
 					return new PasswordAuthentication("jishijun204",
-							"58413142727527");
+							"");
 				}
 			});
 			mailSession.setDebug(true);
@@ -127,7 +127,7 @@ public class SendEmail {
 			mailSession = Session.getInstance(properties, new Authenticator() {
 				public PasswordAuthentication getPasswordAuthentication() {
 					return new PasswordAuthentication("jishijun204",
-					"58413142727527");
+					"");
 				}
 			});
 			mailSession.setDebug(true);
