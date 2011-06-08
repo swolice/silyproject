@@ -38,7 +38,7 @@ public class FtpServerLogic{
 	}
 	/**
 	 * Description: 向FTP服务器上传文件
-	 * @Version1.0 Jul 27, 2008 4:31:09 PM by 崔红保（cuihongbao@d-heaven.com）创建
+	 * @Version1.0 
 	 * @param url FTP服务器hostname
 	 * @param port FTP服务器端口
 	 * @param username FTP登录账号
@@ -125,7 +125,7 @@ public class FtpServerLogic{
     			syslogger.info("上传文件名： 【" + localFiles[i].getName() + "】开始");
     			InputStream input = new FileInputStream(localFiles[i]);
     			
-    			MonitorThread mt = new MonitorThread(ftp,30000);
+    			MonitorThread mt = new MonitorThread(this,ftp,15000);
     			mt.start();
     			
     			ftp.storeFile(localFiles[i].getName(), input);
@@ -149,15 +149,18 @@ public class FtpServerLogic{
 				syslogger.error("上传文件失败",e);
 			}
 		} finally {
-			if (ftp.isConnected()) {
-				try {
-					ftp.disconnect();
-				} catch (IOException ioe) {
-				}
-			}
+			closeConnnect(ftp);
 		}
 	}
 	
+	public void closeConnnect(FTPClient ftp){
+		if (ftp.isConnected()) {
+			try {
+				ftp.disconnect();
+			} catch (IOException ioe) {
+			}
+		}
+	}
 	
 	/**
 	 * Description: 从FTP服务器下载文件
@@ -201,7 +204,7 @@ public class FtpServerLogic{
 			success = true;
 		} catch (IOException e) {
 			syslogger.error("下载文件失败",e);
-			new SendEmail().sendMail("下载文件失败");
+			new SendEmail().sendMail("下载文件失败" + stackTraceToString(e));
 		} finally {
 			if (ftp.isConnected()) {
 				try {
@@ -217,10 +220,12 @@ public class FtpServerLogic{
 		Logger syslogger = Logger.getLogger(MonitorThread.class.getName());
         long timeOut;
         FTPClient ftp;
+        FtpServerLogic ftpsl;
         public boolean flag = true;
-        public MonitorThread(FTPClient ftp,long expiredTime) {
+        public MonitorThread(FtpServerLogic ftpsl,FTPClient ftp,long expiredTime) {
             timeOut = expiredTime;
             this.ftp = ftp;
+            this.ftpsl = ftpsl;
         }
 		public void run(){
 			int i = 0;
@@ -229,13 +234,8 @@ public class FtpServerLogic{
 					Thread.sleep(1000);
 					i++;
 					if(i*1000 == timeOut){
-						try {
-							ftp.logout();
-							ftp.disconnect();
-							syslogger.error("连接关闭。。。。"+ftp.hashCode());
-						} catch (IOException e) {
-							syslogger.error("连接关闭。。。。", e);
-						}
+						ftpsl.closeConnnect(this.ftp);
+						syslogger.error("连接关闭。。。。"+ftp.hashCode());
 						flag = false;
 					}
 				} catch (InterruptedException e) {
@@ -245,7 +245,36 @@ public class FtpServerLogic{
 		}
     }
 
-	
+	public String stackTraceToString(Exception e) {	
+		StringBuffer buffOut = new StringBuffer();
+		buffOut.append("\n").append(e.getMessage()).append("\n");
+        StackTraceElement[] trace = e.getStackTrace();
+        for (int i = 0; i < trace.length; i++)
+        	buffOut.append("\tat ").append(trace[i]).append("\n");
+        Throwable ourCause = e.getCause();
+        if (ourCause != null){
+            logStackTraceAsCause(trace, ourCause,buffOut);
+        }
+        return buffOut.toString();
+	}
+	private void logStackTraceAsCause(StackTraceElement[] causedTrace,Throwable e,StringBuffer buffOut) {
+	    StackTraceElement[] trace = e.getStackTrace();
+	    buffOut.append("\nCaused by: ").append(e.getMessage()).append("\n");
+	    int m = trace.length - 1, n = causedTrace.length - 1;
+	    while (m >= 0 && n >= 0 && trace[m].equals(causedTrace[n])) {
+	        m--;
+	        n--;
+	    }
+	    int framesInCommon = trace.length - 1 - m;
+	    
+	    for (int i = 0; i <= m; i++)
+	    	buffOut.append("\tat ").append(trace[i]).append("\n");
+	    if (framesInCommon != 0)
+	    	buffOut.append("\t... ").append(framesInCommon).append(" more \n");
+	    Throwable ourCause = e.getCause();
+	    if (ourCause != null)
+	        logStackTraceAsCause(trace, ourCause,buffOut);
+	}	
 	
 	private boolean isNullOrEmpty(String param) {
 		if (null == param) {
