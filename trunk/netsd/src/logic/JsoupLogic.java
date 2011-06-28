@@ -46,15 +46,16 @@ public class JsoupLogic {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
-			try {
-				Thread.currentThread().sleep(10000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			new Thread(new JsoupThread()).start();
-			new Thread(new DownloadTread()).start();
-		}
+//		for (int i = 0; i < 10; i++) {
+//			try {
+//				Thread.currentThread().sleep(10000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//			new Thread(new JsoupThread()).start();
+//			new Thread(new DownloadTread()).start();
+//		}
+		new Thread(new DownloadTread()).start();
 	}
 
 	/**

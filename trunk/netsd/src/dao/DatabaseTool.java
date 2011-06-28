@@ -9,11 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import logic.JsoupLogic;
-
 import org.apache.log4j.Logger;
-
-import utils.MyResourceBundle;
 
 public class DatabaseTool {
 
@@ -30,8 +26,8 @@ public class DatabaseTool {
 	public Connection getConnection() {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			String connName = "jdbc:mysql://localhost:3306/netsd";
-			Connection conn = DriverManager.getConnection(connName, "sily","jishijun");
+			String connName = "jdbc:mysql://localhost:3306/netsd?useunicode=true&characterEncoding=GBK";
+			Connection conn = DriverManager.getConnection(connName, "root","jishijun");
 
 //			Class.forName("org.sqlite.JDBC");    
 //			String conn_str = "jdbc:sqlite:" + JsoupLogic.getCommonProp("db_path");;
