@@ -1,0 +1,51 @@
+<project name="wasant" basedir="." default="run">
+	<property name="was.root" value="D:/Program Files/IBM/WebSphere/AppServer/" />
+	<property name="wsanttasks.jar" value="${was.root}/plugins/com.ibm.ws.runtime_6.1.0.jar" />
+	<property name="app.name" value="AccountAdmin" />
+	<property name="ear.file" value="E:/ant_publish/war/201106031345/AccountAdmin.war" />
+	<property name="contextroot" value="AccountAdmin" />
+	<property name="cluster" value="b2bpool" />
+	<property name="node" value="62F86237014B444Node02" />
+	<!--登录信息 192.168.20.38 8879-->
+	<property name="username" value="sily" />
+	<property name="password" value="" />
+	<property name="host" value="172.16.1.142" />
+	<property name="port" value="8882" />
+	<property name="conntype" value="SOAP" />
+	<!-- 使用到的任务 -->
+	<taskdef name="wsStartServer" classname="com.ibm.websphere.ant.tasks.StartServer" classpath="${wsanttasks.jar}" />
+	<taskdef name="wsStopServer" classname="com.ibm.websphere.ant.tasks.StopServer" classpath="${wsanttasks.jar}" />
+	<taskdef name="wsInstallApp" classname="com.ibm.websphere.ant.tasks.InstallApplication" classpath="${wsanttasks.jar}" />
+	<!--<taskdef name="wsUpdateApp" classname="com.ibm.websphere.ant.tasks.UpdateApplication" classpath="${wsanttasks.jar}" />-->
+	<taskdef name="wsUninstallApp" classname="com.ibm.websphere.ant.tasks.UninstallApplication" classpath="${wsanttasks.jar}" />
+	<taskdef name="wsStartApp" classname="com.ibm.websphere.ant.tasks.StartApplication" classpath="${wsanttasks.jar}" />
+	<taskdef name="wsStopApp" classname="com.ibm.websphere.ant.tasks.StopApplication" classpath="${wsanttasks.jar}" />
+	<taskdef name="wsListApps" classname="com.ibm.websphere.ant.tasks.ListApplications" classpath="${wsanttasks.jar}" />
+	<taskdef name="wsAdmin" classname="com.ibm.websphere.ant.tasks.WsAdmin" classpath="${wsanttasks.jar}" />
+	<!-- 安装应用-->
+	<target name="wsInstallApp" description="Update Application ${app.name}">
+		<wsInstallApp   user="${username}" password="${password}" host="${host}" ear="${ear.file}"   port="${port}" conntype="${conntype}" washome="${was.root}" options="-operation install -node ${node} -appname ${app.name}  -contextroot ${contextroot} -usedefaultbindings">
+		</wsInstallApp>
+	</target>
+	<!-- 卸载应用 -->
+	<target name="uninstallApp" depends="stopApp" description="Uninstall an Enterprise Application">
+		<wsUninstallApp washome="${was.root}" application="${app.name}"  conntype="${conntype}"
+	          host="${host}"   port="${port}" user="${username}"  password="${password}"  failonerror="false" />
+	</target>
+	<!-- 实际的任务组合    -->
+	<target name="run_install" description="Update and Save ${app.name}">
+		<antcall target="wsInstallApp" />
+	</target>
+
+	<target name="startApp" depends="run_install">
+		<wsStartApp application="${app.name}" user="${username}" password="${password}" host="${host}"  port="${port}" conntype="${conntype}">
+		</wsStartApp>
+	</target>
+	<target name="stopApp">
+		<wsStopApp application="${app.name}" user="${username}" password="${password}" host="${host}"  port="${port}" conntype="${conntype}">
+		</wsStopApp>
+	</target>
+	<target name="run" depends="uninstallApp,startApp">
+	</target>
+</project>
+
