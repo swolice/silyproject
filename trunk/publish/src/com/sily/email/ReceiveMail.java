@@ -124,10 +124,9 @@ public class ReceiveMail {
 		String disposition;
 		BodyPart bodyPart;
 		
-		Object content = msg.getContent();
 		String contentType = msg.getContentType();
 		// 假如邮件内容是纯文本或者是Html，那么打印出信息
-		System.out.println("CONTENT:" + contentType);
+		log.info("CONTENT:" + contentType);
 		if (contentType.startsWith("text/plain")
 				|| contentType.startsWith("text/html")) {
 			// System.out.println(msg.getContent());
@@ -138,6 +137,7 @@ public class ReceiveMail {
 			}
 				
 		}else{
+			Object content = msg.getContent();
 			// 附件
 			Multipart mp = null;
 			if (content instanceof Multipart) {
@@ -145,11 +145,12 @@ public class ReceiveMail {
 				log.info("[ Multipart Message ]");
 			}
 			if (mp != null) {
-				String title = this.handle(msg);
 				StringBuilder sb = new StringBuilder();
 				int mpCount = mp.getCount();
+				String title = this.handle(msg);
 				for (int i = 0; i < mpCount; i++) {
 					bodyPart = mp.getBodyPart(i);
+					log.info(bodyPart.getContentType());
 					disposition = bodyPart.getDisposition();
 					// 判断是否有附件
 					if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
@@ -157,12 +158,15 @@ public class ReceiveMail {
 						//this.saveAttach(bodyPart);
 						//handleText(msg);
 					} else {
-						sb.append(bodyPart.getContent());
+						if(bodyPart.getContentType().startsWith("text/plain")){
+							sb.append(bodyPart.getContent());
+						}
 					}
 				}
 				if(sb.length()>0){
 					WordPressPost.publishPost(title, sb.toString());
 				}
+				sb = null;
 			}
 		}
 	}
