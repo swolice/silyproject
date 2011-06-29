@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<target name="checkout">
+		<cvs cvsRoot=":pserver:jisj@172.16.1.253:/cvs"
+		       package="AccountInterface"
+		       dest="${tmpdir}"
+		  />
+	</target>
+</project>
