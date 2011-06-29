@@ -41,10 +41,10 @@ public class WordPressPost {
 
 		ReadFile rf =  new ReadFile();
 		
-//		String desc = rf.getFileContent("D:/我的桌面/test.mht", "UTF-8");
+		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
 		
 		try {
-			String desc = new String(readFromFile("D:/我的桌面/test.txt"));
+//			String desc = new String(readFromFile("C:/Users/sily/Desktop/test.txt"));
 			publishPost("知识扩充：企业博客、MetaWeblog 和 XML-RPC",desc);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -64,7 +64,7 @@ public class WordPressPost {
 		Map<String, String> post = new HashMap<String, String>();
 		post.put("title", title);
 //		post.put("link", "http://sily.sinaapp.com/");
-		post.put("description",HtmlUtils.htmlEscape(desc));
+		post.put("description",desc);
 		Object[] params = new Object[] { "1", "sily", "jishijun", post,
 				Boolean.TRUE };
 
