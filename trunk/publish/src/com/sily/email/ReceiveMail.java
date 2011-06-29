@@ -6,9 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.Enumeration;
 import java.util.Properties;
 
 import javax.mail.BodyPart;
@@ -24,14 +21,20 @@ import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.internet.MimeUtility;
 
-import com.sily.publish.PublishResourceBundle;
-import com.sily.util.StringUtils;
-import com.sily.validate.CheckValidateException;
+import org.apache.log4j.Logger;
 
 import sun.misc.BASE64Decoder;
 
+import com.sily.publish.PublishResourceBundle;
+import com.sily.publish.WordPressPost;
+import com.sily.util.StringUtils;
+import com.sily.validate.CheckValidateException;
+
 public class ReceiveMail {
 
+	public static Logger log = Logger.getLogger("publish");
+	
+	
 	private String host = "pop3.sina.com.cn";
 
 	public static void main(String[] args) {
@@ -40,10 +43,11 @@ public class ReceiveMail {
 	}
 
 	// 处理任何邮件时需要的方法
-	private void handle(Message msg) throws MessagingException {
-		System.out.println("邮件主题：" + msg.getSubject());
-		System.out.println("邮件作者：" + msg.getFrom()[0].toString());
-		System.out.println("发送日期：" + msg.getSentDate());
+	private String handle(Message msg) throws MessagingException {
+		log.info("邮件主题：" + msg.getSubject());
+		log.info("邮件作者：" + msg.getFrom()[0].toString());
+		log.info("发送日期：" + msg.getSentDate());
+		return msg.getSubject();
 	}
 
 	// 处理文本邮件
@@ -105,7 +109,6 @@ public class ReceiveMail {
 		if(!path.exists()){
 			path.mkdirs();
 		}
-		
 		FileOutputStream writer = new FileOutputStream(new File(getSaveAttaPath() + fileName));
 		int read = 0;
 		while ((read = in.read()) != -1) {
@@ -120,36 +123,45 @@ public class ReceiveMail {
 
 		String disposition;
 		BodyPart bodyPart;
-		// Multipart mp = (Multipart) msg.getContent();
+		
 		Object content = msg.getContent();
-
 		String contentType = msg.getContentType();
 		// 假如邮件内容是纯文本或者是Html，那么打印出信息
 		System.out.println("CONTENT:" + contentType);
 		if (contentType.startsWith("text/plain")
 				|| contentType.startsWith("text/html")) {
 			// System.out.println(msg.getContent());
-		}
-		System.out.println("-------------- END ---------------");
-		// 附件
-		Multipart mp = null;
-		if (content instanceof Multipart) {
-			mp = (Multipart) content;
-			System.out.println("[ Multipart Message ]");
-		}
-		if (mp != null) {
-			int mpCount = mp.getCount();
-			for (int i = 0; i < mpCount; i++) {
-				this.handle(msg);
-				bodyPart = mp.getBodyPart(i);
-				disposition = bodyPart.getDisposition();
-				// 判断是否有附件
-				if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
-					//先不处理附件 只发布文本文件
-					//this.saveAttach(bodyPart);
-					//handleText(msg);
-				} else {
-					System.out.println(bodyPart.getContent());
+			String title = this.handle(msg);
+			String ss = msg.getContent().toString();
+			if(ss.length()>0){
+				WordPressPost.publishPost(title, ss);
+			}
+				
+		}else{
+			// 附件
+			Multipart mp = null;
+			if (content instanceof Multipart) {
+				mp = (Multipart) content;
+				log.info("[ Multipart Message ]");
+			}
+			if (mp != null) {
+				String title = this.handle(msg);
+				StringBuilder sb = new StringBuilder();
+				int mpCount = mp.getCount();
+				for (int i = 0; i < mpCount; i++) {
+					bodyPart = mp.getBodyPart(i);
+					disposition = bodyPart.getDisposition();
+					// 判断是否有附件
+					if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
+						//先不处理附件 只发布文本文件
+						//this.saveAttach(bodyPart);
+						//handleText(msg);
+					} else {
+						sb.append(bodyPart.getContent());
+					}
+				}
+				if(sb.length()>0){
+					WordPressPost.publishPost(title, sb.toString());
 				}
 			}
 		}
@@ -172,10 +184,7 @@ public class ReceiveMail {
 			FetchProfile profile = new FetchProfile();
 			profile.add(FetchProfile.Item.ENVELOPE);
 			inbox.fetch(msg, profile);
-			Flags flags = inbox.getPermanentFlags();
 			for (int i = 0; i < msg.length; i++) {
-				String[] rec_line = msg[i].getHeader("Received");
-				System.out.println("recevied ======================" + rec_line);
 				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删
 				//除该邮件，在调用inbox.close（）时
 				//不支持其他的操作，pop3，有些服务器可能支持
