@@ -145,7 +145,7 @@ public class ReceiveMail {
 				disposition = bodyPart.getDisposition();
 				// 判断是否有附件
 				if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
-					//先不处理附件
+					//先不处理附件 只发布文本文件
 					//this.saveAttach(bodyPart);
 					//handleText(msg);
 				} else {
