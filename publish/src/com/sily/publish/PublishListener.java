@@ -11,6 +11,7 @@ import org.apache.log4j.PropertyConfigurator;
 public class PublishListener implements ServletContextListener {
 
 	private Timer timer;
+	private Timer wp_timer;
 
 	public void contextInitialized(ServletContextEvent sce) {
 		//初始化log4j
@@ -20,9 +21,6 @@ public class PublishListener implements ServletContextListener {
 		if (file != null) {
 			PropertyConfigurator.configure(prefix + file);
 		}
-		
-		
-		
 		Logger.getLogger("publish").info("发布监听开始.....1");
 		
 		Logger.getLogger("publish").info(System.getProperty("java.version"));
@@ -39,8 +37,21 @@ public class PublishListener implements ServletContextListener {
 			Logger.getLogger("publish").info("第一次执行的时间"+new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date)+"，执行周期"+ ptt.getPeriod());
 			timer.schedule(ptt, date, ptt.getPeriod());
 		}
-
+		processWptt(sce);
 		Logger.getLogger("publish").info("发布监听开始.....2");
+	}
+	
+	private void processWptt(ServletContextEvent sce){
+		wp_timer = new Timer();
+		WordPressTimerTask wptt = new WordPressTimerTask(sce.getServletContext());
+		java.util.Date date = wptt.initTimes();
+		if (null == date) {
+			Logger.getLogger("publish").info("第一次执行的时间60 * 1000时间后，执行周期"+ wptt.getPeriod());
+			wp_timer.schedule(wptt, 60 * 1000, wptt.getPeriod());
+		} else {
+			Logger.getLogger("publish").info("第一次执行的时间"+new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date)+"，执行周期"+ wptt.getPeriod());
+			wp_timer.schedule(wptt, date, wptt.getPeriod());
+		}
 	}
 
 	public void contextDestroyed(ServletContextEvent sce) {
@@ -48,6 +59,9 @@ public class PublishListener implements ServletContextListener {
 
 		if (null != timer) {
 			timer.cancel();
+		}
+		if(null != wp_timer){
+			wp_timer.cancel();
 		}
 	}
 }
