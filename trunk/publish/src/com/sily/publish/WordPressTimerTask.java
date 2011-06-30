@@ -46,7 +46,6 @@ public class WordPressTimerTask extends TimerTask {
 	
 	private void executeLogic(){
 		ReceiveMail.logic();
-
 	}
 
 	/**
@@ -104,7 +103,7 @@ public class WordPressTimerTask extends TimerTask {
 		try {
 			prop = getProp();
 		} catch (Exception e1) {
-			e1.printStackTrace();
+			Logger.getLogger("publish").error(e1.getMessage(), e1);
 			return null;
 		}
 		String rimis_hour = prop.getProperty("wp_hour");
