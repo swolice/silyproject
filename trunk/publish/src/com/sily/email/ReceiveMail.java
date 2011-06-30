@@ -41,6 +41,11 @@ public class ReceiveMail {
 		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae",
 				"123456");
 	}
+	
+	public static void logic(){
+		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae",
+		"123456");
+	}
 
 	// 处理任何邮件时需要的方法
 	private String handle(Message msg) throws MessagingException {
