@@ -151,6 +151,7 @@ public class ReceiveMail {
 			}
 			if (mp != null) {
 				StringBuilder sb = new StringBuilder();
+				StringBuilder sb_html = new StringBuilder();
 				int mpCount = mp.getCount();
 				String title = this.handle(msg);
 				for (int i = 0; i < mpCount; i++) {
@@ -166,12 +167,18 @@ public class ReceiveMail {
 						if(bodyPart.getContentType().startsWith("text/plain")){
 							sb.append(bodyPart.getContent());
 						}
+						if(bodyPart.getContentType().startsWith("text/html")){
+							sb_html.append(bodyPart.getContent());
+						}
 					}
 				}
 				if(sb.length()>0){
 					WordPressPost.publishPost(title, sb.toString());
+				}else if(sb_html.length()>0){
+					WordPressPost.publishPost(title, sb_html.toString());
 				}
 				sb = null;
+				sb_html= null;
 			}
 		}
 	}
