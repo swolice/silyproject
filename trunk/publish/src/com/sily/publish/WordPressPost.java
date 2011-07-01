@@ -19,7 +19,6 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
-import org.springframework.web.util.HtmlUtils;
 
 import com.sily.util.ReadFile;
 
