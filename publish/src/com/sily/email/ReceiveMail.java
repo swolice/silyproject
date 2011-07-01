@@ -35,7 +35,6 @@ public class ReceiveMail {
 
 	public static Logger log = Logger.getLogger("publish");
 	
-	
 	private String host = "pop3.sina.com.cn";
 
 	public static void main(String[] args) {
