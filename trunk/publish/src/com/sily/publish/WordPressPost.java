@@ -9,6 +9,7 @@
  */
 package com.sily.publish;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -20,7 +21,9 @@ import org.apache.log4j.Logger;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
+import com.sily.util.FileType;
 import com.sily.util.ReadFile;
+import com.sily.util.StringUtils;
 
 /**
  * 名称： DemoPost 
@@ -45,11 +48,25 @@ public class WordPressPost {
 		try {
 //			String desc = new String(readFromFile("C:/Users/sily/Desktop/test.txt"));
 			publishPost("知识扩充：企业博客、MetaWeblog 和 XML-RPC",desc);
+			
+			File file = new File("D:/我的桌面/clock.avi");
+			byte[] bytes = getOutExcelByteCon(file);
+			publishMedia(file.getName(),FileType.getMineType(file),bytes);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
+	public static String publishMedia(File file) throws Exception {
+		byte[] bytes = getOutExcelByteCon(file);
+		String mineType =  FileType.getMineType(file);
+		if(StringUtils.isNotNull(mineType)){
+			return publishMedia(file.getName(),mineType,bytes);
+		}else{
+			return null;
+		}
+	}
 	
 	public static void publishPost(String title,String desc) throws Exception {
 		// Set up XML-RPC connection to server
@@ -82,5 +99,53 @@ public class WordPressPost {
         in.close();
         return data;
     }
+	
+	
+	public static String publishMedia(String name,String type,byte[] bytes) throws Exception{
+		// Set up XML-RPC connection to server
+		XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+		config.setServerURL(new URL(
+				"http://sily.sinaapp.com/xmlrpc.php"));
+		XmlRpcClient client = new XmlRpcClient();
+		client.setConfig(config);
+
+		// Set up parameters required by newPost method
+		Map<String, Object> post = new HashMap<String, Object>();
+		post.put("name", name);
+		post.put("type", type);
+		post.put("bits",bytes);
+		Object[] params = new Object[] { "1", "sily", "jishijun", post};
+
+		// Call newPost
+		Map<String,String> result = (Map<String,String>) client.execute("metaWeblog.newMediaObject", params);
+		System.out.println(" metaWeblog.newMediaObject url: " + result.get("url"));
+		log.info(" metaWeblog.newMediaObject url: " + result.get("url"));
+		
+		return result.get("url");
+	}
+	
+	/**
+	 * 获取excel数据的二进制数组
+	 * 
+	 * @return
+	 */
+	private  static byte[] getOutExcelByteCon(File excelFile) {
+		byte[] attachBytes = null;
+		try {
+			FileInputStream inputStream = new FileInputStream(excelFile);
+			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+			int cb = 0;
+			while ((cb = inputStream.read()) != -1) {
+				outStream.write(cb);
+			}
+			inputStream.close();
+			attachBytes = outStream.toByteArray();
+			outStream.close();
+			return attachBytes;
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		return null;
+	}
 	
 }
