@@ -6,11 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
-import java.util.Set;
 import java.util.UUID;
 
 import javax.mail.BodyPart;
@@ -27,17 +25,22 @@ import javax.mail.Store;
 import javax.mail.internet.MimeUtility;
 
 import org.apache.log4j.Logger;
+import org.apache.ws.commons.util.Base64;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import sun.misc.BASE64Decoder;
 
 import com.sily.publish.PublishResourceBundle;
 import com.sily.publish.WordPressPost;
+import com.sily.util.FileType;
 import com.sily.util.StringUtils;
 import com.sily.validate.CheckValidateException;
 
 public class ReceiveMail {
 	
-	private Map<String,String> attaMap = new HashMap<String,String>();
+	private List<AttachmentPO> attaList = new ArrayList<AttachmentPO>();
 
 	public static Logger log = Logger.getLogger("publish");
 	
@@ -81,7 +84,7 @@ public class ReceiveMail {
 		BASE64Decoder decoder = new BASE64Decoder();
 		try {
 			byte[] b = decoder.decodeBuffer(s);
-			return new String(b);
+			return new String(b,"GBK");
 		} catch (Exception e) {
 			return null;
 		}
@@ -106,25 +109,34 @@ public class ReceiveMail {
 		// 除去发送邮件时对中文附件名编码的头和尾，得到正确的附件名
 		log.info(temp);
 		// 文件名解码
-		String fileName = "";
+		String fileName = temp;
 		temp = temp.toLowerCase();
 		if ((temp.startsWith("=?utf-8?b?") && temp.endsWith("?="))
-				|| (temp.startsWith("=?gbk?b?") && temp.endsWith("?="))) {
-			temp = Base64Decoder(temp.substring(8, temp
-					.indexOf("?=") - 1));
+				|| (temp.startsWith("=?gbk?b?") && temp.endsWith("?="))||
+				(temp.startsWith("=?gb2312?b?") && temp.endsWith("?="))||
+				(temp.startsWith("=?") && temp.endsWith("?="))) {
+			temp = fileName.substring(temp.indexOf("?b?")+3, temp.indexOf("?="));
+			temp = Base64Decoder(temp);
+//			temp =  new String(temp.getBytes("gb2312"), "utf-8"); 
 			fileName = MimeUtility.decodeText(temp);
 		} else {
 			temp = toChinese(temp);
 			fileName = MimeUtility.decodeText(temp);
 		}
 		
-		System.out.println("有附件：" + fileName);
+		log.info("有附件：" + fileName);
+		
+		AttachmentPO po = new AttachmentPO();
+		po.setOldFileName(fileName);
 		InputStream in = part.getInputStream();
 		File path = new File(getSaveAttaPath() + File.separator + UUID.randomUUID());
 		if(!path.exists()){
 			path.mkdirs();
 		}
-		File attaStr  =  new File(getSaveAttaPath()+ File.separator + fileName);
+		
+		String newFileName = UUID.randomUUID()+fileName.substring(fileName.lastIndexOf("."));
+		po.setNewFileName(newFileName);
+		File attaStr  =  new File(path + File.separator + newFileName);
 		FileOutputStream writer = new FileOutputStream(attaStr);
 		int read = 0;
 		while ((read = in.read()) != -1) {
@@ -135,12 +147,14 @@ public class ReceiveMail {
 		try {
 			String url = WordPressPost.publishMedia(attaStr);
 			if(StringUtils.isNotNull(url)){
-				attaMap.put(fileName,url);
+				po.setUrl(url);
+				po.setImage(FileType.isImage(attaStr));
+				attaList.add(po);
 			}
 		} catch (Exception e) {
 			log.error(e.getMessage(),e);
 		}finally{
-			attaStr.delete();
+//			attaStr.delete();
 		}
 		
 		return "";
@@ -179,8 +193,8 @@ public class ReceiveMail {
 				}
 				if(sb_html.length()>0){
 					String html = sb_html.toString();
-					if(!attaMap.isEmpty()){
-						html = publishAtta(attaMap,html);
+					if(!attaList.isEmpty()){
+						html = publishAtta(html);
 					}
 					WordPressPost.publishPost(title,html);
 				}else{
@@ -190,6 +204,7 @@ public class ReceiveMail {
 				}
 				sb.setLength(0);
 				sb_html.setLength(0);
+				attaList.clear();
 			}
 		}
 	}
@@ -222,20 +237,24 @@ public class ReceiveMail {
 		}
 	}
 	
-	private String publishAtta(Map<String,String> attaMap, String html){
-		String attaStr = "附件内容：";
-		Set<String> set = attaMap.keySet();
-		Iterator<String> it = set.iterator();
-		while(it.hasNext()){
-			String key = it.next();
-			if(html.indexOf(key)>-1){
-				html = html.replace("cid:__0@Foxmail.net", attaMap.get(key));
+	private String publishAtta(String html){
+		String attaStr = "";
+		int i = 0;
+		Document doc = Jsoup.parse(html);
+		Elements es = doc.getElementsByTag("img");
+		int src_length = es.size();
+		for (AttachmentPO apo : attaList) {
+			if(i<src_length&&apo.isImage()){
+				es.eq(i).attr("src", apo.getUrl()).attr("title", apo.getOldFileName());
+				i++;
 			}else{
-				attaStr += "<a href='"+attaMap.get(key)+"' title='"+key+"'>"+key+"</a>  ";
+				attaStr += "<a href='"+ apo.getUrl()+"' title='"+apo.getOldFileName()+"'>"+apo.getOldFileName()+"</a>  ";
 			}
-			
 		}
-		return html + attaStr;
+		while(i < src_length){
+			es.eq(i++).remove();
+		}
+		return doc.body().html() + attaStr;
 	}
 	
 
