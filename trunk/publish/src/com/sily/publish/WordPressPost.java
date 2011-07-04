@@ -68,6 +68,16 @@ public class WordPressPost {
 		}
 	}
 	
+	public static String publishMedia(File file,String mineType) throws Exception {
+		byte[] bytes = getOutExcelByteCon(file);
+		if(StringUtils.isNotNull(mineType)){
+			return publishMedia(file.getName(),mineType,bytes);
+		}else{
+			return null;
+		}
+	}
+	
+	
 	public static void publishPost(String title,String desc) throws Exception {
 		// Set up XML-RPC connection to server
 		XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
