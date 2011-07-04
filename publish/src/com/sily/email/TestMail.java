@@ -36,7 +36,32 @@ public class TestMail {
 		
 //		txtAndAtta();
 		
-		htmlAndAtta();
+//		htmlAndAtta();
+		
+		String str = "aaabbb";
+		Test test = new Test();
+		test.setAa(str);
+		System.out.println(test.getAa());
+		test(test);
+		System.out.println(test.getAa());
+		
+	}
+	
+	public static void test(Test test){
+		test.setAa(test.getAa().replaceAll("aaa", "ccc"));
+		System.out.println(test.getAa());
+	}
+	
+	static class Test{
+		public Test() {
+		}
+		private String aa;
+		public String getAa() {
+			return aa;
+		}
+		public void setAa(String aa) {
+			this.aa = aa;
+		}
 	}
 	
 	

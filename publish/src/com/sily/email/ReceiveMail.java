@@ -1,13 +1,17 @@
 package com.sily.email;
 
 import java.io.File;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
+import java.util.UUID;
 
 import javax.mail.BodyPart;
 import javax.mail.FetchProfile;
@@ -32,10 +36,15 @@ import com.sily.util.StringUtils;
 import com.sily.validate.CheckValidateException;
 
 public class ReceiveMail {
+	
+	private Map<String,String> attaMap = new HashMap<String,String>();
 
 	public static Logger log = Logger.getLogger("publish");
 	
 	private String host = "pop3.sina.com.cn";
+	
+	StringBuilder sb = new StringBuilder();
+	StringBuilder sb_html = new StringBuilder();
 
 	public static void main(String[] args) {
 		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae",
@@ -91,14 +100,15 @@ public class ReceiveMail {
 	  } 
 
 	// 保存附件
-	private void saveAttach(BodyPart part) throws Exception {
+	private String saveAttach(Part part) throws Exception {
 		// 得到未处理的附件名字
 		String temp = part.getFileName();
 		// 除去发送邮件时对中文附件名编码的头和尾，得到正确的附件名
-		System.out.println(temp);
+		log.info(temp);
 		// 文件名解码
 		String fileName = "";
-		if ((temp.startsWith("=?GBK?B?") && temp.endsWith("?="))
+		temp = temp.toLowerCase();
+		if ((temp.startsWith("=?utf-8?b?") && temp.endsWith("?="))
 				|| (temp.startsWith("=?gbk?b?") && temp.endsWith("?="))) {
 			temp = Base64Decoder(temp.substring(8, temp
 					.indexOf("?=") - 1));
@@ -110,23 +120,35 @@ public class ReceiveMail {
 		
 		System.out.println("有附件：" + fileName);
 		InputStream in = part.getInputStream();
-		File path = new File(getSaveAttaPath());
+		File path = new File(getSaveAttaPath() + File.separator + UUID.randomUUID());
 		if(!path.exists()){
 			path.mkdirs();
 		}
-		FileOutputStream writer = new FileOutputStream(new File(getSaveAttaPath() + fileName));
+		File attaStr  =  new File(getSaveAttaPath()+ File.separator + fileName);
+		FileOutputStream writer = new FileOutputStream(attaStr);
 		int read = 0;
 		while ((read = in.read()) != -1) {
 			writer.write(read);
 		}
 		writer.close();
 		in.close();
+		try {
+			String url = WordPressPost.publishMedia(attaStr);
+			if(StringUtils.isNotNull(url)){
+				attaMap.put(fileName,url);
+			}
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}finally{
+			attaStr.delete();
+		}
+		
+		return "";
 	}
 
 	// 处理Multipart邮件，包括了保存附件的功能
 	private void handleMultipart(Message msg) throws Exception {
 
-		String disposition;
 		BodyPart bodyPart;
 		
 		String contentType = msg.getContentType();
@@ -140,7 +162,6 @@ public class ReceiveMail {
 			if(ss.length()>0){
 				WordPressPost.publishPost(title, ss);
 			}
-				
 		}else{
 			Object content = msg.getContent();
 			// 附件
@@ -150,38 +171,73 @@ public class ReceiveMail {
 				log.info("[ Multipart Message ]");
 			}
 			if (mp != null) {
-				StringBuilder sb = new StringBuilder();
-				StringBuilder sb_html = new StringBuilder();
 				int mpCount = mp.getCount();
 				String title = this.handle(msg);
 				for (int i = 0; i < mpCount; i++) {
 					bodyPart = mp.getBodyPart(i);
-					log.info(bodyPart.getContentType());
-					disposition = bodyPart.getDisposition();
-					// 判断是否有附件
-					if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
-						//先不处理附件 只发布文本文件
-						//this.saveAttach(bodyPart);
-						//handleText(msg);
-					} else {
-						if(bodyPart.getContentType().startsWith("text/plain")){
-							sb.append(bodyPart.getContent());
-						}
-						if(bodyPart.getContentType().startsWith("text/html")){
-							sb_html.append(bodyPart.getContent());
-						}
+					handleMultipart(bodyPart);
+				}
+				if(sb_html.length()>0){
+					String html = sb_html.toString();
+					if(!attaMap.isEmpty()){
+						html = publishAtta(attaMap,html);
+					}
+					WordPressPost.publishPost(title,html);
+				}else{
+					if(sb.length()>0){
+						WordPressPost.publishPost(title, sb.toString());
 					}
 				}
-				if(sb.length()>0){
-					WordPressPost.publishPost(title, sb.toString());
-				}else if(sb_html.length()>0){
-					WordPressPost.publishPost(title, sb_html.toString());
-				}
-				sb = null;
-				sb_html= null;
+				sb.setLength(0);
+				sb_html.setLength(0);
 			}
 		}
 	}
+	
+	public void handleMultipart(Part bodyPart) throws Exception {
+		log.info(bodyPart.getContentType());
+		String disposition = bodyPart.getDisposition();
+		// 判断是否有附件
+		if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
+			//保存附件
+			this.saveAttach(bodyPart);
+			//handleText(msg);
+		} else {
+			if(bodyPart.getContentType().startsWith("text/plain")){
+				sb.append(bodyPart.getContent());
+			}else if(bodyPart.getContentType().startsWith("text/html")){
+				sb_html.append(bodyPart.getContent());
+			}else if(bodyPart.isMimeType("multipart/*")){
+				Multipart multipart=(Multipart)bodyPart.getContent();
+				int mpCount = multipart.getCount();
+				for (int i = 0; i < mpCount; i++) {
+					bodyPart = multipart.getBodyPart(i);
+					handleMultipart(bodyPart);
+				}
+			}else if(bodyPart.isMimeType("message/rfc822")){
+				handleMultipart((Part)bodyPart.getContent());
+			}else if(bodyPart.isMimeType("image/jpeg")){
+				this.saveAttach(bodyPart);
+			}
+		}
+	}
+	
+	private String publishAtta(Map<String,String> attaMap, String html){
+		String attaStr = "附件内容：";
+		Set<String> set = attaMap.keySet();
+		Iterator<String> it = set.iterator();
+		while(it.hasNext()){
+			String key = it.next();
+			if(html.indexOf(key)>-1){
+				html = html.replace("cid:__0@Foxmail.net", attaMap.get(key));
+			}else{
+				attaStr += "<a href='"+attaMap.get(key)+"' title='"+key+"'>"+key+"</a>  ";
+			}
+			
+		}
+		return html + attaStr;
+	}
+	
 
 	// 接受邮件
 	public void receive(String receiveMailBoxAddress, String userName,
