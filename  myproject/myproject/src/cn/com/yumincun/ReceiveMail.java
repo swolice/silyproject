@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Enumeration;
 import java.util.Properties;
 
 import javax.mail.BodyPart;
@@ -23,11 +26,11 @@ import sun.misc.BASE64Decoder;
 
 public class ReceiveMail {
 
-	private String host = "pop3.163.com";
+	private String host = "pop3.sina.com.cn";
 
 	public static void main(String[] args) {
-		new ReceiveMail().receive("jishijun204@163.com", "jishijun204",
-				"");
+		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae",
+				"123456");
 	}
 
 	// 处理任何邮件时需要的方法
@@ -131,7 +134,7 @@ public class ReceiveMail {
 				bodyPart = mp.getBodyPart(i);
 				disposition = bodyPart.getDisposition();
 				// 判断是否有附件
-				if (disposition != null && disposition.equals(Part.ATTACHMENT)) {
+				if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
 					this.saveAttach(bodyPart);
 					// handleText(msg);
 				} else {
@@ -158,13 +161,16 @@ public class ReceiveMail {
 			FetchProfile profile = new FetchProfile();
 			profile.add(FetchProfile.Item.ENVELOPE);
 			inbox.fetch(msg, profile);
-			System.out.println(msg.length);
+			Flags flags = inbox.getPermanentFlags();
 			for (int i = 0; i < msg.length; i++) {
-				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删除该邮件，在调用inbox.close（）时
-				msg[i].setFlag(Flags.Flag.RECENT, true);
+				String[] rec_line = msg[i].getHeader("Received");
+				System.out.println("recevied ======================" + rec_line);
+				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删
+				//除该邮件，在调用inbox.close（）时
+				//不支持其他的操作，pop3，有些服务器可能支持
+				msg[i].setFlag(Flags.Flag.DELETED, true);
 				handleMultipart(msg[i]);
-				System.out
-						.println("----------------------------------------------------");
+				System.out.println("------------------------------------------");
 			}
 			if (inbox != null)
 				inbox.close(true);
