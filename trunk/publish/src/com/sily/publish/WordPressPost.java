@@ -91,6 +91,7 @@ public class WordPressPost {
 		post.put("title", title);
 //		post.put("link", "http://sily.sinaapp.com/");
 		post.put("description",desc);
+		post.put("mt_excerpt",desc);//摘要
 		Object[] params = new Object[] { "1", "sily", "jishijun", post,
 				Boolean.TRUE };
 
