@@ -20,6 +20,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import com.sily.util.FileType;
 import com.sily.util.ReadFile;
@@ -91,7 +93,13 @@ public class WordPressPost {
 		post.put("title", title);
 //		post.put("link", "http://sily.sinaapp.com/");
 		post.put("description",desc);
-		post.put("mt_excerpt",desc);//摘要
+		Document doc = Jsoup.parse(desc);
+		String text = doc.body().text();
+		String excerpt = text;
+		if(text.length()>800){
+			excerpt = text.substring(0, 800);
+		}
+		post.put("mt_excerpt",excerpt);//摘要
 		Object[] params = new Object[] { "1", "sily", "jishijun", post,
 				Boolean.TRUE };
 
