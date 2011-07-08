@@ -2,3 +2,9 @@
 工程目录下的lib包中了，需要添加的文件下面俩个。
 activation.jar
 mail.jar
+
+
+部署到249的时候， 使用249的配置文件， classes下面的配置文件，都要改名
+common_249.properties
+mail_249.properties
+这俩个名字去掉_249就好了删掉相同的文件
