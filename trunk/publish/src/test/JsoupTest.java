@@ -13,7 +13,7 @@ public class JsoupTest {
 	public static void main(String[] args) {
 		ReadFile rFile = new ReadFile();
 		
-		String content = rFile.getFileContent("C:/Users/sily/Desktop/text.html");
+		String content = rFile.getFileContent("d:/我的桌面/simple.html","gb2312");
 		
 		Document doc = null;
 //		try {
@@ -47,7 +47,7 @@ public class JsoupTest {
 //			System.out.println(e.text());
 //		}
 		try {
-			WordPressPost.publishPost("使用xml-rpc发布wordpress日志",htmlString);
+//			WordPressPost.publishPost("使用xml-rpc发布wordpress日志",htmlString);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

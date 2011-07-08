@@ -45,15 +45,24 @@ public class WordPressPost {
 
 		ReadFile rf =  new ReadFile();
 		
-		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
+//		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
 		
 		try {
-//			String desc = new String(readFromFile("C:/Users/sily/Desktop/test.txt"));
-			publishPost("知识扩充：企业博客、MetaWeblog 和 XML-RPC",desc);
+			String desc =rf.getFileContent("d:/我的桌面/simple.html","utf-8");
+
+			Document doc = Jsoup.parse(desc);
+			String text = doc.body().text();
+			String excerpt = text;
 			
-			File file = new File("D:/我的桌面/clock.avi");
-			byte[] bytes = getOutExcelByteCon(file);
-			publishMedia(file.getName(),FileType.getMineType(file),bytes);
+			System.out.println(excerpt);
+			
+//			publishPost("test",desc);
+			
+			
+			
+//			File file = new File("D:/我的桌面/clock.avi");
+//			byte[] bytes = getOutExcelByteCon(file);
+//			publishMedia(file.getName(),FileType.getMineType(file),bytes);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,7 +108,7 @@ public class WordPressPost {
 		if(text.length()>800){
 			excerpt = text.substring(0, 800);
 		}
-		post.put("mt_excerpt",excerpt);//摘要
+		post.put("mt_excerpt",excerpt.replaceAll("\\.|\\。", "\r\n"));//摘要
 		Object[] params = new Object[] { "1", "sily", "jishijun", post,
 				Boolean.TRUE };
 
