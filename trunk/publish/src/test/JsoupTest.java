@@ -14,7 +14,6 @@ public class JsoupTest {
 		ReadFile rFile = new ReadFile();
 		
 		String content = rFile.getFileContent("d:/我的桌面/simple.html","gb2312");
-		
 		Document doc = null;
 //		try {
 //			doc = Jsoup.parse(new File("C:/Users/sily/Desktop/text.html"),"utf-8");
