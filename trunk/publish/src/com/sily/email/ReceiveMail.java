@@ -86,7 +86,8 @@ public class ReceiveMail {
 			byte[] b = decoder.decodeBuffer(s);
 			return new String(b,"GBK");
 		} catch (Exception e) {
-			return null;
+			log.error(e.getMessage(),e);
+			throw e;
 		}
 	}
 	public static String toChinese(String strvalue){ 
@@ -97,7 +98,8 @@ public class ReceiveMail {
 	        strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK"); 
 	        return strvalue; 
 	      } 
-	    }catch(Exception e){ 
+	    }catch(Exception e){
+	    	log.error(e.getMessage(),e);
 	      return null; 
 	    } 
 	  } 
@@ -281,18 +283,18 @@ public class ReceiveMail {
 				//不支持其他的操作，pop3，有些服务器可能支持
 				msg[i].setFlag(Flags.Flag.DELETED, true);
 				handleMultipart(msg[i]);
-				System.out.println("------------------------------------------");
+				log.info("------------------------------------------");
 			}
 			if (inbox != null)
 				inbox.close(true);
 			if (store != null)
 				store.close();
 		} catch (NoSuchProviderException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		} catch (MessagingException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		}
 	}
 	
@@ -302,9 +304,9 @@ public class ReceiveMail {
 		try {
 			prop.load(new FileInputStream(new File(mailpath)));
 		} catch (FileNotFoundException e) {
-			
+			log.error(e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		}
 		String attaPath = prop.getProperty("attachment_path");
 		if(StringUtils.isNotNull(attaPath)){

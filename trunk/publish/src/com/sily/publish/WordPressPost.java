@@ -108,7 +108,7 @@ public class WordPressPost {
 		if(text.length()>800){
 			excerpt = text.substring(0, 800);
 		}
-		post.put("mt_excerpt",excerpt.replaceAll("\\.|\\。", "\r\n"));//摘要
+		post.put("mt_excerpt",excerpt.replaceAll("\\。", "。\r\n"));//摘要
 		Object[] params = new Object[] { "1", "sily", "jishijun", post,
 				Boolean.TRUE };
 
