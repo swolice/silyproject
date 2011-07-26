@@ -263,14 +263,16 @@ public class ReceiveMail {
 	// 接受邮件
 	public void receive(String receiveMailBoxAddress, String userName,
 			String password) {
+		Store store = null;
+		Folder inbox = null;
 		try {
 			Properties pops = new Properties();
 			pops.put("mail.pop3.host", host);
 			pops.put("mail.pop.auth", "true");
 			Session session = Session.getDefaultInstance(pops, null);
-			Store store = session.getStore("pop3");
+			store = session.getStore("pop3");
 			store.connect(host, userName, password);
-			Folder inbox = store.getDefaultFolder().getFolder("INBOX");
+			inbox = store.getDefaultFolder().getFolder("INBOX");
 			// 设置inbox对象属性为可读写，这样可以控制读完邮件后直接删除该附件
 			inbox.open(Folder.READ_WRITE);
 			Message[] msg = inbox.getMessages();
@@ -282,19 +284,27 @@ public class ReceiveMail {
 				//除该邮件，在调用inbox.close（）时
 				//不支持其他的操作，pop3，有些服务器可能支持
 				msg[i].setFlag(Flags.Flag.DELETED, true);
-				handleMultipart(msg[i]);
-				log.info("------------------------------------------");
+				try {
+					handleMultipart(msg[i]);
+				} catch (Exception e) {
+					log.error("--------------handleMultipart(msg[i])----------------------------",e);
+				}
 			}
-			if (inbox != null)
-				inbox.close(true);
-			if (store != null)
-				store.close();
 		} catch (NoSuchProviderException e) {
 			log.error(e.getMessage(),e);
 		} catch (MessagingException e) {
 			log.error(e.getMessage(),e);
 		} catch (Exception e) {
 			log.error(e.getMessage(),e);
+		}finally{
+			try {
+				if (inbox != null)
+					inbox.close(true);
+				if (store != null)
+					store.close();
+			} catch (MessagingException e) {
+				log.error(e.getMessage(), e);
+			}
 		}
 	}
 	
