@@ -48,13 +48,13 @@ public class WordPressPost {
 //		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
 		
 		try {
-			String desc =rf.getFileContent("d:/我的桌面/simple.html","utf-8");
+			String desc =rf.getFileContent("d:/我的桌面/vim.txt","GBK");
 
-			Document doc = Jsoup.parse(desc);
-			String text = doc.body().text();
-			String excerpt = text;
+//			Document doc = Jsoup.parse(desc);
+//			String text = doc.body().text();
+//			String excerpt = text;
 			
-			System.out.println(excerpt);
+//			System.out.println(excerpt);
 			
 //			publishPost("test",desc);
 			
@@ -63,6 +63,9 @@ public class WordPressPost {
 //			File file = new File("D:/我的桌面/clock.avi");
 //			byte[] bytes = getOutExcelByteCon(file);
 //			publishMedia(file.getName(),FileType.getMineType(file),bytes);
+			
+			
+			publishPost("vim学习教程",desc);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,6 +105,8 @@ public class WordPressPost {
 		post.put("title", title);
 //		post.put("link", "http://sily.sinaapp.com/");
 		post.put("description",desc);
+		
+		
 		Document doc = Jsoup.parse(desc);
 		String text = doc.body().text();
 		String excerpt = text;
@@ -109,6 +114,7 @@ public class WordPressPost {
 			excerpt = text.substring(0, 800);
 		}
 		post.put("mt_excerpt",excerpt.replaceAll("\\。", "。\r\n"));//摘要
+		
 		Object[] params = new Object[] { "1", "sily", "jishijun", post,
 				Boolean.TRUE };
 
