@@ -27,7 +27,7 @@ public class WordPressTimerTask extends TimerTask {
 	}
 	
 	public void run() {
-		Logger.getLogger("publish").info("接收邮件开始");
+		Logger.getLogger("publish").info(" run ..... mail ");
 		
 		if (!getSwitch()) {
 			return;
