@@ -92,38 +92,54 @@ public class WordPressPost {
 	}
 	
 	
+	/**
+	 * 发布文章
+	 * @param title
+	 * @param desc
+	 * @throws Exception
+	 */
 	public static void publishPost(String title,String desc) throws Exception {
-		// Set up XML-RPC connection to server
-		XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-		config.setServerURL(new URL(
-				"http://sily.sinaapp.com/xmlrpc.php"));
-		XmlRpcClient client = new XmlRpcClient();
-		client.setConfig(config);
-
-		// Set up parameters required by newPost method
-		Map<String, String> post = new HashMap<String, String>();
-		post.put("title", title);
-//		post.put("link", "http://sily.sinaapp.com/");
-		post.put("description",desc);
+		try {
+			// Set up XML-RPC connection to server
+			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+			config.setServerURL(new URL(
+					"http://sily.sinaapp.com/xmlrpc.php"));
+			XmlRpcClient client = new XmlRpcClient();
+			client.setConfig(config);
+	
+			// Set up parameters required by newPost method
+			Map<String, String> post = new HashMap<String, String>();
+			post.put("title", title);
+			//post.put("link", "http://sily.sinaapp.com/");
+			post.put("description",desc);
+			
+			
+			Document doc = Jsoup.parse(desc);
+			String text = doc.body().text();
+			String excerpt = text;
+			if(text.length()>800){
+				excerpt = text.substring(0, 800);
+			}
+			post.put("mt_excerpt",excerpt.replaceAll("\\。", "。\r\n"));//摘要
+			
+			Object[] params = new Object[] { "1", "sily", "jishijun", post,
+					Boolean.TRUE };
+	
+			// Call newPost
 		
-		
-		Document doc = Jsoup.parse(desc);
-		String text = doc.body().text();
-		String excerpt = text;
-		if(text.length()>800){
-			excerpt = text.substring(0, 800);
+			String result = (String) client.execute("metaWeblog.newPost", params);
+			log.info(" Created with blogid " + result);
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
 		}
-		post.put("mt_excerpt",excerpt.replaceAll("\\。", "。\r\n"));//摘要
-		
-		Object[] params = new Object[] { "1", "sily", "jishijun", post,
-				Boolean.TRUE };
-
-		// Call newPost
-		String result = (String) client.execute("metaWeblog.newPost", params);
-		log.info(" Created with blogid " + result);
 	}
 
-	
+	/**
+	 * 
+	 * @param src
+	 * @return
+	 * @throws Exception
+	 */
 	private static byte[] readFromFile(String src) throws Exception {
         byte data[];
         File file = new File(src);
@@ -134,28 +150,41 @@ public class WordPressPost {
         return data;
     }
 	
-	
+	/**
+	 * 发布多媒体文件
+	 * @param name
+	 * @param type
+	 * @param bytes
+	 * @return
+	 * @throws Exception
+	 */
 	public static String publishMedia(String name,String type,byte[] bytes) throws Exception{
 		// Set up XML-RPC connection to server
-		XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-		config.setServerURL(new URL(
-				"http://sily.sinaapp.com/xmlrpc.php"));
-		XmlRpcClient client = new XmlRpcClient();
-		client.setConfig(config);
-
-		// Set up parameters required by newPost method
-		Map<String, Object> post = new HashMap<String, Object>();
-		post.put("name", name);
-		post.put("type", type);
-		post.put("bits",bytes);
-		Object[] params = new Object[] { "1", "sily", "jishijun", post};
-
-		// Call newPost
-		Map<String,String> result = (Map<String,String>) client.execute("metaWeblog.newMediaObject", params);
-		System.out.println(" metaWeblog.newMediaObject url: " + result.get("url"));
-		log.info(" metaWeblog.newMediaObject url: " + result.get("url"));
-		
-		return result.get("url");
+		try {
+			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+			config.setServerURL(new URL(
+			"http://sily.sinaapp.com/xmlrpc.php"));
+			XmlRpcClient client = new XmlRpcClient();
+			client.setConfig(config);
+			
+			// Set up parameters required by newPost method
+			Map<String, Object> post = new HashMap<String, Object>();
+			post.put("name", name);
+			post.put("type", type);
+			post.put("bits",bytes);
+			Object[] params = new Object[] { "1", "sily", "jishijun", post};
+			
+			// Call newPost
+			Map<String,String> result = (Map<String,String>) client.execute("metaWeblog.newMediaObject", params);
+			System.out.println(" metaWeblog.newMediaObject url: " + result.get("url"));
+			log.info(" metaWeblog.newMediaObject url: " + result.get("url"));
+			
+			return result.get("url");
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error(e.getMessage(),e);
+		}
+		return "";
 	}
 	
 	/**
