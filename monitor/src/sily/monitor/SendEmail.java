@@ -44,15 +44,15 @@ public class SendEmail {
 			// 根据属�?�新建一个邮件会�?
 			mailSession = Session.getInstance(properties, new Authenticator() {
 				public PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("jishijun204",
-							"");
+					return new PasswordAuthentication("jtcrm_email",
+							"jtcrm123");
 				}
 			});
 			mailSession.setDebug(true);
 			// 建立消息对象
 			mailMessage = new MimeMessage(mailSession);
 			// 发件�re人
-			mailMessage.setFrom(new InternetAddress("jishijun204@163.com"));
+			mailMessage.setFrom(new InternetAddress("jtcrm_email@163.com"));
 			// 收件�人
 			mailMessage.setRecipient(MimeMessage.RecipientType.TO,
 					new InternetAddress("16009413@qq.com"));
