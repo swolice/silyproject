@@ -26,6 +26,13 @@ import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 public class CameraPhoto {
+	
+	public static void main(String[] args){
+		CameraPhoto cp = CameraPhoto.getInstance();
+		
+		cp.createPhoto();
+		
+	}
 
 	Logger syslogger = Logger.getLogger(CameraPhoto.class.getName());
 
@@ -92,7 +99,7 @@ public class CameraPhoto {
 			String filePath = propWrapper.getProperty("ftpSendFileDir")
 					+ "/" + System.currentTimeMillis() + ".jpg";
 			File file = new File(propWrapper
-					.getProperty("FTP_UPLOAD_FILE_PATH"));
+					.getProperty("ftpSendFileDir"));
 			if (!file.exists()) {
 				file.mkdirs();
 			}
@@ -149,4 +156,5 @@ public class CameraPhoto {
 		}
 
 	}
+	
 }
