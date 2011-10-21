@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel>
+	<global>
+		<title>0,0</title>
+	</global>
+	<modular>
+		<Theme>0,2</Theme>
+		<title>0,3,x,3</title>
+		<img-margin>2;icon.png</img-margin>
+		<section>
+			<section-first>0,7,0,11</section-first>	
+			<section-margin>1;x.png</section-margin>
+		</section>
+		<supplier-margin>1;y.png</supplier-margin>
+	</modular>
+</excel>
