@@ -47,15 +47,15 @@ public class DescStru {
 					xmlLevelItemXPath, 0);
 			List elementList = new ArrayList();
 			if (null != it) {
+				Map map = new HashMap();
 				while (it.hasNext()) {
 					Entry entry = (Entry) it.next();
 					XMLNode xn = entry.xmlNode;
-					Map map = new HashMap();
 					map.put(xn.getName(), xn.getValue());
 					System.out.println(xn.getName() + " : "
 							+ xn.getValue().trim());
-					elementList.add(map);
 				}
+				elementList.add(map);
 			}
 		return elementList;
 	}
@@ -155,12 +155,12 @@ public class DescStru {
 		String src = map.get("src").toString();
 		File imgFile = new File(src);
 		// WritableImage(col, row, width, height, imgFile);
-		int col, row, width, height;
+		double col, row, width, height;
 		try {
-			col = Integer.parseInt(map.get("col").toString());
-			row = Integer.parseInt(map.get("row").toString());
-			width = Integer.parseInt(map.get("width").toString());
-			height = Integer.parseInt(map.get("height").toString());
+			col = Double.parseDouble(map.get("col").toString());
+			row = Double.parseDouble(map.get("row").toString());
+			width = Double.parseDouble(map.get("width").toString());
+			height = Double.parseDouble(map.get("height").toString());
 			WritableImage image = new WritableImage(col, row, width, height, imgFile);
 			ws.addImage(image);
 		} catch (Exception e) {
