@@ -49,8 +49,11 @@ public class PublishTimerTask extends TimerTask {
 	
 	
 	private void executeLogic(){
-		PublishLogic.logic();
-
+		try {
+			PublishLogic.logic();
+		} catch (Exception e) {
+			Logger.getLogger("publish").info("发布账务executeLogic方法出错",e);
+		}
 	}
 
 	/**

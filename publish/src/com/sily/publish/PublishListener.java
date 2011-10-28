@@ -37,7 +37,9 @@ public class PublishListener implements ServletContextListener {
 			Logger.getLogger("publish").info("第一次执行的时间"+new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date)+"，执行周期"+ ptt.getPeriod());
 			timer.schedule(ptt, date, ptt.getPeriod());
 		}
+		
 		processWptt(sce);
+		
 		Logger.getLogger("publish").info("发布监听开始.....2");
 	}
 	
