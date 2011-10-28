@@ -27,7 +27,7 @@ public class WordPressTimerTask extends TimerTask {
 	}
 	
 	public void run() {
-		Logger.getLogger("publish").info(" run ..... mail ");
+		Logger.getLogger("publish").info(" mail........run ");
 		
 		if (!getSwitch()) {
 			return;
@@ -47,7 +47,13 @@ public class WordPressTimerTask extends TimerTask {
 	
 	
 	private void executeLogic(){
-		ReceiveMail.logic();
+		try {
+			ReceiveMail.logic();
+		} catch (Exception e) {
+			Logger.getLogger("publish").info(" 接收邮件 发布wordpress出错 ");
+		}
+		
+		
 	}
 
 	/**
