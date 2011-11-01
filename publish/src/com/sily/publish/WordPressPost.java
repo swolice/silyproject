@@ -103,7 +103,7 @@ public class WordPressPost {
 			// Set up XML-RPC connection to server
 			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
 			config.setServerURL(new URL(
-					"http://sily.sinaapp.com/xmlrpc.php"));
+					"http://www.swjsj.com/xmlrpc.php"));
 			XmlRpcClient client = new XmlRpcClient();
 			client.setConfig(config);
 	
@@ -163,7 +163,7 @@ public class WordPressPost {
 		try {
 			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
 			config.setServerURL(new URL(
-			"http://sily.sinaapp.com/xmlrpc.php"));
+			"http://www.swjsj.com/xmlrpc.php"));
 			XmlRpcClient client = new XmlRpcClient();
 			client.setConfig(config);
 			
