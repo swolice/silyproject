@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.log4j.Logger;
 
@@ -53,8 +54,8 @@ public class JsoupDao {
 	 * @return 
 	 */
 	public static void insertUrlHref(String urlhref,String urltype,String title,String uphref) {
-		String sql = "insert into url_info(url_href,url_type,html_title,up_url_href,create_time) " +
-				"values(?,?,?,?,?)";
+		String sql = "insert into url_info(url_href,url_type,html_title,up_url_href) " +
+				"values(?,?,?,?)";
 		
 		Connection connection = DatabaseTool.getInstance().getConnection();
 		PreparedStatement pStatement = null;
@@ -62,17 +63,17 @@ public class JsoupDao {
 			pStatement = connection.prepareStatement(sql);
 			pStatement.setString(1, urlhref);
 			pStatement.setString(2, urltype);
-			title = title.replaceAll("[\\-\\:��\\<>|\\?]", "_").replaceAll("\\s", "");   
 			pStatement.setString(3, title);
 			pStatement.setString(4, uphref);
-			pStatement.setTimestamp(5, new Timestamp(new Date().getTime()));
+//			pStatement.setString(5, UUID.randomUUID().toString().replaceAll("-", ""));
+//			pStatement.setTimestamp(6, new Timestamp(new Date().getTime()));
 			synchronized (bytes) {
 				pStatement.execute();
 			}
 			
 		} catch (SQLException e) {
 			logger.error(e.getMessage(), e);
-		} finally{
+		}finally{
 			try {
 				pStatement.close();
 				connection.close();
@@ -83,8 +84,7 @@ public class JsoupDao {
 	}
 	
 	public static  List<String> getFileList() {
-		String sql = "SELECT distinct url_href FROM url_info where url_type=2 and" +
-				" vflag=0 order by create_time desc limit 0,10 ";
+		String sql = "SELECT distinct url_href FROM url_info where url_type=2 and vflag=0 order by create_time desc limit 0,10 ";
 		Connection connection = DatabaseTool.getInstance().getConnection();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
@@ -128,14 +128,6 @@ public class JsoupDao {
 		} catch (SQLException e1) {
 			logger.error(e1.getMessage(),e1);
 		}
-		
-		try {
-			if(list.size() == 0){
-				Thread.currentThread().sleep(120000);
-			}
-		} catch (InterruptedException e) {
-			logger.error(e.getMessage(), e);
-		}
 		return list;
 	}
 	
@@ -172,10 +164,5 @@ public class JsoupDao {
 				logger.error(e.getMessage(), e);
 			}
 		}
-	}
-	
-	
-	public static void main(String[] args) {
-		insertUrlHref("http://adadfad","1","中文难道不能存放","http://uplink");
 	}
 }
