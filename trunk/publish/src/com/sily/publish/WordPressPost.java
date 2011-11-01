@@ -24,6 +24,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import com.sily.util.FileType;
+import com.sily.util.HtmlUtils;
 import com.sily.util.ReadFile;
 import com.sily.util.StringUtils;
 
@@ -120,6 +121,7 @@ public class WordPressPost {
 			if(text.length()>800){
 				excerpt = text.substring(0, 800);
 			}
+			excerpt =  HtmlUtils.htmlEscape(excerpt);
 			post.put("mt_excerpt",excerpt.replaceAll("\\。", "。\r\n"));//摘要
 			
 			Object[] params = new Object[] { "1", "sily", "jishijun", post,
