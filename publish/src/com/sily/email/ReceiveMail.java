@@ -283,11 +283,13 @@ public class ReceiveMail {
 				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删
 				//除该邮件，在调用inbox.close（）时
 				//不支持其他的操作，pop3，有些服务器可能支持
-				msg[i].setFlag(Flags.Flag.DELETED, true);
-				try {
-					handleMultipart(msg[i]);
-				} catch (Exception e) {
-					log.error("--------------handleMultipart(msg[i])----------------------------",e);
+				if(msg[i].isSet(Flags.Flag.DELETED)){
+					msg[i].setFlag(Flags.Flag.DELETED, true);
+					try {
+						handleMultipart(msg[i]);
+					} catch (Exception e) {
+						log.error("--------------handleMultipart(msg[i])----------------------------",e);
+					}
 				}
 			}
 		} catch (NoSuchProviderException e) {
