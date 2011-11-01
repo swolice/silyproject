@@ -1,0 +1,79 @@
+functionshowDialog(url){
+	if(document.all)//IE
+	{
+		feature="dialogWidth:300px;dialogHeight:200px;status:no;help:no";
+		window.showModalDialog(url,null,feature);
+	}else{
+		//modelessDialog可以将modal换成dialog=yes
+		feature="width=300,height=200,menubar=no,toolbar=no,location=no,";
+		feature+="scrollbars=no,status=no,modal=yes";
+		window.open(url,null,feature);
+	}
+}
+functionSetReadOnly(obj,backgroundColor){
+if(obj){
+varieVer=GetIeVersion();//获取IE版本
+if(obj.type=='select-one'){
+//下拉框时
+if(ieVer>6){
+obj.onfocus=function(){
+varindex=this.selectedIndex;
+this.onchange=function(){
+this.selectedIndex=index;
+};
+};
+}else{
+obj.onbeforeactivate=function(){returnfalse;};
+obj.onfocus=function(){obj.blur();};
+obj.onmouseover=function(){obj.setCapture();};
+obj.onmouseout=function(){obj.releaseCapture();};
+}
+}elseif(obj.type=='checkbox'){
+//复选框时
+obj.onclick=function(){returnfalse;};
+}elseif(obj.type=='radio'){
+//单选框时，设置所有具有相同name的radio为只读
+if(obj.name){
+vararr=document.getElementsByName(obj.name);
+varlen=arr.length;
+vartmp=null;
+for(vari=0;i<len;i++)
+if(arr[i].checked){
+tmp=arr[i];
+break;
+}
+varfunc;
+if(tmp)
+func=function(){tmp.checked=true;};
+else
+func=function(){returnfalse;};
+for(vari=0;i<len;i++)
+arr[i].onclick=func;
+}else
+obj.onclick=function(){returnfalse;};
+}else{
+obj.readOnly=true;
+if(obj.type=='text')
+obj.style.borderWidth='0px';
+}
+
+if(backgroundColor)
+obj.style.backgroundColor=backgroundColor;
+}
+}
+
+functionGetIeVersion(){
+varexp;
+try{
+varstr=navigator.userAgent;
+varstrIe='MSIE';
+if(str&&str.indexOf(strIe)>=0){
+str=str.substring(str.indexOf(strIe)+strIe.length);
+str=str.substring(0,str.indexOf(';'));
+returnparseFloat(str.trim());
+}
+}
+catch(exp){
+}
+return0;
+}
