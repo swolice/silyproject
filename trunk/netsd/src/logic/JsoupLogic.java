@@ -53,7 +53,6 @@ public class JsoupLogic {
 //				e.printStackTrace();
 //			}
 //			new Thread(new JsoupThread()).start();
-//			new Thread(new DownloadTread()).start();
 //		}
 		new Thread(new DownloadTread()).start();
 	}
@@ -217,7 +216,7 @@ public class JsoupLogic {
 	public static void downFileByList() {
 		List<String> list = JsoupDao.getFileList();
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i));
+			System.out.println("下载图片"+list.get(i));
 			try {
 				downloadFile(list.get(i));
 			} catch (ConnectException e) {
