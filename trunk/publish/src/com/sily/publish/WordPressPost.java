@@ -48,7 +48,7 @@ public class WordPressPost {
 //		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
 		
 		try {
-			String desc =rf.getFileContent("d:/我的桌面/vim.txt","GBK");
+			String desc =rf.getFileContent("d:/我的桌面/test.txt","GBK");
 
 //			Document doc = Jsoup.parse(desc);
 //			String text = doc.body().text();
