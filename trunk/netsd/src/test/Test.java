@@ -37,6 +37,10 @@ public class Test {
 //		conn.close();
 		
 		
-		System.out.println(UUID.randomUUID());
+//		System.out.println(UUID.randomUUID());
+		
+		String aaString = "01正常/09关闭/02冻结";
+		System.out.println(aaString.split("/")[0].replaceAll("\\d", ""));
+		
 	}
 }
