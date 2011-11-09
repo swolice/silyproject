@@ -1,1 +1,0 @@
-document.write("<scr"+"ipt src=\"http://v4.acode.ifocus.cn/vertical/c182s5.js\"></scr"+"ipt>");

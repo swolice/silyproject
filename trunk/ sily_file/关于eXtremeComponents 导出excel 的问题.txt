@@ -1,3 +1,0 @@
-<ec:column property="xh" escapeAutoFormat="true" title="学号" />
-
-加上escapeAutoFormat="true" 导出excel时是将单元格的格式作为文本 可以使导出的数据不会变成科学计数法的形式
