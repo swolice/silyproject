@@ -1,6 +1,0 @@
-1.   @@identity   要在执行了   insert   操作之后才有值，表示刚插入的那条记录的   id   
-    
-  2.   @@identity   “不是”全局变量，只是在本次连接其间有效。如果两个用户同时连接数据库，分别各执行了一个   insert   操作，那么分别   select   @@identity   得到是各自插入记录的   id   
-    
-  3.   如果使用   select   max(id)   ，第一个用户   insert   之后，第二个用户也   insert   到同一个表。那么第一个用户这时再   select   max(id)   将得到第二个用户插入的   id。   
-  如果使用   select   @@identity，那么，第一个用户插入之后，不管有多少个其他人在同一个表插入多少条，第一个用户   select   @@identity   也可以得到他自己插入的那条。

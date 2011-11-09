@@ -1,7 +1,0 @@
-Tomcat6性能调优 出现java.lang.OutOfMemoryError: PermGen space（转）2010年03月14日 星期日 22:03Tomcat6在部署应用中，Server报错：java.lang.OutOfMemoryError: PermGen space，问题就是Tomcat内存分配的太小了。
-解决办法：
-修改Tomcat\bin\catalina.bat文件。
-找到set JAVA_OPTS=%JAVA_OPTS% -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file="%CATALINA_BASE%\conf \logging.properties"这句话。在前面加上rem注释掉。
-在它下面加入：
-set JAVA_OPTS=-server -Xms1024m -Xmx1024m -Xss512k -XX:PermSize=64M -XX:MaxNewSize=256m -XX:MaxPermSize=128m -Djava.awt.headless=true
-重新启动Tomcat，正常启动了

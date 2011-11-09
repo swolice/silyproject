@@ -1,9 +1,0 @@
-直接修改ANT的运行文件:ant.bat ,设置JAVA_HOME,这样所有的ANT都使用设定的JDK也是一种方法; 我以前做Jetty也是这么做的,挺方便; 
-
-方法2: 
-  <javac srcdir="${src}" 
-         destdir="${build}" 
-         fork="yes"         
-         executable="/opt/java/jdk1.1/bin/javac" 
-         compiler="javac1.5" 
-  />

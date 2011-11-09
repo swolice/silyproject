@@ -1,9 +1,0 @@
-Html中Readonly和Disabled的区别2007-09-07 13:20Readonly和Disabled是用在表单中的两个属性，它们都能够做到使用户不能够更改表单域中的内容。但是它们之间有着微小的差别，我在实践中得到了一些规律，总结如下：
-Readonly只针对input(text / password)和textarea有效，而disabled对于所有的表单元素都有效，包括select, radio, checkbox, button等。但是表单元素在使用了disabled后，当我们将表单以POST或GET的方式提交的话，这个元素的值不会被传递出去，而readonly会将该值传递出去(这种情况出现在我们将某个表单中的textarea元素设置为disabled或readonly，但是submit button却是可以使用的)。
-一般比较常用的情况是：
-①在某个表单中为用户预填了某个唯一识别代码，不允许用户改动，但是在提交时需要传递该值，此时应该将它的属性设置为readonly
-②经常遇到当用户正式提交了表单后需要等待管理员的信息验证，这就不允许用户再更改表单中的数据，而是只能够查看，由于disabled的作用元素范围大，所以此时应该使用disabled，但同时应该注意的是要将submit button也disabled掉，否则只要用户按了这个按钮，如果在数据库操作页面中没有做完整性检测的话，数据库中的值就会被清除。如果说在这种情况下用readonly来代替disabled的话，若表单中只有input(text / password)和textarea元素，那还是可以的，如果存在其他发元素，比如select，用户可以在重新改写值后按回车键进行提交(回车是默认的submit触发按键)
-③我们常常在用户按了提交按钮后，利用javascript将提交按钮disabled掉，这样可以防止网络条件比较差的环境下，用户反复点提交按钮导致数据冗余地存入数据库。 
-
-
-用javascript控制readonly属性 本来以为document.myform.myfield.readonly=false 肯定可以,结果错误.有人提出采用将myfield加一个ID然后用ID控制readonly 属性document.getElementById("MyfieldID").readOnly=false为何前者错误不得其解?!查资料仔细对比,得正解:readOnly而非readonly。document.myform.myfield.readOnly=false 这个才是对的。
