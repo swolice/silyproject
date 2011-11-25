@@ -30,7 +30,8 @@ public class SvnKitTest {
 					.parseURIDecoded(url));
 
 			ISVNAuthenticationManager authManager = SVNWCUtil
-					.createDefaultAuthenticationManager("jishijun204@163.com", "Ce3sy3xB5Gc3");
+					.createDefaultAuthenticationManager("jishijun204@163.com",
+							"Ce3sy3xB5Gc3");
 
 			repository.setAuthenticationManager(authManager);
 
@@ -38,21 +39,23 @@ public class SvnKitTest {
 			ISVNEditor editor = repository.getCommitEditor(logMessage,
 					null /* locks */, true /* keepLocks */, null /* mediator */);
 
-			addDir(editor,
+			SVNCommitInfo svnCommitInfo = addDir(
+					editor,
 					" sily_file",
 					"20111118204542.jpg",
 					getBytesFromFile("C:/Users/sily/Desktop/sily_file/20111118204542.jpg"));
+			
+			System.out.println(svnCommitInfo.getNewRevision());
 
 		} catch (SVNException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
-	
+
 	public static byte[] getBytesFromFile(String file) {
 		File f = new File(file);
-		if(!f.exists()){
+		if (!f.exists()) {
 			return null;
 		}
 		try {
