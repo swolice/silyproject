@@ -8,7 +8,7 @@ import org.springframework.web.util.HtmlUtils;
 import com.sily.publish.WordPressPost;
 import com.sily.util.ReadFile;
 
-public class JsoupTest {
+public class JsoupTest { 
 
 	public static void main(String[] args) {
 		ReadFile rFile = new ReadFile();
