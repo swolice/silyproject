@@ -17,7 +17,7 @@ import com.cthq.crm.project.common.xml.imp.XMLCommonReader;
 import com.cthq.crm.project.common.xml.imp.XMLNode;
 import com.cthq.crm.project.common.xml.imp.XMLNodeCollection.Entry;
 
-public class DescStru {
+public class DescStru { 
 
 	public XMLBaseReader xmlStruRead(String xmlPath) {
 		XMLCommonReader xmlCB = new XMLCommonReader();
