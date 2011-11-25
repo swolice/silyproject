@@ -24,6 +24,8 @@ public class FileType {
 	static {
 		getAllFileType(); // 初始化文件类型信息
 	}
+	
+	
 
 	/**
 	 * Created on 2010-7-1
