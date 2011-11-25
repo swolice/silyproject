@@ -29,11 +29,12 @@ public class SvnKitTest {
 			svnCommitInfo = addDir(
 					editor,
 					" sily_file",
-					"201111182045421.jpg",
+					"201111182045422.jpg",
 					getBytesFromFile("C:/Users/sily/Desktop/sily_file/20111118204542.jpg"));
 			System.out.println(svnCommitInfo.getNewRevision());
 			
 			System.out.println(svnCommitInfo.getAuthor());
+			
 		} catch (SVNException e) {
 			e.printStackTrace();
 		}
