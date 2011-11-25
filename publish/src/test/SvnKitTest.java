@@ -20,10 +20,30 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 public class SvnKitTest {
 
 	public static void main(String[] args) {
-
+		ISVNEditor editor = init();
+		if(editor == null){
+			return;
+		}
+		SVNCommitInfo svnCommitInfo;
+		try {
+			svnCommitInfo = addDir(
+					editor,
+					" sily_file",
+					"201111182045421.jpg",
+					getBytesFromFile("C:/Users/sily/Desktop/sily_file/20111118204542.jpg"));
+			System.out.println(svnCommitInfo.getNewRevision());
+			
+			System.out.println(svnCommitInfo.getAuthor());
+		} catch (SVNException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static ISVNEditor init(){
 		FSRepositoryFactory.setup();
 		String url = "https://silyproject.googlecode.com/svn/trunk/";
-
+		ISVNEditor editor = null;
 		SVNRepository repository;
 		try {
 			repository = SVNRepositoryFactory.create(SVNURL
@@ -36,21 +56,14 @@ public class SvnKitTest {
 			repository.setAuthenticationManager(authManager);
 
 			String logMessage = "svnkit test log ";
-			ISVNEditor editor = repository.getCommitEditor(logMessage,
+			editor = repository.getCommitEditor(logMessage,
 					null /* locks */, true /* keepLocks */, null /* mediator */);
-
-			SVNCommitInfo svnCommitInfo = addDir(
-					editor,
-					" sily_file",
-					"20111118204542.jpg",
-					getBytesFromFile("C:/Users/sily/Desktop/sily_file/20111118204542.jpg"));
-			
-			System.out.println(svnCommitInfo.getNewRevision());
 
 		} catch (SVNException e) {
 			e.printStackTrace();
 		}
-
+		
+		return editor;
 	}
 
 	public static byte[] getBytesFromFile(String file) {
