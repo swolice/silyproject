@@ -32,7 +32,7 @@ package com.sily.util;
  *
  * @author Juergen Hoeller
  * @author Martin Kersten
- * @since 01.03.2003
+ * @since 01.03.2003 
  * @see org.apache.commons.lang.StringEscapeUtils
  */
 public abstract class HtmlUtils {
