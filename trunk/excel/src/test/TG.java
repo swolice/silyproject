@@ -34,7 +34,7 @@ public class TG {
 		
 		List list_x = ds.getXmlLevelItemList(xmlbr, "excel/modular/section");
 		
-		
+		 
 		List list = ds.getXmlLevelItemList(xmlbr, "excel/global");
 		if (!list.isEmpty()) {
 			Map map = (Map) list.get(0);
