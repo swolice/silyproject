@@ -44,7 +44,7 @@ public class WpTest {
 		
 		try {
 //			String desc = new String(readFromFile("C:/Users/sily/Desktop/test.txt"));
-			publishPost("知识扩充：企业博客、MetaWeblog 和 XML-RPC",desc);
+			publishPost("title",desc);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
