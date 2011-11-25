@@ -14,7 +14,7 @@ import com.cthq.crm.project.common.xml.imp.XMLBaseReader;
 
 public class TG {
 	public static void main(String[] args) throws Exception {
-		String filePath = "d:/我的桌面/test.xls";
+		String filePath = "C:/Users/sily/Desktop/test.xls";
 		TG tg = new TG();
 		// jxlWriteImg.writeImg(filePath);
 		tg.exeExcelWrite(filePath);
@@ -23,13 +23,13 @@ public class TG {
 	private void exeExcelWrite(String filePath) throws Exception {
 		Workbook wb = Workbook.getWorkbook(new File(filePath));
 		WritableWorkbook wwb = Workbook.createWorkbook(new File(
-				"d:/我的桌面/test1.xls"), wb);
+				"C:/Users/sily/Desktop/test1.xls"), wb);
 		WritableSheet ws = wwb.getSheet(0);
 		DescStru ds = new DescStru();
 		Map dataMap = new HashMap();
 		dataMap.put("title", "例如1：Shanghai->HKG->Malaysia-Pakistan");
 		/* 左上角的标题 */
-		XMLBaseReader xmlbr = ds.xmlStruRead("d:/我的桌面/desc_stru.xml");
+		XMLBaseReader xmlbr = ds.xmlStruRead("C:/Users/sily/Desktop/desc_stru.xml");
 		
 		List list_x = ds.getXmlLevelItemList(xmlbr, "excel/modular/section");
 		
@@ -103,7 +103,7 @@ public class TG {
 			dataMap.put("row", row1 + 2 + "");
 			dataMap.put("width",width + "");
 			dataMap.put("height", "0.1");
-			dataMap.put("src", "d:/我的桌面/" + margin_src_x);
+			dataMap.put("src", "C:/Users/sily/Desktop/" + margin_src_x);
 			ds.writeImg(ws, dataMap);
 		}
 			
@@ -116,7 +116,7 @@ public class TG {
 		imgMap.put("row", row_r + 1 + "");
 		imgMap.put("width",last_col - col1 + 1.5 + "");
 		imgMap.put("height","2");
-		imgMap.put("src", "d:/我的桌面/" + supplier_margin);
+		imgMap.put("src", "C:/Users/sily/Desktop/" + supplier_margin);
 		ds.writeImg(ws, imgMap);
 		
 		String margin_src_y = map.get("supplier-margin").toString();
@@ -125,7 +125,7 @@ public class TG {
 		imgMap.put("row", row_r + "");
 		imgMap.put("width","0.1");
 		imgMap.put("height",last_row + 1 + "");
-		imgMap.put("src", "d:/我的桌面/" + margin_src_y);
+		imgMap.put("src", "C:/Users/sily/Desktop/" + margin_src_y);
 		ds.writeImg(ws, imgMap);
 		
 	}
