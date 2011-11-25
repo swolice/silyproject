@@ -17,6 +17,7 @@ public class TG {
 		String filePath = "C:/Users/sily/Desktop/test.xls";
 		TG tg = new TG();
 		// jxlWriteImg.writeImg(filePath);
+		
 		tg.exeExcelWrite(filePath);
 	}
 
