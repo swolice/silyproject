@@ -39,7 +39,7 @@ public class WpTest {
 	public static void main(String[] args){
 
 		ReadFile rf =  new ReadFile();
-		
+		 
 		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
 		
 		try {
