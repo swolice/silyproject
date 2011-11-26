@@ -20,33 +20,53 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 public class SvnKitTest {
 
-	public static void main(String[] args) {
-		ISVNEditor editor = init();
-		if(editor == null){
-			return;
-		}
-		SVNCommitInfo svnCommitInfo;
-		try {
-			svnCommitInfo = addDir(
+	public static void main(String[] args) throws SVNException {
+		
+		SVNRepository repository = init();
+		
+		SVNNodeKind nodeKind = repository.checkPath( "test" , -1 );
+		
+		String logMessage = "svnkit test log ";
+		ISVNEditor editor = repository.getCommitEditor(logMessage,
+				null /* locks */, true /* keepLocks */, null /* mediator */);
+
+        if ( nodeKind == SVNNodeKind.NONE ) {
+            System.out.println( "No entry at URL " + repository.getLocation() );
+            
+            SVNCommitInfo svnCommitInfo = addDir(
 					editor,
 					"test",
-					"a3111.png",
-					getBytesFromFile("D:/我的桌面/sily_file/a3.png"));
-			System.out.println(svnCommitInfo.getNewRevision());
-			
-			System.out.println(svnCommitInfo.getAuthor());
-			
-		} catch (SVNException e) {
-			e.printStackTrace();
-		}
+					"a6.jpg",
+					getBytesFromFile("C:/Users/sily/Desktop/20111118204542.jpg"));
+            
+            System.out.println(svnCommitInfo.getNewRevision());
+    		
+    		System.out.println(svnCommitInfo.getAuthor());
+            
+            return;
+            //System.exit( 1 );
+        } else if ( nodeKind == SVNNodeKind.FILE ) {
+            System.out.println( "Entry at URL " + repository.getLocation()  + " is a file while directory was expected" );
+            System.exit( 1 );
+        }
+        
+        SVNCommitInfo svnCommitInfo = addFile(
+				editor,
+				"test",
+				"a6.jpg",
+				getBytesFromFile("C:/Users/sily/Desktop/20111118204542.jpg"));
 		
+        System.out.println(svnCommitInfo.getNewRevision());
+		
+		System.out.println(svnCommitInfo.getAuthor());
+
 	}
 	
-	public static ISVNEditor init(){
+	public static SVNRepository init(){
 		FSRepositoryFactory.setup();
 		String url = "https://silyproject.googlecode.com/svn/trunk/ sily_file/images/";
-		ISVNEditor editor = null;
-		SVNRepository repository;
+		
+		SVNRepository repository = null;
 		try {
 			repository = SVNRepositoryFactory.create(SVNURL
 					.parseURIDecoded(url));
@@ -57,26 +77,11 @@ public class SvnKitTest {
 
 			repository.setAuthenticationManager(authManager);
 			
-			SVNNodeKind nodeKind = repository.checkPath( "test" , -1 );
-
-	        if ( nodeKind == SVNNodeKind.NONE ) {
-	            System.out.println( "No entry at URL " + url );
-	            
-	            //System.exit( 1 );
-	        } else if ( nodeKind == SVNNodeKind.FILE ) {
-	            System.out.println( "Entry at URL " + url + " is a file while directory was expected" );
-	            System.exit( 1 );
-	        }
-
-			String logMessage = "svnkit test log ";
-			editor = repository.getCommitEditor(logMessage,
-					null /* locks */, true /* keepLocks */, null /* mediator */);
-
 		} catch (SVNException e) {
 			e.printStackTrace();
 		}
 		
-		return editor;
+		return repository;
 	}
 
 	public static byte[] getBytesFromFile(String file) {
