@@ -5,9 +5,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.springframework.core.SimpleAliasRegistry;
 import org.tmatesoft.svn.core.SVNCommitInfo;
 import org.tmatesoft.svn.core.SVNException;
+import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.SVNURL;
 import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
 import org.tmatesoft.svn.core.internal.io.fs.FSRepositoryFactory;
@@ -19,12 +23,75 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 public class SvnKitLogic {
 	
+	public static void main(String[] args) {
+		try {
+			
+//			
+//			String ext_name = new File("E:/sily/Pictures/DSCN6999.JPG").getName();
+//			System.out.println(ext_name.lastIndexOf("."));
+//			ext_name = ext_name.substring(ext_name.lastIndexOf("."));
+//			
+//			System.out.println(ext_name);
+//			
+			String str = SvnKitLogic.process(new File("E:/sily/Pictures/DSCN6999.JPG"));
+			System.out.println(str);
+		} catch (SVNException e) {
+			e.printStackTrace();
+		}
+	}
 	
-	private static ISVNEditor init(){
+
+	public static final String url = "https://silyproject.googlecode.com/svn/trunk/ sily_file/images/";
+
+	public static String process(File f) throws SVNException {
+
+		SVNRepository repository = init();
+
+		SVNNodeKind nodeKind = repository.checkPath("test", -1);
+
+		String logMessage = "svnkit test log ";
+		ISVNEditor editor = repository.getCommitEditor(logMessage,
+				null /* locks */, true /* keepLocks */, null /* mediator */);
+
+		SimpleDateFormat sFormat = new SimpleDateFormat("yyyyMM");
+		String nyString = sFormat.format(new Date());
+
+		String ext_name = f.getName();
+		ext_name = ext_name.substring(ext_name.lastIndexOf("."));
+
+		String nameString = System.currentTimeMillis() + ext_name;
+
+		SVNCommitInfo svnCommitInfo = null;
+
+		if (nodeKind == SVNNodeKind.NONE) {
+			System.out.println("No entry at URL " + repository.getLocation());
+
+			// 添加目录 文件
+			svnCommitInfo = addDir(editor, nyString, nameString,
+					getBytesFromFile(f));
+
+			// System.exit( 1 );
+		} else if (nodeKind == SVNNodeKind.FILE) {
+			System.out.println("Entry at URL " + repository.getLocation()
+					+ " is a file while directory was expected");
+
+			// System.exit(1);
+		} else {
+			// 直接添加文件
+			svnCommitInfo = addFile(editor, nyString, nameString,
+					getBytesFromFile(f));
+
+		}
+		System.out.println(svnCommitInfo.getNewRevision());
+		System.out.println(svnCommitInfo.getAuthor());
+		
+		return url + "/" + nyString + "/" + nameString;
+	}
+
+	private static SVNRepository init() {
 		FSRepositoryFactory.setup();
-		String url = "https://silyproject.googlecode.com/svn/trunk/";
-		ISVNEditor editor = null;
-		SVNRepository repository;
+
+		SVNRepository repository = null;
 		try {
 			repository = SVNRepositoryFactory.create(SVNURL
 					.parseURIDecoded(url));
@@ -35,15 +102,11 @@ public class SvnKitLogic {
 
 			repository.setAuthenticationManager(authManager);
 
-			String logMessage = "上传图片到自己的网站swjsj.com";
-			editor = repository.getCommitEditor(logMessage,
-					null /* locks */, true /* keepLocks */, null /* mediator */);
-
 		} catch (SVNException e) {
 			e.printStackTrace();
 		}
-		
-		return editor;
+
+		return repository;
 	}
 
 	private static byte[] getBytesFromFile(File f) {
@@ -66,20 +129,21 @@ public class SvnKitLogic {
 	}
 
 	private static SVNCommitInfo addDir(ISVNEditor editor, String dirPath,
-			String fileName, byte[] data) throws SVNException {
+			String filePath, byte[] data) throws SVNException {
+
 		editor.openRoot(-1);
 
-		editor.openDir(dirPath, -1);
+		editor.addDir(dirPath, null, -1);
 
-		editor.addFile(fileName, null, -1);
+		editor.addFile(filePath, null, -1);
 
-		editor.applyTextDelta(fileName, null);
+		editor.applyTextDelta(filePath, null);
 
 		SVNDeltaGenerator deltaGenerator = new SVNDeltaGenerator();
-		String checksum = deltaGenerator.sendDelta(fileName,
+		String checksum = deltaGenerator.sendDelta(filePath,
 				new ByteArrayInputStream(data), editor, true);
 
-		editor.closeFile(fileName, checksum);
+		editor.closeFile(filePath, checksum);
 
 		// Closes dirPath.
 		editor.closeDir();
@@ -89,25 +153,30 @@ public class SvnKitLogic {
 
 		return editor.closeEdit();
 	}
-	
-	public static String process(File f,String svnPath){
-		ISVNEditor editor = init();
-		if(editor == null){
-			return "";
-		}
-		SVNCommitInfo svnCommitInfo;
-		try {
-			svnCommitInfo = addDir(
-					editor,
-					svnPath,
-					f.getName(),
-					getBytesFromFile(f));
-			System.out.println(svnCommitInfo.getNewRevision());
-			System.out.println(svnCommitInfo.getAuthor());
-			return "https://silyproject.googlecode.com/svn/trunk/" + svnPath + "/" + f.getName();
-		} catch (SVNException e) {
-			e.printStackTrace();
-		}
-		return "";
+
+	private static SVNCommitInfo addFile(ISVNEditor editor, String dirPath,
+			String filePath, byte[] data) throws SVNException {
+
+		editor.openRoot(-1);
+
+		editor.openDir(dirPath, -1);
+
+		editor.addFile(filePath, null, -1);
+
+		editor.applyTextDelta(filePath, null);
+
+		SVNDeltaGenerator deltaGenerator = new SVNDeltaGenerator();
+		String checksum = deltaGenerator.sendDelta(filePath,
+				new ByteArrayInputStream(data), editor, true);
+
+		editor.closeFile(filePath, checksum);
+
+		// Closes dirPath.
+		editor.closeDir();
+
+		// Closes the root directory.
+		editor.closeDir();
+
+		return editor.closeEdit();
 	}
 }
