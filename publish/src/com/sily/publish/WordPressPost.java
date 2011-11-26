@@ -23,7 +23,6 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import com.sily.util.FileType;
 import com.sily.util.HtmlUtils;
 import com.sily.util.ReadFile;
 import com.sily.util.StringUtils;
@@ -73,14 +72,24 @@ public class WordPressPost {
 		}
 	}
 	
+	
+	/**
+	 * 发布媒体文件， 图片，附件
+	 * @param file
+	 * @return
+	 * @throws Exception
+	 */
 	public static String publishMedia(File file) throws Exception {
-		byte[] bytes = getOutExcelByteCon(file);
-		String mineType =  FileType.getMineType(file);
-		if(StringUtils.isNotNull(mineType)){
-			return publishMedia(file.getName(),mineType,bytes);
-		}else{
-			return null;
-		}
+//		byte[] bytes = getOutExcelByteCon(file);
+//		String mineType =  FileType.getMineType(file);
+//		if(StringUtils.isNotNull(mineType)){
+//			return publishMedia(file.getName(),mineType,bytes);
+//		}else{
+//			return null;
+//		}
+		
+//		SvnKitLogic.process(f, svnPath);
+		return "";
 	}
 	
 	public static String publishMedia(File file,String mineType) throws Exception {

@@ -20,7 +20,7 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 public class SvnKitLogic {
 	
 	
-	public static ISVNEditor init(){
+	private static ISVNEditor init(){
 		FSRepositoryFactory.setup();
 		String url = "https://silyproject.googlecode.com/svn/trunk/";
 		ISVNEditor editor = null;
@@ -35,7 +35,7 @@ public class SvnKitLogic {
 
 			repository.setAuthenticationManager(authManager);
 
-			String logMessage = "svnkit test log ";
+			String logMessage = "上传图片到自己的网站swjsj.com";
 			editor = repository.getCommitEditor(logMessage,
 					null /* locks */, true /* keepLocks */, null /* mediator */);
 
@@ -46,7 +46,7 @@ public class SvnKitLogic {
 		return editor;
 	}
 
-	public static byte[] getBytesFromFile(File f) {
+	private static byte[] getBytesFromFile(File f) {
 		if (!f.exists()) {
 			return null;
 		}
@@ -66,20 +66,20 @@ public class SvnKitLogic {
 	}
 
 	private static SVNCommitInfo addDir(ISVNEditor editor, String dirPath,
-			String filePath, byte[] data) throws SVNException {
+			String fileName, byte[] data) throws SVNException {
 		editor.openRoot(-1);
 
 		editor.openDir(dirPath, -1);
 
-		editor.addFile(filePath, null, -1);
+		editor.addFile(fileName, null, -1);
 
-		editor.applyTextDelta(filePath, null);
+		editor.applyTextDelta(fileName, null);
 
 		SVNDeltaGenerator deltaGenerator = new SVNDeltaGenerator();
-		String checksum = deltaGenerator.sendDelta(filePath,
+		String checksum = deltaGenerator.sendDelta(fileName,
 				new ByteArrayInputStream(data), editor, true);
 
-		editor.closeFile(filePath, checksum);
+		editor.closeFile(fileName, checksum);
 
 		// Closes dirPath.
 		editor.closeDir();
@@ -103,9 +103,7 @@ public class SvnKitLogic {
 					f.getName(),
 					getBytesFromFile(f));
 			System.out.println(svnCommitInfo.getNewRevision());
-			
 			System.out.println(svnCommitInfo.getAuthor());
-			
 			return "https://silyproject.googlecode.com/svn/trunk/" + svnPath + "/" + f.getName();
 		} catch (SVNException e) {
 			e.printStackTrace();
