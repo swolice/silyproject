@@ -269,6 +269,7 @@ public class ReceiveMail {
 			Properties pops = new Properties();
 			pops.put("mail.pop3.host", host);
 			pops.put("mail.pop.auth", "true");
+			pops.setProperty("mail.pop3.starttls.enable", "true");
 			Session session = Session.getDefaultInstance(pops, null);
 			store = session.getStore("pop3");
 			store.connect(host, userName, password);
@@ -304,9 +305,59 @@ public class ReceiveMail {
 					store.close();
 			} catch (MessagingException e) {
 				log.error(e.getMessage(), e);
+				delMessage(receiveMailBoxAddress, userName, password);
 			}
 		}
 	}
+	
+	public void delMessage(String receiveMailBoxAddress, String userName,
+			String password){
+		Store store = null;
+		Folder inbox = null;
+		try {
+			Properties pops = new Properties();
+			pops.put("mail.pop3.host", host);
+			pops.put("mail.pop.auth", "true");
+			pops.setProperty("mail.pop3.starttls.enable", "true");
+			Session session = Session.getDefaultInstance(pops, null);
+			store = session.getStore("pop3");
+			store.connect(host, userName, password);
+			inbox = store.getDefaultFolder().getFolder("INBOX");
+			// 设置inbox对象属性为可读写，这样可以控制读完邮件后直接删除该附件
+			inbox.open(Folder.READ_WRITE);
+			Message[] msg = inbox.getMessages();
+			FetchProfile profile = new FetchProfile();
+			profile.add(FetchProfile.Item.ENVELOPE);
+			inbox.fetch(msg, profile);
+			for (int i = 0; i < msg.length; i++) {
+				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删
+				//除该邮件，在调用inbox.close（）时
+				//不支持其他的操作，pop3，有些服务器可能支持
+				msg[i].setFlag(Flags.Flag.DELETED, true);
+//				try {
+//					handleMultipart(msg[i]);
+//				} catch (Exception e) {
+//					log.error("--------------handleMultipart(msg[i])----------------------------",e);
+//				}
+			}
+		} catch (NoSuchProviderException e) {
+			log.error(e.getMessage(),e);
+		} catch (MessagingException e) {
+			log.error(e.getMessage(),e);
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}finally{
+			try {
+				if (inbox != null)
+					inbox.close(true);
+				if (store != null)
+					store.close();
+			} catch (MessagingException e) {
+				log.error(e.getMessage(), e);
+			}
+		}
+	}
+	
 	
 	public  static String getSaveAttaPath() throws CheckValidateException{
 		String mailpath = PublishResourceBundle.getResourcesAbsolutePath("mail.properties");
