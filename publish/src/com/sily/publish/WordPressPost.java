@@ -23,125 +23,119 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import com.sily.util.FileType;
 import com.sily.util.HtmlUtils;
 import com.sily.util.ReadFile;
 import com.sily.util.StringUtils;
 
 /**
- * 名称： DemoPost 
- * 描述： 创建人： sily 
- * 创建时间： 2011-6-29 上午08:38:56 
- * 修改人：
- *  修改时间： 
- *  修改备注：
+ * 名称： DemoPost 描述： 创建人： sily 创建时间： 2011-6-29 上午08:38:56 修改人： 修改时间： 修改备注：
  * 
  * @version 1.0
  */
 public class WordPressPost {
-	
+
 	public static Logger log = Logger.getLogger("publish");
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
-		ReadFile rf =  new ReadFile();
-		
-//		String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt", "GBK");
-		
+		ReadFile rf = new ReadFile();
+
+		// String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt",
+		// "GBK");
+
 		try {
-			String desc =rf.getFileContent("d:/我的桌面/test.txt","GBK");
+			String desc = rf.getFileContent("d:/我的桌面/test.txt", "GBK");
 
-//			Document doc = Jsoup.parse(desc);
-//			String text = doc.body().text();
-//			String excerpt = text;
-			
-//			System.out.println(excerpt);
-			
-//			publishPost("test",desc);
-			
-			
-			
-//			File file = new File("D:/我的桌面/clock.avi");
-//			byte[] bytes = getOutExcelByteCon(file);
-//			publishMedia(file.getName(),FileType.getMineType(file),bytes);
-			
-			
-			publishPost("vim学习教程",desc);
-			
+			// Document doc = Jsoup.parse(desc);
+			// String text = doc.body().text();
+			// String excerpt = text;
+
+			// System.out.println(excerpt);
+
+			// publishPost("test",desc);
+
+			// File file = new File("D:/我的桌面/clock.avi");
+			// byte[] bytes = getOutExcelByteCon(file);
+			// publishMedia(file.getName(),FileType.getMineType(file),bytes);
+
+			publishPost("vim学习教程", desc);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	/**
 	 * 发布媒体文件， 图片，附件
+	 * 
 	 * @param file
 	 * @return
 	 * @throws Exception
 	 */
 	public static String publishMedia(File file) throws Exception {
 //		byte[] bytes = getOutExcelByteCon(file);
-//		String mineType =  FileType.getMineType(file);
-//		if(StringUtils.isNotNull(mineType)){
-//			return publishMedia(file.getName(),mineType,bytes);
-//		}else{
-//			return null;
-//		}
-		
-//		SvnKitLogic.process(f, svnPath);
-		return "";
+		String mineType = FileType.getMineType(file);
+		String urlString = null;
+		if (StringUtils.isNotNull(mineType)) {
+			// publishMedia(file.getName(),mineType,bytes);
+			urlString = SvnKitLogic.process(file);
+		}
+
+		return urlString;
 	}
-	
-	public static String publishMedia(File file,String mineType) throws Exception {
+
+	public static String publishMedia(File file, String mineType)
+			throws Exception {
 		byte[] bytes = getOutExcelByteCon(file);
-		if(StringUtils.isNotNull(mineType)){
-			return publishMedia(file.getName(),mineType,bytes);
-		}else{
+		if (StringUtils.isNotNull(mineType)) {
+			return publishMedia(file.getName(), mineType, bytes);
+		} else {
 			return null;
 		}
 	}
-	
-	
+
 	/**
 	 * 发布文章
+	 * 
 	 * @param title
 	 * @param desc
 	 * @throws Exception
 	 */
-	public static void publishPost(String title,String desc) throws Exception {
+	public static void publishPost(String title, String desc) throws Exception {
 		try {
 			// Set up XML-RPC connection to server
 			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-			config.setServerURL(new URL(
-					"http://www.swjsj.com/xmlrpc.php"));
+			config.setServerURL(new URL("http://www.swjsj.com/xmlrpc.php"));
 			XmlRpcClient client = new XmlRpcClient();
 			client.setConfig(config);
-	
+
 			// Set up parameters required by newPost method
 			Map<String, String> post = new HashMap<String, String>();
 			post.put("title", title);
-			//post.put("link", "http://sily.sinaapp.com/");
-			post.put("description",desc);
-			
-			
+			// post.put("link", "http://sily.sinaapp.com/");
+
 			Document doc = Jsoup.parse(desc);
+			post.put("description", doc.body().html());
+			
 			String text = doc.body().text();
 			String excerpt = text;
-			if(text.length()>800){
+			if (text.length() > 800) {
 				excerpt = text.substring(0, 800);
 			}
-			excerpt =  HtmlUtils.htmlEscape(excerpt);
-			post.put("mt_excerpt",excerpt.replaceAll("\\。", "。\r\n"));//摘要
-			
+			excerpt = HtmlUtils.htmlEscape(excerpt);
+			post.put("mt_excerpt", excerpt.replaceAll("\\。", "。\r\n"));// 摘要
+
 			Object[] params = new Object[] { "1", "sily", "jishijun", post,
 					Boolean.TRUE };
-	
+
 			// Call newPost
-		
-			String result = (String) client.execute("metaWeblog.newPost", params);
+
+			String result = (String) client.execute("metaWeblog.newPost",
+					params);
 			log.info(" Created with blogid " + result);
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		}
 	}
 
@@ -152,58 +146,61 @@ public class WordPressPost {
 	 * @throws Exception
 	 */
 	private static byte[] readFromFile(String src) throws Exception {
-        byte data[];
-        File file = new File(src);
-        InputStream in = new FileInputStream(src);
-        data = new byte[(int)file.length()];
-        in.read(data);
-        in.close();
-        return data;
-    }
-	
+		byte data[];
+		File file = new File(src);
+		InputStream in = new FileInputStream(src);
+		data = new byte[(int) file.length()];
+		in.read(data);
+		in.close();
+		return data;
+	}
+
 	/**
 	 * 发布多媒体文件
+	 * 
 	 * @param name
 	 * @param type
 	 * @param bytes
 	 * @return
 	 * @throws Exception
 	 */
-	public static String publishMedia(String name,String type,byte[] bytes) throws Exception{
+	public static String publishMedia(String name, String type, byte[] bytes)
+			throws Exception {
 		// Set up XML-RPC connection to server
 		try {
 			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-			config.setServerURL(new URL(
-			"http://www.swjsj.com/xmlrpc.php"));
+			config.setServerURL(new URL("http://www.swjsj.com/xmlrpc.php"));
 			XmlRpcClient client = new XmlRpcClient();
 			client.setConfig(config);
-			
+
 			// Set up parameters required by newPost method
 			Map<String, Object> post = new HashMap<String, Object>();
 			post.put("name", name);
 			post.put("type", type);
-			post.put("bits",bytes);
-			Object[] params = new Object[] { "1", "sily", "jishijun", post};
-			
+			post.put("bits", bytes);
+			Object[] params = new Object[] { "1", "sily", "jishijun", post };
+
 			// Call newPost
-			Map<String,String> result = (Map<String,String>) client.execute("metaWeblog.newMediaObject", params);
-			System.out.println(" metaWeblog.newMediaObject url: " + result.get("url"));
+			Map<String, String> result = (Map<String, String>) client.execute(
+					"metaWeblog.newMediaObject", params);
+			System.out.println(" metaWeblog.newMediaObject url: "
+					+ result.get("url"));
 			log.info(" metaWeblog.newMediaObject url: " + result.get("url"));
-			
+
 			return result.get("url");
 		} catch (Exception e) {
 			// TODO: handle exception
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		}
 		return "";
 	}
-	
+
 	/**
 	 * 获取excel数据的二进制数组
 	 * 
 	 * @return
 	 */
-	private  static byte[] getOutExcelByteCon(File excelFile) {
+	private static byte[] getOutExcelByteCon(File excelFile) {
 		byte[] attachBytes = null;
 		try {
 			FileInputStream inputStream = new FileInputStream(excelFile);
@@ -221,5 +218,5 @@ public class WordPressPost {
 		}
 		return null;
 	}
-	
+
 }
