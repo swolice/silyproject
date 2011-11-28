@@ -15,6 +15,8 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
+import com.sily.email.AttachmentPO;
+
 public class FileType {
 	public final static Map<String, String> FILE_TYPE_MAP = new HashMap<String, String>();
 
@@ -24,6 +26,7 @@ public class FileType {
 	static {
 		getAllFileType(); // 初始化文件类型信息
 	}
+
 	/**
 	 * Created on 2010-7-1
 	 * <p>
@@ -61,8 +64,8 @@ public class FileType {
 		FILE_TYPE_MAP.put("qdf", "AC9EBD8F"); // Quicken (qdf)
 		FILE_TYPE_MAP.put("pwl", "E3828596"); // Windows Password (pwl)
 		FILE_TYPE_MAP.put("wav", "57415645"); // Wave (wav)
-//		FILE_TYPE_MAP.put("avi", "41564920");
-		FILE_TYPE_MAP.put("avi", "52494646");//avi
+		// FILE_TYPE_MAP.put("avi", "41564920");
+		FILE_TYPE_MAP.put("avi", "52494646");// avi
 		FILE_TYPE_MAP.put("ram", "2E7261FD"); // Real Audio (ram)
 		FILE_TYPE_MAP.put("rm", "2E524D46"); // Real Media (rm)
 		FILE_TYPE_MAP.put("mpg", "000001BA"); //
@@ -72,36 +75,36 @@ public class FileType {
 	}
 
 	public static void main(String[] args) throws Exception {
-		File f = new File("D:/我的桌面/clock.avi");
-		
+		File f = new File("C:/Users/sily/Desktop/20111118204542.jpg");
+
 		if (f.exists()) {
 			String filetype1 = getImageFileType(f);
 			System.out.println(filetype1);
 			String filetype2 = getFileByFile(f);
 			System.out.println(filetype2);
-			if(null != filetype2){
+			if (null != filetype2) {
 				String minetype = MimeTypes.getMimeType(filetype2);
 				System.out.println(minetype);
 			}
 		}
 	}
-	
-	
-	public static String getMineType(File f){
-//		File f = new File(filePath);
+
+	public static String getMineType(File f) {
+		// File f = new File(filePath);
 		if (f.exists()) {
-//			String filetype1 = getImageFileType(f);
-//			System.out.println(filetype1);
+			// String filetype1 = getImageFileType(f);
+			// System.out.println(filetype1);
 			String filetype2 = getFileByFile(f);
-//			System.out.println(filetype2);
-			if(null != filetype2){
+			// System.out.println(filetype2);
+			if (null != filetype2) {
 				String minetype = MimeTypes.getMimeType(filetype2);
-//				System.out.println(minetype);
+				// System.out.println(minetype);
 				return minetype;
 			}
 		}
 		return null;
 	}
+
 	/**
 	 * Created on 2010-7-1
 	 * <p>
@@ -170,7 +173,7 @@ public class FileType {
 	 */
 	public final static String getFileTypeByStream(byte[] b) {
 		String filetypeHex = String.valueOf(getFileHexString(b));
-		System.out.println(filetypeHex);
+		// System.out.println(filetypeHex);
 		Iterator<Entry<String, String>> entryiterator = FILE_TYPE_MAP
 				.entrySet().iterator();
 		while (entryiterator.hasNext()) {
@@ -181,6 +184,37 @@ public class FileType {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Created on 2010-7-2
+	 * <p>
+	 * Discription:[isImage,判断文件是否为图片]
+	 * </p>
+	 * 
+	 * @param file
+	 * @return true 是 | false 否
+	 * @author:[shixing_11@sina.com]
+	 */
+	public static final boolean isImage(File file, AttachmentPO po) {
+		boolean flag = false;
+		try {
+			BufferedImage bufreader = ImageIO.read(file);
+			int width = bufreader.getWidth();
+			int height = bufreader.getHeight();
+			if (width == 0 || height == 0) {
+				flag = false;
+			} else {
+				po.setWidth(width);
+				po.setHeight(height);
+				flag = true;
+			}
+		} catch (IOException e) {
+			flag = false;
+		} catch (Exception e) {
+			flag = false;
+		}
+		return flag;
 	}
 
 	/**
