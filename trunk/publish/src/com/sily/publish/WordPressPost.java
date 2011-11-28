@@ -74,13 +74,13 @@ public class WordPressPost {
 	 * @throws Exception
 	 */
 	public static String publishMedia(File file) throws Exception {
-//		byte[] bytes = getOutExcelByteCon(file);
-		String mineType = FileType.getMineType(file);
+		// byte[] bytes = getOutExcelByteCon(file);
+		// String mineType = FileType.getMineType(file);
 		String urlString = null;
-		if (StringUtils.isNotNull(mineType)) {
-			// publishMedia(file.getName(),mineType,bytes);
-			urlString = SvnKitLogic.process(file);
-		}
+		// if (StringUtils.isNotNull(mineType)) {
+		// publishMedia(file.getName(),mineType,bytes);
+		urlString = SvnKitLogic.process(file);
+		// }
 
 		return urlString;
 	}
@@ -117,7 +117,7 @@ public class WordPressPost {
 
 			Document doc = Jsoup.parse(desc);
 			post.put("description", doc.body().html());
-			
+
 			String text = doc.body().text();
 			String excerpt = text;
 			if (text.length() > 800) {

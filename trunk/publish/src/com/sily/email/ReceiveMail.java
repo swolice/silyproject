@@ -39,24 +39,22 @@ import com.sily.util.StringUtils;
 import com.sily.validate.CheckValidateException;
 
 public class ReceiveMail {
-	
+
 	private List<AttachmentPO> attaList = new ArrayList<AttachmentPO>();
 
 	public static Logger log = Logger.getLogger("publish");
-	
+
 	private String host = "pop3.sina.com.cn";
-	
+
 	StringBuilder sb = new StringBuilder();
 	StringBuilder sb_html = new StringBuilder();
 
 	public static void main(String[] args) {
-		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae",
-				"123456");
+		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae", "123456");
 	}
-	
-	public static void logic(){
-		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae",
-		"123456");
+
+	public static void logic() {
+		new ReceiveMail().receive("sily_sae@sina.com", "sily_sae", "123456");
 	}
 
 	// 处理任何邮件时需要的方法
@@ -84,25 +82,26 @@ public class ReceiveMail {
 		BASE64Decoder decoder = new BASE64Decoder();
 		try {
 			byte[] b = decoder.decodeBuffer(s);
-			return new String(b,"GBK");
+			return new String(b, "GBK");
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 			throw e;
 		}
 	}
-	public static String toChinese(String strvalue){ 
-	    try{ 
-	      if(strvalue==null) 
-	        return null; 
-	      else{ 
-	        strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK"); 
-	        return strvalue; 
-	      } 
-	    }catch(Exception e){
-	    	log.error(e.getMessage(),e);
-	      return null; 
-	    } 
-	  } 
+
+	public static String toChinese(String strvalue) {
+		try {
+			if (strvalue == null)
+				return null;
+			else {
+				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");
+				return strvalue;
+			}
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+			return null;
+		}
+	}
 
 	// 保存附件
 	private String saveAttach(Part part) throws Exception {
@@ -114,31 +113,34 @@ public class ReceiveMail {
 		String fileName = temp;
 		temp = temp.toLowerCase();
 		if ((temp.startsWith("=?utf-8?b?") && temp.endsWith("?="))
-				|| (temp.startsWith("=?gbk?b?") && temp.endsWith("?="))||
-				(temp.startsWith("=?gb2312?b?") && temp.endsWith("?="))||
-				(temp.startsWith("=?") && temp.endsWith("?="))) {
-			temp = fileName.substring(temp.indexOf("?b?")+3, temp.indexOf("?="));
+				|| (temp.startsWith("=?gbk?b?") && temp.endsWith("?="))
+				|| (temp.startsWith("=?gb2312?b?") && temp.endsWith("?="))
+				|| (temp.startsWith("=?") && temp.endsWith("?="))) {
+			temp = fileName.substring(temp.indexOf("?b?") + 3,
+					temp.indexOf("?="));
 			temp = Base64Decoder(temp);
-//			temp =  new String(temp.getBytes("gb2312"), "utf-8"); 
+			// temp = new String(temp.getBytes("gb2312"), "utf-8");
 			fileName = MimeUtility.decodeText(temp);
 		} else {
 			temp = toChinese(temp);
 			fileName = MimeUtility.decodeText(temp);
 		}
-		
+
 		log.info("有附件：" + fileName);
-		
+
 		AttachmentPO po = new AttachmentPO();
 		po.setOldFileName(fileName);
 		InputStream in = part.getInputStream();
-		File path = new File(getSaveAttaPath() + File.separator + UUID.randomUUID());
-		if(!path.exists()){
+		File path = new File(getSaveAttaPath() + File.separator
+				+ UUID.randomUUID());
+		if (!path.exists()) {
 			path.mkdirs();
 		}
-		
-		String newFileName = UUID.randomUUID()+fileName.substring(fileName.lastIndexOf("."));
+
+		String newFileName = UUID.randomUUID()
+				+ fileName.substring(fileName.lastIndexOf("."));
 		po.setNewFileName(newFileName);
-		File attaStr  =  new File(path + File.separator + newFileName);
+		File attaStr = new File(path + File.separator + newFileName);
 		FileOutputStream writer = new FileOutputStream(attaStr);
 		int read = 0;
 		while ((read = in.read()) != -1) {
@@ -148,17 +150,17 @@ public class ReceiveMail {
 		in.close();
 		try {
 			String url = WordPressPost.publishMedia(attaStr);
-			if(StringUtils.isNotNull(url)){
+			if (StringUtils.isNotNull(url)) {
 				po.setUrl(url);
-				po.setImage(FileType.isImage(attaStr));
+				po.setImage(FileType.isImage(attaStr, po));
 				attaList.add(po);
 			}
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
-		}finally{
-//			attaStr.delete();
+			log.error(e.getMessage(), e);
+		} finally {
+			// attaStr.delete();
 		}
-		
+
 		return "";
 	}
 
@@ -166,7 +168,7 @@ public class ReceiveMail {
 	private void handleMultipart(Message msg) throws Exception {
 
 		BodyPart bodyPart;
-		
+
 		String contentType = msg.getContentType();
 		// 假如邮件内容是纯文本或者是Html，那么打印出信息
 		log.info("CONTENT:" + contentType);
@@ -175,10 +177,10 @@ public class ReceiveMail {
 			// System.out.println(msg.getContent());
 			String title = this.handle(msg);
 			String ss = msg.getContent().toString();
-			if(ss.length()>0){
+			if (ss.length() > 0) {
 				WordPressPost.publishPost(title, ss);
 			}
-		}else{
+		} else {
 			Object content = msg.getContent();
 			// 附件
 			Multipart mp = null;
@@ -193,14 +195,14 @@ public class ReceiveMail {
 					bodyPart = mp.getBodyPart(i);
 					handleMultipart(bodyPart);
 				}
-				if(sb_html.length()>0){
+				if (sb_html.length() > 0) {
 					String html = sb_html.toString();
-					if(!attaList.isEmpty()){
+					if (!attaList.isEmpty()) {
 						html = publishAtta(html);
 					}
-					WordPressPost.publishPost(title,html);
-				}else{
-					if(sb.length()>0){
+					WordPressPost.publishPost(title, html);
+				} else {
+					if (sb.length() > 0) {
 						WordPressPost.publishPost(title, sb.toString());
 					}
 				}
@@ -210,55 +212,61 @@ public class ReceiveMail {
 			}
 		}
 	}
-	
+
 	public void handleMultipart(Part bodyPart) throws Exception {
 		log.info(bodyPart.getContentType());
 		String disposition = bodyPart.getDisposition();
 		// 判断是否有附件
-		if (disposition != null && (disposition.equals(Part.ATTACHMENT)||disposition.equals(Part.INLINE))) {
-			//保存附件
+		if (disposition != null
+				&& (disposition.equals(Part.ATTACHMENT) || disposition
+						.equals(Part.INLINE))) {
+			// 保存附件
 			this.saveAttach(bodyPart);
-			//handleText(msg);
+			// handleText(msg);
 		} else {
-			if(bodyPart.getContentType().startsWith("text/plain")){
+			if (bodyPart.getContentType().startsWith("text/plain")) {
 				sb.append(bodyPart.getContent());
-			}else if(bodyPart.getContentType().startsWith("text/html")){
+			} else if (bodyPart.getContentType().startsWith("text/html")) {
 				sb_html.append(bodyPart.getContent());
-			}else if(bodyPart.isMimeType("multipart/*")){
-				Multipart multipart=(Multipart)bodyPart.getContent();
+			} else if (bodyPart.isMimeType("multipart/*")) {
+				Multipart multipart = (Multipart) bodyPart.getContent();
 				int mpCount = multipart.getCount();
 				for (int i = 0; i < mpCount; i++) {
 					bodyPart = multipart.getBodyPart(i);
 					handleMultipart(bodyPart);
 				}
-			}else if(bodyPart.isMimeType("message/rfc822")){
-				handleMultipart((Part)bodyPart.getContent());
-			}else if(bodyPart.isMimeType("image/jpeg")){
+			} else if (bodyPart.isMimeType("message/rfc822")) {
+				handleMultipart((Part) bodyPart.getContent());
+			} else if (bodyPart.isMimeType("image/jpeg")) {
 				this.saveAttach(bodyPart);
 			}
 		}
 	}
-	
-	private String publishAtta(String html){
+
+	private String publishAtta(String html) {
 		String attaStr = "";
 		int i = 0;
 		Document doc = Jsoup.parse(html);
 		Elements es = doc.getElementsByTag("img");
 		int src_length = es.size();
 		for (AttachmentPO apo : attaList) {
-			if(i<src_length&&apo.isImage()){
-				es.eq(i).attr("src", apo.getUrl()).attr("title", apo.getOldFileName());
+			if (i < src_length && apo.isImage()) {
+				es.eq(i).attr("src", apo.getUrl())
+						.attr("title", apo.getOldFileName())
+						.attr("width", apo.getWidth() + "")
+						.attr("height", apo.getHeight() + "");
 				i++;
-			}else{
-				attaStr += "<a href='"+ apo.getUrl()+"' title='"+apo.getOldFileName()+"'>"+apo.getOldFileName()+"</a>  ";
+			} else {
+				attaStr += "<a href='" + apo.getUrl() + "' title='"
+						+ apo.getOldFileName() + "' target='_blank'>" + apo.getOldFileName()
+						+ "</a>  ";
 			}
 		}
-		while(i < src_length){
+		while (i < src_length) {
 			es.eq(i++).remove();
 		}
 		return doc.body().html() + attaStr;
 	}
-	
 
 	// 接受邮件
 	public void receive(String receiveMailBoxAddress, String userName,
@@ -282,22 +290,24 @@ public class ReceiveMail {
 			inbox.fetch(msg, profile);
 			for (int i = 0; i < msg.length; i++) {
 				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删
-				//除该邮件，在调用inbox.close（）时
-				//不支持其他的操作，pop3，有些服务器可能支持
+				// 除该邮件，在调用inbox.close（）时
+				// 不支持其他的操作，pop3，有些服务器可能支持
 				msg[i].setFlag(Flags.Flag.DELETED, true);
 				try {
 					handleMultipart(msg[i]);
 				} catch (Exception e) {
-					log.error("--------------handleMultipart(msg[i])----------------------------",e);
+					log.error(
+							"--------------handleMultipart(msg[i])----------------------------",
+							e);
 				}
 			}
 		} catch (NoSuchProviderException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		} catch (MessagingException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
-		}finally{
+			log.error(e.getMessage(), e);
+		} finally {
 			try {
 				if (inbox != null)
 					inbox.close(true);
@@ -309,9 +319,9 @@ public class ReceiveMail {
 			}
 		}
 	}
-	
+
 	public void delMessage(String receiveMailBoxAddress, String userName,
-			String password){
+			String password) {
 		Store store = null;
 		Folder inbox = null;
 		try {
@@ -331,22 +341,22 @@ public class ReceiveMail {
 			inbox.fetch(msg, profile);
 			for (int i = 0; i < msg.length; i++) {
 				// 标记此邮件的flag标志对象的DELETEED为true，可以在看完邮件后直接删
-				//除该邮件，在调用inbox.close（）时
-				//不支持其他的操作，pop3，有些服务器可能支持
+				// 除该邮件，在调用inbox.close（）时
+				// 不支持其他的操作，pop3，有些服务器可能支持
 				msg[i].setFlag(Flags.Flag.DELETED, true);
-//				try {
-//					handleMultipart(msg[i]);
-//				} catch (Exception e) {
-//					log.error("--------------handleMultipart(msg[i])----------------------------",e);
-//				}
+				// try {
+				// handleMultipart(msg[i]);
+				// } catch (Exception e) {
+				// log.error("--------------handleMultipart(msg[i])----------------------------",e);
+				// }
 			}
 		} catch (NoSuchProviderException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		} catch (MessagingException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
-		}finally{
+			log.error(e.getMessage(), e);
+		} finally {
 			try {
 				if (inbox != null)
 					inbox.close(true);
@@ -357,23 +367,24 @@ public class ReceiveMail {
 			}
 		}
 	}
-	
-	
-	public  static String getSaveAttaPath() throws CheckValidateException{
-		String mailpath = PublishResourceBundle.getResourcesAbsolutePath("mail.properties");
-		Properties prop  = new Properties();
+
+	public static String getSaveAttaPath() throws CheckValidateException {
+		String mailpath = PublishResourceBundle
+				.getResourcesAbsolutePath("mail.properties");
+		Properties prop = new Properties();
 		try {
 			prop.load(new FileInputStream(new File(mailpath)));
 		} catch (FileNotFoundException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		} catch (IOException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 		}
 		String attaPath = prop.getProperty("attachment_path");
-		if(StringUtils.isNotNull(attaPath)){
-			return attaPath.endsWith("/")?attaPath:attaPath+"/";
-		}else{
-			new CheckValidateException("mail.properties文件中attachment_path的key不存在");
+		if (StringUtils.isNotNull(attaPath)) {
+			return attaPath.endsWith("/") ? attaPath : attaPath + "/";
+		} else {
+			new CheckValidateException(
+					"mail.properties文件中attachment_path的key不存在");
 			return "";
 		}
 	}

@@ -27,7 +27,7 @@ public class WordPressTimerTask extends TimerTask {
 	}
 	
 	public void run() {
-		Logger.getLogger("publish").info(" mail........run ");
+		Logger.getLogger("publish").info("  start  ");
 		
 		if (!getSwitch()) {
 			return;
@@ -40,6 +40,8 @@ public class WordPressTimerTask extends TimerTask {
 			executeLogic();
 			
 			isRunning = false;
+			
+			Logger.getLogger("publish").info("  end  ");
 		} else {
 			Logger.getLogger("publish").info("上一次任务执行还未结束");
 		}

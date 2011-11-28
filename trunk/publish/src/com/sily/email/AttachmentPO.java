@@ -6,6 +6,20 @@ public class AttachmentPO{
 	private String url;
 	private String oldFileName;
 	private boolean isImage;
+	private int width;
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	private int height;
 	
 	public boolean isImage() {
 		return isImage;
