@@ -25,9 +25,9 @@ import javax.mail.Store;
 import javax.mail.internet.MimeUtility;
 
 import org.apache.log4j.Logger;
-import org.apache.ws.commons.util.Base64;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import sun.misc.BASE64Decoder;
@@ -251,11 +251,29 @@ public class ReceiveMail {
 		int src_length = es.size();
 		for (AttachmentPO apo : attaList) {
 			if (i < src_length && apo.isImage()) {
-				es.eq(i).attr("src", apo.getUrl())
+				Element img = es.get(i);
+				int width = apo.getWidth();
+				int height = apo.getHeight();
+				if(width > 500 || height > 500){
+					width = width/2;
+					height = height/2;
+				}
+				img.attr("src", apo.getUrl())
 						.attr("title", apo.getOldFileName())
-						.attr("width", apo.getWidth() + "")
-						.attr("height", apo.getHeight() + "");
+						.attr("width", width + "")
+						.attr("height", height + "");
+				
 				i++;
+				if(null != img.parent()){
+					Element a = img.parent();
+					if("a".equalsIgnoreCase(a.nodeName())){
+						a.attr("href",apo.getUrl());
+						continue;
+					}
+				}
+				Element newEle = doc.createElement("a").attr("href",img.attr("src")).appendChild(img.clone());
+				img.after(newEle.outerHtml());
+				img.remove();
 			} else {
 				attaStr += "<a href='" + apo.getUrl() + "' title='"
 						+ apo.getOldFileName() + "' target='_blank'>" + apo.getOldFileName()
