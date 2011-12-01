@@ -254,7 +254,7 @@ public class ReceiveMail {
 				Element img = es.get(i);
 				int width = apo.getWidth();
 				int height = apo.getHeight();
-				if(width > 400 || height > 400){
+				while(width > 400 || height > 400){
 					width = width/2;
 					height = height/2;
 				}
