@@ -5,6 +5,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.tmatesoft.svn.core.SVNCommitInfo;
 import org.tmatesoft.svn.core.SVNException;
@@ -24,20 +26,26 @@ public class SvnKitTest {
 		
 		SVNRepository repository = init();
 		
-		SVNNodeKind nodeKind = repository.checkPath( "test" , -1 );
+		SimpleDateFormat sFormat = new SimpleDateFormat("yyyyMM");
+		String nyString = sFormat.format(new Date());
+		
+		SVNNodeKind nodeKind = repository.checkPath(nyString , -1 );
 		
 		String logMessage = "svnkit test log ";
 		ISVNEditor editor = repository.getCommitEditor(logMessage,
 				null /* locks */, true /* keepLocks */, null /* mediator */);
+		
+		String filepath = "F:/快盘/手机图片/kindle/20111205.jpg";
+		
 
         if ( nodeKind == SVNNodeKind.NONE ) {
             System.out.println( "No entry at URL " + repository.getLocation() );
             
             SVNCommitInfo svnCommitInfo = addDir(
 					editor,
-					"test",
-					"a6.jpg",
-					getBytesFromFile("C:/Users/sily/Desktop/20111118204542.jpg"));
+					nyString,
+					"20111205.jpg",
+					getBytesFromFile(filepath));
             
             System.out.println(svnCommitInfo.getNewRevision());
     		
@@ -52,9 +60,9 @@ public class SvnKitTest {
         
         SVNCommitInfo svnCommitInfo = addFile(
 				editor,
-				"test",
-				"a6.jpg",
-				getBytesFromFile("C:/Users/sily/Desktop/20111118204542.jpg"));
+				nyString,
+				"20111205.jpg",
+				getBytesFromFile(filepath));
 		
         System.out.println(svnCommitInfo.getNewRevision());
 		
