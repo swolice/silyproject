@@ -46,7 +46,7 @@ public class SvnKitLogic {
 
 		SVNRepository repository = init();
 
-		SVNNodeKind nodeKind = repository.checkPath("test", -1);
+		
 
 		String logMessage = "svnkit test log ";
 		ISVNEditor editor = repository.getCommitEditor(logMessage,
@@ -60,6 +60,8 @@ public class SvnKitLogic {
 
 		String nameString = System.currentTimeMillis() + ext_name;
 
+		SVNNodeKind nodeKind = repository.checkPath(nyString, -1);
+		
 		SVNCommitInfo svnCommitInfo = null;
 
 		if (nodeKind == SVNNodeKind.NONE) {
