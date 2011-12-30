@@ -1,4 +1,4 @@
-package com.sily.publish;
+package com.sily.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,14 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.PropertyConfigurator;
+import com.sily.util.ImportDBByFile;
 
-public class PublishServlet extends HttpServlet {
+
+public class TriggerEventServlet extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public PublishServlet() {
+	public TriggerEventServlet() {
 		super();
 	}
 
@@ -29,51 +30,44 @@ public class PublishServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
-	 * 
+	 *
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request
-	 *            the request send by the client to the server
-	 * @param response
-	 *            the response send by the server to the client
-	 * @throws ServletException
-	 *             if an error occurred
-	 * @throws IOException
-	 *             if an error occurred
+	 * @param request the request send by the client to the server
+	 * @param response the response send by the server to the client
+	 * @throws ServletException if an error occurred
+	 * @throws IOException if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		doPost(request, response);
+		
 	}
 
 	/**
 	 * The doPost method of the servlet. <br>
+	 *
+	 * This method is called when a form has its tag value method equals to post.
 	 * 
-	 * This method is called when a form has its tag value method equals to
-	 * post.
-	 * 
-	 * @param request
-	 *            the request send by the client to the server
-	 * @param response
-	 *            the response send by the server to the client
-	 * @throws ServletException
-	 *             if an error occurred
-	 * @throws IOException
-	 *             if an error occurred
+	 * @param request the request send by the client to the server
+	 * @param response the response send by the server to the client
+	 * @throws ServletException if an error occurred
+	 * @throws IOException if an error occurred
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		new Thread() {
-			public void run() {
-				PublishTimerTask task = new PublishTimerTask();
-				task.run();
-			}
-		}.start();
+		String triggerFlag = request.getParameter("flag");
+		if("1".equals(triggerFlag)){
+			new Thread(){
+				public void run() {
+					ImportDBByFile idbbf = new ImportDBByFile();
+					idbbf.process();
+				}
+			}.start();
+		}
 		
-		
-
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
@@ -81,7 +75,7 @@ public class PublishServlet extends HttpServlet {
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		out.print(" 发布指令已经执行，请等待发送完成后的邮件通知...");
+		out.print(" 触发成功...");
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
@@ -90,11 +84,11 @@ public class PublishServlet extends HttpServlet {
 
 	/**
 	 * Initialization of the servlet. <br>
-	 * 
-	 * @throws ServletException
-	 *             if an error occurs
+	 *
+	 * @throws ServletException if an error occurs
 	 */
 	public void init() throws ServletException {
+		// Put your code here
 	}
 
 }
