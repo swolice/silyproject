@@ -12,7 +12,7 @@ public class EmailSendListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent arg0) {
 		new Thread(){
 			public void run() {
-				EmailSendTest.txtNoAtta();
+//				EmailSendTest.txtNoAtta();
 			}
 		}.start();
 	}
