@@ -46,21 +46,19 @@ public class SvnKitLogic {
 
 		SVNRepository repository = init();
 
+		SimpleDateFormat sFormat = new SimpleDateFormat("yyyyMM");
+		String nyString = sFormat.format(new Date());
+		SVNNodeKind nodeKind = repository.checkPath(nyString, -1);
 		
-
 		String logMessage = "svnkit test log ";
 		ISVNEditor editor = repository.getCommitEditor(logMessage,
 				null /* locks */, true /* keepLocks */, null /* mediator */);
-
-		SimpleDateFormat sFormat = new SimpleDateFormat("yyyyMM");
-		String nyString = sFormat.format(new Date());
-
+		
 		String ext_name = f.getName();
 		ext_name = ext_name.substring(ext_name.lastIndexOf("."));
 
 		String nameString = System.currentTimeMillis() + ext_name;
 
-		SVNNodeKind nodeKind = repository.checkPath(nyString, -1);
 		
 		SVNCommitInfo svnCommitInfo = null;
 
@@ -86,7 +84,7 @@ public class SvnKitLogic {
 		System.out.println(svnCommitInfo.getNewRevision());
 		System.out.println(svnCommitInfo.getAuthor());
 		
-		return url + "/" + nyString + "/" + nameString;
+		return url + nyString + "/" + nameString;
 	}
 
 	private static SVNRepository init() {
