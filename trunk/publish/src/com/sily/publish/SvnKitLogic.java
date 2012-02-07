@@ -32,7 +32,7 @@ public class SvnKitLogic {
 //			
 //			System.out.println(ext_name);
 //			
-			String str = SvnKitLogic.process(new File("E:/sily/Pictures/DSCN6999.JPG"));
+			String str = SvnKitLogic.process(new File("E:/movie/bj_dtxlt_111231.jpg"));
 			System.out.println(str);
 		} catch (SVNException e) {
 			e.printStackTrace();
