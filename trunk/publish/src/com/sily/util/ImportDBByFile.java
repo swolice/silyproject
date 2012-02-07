@@ -39,13 +39,13 @@ public class ImportDBByFile {
 				InputStreamReader isr = new InputStreamReader(fis, "GBK");
 				
 				BufferedReader br = new BufferedReader(isr);
-				String oneline = "";
 				
 				DatabaseTool dt = DatabaseTool.getInstance();
 				Connection conn = dt.getConnection();
 				conn.setAutoCommit(false);
 				PreparedStatement ps = conn.prepareStatement("insert into account(user_name,password,email) values(?,?,?)");
 				int len = 0;
+				String oneline = "";
 				while((oneline = br.readLine()) != null){
 					String ols[] = oneline.split("\\s+");
 					if(ols.length > 2){
