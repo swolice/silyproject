@@ -81,8 +81,8 @@ public class SvnKitLogic {
 					getBytesFromFile(f));
 
 		}
-		System.out.println(svnCommitInfo.getNewRevision());
-		System.out.println(svnCommitInfo.getAuthor());
+//		System.out.println(svnCommitInfo.getNewRevision());
+//		System.out.println(svnCommitInfo.getAuthor());
 		
 		return url + nyString + "/" + nameString;
 	}
