@@ -245,43 +245,46 @@ public class ReceiveMail {
 
 	private String publishAtta(String html) {
 		String attaStr = "";
-		int i = 0;
 		Document doc = Jsoup.parse(html);
 		Elements es = doc.getElementsByTag("img");
 		int src_length = es.size();
 		for (AttachmentPO apo : attaList) {
-			if (i < src_length && apo.isImage()) {
-				Element img = es.get(i);
-				int width = apo.getWidth();
-				int height = apo.getHeight();
-				while(width > 400 || height > 400){
-					width = width/2;
-					height = height/2;
-				}
-				img.attr("src", apo.getUrl())
-						.attr("title", apo.getOldFileName())
-						.attr("width", width + "")
-						.attr("height", height + "");
-				
-				i++;
-				if(null != img.parent()){
-					Element a = img.parent();
-					if("a".equalsIgnoreCase(a.nodeName())){
-						a.attr("href",apo.getUrl());
-						continue;
+			if (apo.isImage()) {
+				String img_name = apo.getOldFileName();
+				for (int i = 0; i < src_length; i++) {
+					Element img = es.get(i);
+					String src = img.attr("src");
+					if(src.indexOf(img_name)>-1){
+						int width = apo.getWidth();
+						int height = apo.getHeight();
+						while (width > 400 || height > 400) {
+							width = width / 2;
+							height = height / 2;
+						}
+						img.attr("src", apo.getUrl())
+								.attr("title", apo.getOldFileName())
+								.attr("width", width + "")
+								.attr("height", height + "");
+
+						if (null != img.parent()) {
+							Element a = img.parent();
+							if ("a".equalsIgnoreCase(a.nodeName())) {
+								a.attr("href", apo.getUrl());
+								break;
+							}
+						}
+						Element newEle = doc.createElement("a")
+								.attr("href", img.attr("src"))
+								.appendChild(img.clone());
+						img.after(newEle.outerHtml());
+						img.remove();
 					}
 				}
-				Element newEle = doc.createElement("a").attr("href",img.attr("src")).appendChild(img.clone());
-				img.after(newEle.outerHtml());
-				img.remove();
 			} else {
 				attaStr += "<a href='" + apo.getUrl() + "' title='"
-						+ apo.getOldFileName() + "' target='_blank'>" + apo.getOldFileName()
-						+ "</a>  ";
+						+ apo.getOldFileName() + "' target='_blank'>"
+						+ apo.getOldFileName() + "</a>  ";
 			}
-		}
-		while (i < src_length) {
-			es.eq(i++).remove();
 		}
 		return doc.body().html() + attaStr;
 	}
