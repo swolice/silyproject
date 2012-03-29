@@ -257,13 +257,12 @@ public class ReceiveMail {
 					if(src.indexOf(img_name)>-1){
 						int width = apo.getWidth();
 						int height = apo.getHeight();
-						while (width > 400 || height > 400) {
-							width = width / 2;
-							height = height / 2;
+						if (width > 400) {
+							height = height * 400 / width;
 						}
 						img.attr("src", apo.getUrl())
 								.attr("title", apo.getOldFileName())
-								.attr("width", width + "")
+								.attr("width",  "400")
 								.attr("height", height + "");
 
 						if (null != img.parent()) {
