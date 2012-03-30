@@ -262,7 +262,7 @@ public class ReceiveMail {
 						}
 						img.attr("src", apo.getUrl())
 								.attr("title", apo.getOldFileName())
-								.attr("width",  "400")
+								.attr("width",  width > 400 ? "400":String.valueOf(width))
 								.attr("height", height + "");
 
 						if (null != img.parent()) {
