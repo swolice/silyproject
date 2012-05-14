@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 public class MailTimerTask extends TimerTask {
 
 	private static boolean isRunning = false;
+	
 	private ServletContext context;
 	
 	public MailTimerTask(ServletContext context) {
