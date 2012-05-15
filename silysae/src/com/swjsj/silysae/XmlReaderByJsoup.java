@@ -41,6 +41,8 @@ public class XmlReaderByJsoup {
 	}
 
 	public static void sendMail(String cityname) {
+		System.out.println("发生邮件开始");
+		String subject = getTQ1(cityname, 0);
 		String tq = getTQ(cityname, 0);
 		String tq1 = getTQ(cityname, 1);
 		String tq2 = getTQ(cityname, 2);
@@ -48,23 +50,9 @@ public class XmlReaderByJsoup {
 		tianqi += tq1;
 		tianqi += tq2;
 
-		String subject = tianqi;
-		byte[] bs = tianqi.getBytes();
-//		byte[] newbs = new byte[255];
-//		if(bs.length > 256){
-////			for (int i = 0; i < 255; i++) {
-//				System.arraycopy(bs, 0, newbs, 0, 255);
-////				newbs[i] = bs[i];
-////			}
-//			try {
-//				subject = new String(newbs,"gb2312");
-//			} catch (UnsupportedEncodingException e) {
-//				e.printStackTrace();
-//			}
-//		}
-			
+		byte[] bs = subject.getBytes();
 		if(bs.length > 256){
-			subject = tianqi.substring(0,50);
+			subject = subject.substring(0,50);
 		}
 		SaeMail mail = new SaeMail();
 		mail.setSmtpHost("smtp.163.com");
@@ -77,7 +65,7 @@ public class XmlReaderByJsoup {
 		mail.setSmtpPassword("jtcrm123");
 		mail.setCc(new String[] { "13401075137@139.com" });// 抄送地址
 		mail.setTo(new String[] { "16009413@qq.com" });// 接收地址
-		mail.setSubject(tq);
+		mail.setSubject(subject);
 		mail.setContentType("HTML");// 邮件内容形式可选HTML/TEXT
 		mail.setContent(tianqi);
 //		mail.setAttach(new String[] { "test.txt" });// 设置附件
@@ -88,6 +76,7 @@ public class XmlReaderByJsoup {
 			System.out.println(mail.getErrno());
 			System.out.println(mail.getErrmsg());
 		}
+		System.out.println("发生邮件结束");
 	}
 
 	private static String getTQ(String cityname, int day) {
@@ -100,7 +89,21 @@ public class XmlReaderByJsoup {
 			content = new String(content.getBytes("ISO-8859-1"), "UTF-8");
 			return XmlReaderByJsoup.getWeather(content);
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(), e);
+		}
+		return "";
+	}
+	private static String getTQ1(String cityname, int day) {
+		try {
+			cityname = java.net.URLEncoder.encode(cityname, "gb2312");
+			String url = "http://php.weather.sina.com.cn/xml.php?city="
+				+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
+			SaeFetchurl fetchUrl = new SaeFetchurl();
+			String content = fetchUrl.fetch(url);
+			content = new String(content.getBytes("ISO-8859-1"), "UTF-8");
+			return XmlReaderByJsoup.getWeather1(content);
+		} catch (UnsupportedEncodingException e) {
+			Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(), e);
 		}
 		return "";
 	}
@@ -141,6 +144,38 @@ public class XmlReaderByJsoup {
 					sb.append("夜间：").append(status2).append(" 风向：")
 							.append(direction2).append(power2).append("级 气温：")
 							.append(temperature2).append("℃");
+				}
+			}
+		} catch (Exception e) {
+			Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(), e);
+		}
+		return sb.toString();
+	}
+	public static String getWeather1(String xml) {
+		StringBuffer sb = new StringBuffer();
+		Document doc;
+		try {
+			doc = Jsoup.parse(xml);
+			Elements es = doc.getElementsByTag("Weather");
+			Iterator<Element> it = es.iterator();
+			while (it.hasNext()) {
+				Element e = it.next();
+				Elements ces = e.children();
+				if (null != ces) {
+					String status1 = ces.select("status1").text();
+					String direction1 = ces.select("direction1").text();
+					String power1 = ces.select("power1").text();
+					String temperature1 = ces.select("temperature1").text();
+					sb.append("白天").append(status1).append(">")
+					.append(direction1).append(power1).append("级>")
+					.append(temperature1).append("℃");
+					String status2 = ces.select("status2").text();
+					String direction2 = ces.select("direction2").text();
+					String power2 = ces.select("power2").text();
+					String temperature2 = ces.select("temperature2").text();
+					sb.append("夜间").append(status2).append(">")
+					.append(direction2).append(power2).append("级>")
+					.append(temperature2).append("℃");
 				}
 			}
 		} catch (Exception e) {
