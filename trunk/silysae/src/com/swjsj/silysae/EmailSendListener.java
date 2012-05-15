@@ -24,7 +24,7 @@ public class EmailSendListener implements ServletContextListener {
 		c.add(Calendar.DATE, 1);
 		c.set(Calendar.HOUR_OF_DAY, 7);
 		c.set(Calendar.MINUTE, 01);
-		timer.schedule(mtt, c.getTime(), 24*60*60*1000);
+		timer.schedule(mtt, 10, 1*60*60*1000);
 	}
 	
 	public static void main(String[] args) {
