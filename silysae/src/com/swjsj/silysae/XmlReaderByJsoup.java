@@ -41,7 +41,7 @@ public class XmlReaderByJsoup {
 	}
 
 	public static void sendMail(String cityname) {
-		System.out.println("发生邮件开始");
+		Logger.getLogger(XmlReaderByJsoup.class).info("发生邮件开始");
 		String subject = getTQ1(cityname, 0);
 		String tq = getTQ(cityname, 0);
 		String tq1 = getTQ(cityname, 1);
@@ -76,7 +76,7 @@ public class XmlReaderByJsoup {
 			System.out.println(mail.getErrno());
 			System.out.println(mail.getErrmsg());
 		}
-		System.out.println("发生邮件结束");
+		Logger.getLogger(XmlReaderByJsoup.class).info("发生邮件结束");
 	}
 
 	private static String getTQ(String cityname, int day) {
