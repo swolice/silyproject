@@ -54,6 +54,9 @@ public class XmlReaderByJsoup {
 		if(bs.length > 256){
 			subject = subject.substring(0,50);
 		}
+		if("".equals(subject)){
+			subject = "主题为空！！！！！";
+		}
 		SaeMail mail = new SaeMail();
 		mail.setSmtpHost("smtp.163.com");
 		// 快速发送邮件
@@ -65,6 +68,7 @@ public class XmlReaderByJsoup {
 		mail.setSmtpPassword("jtcrm123");
 		mail.setCc(new String[] { "13401075137@139.com" });// 抄送地址
 		mail.setTo(new String[] { "16009413@qq.com" });// 接收地址
+		
 		mail.setSubject(subject);
 		mail.setContentType("HTML");// 邮件内容形式可选HTML/TEXT
 		mail.setContent(tianqi);
