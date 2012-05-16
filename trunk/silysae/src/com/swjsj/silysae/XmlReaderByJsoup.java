@@ -54,8 +54,6 @@ public class XmlReaderByJsoup {
 		String tianqi = "天气：" + tq;
 		tianqi += tq1;
 		tianqi += tq2;
-		
-		tianqi += threeDayWeather(cityname);
 
 		byte[] bs = subject.getBytes();
 		if(bs.length > 256){
@@ -73,7 +71,7 @@ public class XmlReaderByJsoup {
 	
 	private static void sendMail(String subject,String tianqi){
 		SaeMail mail = new SaeMail();
-		mail.setSmtpHost("smtp.qq.com");
+		mail.setSmtpHost("smtp.163.com");
 		// 快速发送邮件
 //		mail.quickSend("jtcrm_email@163.com", new String[] { "16009413@qq.com" }, tianqi,
 //				tianqi, "jtcrm_email@163.com", "jtcrm123");
