@@ -34,7 +34,6 @@ public class MailTimerTask extends TimerTask {
 		}
 	}
 	
-	
 	private void executeLogic(){
 		try {
 			XmlReaderByJsoup.sendMail("昌平");
@@ -42,6 +41,13 @@ public class MailTimerTask extends TimerTask {
 			Logger.getLogger(this.getClass()).info("发送邮件出错 ");
 		}
 		
-		
+	}
+	
+	public static void main(String[] args) {
+		try {
+			XmlReaderByJsoup.sendMail("昌平");
+		} catch (Exception e) {
+			Logger.getLogger(XmlReaderByJsoup.class).info("发送邮件出错 ");
+		}
 	}
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -86,6 +87,14 @@ public class WeatherServlet extends HttpServlet {
         String html = doc.html();
         
         String cityname = request.getParameter("cityname");
+        
+        try {
+			XmlReaderByJsoup.sendMail(cityname);
+		} catch (Exception e) {
+			Logger.getLogger(this.getClass()).info("发送邮件出错 ");
+		}
+        
+        Logger.getLogger(this.getClass()).info(cityname);
         
         out.write(html + XmlReaderByJsoup.threeDayWeather(cityname));
 	}
