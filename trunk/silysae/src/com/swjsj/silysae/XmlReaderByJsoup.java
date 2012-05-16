@@ -14,6 +14,8 @@ import com.sina.sae.mail.SaeMail;
 
 public class XmlReaderByJsoup {
 
+	private static SaeFetchurl fetchUrl = new SaeFetchurl();
+	
 	public static void main(String[] args) {
 		// File file = new File("D:\\我的桌面\\tq.xml");
 		// FileUtils fu = new FileUtils();
@@ -102,8 +104,11 @@ public class XmlReaderByJsoup {
 			String url = "http://php.weather.sina.com.cn/xml.php?city="
 					+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
 			
-			SaeFetchurl fetchUrl = new SaeFetchurl();
 			String content = fetchUrl.fetch(url);
+			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误编码：" + fetchUrl.getErrno());
+			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误信息：" + fetchUrl.getErrmsg());
+			
+			
 			String content1 = new String(content.getBytes("ISO8859-1"), "UTF-8");
 			return XmlReaderByJsoup.getWeather(content1);
 		} catch (UnsupportedEncodingException e) {
@@ -117,8 +122,11 @@ public class XmlReaderByJsoup {
 			String url = "http://php.weather.sina.com.cn/xml.php?city="
 				+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
 			
-			SaeFetchurl fetchUrl = new SaeFetchurl();
+
 			String content = fetchUrl.fetch(url);
+			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误编码：" + fetchUrl.getErrno());
+			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误信息：" + fetchUrl.getErrmsg());
+			
 			String content1 = new String(content.getBytes("ISO8859-1"), "UTF-8");
 			return XmlReaderByJsoup.getWeather1(content1);
 		} catch (UnsupportedEncodingException e) {
@@ -206,5 +214,13 @@ public class XmlReaderByJsoup {
 			Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(), e);
 		}
 		return sb.toString();
+	}
+
+	public static void setFetchUrl(SaeFetchurl fetchUrl) {
+		XmlReaderByJsoup.fetchUrl = fetchUrl;
+	}
+
+	public static SaeFetchurl getFetchUrl() {
+		return fetchUrl;
 	}
 }
