@@ -67,7 +67,7 @@ public class XmlReaderByJsoup {
 		mail.setSmtpUsername("jtcrm_email@163.com");
 		mail.setSmtpPassword("jtcrm123");
 		mail.setCc(new String[] { "13401075137@139.com" });// 抄送地址
-		mail.setTo(new String[] { "16009413@qq.com" });// 接收地址
+		mail.setTo(new String[] { "jishijun204@163.com" });// 接收地址
 		
 		mail.setSubject(subject);
 		mail.setContentType("HTML");// 邮件内容形式可选HTML/TEXT
@@ -90,6 +90,7 @@ public class XmlReaderByJsoup {
 					+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
 			SaeFetchurl fetchUrl = new SaeFetchurl();
 			String content = fetchUrl.fetch(url);
+			Logger.getLogger(XmlReaderByJsoup.class).info("未转换的数据=====" + content);
 			content = new String(content.getBytes("ISO-8859-1"), "UTF-8");
 			return XmlReaderByJsoup.getWeather(content);
 		} catch (UnsupportedEncodingException e) {
@@ -104,6 +105,7 @@ public class XmlReaderByJsoup {
 				+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
 			SaeFetchurl fetchUrl = new SaeFetchurl();
 			String content = fetchUrl.fetch(url);
+			Logger.getLogger(XmlReaderByJsoup.class).info("未转换的数据=====" + content);
 			content = new String(content.getBytes("ISO-8859-1"), "UTF-8");
 			return XmlReaderByJsoup.getWeather1(content);
 		} catch (UnsupportedEncodingException e) {
