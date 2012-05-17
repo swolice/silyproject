@@ -38,8 +38,6 @@ public class MailTimerTask extends TimerTask {
 	
 	private void executeLogic(){
 		try {
-			SaeFetchurl fetchUrl = new SaeFetchurl("3lnkom20yl","125mmkz5m343kwyz01214xxjk2z0x11004lm03lx");
-			XmlReaderByJsoup.setFetchUrl(fetchUrl);
 			XmlReaderByJsoup.sendMail("昌平");
 		} catch (Exception e) {
 			Logger.getLogger(this.getClass()).info("发送邮件出错 ");
@@ -49,8 +47,6 @@ public class MailTimerTask extends TimerTask {
 	
 	public static void main(String[] args) {
 		try {
-			SaeFetchurl fetchUrl = new SaeFetchurl("3lnkom20yl","125mmkz5m343kwyz01214xxjk2z0x11004lm03lx");
-			XmlReaderByJsoup.setFetchUrl(fetchUrl);
 			XmlReaderByJsoup.sendMail("昌平");
 		} catch (Exception e) {
 			Logger.getLogger(XmlReaderByJsoup.class).info("发送邮件出错 ");
