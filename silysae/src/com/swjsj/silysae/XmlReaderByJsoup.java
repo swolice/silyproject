@@ -11,10 +11,11 @@ import org.jsoup.select.Elements;
 
 import com.sina.sae.fetchurl.SaeFetchurl;
 import com.sina.sae.mail.SaeMail;
+import com.sina.sae.util.SaeUserInfo;
 
 public class XmlReaderByJsoup {
 
-	private static SaeFetchurl fetchUrl = new SaeFetchurl();
+	private static SaeFetchurl fetchUrl;
 	
 	public static void main(String[] args) {
 		// File file = new File("D:\\我的桌面\\tq.xml");
@@ -103,7 +104,7 @@ public class XmlReaderByJsoup {
 			
 			String url = "http://php.weather.sina.com.cn/xml.php?city="
 					+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
-			
+			fetchUrl = new SaeFetchurl(SaeUserInfo.getAccessKey(),SaeUserInfo.getSecretKey());
 			String content = fetchUrl.fetch(url);
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误编码：" + fetchUrl.getErrno());
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误信息：" + fetchUrl.getErrmsg());
@@ -122,7 +123,7 @@ public class XmlReaderByJsoup {
 			String url = "http://php.weather.sina.com.cn/xml.php?city="
 				+ cityname + "&password=DJOYnieT8234jlsK&day=" + day;
 			
-
+			fetchUrl = new SaeFetchurl(SaeUserInfo.getAccessKey(),SaeUserInfo.getSecretKey());
 			String content = fetchUrl.fetch(url);
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误编码：" + fetchUrl.getErrno());
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误信息：" + fetchUrl.getErrmsg());
