@@ -37,10 +37,11 @@
     <servlet-name>WeatherServlet</servlet-name>
     <url-pattern>/servlet/WeatherServlet</url-pattern>
   </servlet-mapping>	
-
+<!-- 
 	<listener>
 		<listener-class>com.swjsj.silysae.EmailSendListener</listener-class>
 	</listener>
+	 -->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
