@@ -2,10 +2,7 @@
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
 	<servlet>
 		<servlet-name>PublishServlet</servlet-name>
 		<servlet-class>com.sily.publish.PublishServlet</servlet-class>
@@ -17,6 +14,7 @@
     <servlet-name>TriggerEventServlet</servlet-name>
     <servlet-class>com.sily.servlet.TriggerEventServlet</servlet-class>
   </servlet>
+  <display-name>publish</display-name>
 
 	
 	<context-param>
@@ -38,5 +36,13 @@
 	<listener>
 		<listener-class>com.sily.publish.PublishListener</listener-class>
 	</listener>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
 
 </web-app>
