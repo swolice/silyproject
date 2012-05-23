@@ -19,7 +19,7 @@ public class AttachmentPO{
 	public void setHeight(int height) {
 		this.height = height;
 	}
-	private int height;
+	private int height; 
 	
 	public boolean isImage() {
 		return isImage;
