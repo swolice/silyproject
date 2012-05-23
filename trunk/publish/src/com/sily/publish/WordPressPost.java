@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -22,6 +23,8 @@ import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import com.sily.util.FileType;
 import com.sily.util.HtmlUtils;
@@ -116,6 +119,14 @@ public class WordPressPost {
 			// post.put("link", "http://sily.sinaapp.com/");
 
 			Document doc = Jsoup.parse(desc);
+			
+			Elements es = doc.select("table");
+			Iterator<Element> it = es.iterator();
+			if(it.hasNext()){
+				Element e = it.next();
+				e.remove();
+			}
+			
 			post.put("description", doc.body().html());
 
 			String text = doc.body().text();
