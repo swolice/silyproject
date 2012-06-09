@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+				http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.6.xsd">
+
+	<http auto-config='true'>
+	<!-- 
+		<intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/admin.jsp" access="ROLE_ADMIN" />
+		<intercept-url pattern="/**" access="ROLE_USER" />
+		 <form-login login-page="/login.jsp"
+                authentication-failure-url="/login.jsp?error=true"
+                default-target-url="/" />
+      -->
+	</http>
+
+	<authentication-provider>
+		<!-- <user-service> <user name="admin" password="admin" authorities="ROLE_USER, 
+			ROLE_ADMIN" /> <user name="user" password="user" authorities="ROLE_USER" 
+			/> </user-service> -->
+		<jdbc-user-service data-source-ref="dataSource" 
+				users-by-username-query="select username,password,status as enabled
+		  from users
+		 where username=?"
+		 	authorities-by-username-query="select u.username,r.name as authority
+		  from users u
+		  join user_role ur
+		    on u.id=ur.user_id
+		  join role r
+		    on r.id=ur.role_id
+		 where u.username=?"
+				/>
+	</authentication-provider>
+	
+	<beans:bean id="dataSource"
+			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+			<beans:property name="url" value="jdbc:oracle:thin:@172.16.1.248:1521:jtcrma" />
+			<beans:property name="username" value="jtcrm_app" />
+			<beans:property name="password" value="test_pass" />
+		</beans:bean>
+		
+	<beans:bean id="filterSecurityInterceptor"
+	    class="org.springframework.security.intercept.web.FilterSecurityInterceptor" autowire="byType">
+	    <custom-filter before="FILTER_SECURITY_INTERCEPTOR" />
+	    <beans:property name="objectDefinitionSource" ref="filterInvocationDefinitionSource" />
+	</beans:bean>
+	
+	<beans:bean id="filterInvocationDefinitionSource"
+	    class="com.sily.acegi.JdbcFilterInvocationDefinitionSourceFactoryBean">
+	    <beans:property name="dataSource" ref="dataSource"/>
+	    <beans:property name="resourceQuery" value="
+	        select re.res_string,r.name
+	          from role r
+	          join resc_role rr
+	            on r.id=rr.role_id
+	          join resc re
+	            on re.id=rr.resc_id
+	      order by re.priority
+	    "/>
+	</beans:bean>
+	
+</beans:beans>
