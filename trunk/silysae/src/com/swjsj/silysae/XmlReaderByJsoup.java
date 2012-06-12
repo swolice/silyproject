@@ -1,5 +1,6 @@
 package com.swjsj.silysae;
 
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 
@@ -65,7 +66,14 @@ public class XmlReaderByJsoup {
 		if("".equals(subject)){
 			subject = "主题为空！！！！！";
 		}
-		
+		String url = ProvinceCityOpt.getUrl(cityname);
+		if(!"".equals(url)){
+			try {
+				tianqi = new XmlReaderByJsoup().getHTML(url) + tianqi;
+			} catch (UnsupportedEncodingException e) {
+				Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(),e);
+			}
+		}
 		sendMail(subject,tianqi);
 		
 		Logger.getLogger(XmlReaderByJsoup.class).info("发生邮件结束");
@@ -97,6 +105,41 @@ public class XmlReaderByJsoup {
 			System.out.println(mail.getErrmsg());
 		}
 	}
+	
+	public String getHTML(String url) throws UnsupportedEncodingException{
+		SaeFetchurl fetchUrl = new SaeFetchurl();
+		String content = fetchUrl.fetch(url);
+		content  = new String(content.getBytes("iso8859-1"),"gb2312");
+		
+		Document doc = Jsoup.parse(content);
+		setUrl(doc,"href","link");
+		setUrl(doc,"src","script");
+		setUrl(doc.body(),"src","img");
+		
+		Elements styles = doc.getElementsByTag("style");
+		String style = styles.first().html();
+		String css = ".wdj_width{background:url('http://www.weather.gov.cn/images/monitor/qwj.png') repeat-x scroll 0 0 transparent;bottom: 22px !important;*bottom:12px;height: 4px;left: 65px;line-height: 0;padding: 0;position: absolute;z-index:10;}";
+		style += "\n\r" + css; 
+		styles.html(style);
+		
+        String html = doc.html();	
+        return html;
+        
+	}
+	
+	private void setUrl(Element doc,String attr,String tag){
+		Elements es = doc.getElementsByTag(tag);
+		Iterator it = es.iterator();
+		while(it.hasNext()){
+			Element e = (Element)it.next();
+			String val =  e.attr(attr);
+			if("".equals(val)){
+				continue;
+			}
+			e.attr(attr, "http://www.weather.gov.cn" + val );
+		}
+	}
+	
 
 	private static String getTQ(String cityname, int day) {
 		try {

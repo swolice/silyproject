@@ -97,6 +97,7 @@ public class WeatherServlet extends HttpServlet {
         Logger.getLogger(this.getClass()).info(cityname);
         
         out.write(html + XmlReaderByJsoup.threeDayWeather(cityname));
+        
 	}
 	
 
