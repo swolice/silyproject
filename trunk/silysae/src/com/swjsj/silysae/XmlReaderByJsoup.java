@@ -66,14 +66,23 @@ public class XmlReaderByJsoup {
 		if("".equals(subject)){
 			subject = "主题为空！！！！！";
 		}
-		String url = ProvinceCityOpt.getUrl(cityname);
-		if(!"".equals(url)){
+//		String url = ProvinceCityOpt.getUrl(cityname);
+//		if(!"".equals(url)){
+//			try {
+//				tianqi = XmlReaderByJsoup.getHTML(url) + tianqi;
+//			} catch (UnsupportedEncodingException e) {
+//				Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(),e);
+//			}
+//		}
+		if("昌平".equals(cityname)){
+			String url = "http://www.weather.gov.cn/publish/forecast/ABJ/changping_iframe.html";
 			try {
 				tianqi = XmlReaderByJsoup.getHTML(url) + tianqi;
 			} catch (UnsupportedEncodingException e) {
-				Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(),e);
+				e.printStackTrace();
 			}
 		}
+		
 		sendMail(subject,tianqi);
 		
 		Logger.getLogger(XmlReaderByJsoup.class).info("发生邮件结束");
