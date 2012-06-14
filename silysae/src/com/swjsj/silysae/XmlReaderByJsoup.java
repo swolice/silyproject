@@ -69,7 +69,7 @@ public class XmlReaderByJsoup {
 		String url = ProvinceCityOpt.getUrl(cityname);
 		if(!"".equals(url)){
 			try {
-				tianqi = new XmlReaderByJsoup().getHTML(url) + tianqi;
+				tianqi = XmlReaderByJsoup.getHTML(url) + tianqi;
 			} catch (UnsupportedEncodingException e) {
 				Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(),e);
 			}
@@ -106,7 +106,7 @@ public class XmlReaderByJsoup {
 		}
 	}
 	
-	public String getHTML(String url) throws UnsupportedEncodingException{
+	public static String getHTML(String url) throws UnsupportedEncodingException{
 		SaeFetchurl fetchUrl = new SaeFetchurl();
 		String content = fetchUrl.fetch(url);
 		content  = new String(content.getBytes("iso8859-1"),"gb2312");
@@ -127,7 +127,7 @@ public class XmlReaderByJsoup {
         
 	}
 	
-	private void setUrl(Element doc,String attr,String tag){
+	private static  void setUrl(Element doc,String attr,String tag){
 		Elements es = doc.getElementsByTag(tag);
 		Iterator it = es.iterator();
 		while(it.hasNext()){
