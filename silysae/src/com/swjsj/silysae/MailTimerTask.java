@@ -37,17 +37,19 @@ public class MailTimerTask extends TimerTask {
 	}
 	
 	private void executeLogic(){
+		XmlReaderByJsoup xrbj = new XmlReaderByJsoup();
 		try {
-			XmlReaderByJsoup.sendMail("昌平");
+			xrbj.sendMail("昌平");
 		} catch (Exception e) {
-			Logger.getLogger(this.getClass()).info("发送邮件出错 ");
+			Logger.getLogger(XmlReaderByJsoup.class).info("发送邮件出错 ");
 		}
-		
 	}
 	
 	public static void main(String[] args) {
+		
+		XmlReaderByJsoup xrbj = new XmlReaderByJsoup();
 		try {
-			XmlReaderByJsoup.sendMail("昌平");
+			xrbj.sendMail("昌平");
 		} catch (Exception e) {
 			Logger.getLogger(XmlReaderByJsoup.class).info("发送邮件出错 ");
 		}
