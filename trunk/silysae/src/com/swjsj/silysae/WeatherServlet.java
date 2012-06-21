@@ -87,16 +87,14 @@ public class WeatherServlet extends HttpServlet {
         String html = doc.html();
         
         String cityname = request.getParameter("cityname");
-        
+        XmlReaderByJsoup xrbj = new XmlReaderByJsoup();
         try {
-			XmlReaderByJsoup.sendMail(cityname);
+        	xrbj.servletEmail(cityname,"");
 		} catch (Exception e) {
 			Logger.getLogger(this.getClass()).info("发送邮件出错 ");
 		}
-        
         Logger.getLogger(this.getClass()).info(cityname);
-        
-        out.write(html + XmlReaderByJsoup.threeDayWeather(cityname));
+        out.write(html + xrbj.threeDayWeather(cityname));
         
 	}
 	

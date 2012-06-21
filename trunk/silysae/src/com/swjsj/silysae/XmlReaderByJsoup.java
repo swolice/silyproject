@@ -1,6 +1,5 @@
 package com.swjsj.silysae;
 
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 
@@ -16,7 +15,7 @@ import com.sina.sae.util.SaeUserInfo;
 
 public class XmlReaderByJsoup {
 
-	private static SaeFetchurl fetchUrl;
+	private SaeFetchurl fetchUrl;
 	
 	public static void main(String[] args) {
 		// File file = new File("D:\\我的桌面\\tq.xml");
@@ -33,14 +32,9 @@ public class XmlReaderByJsoup {
 
 		try {
 			String cs = java.net.URLEncoder.encode("醴陵", "gb2312");
-//
 			System.out.println(cs);
-			
 			String city = new String("昌平");
-			
-			sendMail(city);
-			
-			
+//			sendMail(city);
 			
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -49,8 +43,8 @@ public class XmlReaderByJsoup {
 
 	}
 
-	public static void sendMail(String cityname) {
-		Logger.getLogger(XmlReaderByJsoup.class).info("发生邮件开始");
+	public void servletEmail(String cityname, String content){
+		Logger.getLogger(XmlReaderByJsoup.class).debug("发生邮件开始");
 		String subject = getTQ1(cityname, 0);
 		String tq = getTQ(cityname, 0);
 		String tq1 = getTQ(cityname, 1);
@@ -66,30 +60,52 @@ public class XmlReaderByJsoup {
 		if("".equals(subject)){
 			subject = "主题为空！！！！！";
 		}
-//		String url = ProvinceCityOpt.getUrl(cityname);
-//		if(!"".equals(url)){
+		sendMail(subject,tianqi + content);
+		Logger.getLogger(XmlReaderByJsoup.class).debug("发生邮件结束");
+	}
+	
+	
+	public void sendMail(String cityname) {
+		Logger.getLogger(XmlReaderByJsoup.class).debug("发生邮件开始");
+		String subject = getTQ1(cityname, 0);
+		String tq = getTQ(cityname, 0);
+		String tq1 = getTQ(cityname, 1);
+		String tq2 = getTQ(cityname, 2);
+		String tianqi = "天气：" + tq;
+		tianqi += tq1;
+		tianqi += tq2;
+
+		byte[] bs = subject.getBytes();
+		if(bs.length > 256){
+			subject = subject.substring(0,50);
+		}
+		if("".equals(subject)){
+			subject = "主题为空！！！！！";
+		}
+		
+//		ProvinceCityOpt pco = new ProvinceCityOpt();
+//		String url = pco.getUrl(cityname);
+//		if(!"".equals(url) && "昌平".equals(cityname)){
 //			try {
-//				tianqi = XmlReaderByJsoup.getHTML(url) + tianqi;
+//				tianqi = this.getHTML(url) + tianqi;
 //			} catch (UnsupportedEncodingException e) {
 //				Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(),e);
 //			}
 //		}
-		if("昌平".equals(cityname)){
-			String url = "http://www.weather.gov.cn/publish/forecast/ABJ/changping_iframe.html";
-			try {
-				tianqi = XmlReaderByJsoup.getHTML(url) + tianqi;
-			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
-			}
-		}
-		
+//		if("昌平".equals(cityname)){
+//			String url = "http://www.weather.gov.cn/publish/forecast/ABJ/changping_iframe.html";
+//			try {
+//				tianqi = this.getHTML(url) + tianqi;
+//			} catch (UnsupportedEncodingException e) {
+//				e.printStackTrace();
+//			}
+//		}
 		sendMail(subject,tianqi);
-		
-		Logger.getLogger(XmlReaderByJsoup.class).info("发生邮件结束");
+		Logger.getLogger(XmlReaderByJsoup.class).debug("发生邮件结束");
 	}
 	
 	
-	private static void sendMail(String subject,String tianqi){
+	private void sendMail(String subject,String tianqi){
 		SaeMail mail = new SaeMail();
 		mail.setSmtpHost("smtp.163.com");
 		// 快速发送邮件
@@ -105,9 +121,13 @@ public class XmlReaderByJsoup {
 		mail.setSubject(subject);
 		mail.setContentType("HTML");// 邮件内容形式可选HTML/TEXT
 		mail.setContent(tianqi);
+		
 //		mail.setAttach(new String[] { "test.txt" });// 设置附件
 //		mail.setCallbackUrl("callbackurl");// 设置发送失败后回调的url
+		
+		Logger.getLogger(XmlReaderByJsoup.class).debug("发生邮件==================1s");
 		boolean isOk = mail.send();// 发送邮件
+		Logger.getLogger(XmlReaderByJsoup.class).debug("发生邮件==================2e" + isOk);
 		// 失败输出错误码和错误信息
 		if (!isOk) {
 			System.out.println(mail.getErrno());
@@ -115,8 +135,8 @@ public class XmlReaderByJsoup {
 		}
 	}
 	
-	public static String getHTML(String url) throws UnsupportedEncodingException{
-		SaeFetchurl fetchUrl = new SaeFetchurl();
+	public String getHTML(String url) throws UnsupportedEncodingException{
+		fetchUrl = new SaeFetchurl(SaeUserInfo.getAccessKey(),SaeUserInfo.getSecretKey());
 		String content = fetchUrl.fetch(url);
 		content  = new String(content.getBytes("iso8859-1"),"gb2312");
 		
@@ -136,7 +156,7 @@ public class XmlReaderByJsoup {
         
 	}
 	
-	private static  void setUrl(Element doc,String attr,String tag){
+	private void setUrl(Element doc,String attr,String tag){
 		Elements es = doc.getElementsByTag(tag);
 		Iterator it = es.iterator();
 		while(it.hasNext()){
@@ -150,7 +170,7 @@ public class XmlReaderByJsoup {
 	}
 	
 
-	private static String getTQ(String cityname, int day) {
+	private String getTQ(String cityname, int day) {
 		try {
 			cityname = java.net.URLEncoder.encode(cityname, "gb2312");
 			
@@ -161,15 +181,14 @@ public class XmlReaderByJsoup {
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误编码：" + fetchUrl.getErrno());
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误信息：" + fetchUrl.getErrmsg());
 			
-			
 			String content1 = new String(content.getBytes("ISO8859-1"), "UTF-8");
-			return XmlReaderByJsoup.getWeather(content1);
+			return this.getWeather(content1);
 		} catch (UnsupportedEncodingException e) {
 			Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(), e);
 		}
 		return "";
 	}
-	private static String getTQ1(String cityname, int day) {
+	private String getTQ1(String cityname, int day) {
 		try {
 			cityname = java.net.URLEncoder.encode(cityname, "gb2312");
 			String url = "http://php.weather.sina.com.cn/xml.php?city="
@@ -179,16 +198,15 @@ public class XmlReaderByJsoup {
 			String content = fetchUrl.fetch(url);
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误编码：" + fetchUrl.getErrno());
 			Logger.getLogger(XmlReaderByJsoup.class).error("fetchUrl错误信息：" + fetchUrl.getErrmsg());
-			
 			String content1 = new String(content.getBytes("ISO8859-1"), "UTF-8");
-			return XmlReaderByJsoup.getWeather1(content1);
+			return this.getWeather1(content1);
 		} catch (UnsupportedEncodingException e) {
 			Logger.getLogger(XmlReaderByJsoup.class).error(e.getMessage(), e);
 		}
 		return "";
 	}
 
-	public static String threeDayWeather(String cityname) {
+	public String threeDayWeather(String cityname) {
 		String tq = getTQ(cityname, 0);
 		String tq1 = getTQ(cityname, 1);
 		String tq2 = getTQ(cityname, 2);
@@ -199,7 +217,7 @@ public class XmlReaderByJsoup {
 		return tianqi;
 	}
 
-	public static String getWeather(String xml) {
+	public String getWeather(String xml) {
 		
 		StringBuffer sb = new StringBuffer();
 		Document doc;
@@ -232,7 +250,7 @@ public class XmlReaderByJsoup {
 		}
 		return sb.toString();
 	}
-	public static String getWeather1(String xml) {
+	public String getWeather1(String xml) {
 		
 //		Logger.getLogger(XmlReaderByJsoup.class).info("getWeather1===============" + xml);
 //		sendMail("错误日志xml",xml);
@@ -269,11 +287,11 @@ public class XmlReaderByJsoup {
 		return sb.toString();
 	}
 
-	public static void setFetchUrl(SaeFetchurl fetchUrl) {
-		XmlReaderByJsoup.fetchUrl = fetchUrl;
+	public void setFetchUrl(SaeFetchurl fetchUrl) {
+		this.fetchUrl = fetchUrl;
 	}
 
-	public static SaeFetchurl getFetchUrl() {
+	public SaeFetchurl getFetchUrl() {
 		return fetchUrl;
 	}
 }
