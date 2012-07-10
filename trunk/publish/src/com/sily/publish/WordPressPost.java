@@ -9,14 +9,18 @@
  */
 package com.sily.publish;
 
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import javax.imageio.ImageIO;
 
 import org.apache.log4j.Logger;
 import org.apache.xmlrpc.client.XmlRpcClient;
@@ -26,6 +30,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.sily.email.AttachmentPO;
 import com.sily.util.FileType;
 import com.sily.util.HtmlUtils;
 import com.sily.util.ReadFile;
@@ -43,12 +48,11 @@ public class WordPressPost {
 	public static void main(String[] args) {
 
 		ReadFile rf = new ReadFile();
-
 		// String desc = rf.getFileContent("C:/Users/sily/Desktop/test.txt",
 		// "GBK");
 
 		try {
-			String desc = rf.getFileContent("d:/我的桌面/test.txt", "GBK");
+//			String desc = rf.getFileContent("d:/我的桌面/test.txt", "GBK");
 
 			// Document doc = Jsoup.parse(desc);
 			// String text = doc.body().text();
@@ -57,16 +61,121 @@ public class WordPressPost {
 			// System.out.println(excerpt);
 
 			// publishPost("test",desc);
-
-			// File file = new File("D:/我的桌面/clock.avi");
-			// byte[] bytes = getOutExcelByteCon(file);
-			// publishMedia(file.getName(),FileType.getMineType(file),bytes);
-
-			publishPost("vim学习教程", desc);
-
+			 
+			File file1 = new File("E:/凤凰岭/me/QQ影像批量编辑结果_1");
+			File[] files = file1.listFiles();
+			for (int i = 0; i < files.length; i++) {
+				File file = files[i];
+				byte[] bytes = getOutExcelByteCon(file);
+				 String imgurl = publishMedia1108(file.getName(),FileType.getMineType(file),bytes);
+				 AttachmentPO po = new AttachmentPO();
+				 if(isImgage(file,po)){
+					 String desc = "<a href='"+imgurl+"'><img class='alignnone size-medium wp-image-42' title='IMG_1529' src='"+imgurl+"'" +
+					 		" alt='' width='"+po.getWidth()+"' height='"+po.getHeight()+"'/></a>";
+					 publishPost1108("凤凰岭", desc);
+				 }
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * 发布文章
+	 * 
+	 * @param title
+	 * @param desc
+	 * @throws Exception
+	 */
+	public static void publishPost1108(String title, String desc) throws Exception {
+		try {
+			// Set up XML-RPC connection to server
+			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+			config.setServerURL(new URL("http://1108.sinaapp.com/xmlrpc.php"));
+			XmlRpcClient client = new XmlRpcClient();
+			client.setConfig(config);
+
+			// Set up parameters required by newPost method
+			Map<String, String> post = new HashMap<String, String>();
+			post.put("title", title);
+			// post.put("link", "http://sily.sinaapp.com/");
+			post.put("description", desc);
+
+			Object[] params = new Object[] { "1", "admin", "jishijun", post,
+					Boolean.TRUE };
+
+			String result = (String) client.execute("metaWeblog.newPost",
+					params);
+			log.info(" Created with blogid " + result);
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+	}
+	
+	/**
+	 * 发布多媒体文件
+	 * 
+	 * @param name
+	 * @param type
+	 * @param bytes
+	 * @return
+	 * @throws Exception
+	 */
+	public static String publishMedia1108(String name, String type, byte[] bytes)
+			throws Exception {
+		// Set up XML-RPC connection to server
+		try {
+			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+			config.setServerURL(new URL("http://1108.sinaapp.com/xmlrpc.php"));
+			XmlRpcClient client = new XmlRpcClient();
+			client.setConfig(config);
+
+			// Set up parameters required by newPost method
+			Map<String, Object> post = new HashMap<String, Object>();
+			post.put("name", name);
+			post.put("type", type);
+			post.put("bits", bytes);
+			Object[] params = new Object[] { "1", "admin", "jishijun", post };
+
+			// Call newPost
+			Map<String, String> result = (Map<String, String>) client.execute(
+					"metaWeblog.newMediaObject", params);
+			System.out.println(" metaWeblog.newMediaObject url: "
+					+ result.get("url"));
+			log.info(" metaWeblog.newMediaObject url: " + result.get("url"));
+
+			return result.get("url");
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error(e.getMessage(), e);
+		}
+		return "";
+	}
+	
+	
+	public static final boolean isImgage(File file,AttachmentPO po ) {
+		boolean flag = false;
+		try {
+			BufferedImage bufreader = ImageIO.read(file);
+			int width = bufreader.getWidth();
+			int height = bufreader.getHeight();
+			if (width == 0 || height == 0) {
+				flag = false;
+			} else {
+				if (width > 300) {
+					height = height * 300 / width;
+				}
+				int w = width > 300 ? 300:width;
+				po.setWidth(w);
+				po.setHeight(height);
+				flag = true;
+			}
+		} catch (IOException e) {
+			flag = false;
+		} catch (Exception e) {
+			flag = false;
+		}
+		return flag;
 	}
 
 	/**
