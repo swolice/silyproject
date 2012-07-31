@@ -2408,7 +2408,7 @@ public class ProvinceCityOpt {
 		////////*********end 初始化数据*************///////
 	}
 	
-	public static String getUrl(String cityname){
+	public String getUrl(String cityname){
 		String param = getParam(cityname);
 		if("".equals(param)){
 			return "";
@@ -2419,7 +2419,7 @@ public class ProvinceCityOpt {
 		return url;
 	}
 	
-	public static String getParam(String cityname){
+	public String getParam(String cityname){
 		List<ProvinceBean> provinceList = PStation.getProvinceList();
 		for (int i = 0; i < provinceList.size(); i++) {
 			ProvinceBean pb = provinceList.get(i);
