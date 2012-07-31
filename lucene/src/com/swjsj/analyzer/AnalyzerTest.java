@@ -12,8 +12,7 @@ import com.chenlb.mmseg4j.analysis.ComplexAnalyzer;
 import com.chenlb.mmseg4j.analysis.MMSegAnalyzer;
 
 public class AnalyzerTest {
-
-	@Test
+ 	@Test
 	public void test01(){
 		Analyzer a1 = new StandardAnalyzer(Version.LUCENE_36);
 		Analyzer a2 = new StopAnalyzer(Version.LUCENE_36);
