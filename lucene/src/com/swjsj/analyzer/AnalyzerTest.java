@@ -8,6 +8,9 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.util.Version;
 import org.junit.Test;
 
+import com.chenlb.mmseg4j.analysis.ComplexAnalyzer;
+import com.chenlb.mmseg4j.analysis.MMSegAnalyzer;
+
 public class AnalyzerTest {
 
 	@Test
@@ -57,6 +60,22 @@ public class AnalyzerTest {
 		AnalyzerUtils.analyzer02(str, a1);
 		System.out.println("=-------------------=");
 		AnalyzerUtils.analyzer02(str, a2);
+	}
+	
+	
+	@Test
+	public void test04(){
+//		第三方的分词器
+		MMSegAnalyzer a1 = new MMSegAnalyzer("H:\\源码\\mmseg4j-1.8.5\\data\\");
+//		最大匹配
+		ComplexAnalyzer a2 = new ComplexAnalyzer("H:\\源码\\mmseg4j-1.8.5\\data\\");
+		String str ="MMSeg 算法有两种分词方法：Simple和Complex，吉仕军 都是基于正向最大匹配。Complex 加了四个规则过虑。白云山 ";
+		AnalyzerUtils.analyzer02(str, a1);
+		System.out.println("===================");
+		AnalyzerUtils.analyzer02(str, a2);
+		
+		
+		
 	}
 	
 }
