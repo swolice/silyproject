@@ -66,6 +66,9 @@ public class SearchUtils {
 			e.printStackTrace();
 		}
 	}
+	public SearchUtils(Directory directory) {
+			this.directory = directory;
+	}
 
 	public IndexSearcher getIndexSearcher() {
 		try {
