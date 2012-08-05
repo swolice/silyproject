@@ -6,6 +6,7 @@ import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.WildcardQuery;
 import org.apache.lucene.util.Version;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,14 +47,16 @@ public class SearchTest {
 		try {
 //			query = qp.parse("jishijun 163.");
 //			query = qp.parse("filename:publish*");
-//			qp.setAllowLeadingWildcard(true);
+			qp.setAllowLeadingWildcard(true);
 //			query = qp.parse("filename:*_info.log");
 			
-			query = qp.parse("- filename:netsdlog*.log + filename:netsd*");
+//			query = qp.parse("- filename:netsdlog*.log + filename:netsd*");
 			
 			//完全匹配不起作用了 使用下面的方法
-//			query = qp.parse("filename:\"netsd_info.log\"");
+			query = qp.parse("filename:\"netsd_info.log\"");
 //			query = new TermQuery(new Term("filename","netsd_info.log"));
+			
+			query = new WildcardQuery(new Term("filename","*.log"));
 			
 			su.SearchByQueryParse2(query);
 		} catch (ParseException e) {

@@ -1,12 +1,15 @@
 package com.swjsj.searcher;
 
 import java.io.File;
+
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
-import org.apache.lucene.analysis.SimpleAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.document.NumericField;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
@@ -23,9 +26,9 @@ import org.apache.lucene.util.Version;
 
 public class SearchUtils {
 	private static IndexWriterConfig config = new IndexWriterConfig(
-			Version.LUCENE_36, new SimpleAnalyzer(Version.LUCENE_36));
+			Version.LUCENE_36, new StandardAnalyzer(Version.LUCENE_36));
 
-	private Directory directory = null;
+	private static Directory directory = null;
 
 	private static IndexReader reader = null;
 
@@ -36,13 +39,18 @@ public class SearchUtils {
 			iw.deleteAll();
 			Document doc = null;
 			File[] files = new File("h:/logs").listFiles();
+			Random r = new Random();
 			for (File file : files) {
 				doc = new Document();
+				int sorce = r.nextInt(200);
 				doc.add(new Field("content", new FileReader(file)));
 				doc.add(new Field("filename", file.getName(), Field.Store.YES,
 						Field.Index.NOT_ANALYZED));
 				doc.add(new Field("path", file.getAbsolutePath(),
 						Field.Store.YES, Field.Index.NOT_ANALYZED));
+				doc.add(new NumericField("size",Field.Store.YES,true).setDoubleValue(file.length()));
+				doc.add(new NumericField("date",Field.Store.YES,true).setLongValue(file.lastModified()));
+				doc.add(new NumericField("score",Field.Store.YES,true).setIntValue(sorce));
 				iw.addDocument(doc);
 			}
 		} catch (IOException e) {
@@ -97,7 +105,7 @@ public class SearchUtils {
 		IndexSearcher is = getIndexSearcher();
 		try {
 			QueryParser qp = new QueryParser(Version.LUCENE_36, "content",
-					new SimpleAnalyzer(Version.LUCENE_36));
+					new StandardAnalyzer(Version.LUCENE_36));
 			Query query = qp.parse("jishijun204");
 			TopDocs tp = is.search(query, 10);
 			ScoreDoc[] sd = tp.scoreDocs;
