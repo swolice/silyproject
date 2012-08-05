@@ -1,6 +1,8 @@
 package com.swjsj.searcher;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -27,7 +29,7 @@ public class CustomQueryUtils {
 						+ sd.score + "--> filename :" + doc.get("filename")
 						+ "--> path = " + doc.get("path") + "---->"
 						+ "--> size:" + doc.get("size") + " --> date: "
-						+ doc.get("date"));
+						+ getLong2DateStr(doc.get("date")));
 			}
 		} catch (ParseException e) {
 			System.err.println(e.getMessage());
@@ -42,6 +44,14 @@ public class CustomQueryUtils {
 				}
 			}
 		}
+	}
+	
+	public String getLong2DateStr(String str) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		Long l = Long.parseLong(str);
+		Date date = new Date();
+		date.setTime(l);
+		return sdf.format(date);
 	}
 	
 }

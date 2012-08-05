@@ -1,7 +1,6 @@
 package com.swjsj.searcher;
 
 import java.io.File;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
@@ -14,15 +13,25 @@ import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.queryParser.MultiFieldQueryParser;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.highlight.Fragmenter;
+import org.apache.lucene.search.highlight.Highlighter;
+import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.apache.lucene.search.highlight.QueryScorer;
+import org.apache.lucene.search.highlight.SimpleSpanFragmenter;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
+import org.apache.tika.Tika;
+import org.apache.tika.exception.TikaException;
+
+import com.chenlb.mmseg4j.analysis.MMSegAnalyzer;
 
 public class SearchUtils {
 	private static IndexWriterConfig config = new IndexWriterConfig(
@@ -40,9 +49,11 @@ public class SearchUtils {
 			Document doc = null;
 			File[] files = new File("h:/logs").listFiles();
 			Random r = new Random();
+			int id = 0;
 			for (File file : files) {
 				doc = new Document();
 				int sorce = r.nextInt(200);
+				doc.add(new Field("id",String.valueOf(id++),Field.Store.YES,Field.Index.NOT_ANALYZED_NO_NORMS));
 				doc.add(new Field("content", new FileReader(file)));
 				doc.add(new Field("filename", file.getName(), Field.Store.YES,
 						Field.Index.NOT_ANALYZED));
@@ -260,6 +271,70 @@ public class SearchUtils {
 					e.printStackTrace();
 				}
 			}
+		}
+	}
+	
+	
+	
+	public void searchByContent(String name){
+		MultiFieldQueryParser qp = new MultiFieldQueryParser(Version.LUCENE_36, new String[]{"filename","content"},
+				new MMSegAnalyzer());
+		try {
+			Directory dir = FSDirectory.open(new File("H:/workspace2/lucene/indexs03"));
+			IndexSearcher is = new SearchUtils(dir).getIndexSearcher();
+			Query query = qp.parse(name);
+			TopDocs td = is.search(query, 10);
+			Document doc = null;
+			for (ScoreDoc sd : td.scoreDocs) {
+				doc = is.doc(sd.doc);
+				String tilte = doc.get("filename");
+				tilte = highligh02(query, "filename", tilte);
+				System.out.println(doc.get("path"));
+				String content = new Tika().parseToString(new File(doc.get("path")));
+				content = highligh02(query, "content", content);
+				System.out.println(content);
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (InvalidTokenOffsetsException e) {
+			e.printStackTrace();
+		} catch (TikaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public String highligh02(Query query,String field,String txt) throws IOException, InvalidTokenOffsetsException{
+		QueryScorer scorer = new QueryScorer(query);
+		Fragmenter f = new SimpleSpanFragmenter(scorer);
+		Highlighter hl = new Highlighter(scorer);
+		hl.setTextFragmenter(f);
+		return hl.getBestFragment(new MMSegAnalyzer(), field, txt);
+	}
+	
+	
+	
+	public void highlight01(){
+		String str ="阿里鸡丝豆腐垃圾死对方了解拉萨江东父老lajsldfjlasdjflsjdflajsdfljsdfljlsjad撒旦发射点发";
+		QueryParser qp = new QueryParser(Version.LUCENE_36, "f",
+				new MMSegAnalyzer());
+		try {
+			Query query = qp.parse("了解 江东");
+			QueryScorer scorer = new QueryScorer(query);
+			Fragmenter f = new SimpleSpanFragmenter(scorer);
+			Highlighter hl = new Highlighter(scorer);
+			hl.setTextFragmenter(f);
+			System.out.println(hl.getBestFragment(new MMSegAnalyzer(), "f", str));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InvalidTokenOffsetsException e) {
+			e.printStackTrace();
 		}
 	}
 

@@ -96,4 +96,15 @@ public class SearchTest {
 		
 	}
 	
+	@Test
+	public void testHL01(){
+		su.highlight01();
+	}
+	
+	
+	@Test
+	public void testHL02(){
+		su.searchByContent("python");
+	}
+	
 }

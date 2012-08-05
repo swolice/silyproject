@@ -50,9 +50,9 @@ public class IndexUtil {
 	private static IndexReader reader = null;
 	private static IndexWriter write = null;
 
-	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 	public String getLong2DateStr(String str) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Long l = Long.parseLong(str);
 		Date date = new Date();
 		date.setTime(l);
