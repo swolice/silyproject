@@ -64,12 +64,12 @@ public class SortUtils {
 					new SimpleAnalyzer(Version.LUCENE_36));
 			Query query = qp.parse(qstr);
 			TopDocs td = null;
-			if(null != sort){
-				td= is.search(query, 150, sort);
-			}else{
-				td= is.search(query, 150);
+			if (null != sort) {
+				td = is.search(query, 150, sort);
+			} else {
+				td = is.search(query, 150);
 			}
-			
+
 			ScoreDoc[] sds = td.scoreDocs;
 			Document doc = null;
 			for (ScoreDoc sd : sds) {
@@ -89,11 +89,12 @@ public class SortUtils {
 		}
 
 	}
+
 	public void filter(Query query, Filter filter) {
 		IndexSearcher is = getIndexSearcher();
-		
+
 		try {
-			TopDocs td= is.search(query,filter, 150);
+			TopDocs td = is.search(query, filter, 150);
 			ScoreDoc[] sds = td.scoreDocs;
 			Document doc = null;
 			for (ScoreDoc sd : sds) {
@@ -104,11 +105,34 @@ public class SortUtils {
 						+ "--> size:" + doc.get("size") + " --> date: "
 						+ doc.get("date"));
 			}
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
+	}
+
+	public void customFilter(Query query, Filter filter) {
+		IndexSearcher is = getIndexSearcher();
+
+		try {
+			TopDocs td = is.search(query, filter, 150);
+			ScoreDoc[] sds = td.scoreDocs;
+			Document doc = null;
+			for (ScoreDoc sd : sds) {
+				doc = is.doc(sd.doc);
+				System.out.println(" doc.id = " + sd.doc + "doc.getid = "
+						+ doc.get("id") + " sd.score:" + sd.score
+						+ "--> filename :" + doc.get("filename")
+						+ "--> path = " + doc.get("path") + "---->"
+						+ "--> size:" + doc.get("size") + " --> date: "
+						+ doc.get("date"));
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 }
