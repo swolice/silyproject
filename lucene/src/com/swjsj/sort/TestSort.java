@@ -75,17 +75,12 @@ public class TestSort {
 	@Test
 	public void testCustFilter() {
 		Filter filter = new MyIdCustFilter(new FilterAccess() {
-			@Override
 			public boolean isSet() {
 				return false;
 			}
-			
-			@Override
 			public String[] getValues() {
 				return new String[]{"1","2","3","4","7"};
 			}
-			
-			@Override
 			public String getField() {
 				return "id";
 			}
