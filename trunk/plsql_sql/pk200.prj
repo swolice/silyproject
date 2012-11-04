@@ -1,0 +1,17 @@
+PL/SQL Developer Project
+
+[Options]
+AutoConnect=0
+Username=
+Password=2176
+Database=
+ConnectAs=
+HaltAfterError=0
+ShowItems=0
+
+[Groups]
+
+[Files]
+0,0,TABLE,,PK_ACCOUT_TYPE
+
+[Notes]
