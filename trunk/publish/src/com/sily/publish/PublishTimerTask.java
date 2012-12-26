@@ -14,6 +14,10 @@ import org.apache.log4j.Logger;
 public class PublishTimerTask extends TimerTask {
 
 	private static boolean isRunning = false;
+	
+	public static boolean isRunning() {
+		return isRunning;
+	}
 	private static ServletContext context;
 
 	private int hour = -1;
@@ -25,6 +29,8 @@ public class PublishTimerTask extends TimerTask {
 	}
 	
 	public PublishTimerTask() {
+	}
+	public PublishTimerTask(String[] flags) {
 	}
 
 	public void run() {
