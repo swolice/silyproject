@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
+import javax.servlet.ServletContext;
+
 import org.apache.log4j.Logger;
 
 public class PublishLogic {
+	
+	public static String pubType = "0";
 
 	public static void logic(){
 		new PublishLogic().mutiTaskRun();
@@ -37,13 +41,12 @@ public class PublishLogic {
 			Logger.getLogger("publish").error(e.getMessage(),e);
 			return;
 		}
+		//发布程序
+		String path = prop.getProperty("commandFile_"+pubType);
+		processLogic(path);
 		
-		for (int i = 1; i < 10; i++) {
-			String path = prop.getProperty("commandFile_"+i);
-			if(null == path || "".equals(path)){
-				continue;
-			}
-			processLogic(path);
-		}
+		//发送邮件
+		path = prop.getProperty("commandFile_email");
+		processLogic(path);
 	}
 }

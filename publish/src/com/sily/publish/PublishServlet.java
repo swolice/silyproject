@@ -65,15 +65,20 @@ public class PublishServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		new Thread() {
-			public void run() {
-				PublishTimerTask task = new PublishTimerTask();
-				task.run();
-			}
-		}.start();
+		String flag = request.getParameter("flag");
+		String result = " 发布指令已经执行，请等待发送完成后的邮件通知...";
 		
-		
-
+		if(!PublishTimerTask.isRunning()){
+			PublishLogic.pubType = flag;
+			new Thread() {
+				public void run() {
+					PublishTimerTask task = new PublishTimerTask();
+					task.run();
+				}
+			}.start();
+		}else{
+			result = " 程序发布中...... ,请等待发布完后在执行！";
+		}
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
@@ -81,7 +86,7 @@ public class PublishServlet extends HttpServlet {
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		out.print(" 发布指令已经执行，请等待发送完成后的邮件通知...");
+		out.print(result);
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
