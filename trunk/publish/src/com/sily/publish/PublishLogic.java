@@ -9,6 +9,8 @@ import javax.servlet.ServletContext;
 
 import org.apache.log4j.Logger;
 
+import com.sily.util.StringUtils;
+
 public class PublishLogic {
 	
 	public static String pubType = "0";
@@ -43,8 +45,9 @@ public class PublishLogic {
 		}
 		//发布程序
 		String path = prop.getProperty("commandFile_"+pubType);
-		processLogic(path);
-		
+		if(!StringUtils.isNullOrEmpty(path)){
+			processLogic(path);
+		}
 		//发送邮件
 		path = prop.getProperty("commandFile_email");
 		processLogic(path);
