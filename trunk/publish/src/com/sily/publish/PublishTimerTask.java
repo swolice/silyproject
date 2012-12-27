@@ -38,27 +38,24 @@ public class PublishTimerTask extends TimerTask {
 		if (!getSwitch()) {
 			return;
 		}
-
-		if (!isRunning) {
-
-			isRunning = true;
-
-			executeLogic();
-			
-			isRunning = false;
-		} else {
-			Logger.getLogger("publish").info("上一次任务执行还未结束");
-		}
+		PublishLogic.pubType = "0";
+		executeLogic();
 		
 		Logger.getLogger("publish").info("发布项目run方法结束");
 	}
 	
 	
-	private void executeLogic(){
-		try {
-			PublishLogic.logic();
-		} catch (Exception e) {
-			Logger.getLogger("publish").info("发布账务executeLogic方法出错",e);
+	public void executeLogic(){
+		if (!isRunning) {
+			isRunning = true;
+			try {
+				PublishLogic.logic();
+			} catch (Exception e) {
+				Logger.getLogger("publish").info("发布账务executeLogic方法出错",e);
+			}
+			isRunning = false;
+		} else {
+			Logger.getLogger("publish").info("上一次任务执行还未结束");
 		}
 	}
 
