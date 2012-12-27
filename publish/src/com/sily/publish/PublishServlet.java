@@ -73,7 +73,7 @@ public class PublishServlet extends HttpServlet {
 			new Thread() {
 				public void run() {
 					PublishTimerTask task = new PublishTimerTask();
-					task.run();
+					task.executeLogic();
 				}
 			}.start();
 		}else{
